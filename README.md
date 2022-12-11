@@ -52,41 +52,48 @@ Users for testing:
 **The project concept**
 
 PolishGirlPainting is the webpage for an artist showcasing her work on the web and selling her paintings online. 
-Apart allowing the Owner present her pictures for sale, the webpage also helps in developing her clientbase by building a community of people interested in her art.
+Apart from allowing the Owner present her pictures for sale, the webpage also helps in developing her clientbase by building a community of people interested in her art.
 
 ___
 
 # 1. User Experience (UX) <a name='ux'></a> 
 ### **Project goals**
-The main goal of the project is to provide a platform for engaging prospective and current clients interested in using PhysioClinic's offering for enhancing the state of their health. This should be achieved through several sub-goals:
-- To enable staff users to post, edit, read and delete content related to company's offering.
-- To enable registered users to comment and like specific treatments and read other users' input.
-- To enable all users to read about company's offering and see other users' reviews, comments and likes.
-- To enable registered users contact the company to book specific treatments.
-- To enable all users to contact the company for any reason.
+The main goal of the project is to provide a platform for selling Artist's paintings and supporting this goal by engaging prospective and current clients interested in acquiring the paintings. This should be achieved through several sub-goals:
+- To enable owner (Artist) to post, edit, read and delete textual and graphical content directly related to her offering.
+- To enable the owner to post in her personal blog.
+- To provide functionality for commercial transactions related to the items for sale.
+- To enable registered users to comment and like entries for specific art pieces and read other users' input.
+- To enable registered users to enter their testimonials.
+- To enable all users to view the Artist's offering, blog and see other users' reviews, comments and likes.
+- To enable all visitors to subscribe to email newsletter.
+- To enable all users to contact the Artist for any reason.
 
 ### **Site owner goals**
-- To ensure the company's up-to-date offering is broadcast in a timely and efficient manner.
-- To increase prospective and current users' interest in the offering and to promote sales through encouraging engagement within the community.
+- To ensure the offering is broadcast in a consumer-friendly and appealing way.
+- To have commercial transactions processed in accurate and time-efficient manner.
+- To increase prospective and current customers' interest in the offering and to promote sales through encouraging engagement within the community.
 - To maximise customers' retainment.
-- To promote knowledge on benefits of treatments on offer.
-- To receive requests for booking.
-- To enable customer - company correspondence.
+- To promote knowledge on benefits of art appreciation.
+- To receive requests for custom art creation.
+- To enable customer - Artist correspondence.
 - To build customer database.
-- To differentiate between different kinds of users in terms of access and ability to edit and delete information.
+- To differentiate between different kinds of customers in terms of access and ability to edit and delete information.
 - To assure access to the service on different kinds of devices.
 
 ### **User goals**
+All users
 - To be able to use service intuitively and with ease.
-- To be able to read content without sharing any details.
-- To find details on what kinds of treatments are offered and about their benefits.
-- To be able to contact the company to book a specific treatment or about other related topics.
-- To open and then access account for easier communication.
+- To be able to view content without sharing any details.
+- To view the Artist's collection and find details on each item.
+- To be able to enter contact details and carry out a complete purchase transaction.
+- To be able to contact the company.
+- To open and then access account for easier communication and to join the community.
+
+Registered users
 - To log in and log out as needed.
 - To log in with a chosen user name to maintain privacy.
 - To have an aesthetically pleasing and functionally easy experience while using the webpage.
-- To be able give feedback on treatments already received.
-- To be able to upload, update and delete information on treatments contained in the posts (for staff users only).
+- To be able to give testimony after a piece acquisition.
 
 ---
 
@@ -106,15 +113,16 @@ The main goal of the project is to provide a platform for engaging prospective a
 
 1.6 As a **site user** I receive **confirmation of logging in and logging out visible on webpage** so that I **instantly know if the operation was successful**.
 
-1.7 As a **staff site user** I can **access enhanced functionality** so that I can **add, edit and delete content on webpage**.
+1.7 As a **site user** I can **enter my details once** so that I can **reuse them at any time**.
+
 
 ### **2. Epic: Navigation**
 
 2.1 As a **site user** I can **navigate the service intuitively** so that I can **utilize all of its content**.
 
-2.2 As a **site user** I can easily **browse through available treatments** so I can **decide which ones are most appropriate to me**. 
+2.2 As a **site user** I can easily **browse through available items** so I can **decide which ones are most appropriate to me**.
 
-2.3 As a **site user** I can **navigate the site on all kinds of devices** so that **I am not limited to any kind of device**.
+2.3 As a **site user** I can **navigate the site on all kinds of screens** so that **I am not limited to any kind of device**.
 
 ### **3. Epic: Customer engagement**
 
@@ -124,37 +132,35 @@ The main goal of the project is to provide a platform for engaging prospective a
 
 3.3 As a **site user** I can **locate company's social media accounts** so I can **stay in contact through alternative means**.
 
-3.4 As a **site user** I can **use the website for communication with the company** so that I can **send general queries or request booking for a specific treatment**.
+3.4 As a **registered site user** I can **use website without having to re-enter my details** so that **my activity on the site requires minimum afford from my side**.
 
-3.5 As a **registered site user** I can **use website for communication without having to re-enter my details** so that **sending my message requires minimum afford from my side**.
+3.5 As a **site owner** I can **control content showing on the website** so that **the whole website content is in line with my values and supports my mission**.
 
-3.6 As a **site owner** I can **control content showing on the website** so that **the whole website content is in line with company values and supports its mission**.
+### **4. Epic: Artist's offer**
 
-### **4. Epic: Company offer**
+4.1 As a **site user** I can **quickly get a general idea about items on offer** so that I can **prioritize which content to get acquainted with more thoroughly**.
 
-4.1 As a **site user** I can **quickly get a general idea about services on offer** so that I can **prioritize which content to read more thoroughly**.
-
-4.2 As a **site user** I can **read thoroughly about chosen treatments** so that I can **acquire content most appropriate to my requirements**.
+4.2 As a **site user** I can **read details about a chosen item** so that I can **get make the best decision about the purchase based on technical information and my personal preferences**.
 
 4.3 As a **site user** I can **respond to content via likes and comments** for **increased sense of community** (registered users only).
 
-4.4 As a **site user** I can **take part in polls and see poll results** so I can **feel more engaged with the company and the health-oriented community**.
+4.5 As a **site owner** I can **create, update and delete item entries** so that I can **inform visitors on pieces on offer and pieces sold**.
 
-4.5 As a **staff site user** I can **create, update and delete polls** so that **polls as means of engaging users and gathering information are used according to their purpose**.
+4.6 As a **site owner** I can **create, update and delete blog entries** so that I can **share content of my choice and build a sense of community with my audience and prospective buyers**.
 
-4.6 As a **site owner** I can **easily activate and deactivate content is visible to the public**.
+4.7 As a **site owner** I can **easily activate and deactivate content visibility to the public** so that **only approriate content is shown on the site**.
 
-4.7 As a **site owner** I can **prioritize which treatments are showing first on the site** so that I can **influence demand on offering of my choice**. 
+4.8 As a **site owner** I can **prioritize which items are showing first on the site** so that I can **influence demand on offering of my choice**. 
 
 ### **5. Epic: Admin site**
 
-5.1 As a **site admin** I can **create, update and delete user profiles in admin page** so that **all users have appropriate access to site services**. 
+5.1 As a **site admin** I can **create, update and delete user profiles in admin page** so that **all users have appropriate access to website functionality**. 
 
-5.2 As a **site admin** I can **create, update and delete posts and comments in admin page** so I can assure that **only content in line with company's ethos and goals is made available**.
+5.2 As a **site admin** I can **create, update and delete items and comments in admin page** so I can assure that **only content in line with my ethos and goals is made available**.
 
-5.3 As a **site admin** I can **create, update and delete polls** so that **polls as means of engaging users and gathering information are used according to their purpose**.
+5.3 As a **site admin** I can **create, update and delete blog entries** so that **blog entries as means of engaging users and gathering information are used according to their purpose**.
 
-5.4 As a **site admin** I can **read, update and delete booking requests** so that **booking requests are dealt with**. 
+5.4 As a **site admin** I can **read, update and delete testimonials** so that **only content in line with my values is made available**. 
 
 [Table of Contents](#home)
 
