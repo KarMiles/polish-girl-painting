@@ -101,11 +101,11 @@ Registered users
 
 ### **1. Epic: Account management**
 
-1.1 As a **site user** I can **access site without logging in** so that I can **read information about available treatments**.
+1.1 As a **site user** I can **access site without logging in** so that I can **view content of the webpage**.
 
 1.2 As a **site user** I can **register** so that **I have access to personalized service**.
 
-1.3 As a **site user** I can **log in using my username and password** so that I can **access site's enhanced functionality**.
+1.3 As a **site user** I can **log in using my username and password** so that I can **access site's enhanced functionality and reuse once entered personal information**.
 
 1.4 As a **site user** I can **log out of my account** so that I know **my information stays confidential**.
 
@@ -114,7 +114,6 @@ Registered users
 1.6 As a **site user** I receive **confirmation of logging in and logging out visible on webpage** so that I **instantly know if the operation was successful**.
 
 1.7 As a **site user** I can **enter my details once** so that I can **reuse them at any time**.
-
 
 ### **2. Epic: Navigation**
 
@@ -132,11 +131,13 @@ Registered users
 
 3.3 As a **site user** I can **locate company's social media accounts** so I can **stay in contact through alternative means**.
 
-3.4 As a **registered site user** I can **use website without having to re-enter my details** so that **my activity on the site requires minimum afford from my side**.
+3.4 As a **site user** I can **subscribe to a newsletter** so I can **stay engaged and up do date with the Artist's offering and creative process**.
 
-3.5 As a **site owner** I can **control content showing on the website** so that **the whole website content is in line with my values and supports my mission**.
+3.5 As a **registered site user** I can **use website without having to re-enter my details** so that **my activity on the site requires minimum afford from my side**.
 
-### **4. Epic: Artist's offer**
+3.6 As a **site owner** I can **control content showing on the website** so that **the whole website content is in line with my values and supports my mission**.
+
+### **4. Epic: Offer**
 
 4.1 As a **site user** I can **quickly get a general idea about items on offer** so that I can **prioritize which content to get acquainted with more thoroughly**.
 
@@ -144,23 +145,41 @@ Registered users
 
 4.3 As a **site user** I can **respond to content via likes and comments** for **increased sense of community** (registered users only).
 
-4.5 As a **site owner** I can **create, update and delete item entries** so that I can **inform visitors on pieces on offer and pieces sold**.
+4.6 As a **site owner** I can **create, update and delete item entries** so that I can **inform visitors on pieces on offer and pieces sold**.
 
-4.6 As a **site owner** I can **create, update and delete blog entries** so that I can **share content of my choice and build a sense of community with my audience and prospective buyers**.
+4.9 As a **site owner** I can **add, edit and delete items** so that I can **control the offering to the potencial buyers**.
 
-4.7 As a **site owner** I can **easily activate and deactivate content visibility to the public** so that **only content I deem approriate is shown on the site**.
+4.10 As a **site owner** I can **prioritize which items are showing first on the site** so that I can **influence demand on offering of my choice**.
 
-4.8 As a **site owner** I can **prioritize which items are showing first on the site** so that I can **influence demand on offering of my choice**. 
+### **5. Epic: Blog**
 
-### **5. Epic: Admin site**
+5.1 As a **site user** I can **read Artist's blog** so that I can **stay up to date with the Artist's developments**.
 
-5.1 As a **site admin** I can **create, update and delete user profiles in admin page** so that **all users have appropriate access to website functionality**. 
+5.2 As a **site user** I can **comment and like entries on Artist's blog** so that I can **stay engaged with the community gathered around the Artist**. (registered users)
 
-5.2 As a **site admin** I can **create, update and delete items and comments in admin page** so I can assure that **only content in line with my ethos and goals is made available**.
+5.3 As a **site owner** I can **create, update and delete blog entries** so that I can **share content of my choice and build a sense of community with my audience and prospective buyers**.
 
-5.3 As a **site admin** I can **create, update and delete blog entries** so that **blog entries as means of engaging users and gathering information are used according to their purpose**.
+### **6. Epic: Testimony**
 
-5.4 As a **site admin** I can **read, update and delete testimonials** so that **only content in line with my values is made available**. 
+6.1 As a **site user** I can **write a testimony after my purchase** so that I can **share my experience and contribute to the community gathered around the Artist**. (registered users)
+
+6.2 As a **site owner** I can **control each testimony** so I can **maintain standards of the site's content**. 
+
+### **7. Epic: Checkout**
+
+7.1 As a **site user** I can **smoothly go through purchase process** so that I can **acquire a chosen item**.
+
+7.2 As a **site owner** I can **monitor transactions status** so I can **ensure process of purchase and delivery is completed**.
+
+### **8. Epic: Admin site**
+
+8.1 As a **site admin** I can **create, update and delete user profiles in admin page** so that **all users have appropriate access to website functionality**. 
+
+8.2 As a **site admin** I can **create, update and delete items and comments in admin page** so I can assure that **only content in line with my ethos and goals is made available**.
+
+8.3 As a **site admin** I can **create, update and delete blog entries** so that **blog entries as means of engaging users and gathering information are used according to their purpose**.
+
+8.4 As a **site admin** I can **read, update and delete testimonials** so that **only content in line with my values is made available**. 
 
 [Table of Contents](#home)
 
