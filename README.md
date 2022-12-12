@@ -148,7 +148,7 @@ Registered users
 
 4.6 As a **site owner** I can **create, update and delete blog entries** so that I can **share content of my choice and build a sense of community with my audience and prospective buyers**.
 
-4.7 As a **site owner** I can **easily activate and deactivate content visibility to the public** so that **only approriate content is shown on the site**.
+4.7 As a **site owner** I can **easily activate and deactivate content visibility to the public** so that **only content I deem approriate is shown on the site**.
 
 4.8 As a **site owner** I can **prioritize which items are showing first on the site** so that I can **influence demand on offering of my choice**. 
 
