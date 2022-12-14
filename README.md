@@ -59,41 +59,42 @@ ___
 # 1. User Experience (UX) <a name='ux'></a> 
 ### **Project goals**
 The main goal of the project is to provide a platform for selling Artist's paintings and supporting this goal by engaging prospective and current clients interested in acquiring the paintings. This should be achieved through several sub-goals:
-- To enable owner (Artist) to post, edit, read and delete textual and graphical content directly related to her offering.
-- To enable the owner to post in her personal blog.
-- To provide functionality for commercial transactions related to the items for sale.
-- To enable registered users to comment and like entries for specific art pieces and read other users' input.
-- To enable registered users to enter their testimonials.
-- To enable all users to view the Artist's offering, blog and see other users' reviews, comments and likes.
-- To enable all visitors to subscribe to email newsletter.
-- To enable all users to contact the Artist for any reason.
+-	To enable owner (Artist) to post, edit, read and delete textual and graphical content directly related to her offering.
+-	To enable the owner to post in her personal blog.
+-	To provide functionality for commercial transactions related to the items for sale.
+-	To enable users to view pictures and details on specific art pieces .
+-	To enable all users to view the Artist's blog.
+-	To enable all visitors to subscribe to email newsletter.
+-	To enable all users to contact the Artist using details in Contact section.
+
 
 ### **Site owner goals**
-- To ensure the offering is broadcast in a consumer-friendly and appealing way.
-- To have commercial transactions processed in accurate and time-efficient manner.
-- To increase prospective and current customers' interest in the offering and to promote sales through encouraging engagement within the community.
-- To maximise customers' retainment.
-- To promote knowledge on benefits of art appreciation.
-- To receive requests for custom art creation.
-- To enable customer - Artist correspondence.
-- To build customer database.
-- To differentiate between different kinds of customers in terms of access and ability to edit and delete information.
-- To assure access to the service on different kinds of devices.
+-	To ensure the offering is broadcast in a consumer-friendly and appealing way.
+-	To have commercial transactions processed in accurate and time-efficient manner.
+-	To increase prospective and current customers' interest in the offering and to promote sales through encouraging engagement within the community.
+-	To maximise customers' retainment.
+-	To promote knowledge on benefits of art appreciation.
+-	To receive requests for custom art creation.
+-	To enable customer - Artist correspondence.
+-	To build customer database.
+-	To assure access to the website on different kinds of devices.
+
 
 ### **User goals**
 All users
-- To be able to use service intuitively and with ease.
-- To be able to view content without sharing any details.
-- To view the Artist's collection and find details on each item.
-- To be able to enter contact details and carry out a complete purchase transaction.
-- To be able to contact the company.
-- To open and then access account for easier communication and to join the community.
+-	To be able to use service intuitively and with ease.
+-	To be able to view content without sharing any details.
+-	To view the Artist's collection and find details on each item.
+-	To be able to enter contact details and carry out a complete purchase transaction.
+-	To be able to contact the Artist.
+-	To open and then access account for easier future transactions.
+-	To have an aesthetically pleasing and functionally easy experience while using the webpage.
+
 
 Registered users
-- To log in and log out as needed.
-- To log in with a chosen user name to maintain privacy.
-- To have an aesthetically pleasing and functionally easy experience while using the webpage.
-- To be able to give testimony after a piece acquisition.
+-	To log in and log out as needed.
+-	To log in with a chosen user name to maintain privacy.
+-	To have my details remembered for smooth future transactions.
 
 ---
 
