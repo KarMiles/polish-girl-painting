@@ -62,7 +62,7 @@ The main goal of the project is to provide a platform for selling Artist's paint
 -	To enable owner (Artist) to post, edit, read and delete textual and graphical content directly related to her offering.
 -	To enable the owner to post in her personal blog.
 -	To provide functionality for commercial transactions related to the items for sale.
--	To enable users to view pictures and details on specific art pieces .
+-	To enable users to view pictures and details on specific art pieces.
 -	To enable all users to view the Artist's blog.
 -	To enable all visitors to subscribe to email newsletter.
 -	To enable all users to contact the Artist using details in Contact section.
@@ -71,7 +71,7 @@ The main goal of the project is to provide a platform for selling Artist's paint
 ### **Site owner goals**
 -	To ensure the offering is broadcast in a consumer-friendly and appealing way.
 -	To have commercial transactions processed in accurate and time-efficient manner.
--	To increase prospective and current customers' interest in the offering and to promote sales through encouraging engagement within the community.
+-	To increase prospective and current customers' interest in the offering.
 -	To maximise customers' retainment.
 -	To promote knowledge on benefits of art appreciation.
 -	To receive requests for custom art creation.
@@ -106,15 +106,16 @@ Registered users
 
 1.2 As a **site user** I can **register** so that **I have access to personalized service**.
 
-1.3 As a **site user** I can **log in using my username and password** so that I can **access site's enhanced functionality and reuse once entered personal information**.
+1.3 As a **site user** I can **log in using my username and password** so that I can **reuse once entered personal information**.
 
 1.4 As a **site user** I can **log out of my account** so that I know **my information stays confidential**.
 
-1.5 As a **site user** I can **easily see my current login status** so that **I know I'm in control of access to my enhanced service on currently used device**.
+1.5 As a **site user** I can **easily see my current login status** so that **I can control my status for privacy protection**.
 
 1.6 As a **site user** I receive **confirmation of logging in and logging out visible on webpage** so that I **instantly know if the operation was successful**.
 
 1.7 As a **site user** I can **enter my details once** so that I can **reuse them at any time**.
+
 
 ### **2. Epic: Navigation**
 
@@ -124,63 +125,54 @@ Registered users
 
 2.3 As a **site user** I can **navigate the site on all kinds of screens** so that **I am not limited to any kind of device**.
 
+2.4 As a **site user** I can **find links to Artist's social media wherever I am on the webpage** so that **I can use alternative means of getting the content**.
+
+2.5 As a **site user** I can **easily go back to home page** so I can **restart my experience**.
+
+
 ### **3. Epic: Customer engagement**
 
-3.1 As a **site user** I can **read and respond to available content** so **my experience on the site feels engaging and interactive**. 
+3.1 As a **site user** I can **locate company's social media accounts** so I can **stay in contact through alternative means**.
 
-3.2 As a **site user** I can **engage in activities that other users can also participate in** so I can **feel part of a wider community**.
+3.2 As a **site user** I can **subscribe to a newsletter** so I can **stay engaged and up do date with the Artist's offering and creative process**.
 
-3.3 As a **site user** I can **locate company's social media accounts** so I can **stay in contact through alternative means**.
+3.3 As a **registered site user** I can **use website without having to re-enter my details** so that **my activity on the site requires minimum afford from my side**.
 
-3.4 As a **site user** I can **subscribe to a newsletter** so I can **stay engaged and up do date with the Artist's offering and creative process**.
+3.4 As a **site user** I can **see imediately information about newest content** so I can **go directly to that content should I wish to do so**. 
 
-3.5 As a **registered site user** I can **use website without having to re-enter my details** so that **my activity on the site requires minimum afford from my side**.
-
-3.6 As a **site owner** I can **control content showing on the website** so that **the whole website content is in line with my values and supports my mission**.
 
 ### **4. Epic: Offer**
 
-4.1 As a **site user** I can **quickly get a general idea about items on offer** so that I can **prioritize which content to get acquainted with more thoroughly**.
+4.1 As a **site user** I can **quickly get a general idea about items on offer** so that I can **decide which content to get acquainted with more thoroughly**.
 
-4.2 As a **site user** I can **read details about a chosen item** so that I can **get make the best decision about the purchase based on technical information and my personal preferences**.
+4.2 As a **site user** I can **read details about a chosen item** so that I can **make the best decision about the purchase based on technical information (e.g. size) and my personal preferences**.
 
-4.3 As a **site user** I can **respond to content via likes and comments** for **increased sense of community** (registered users only).
+4.3 As a **site owner** I can **create, update and delete item entries** so that I can **inform visitors on pieces on offer and pieces sold**.
 
-4.6 As a **site owner** I can **create, update and delete item entries** so that I can **inform visitors on pieces on offer and pieces sold**.
+4.4 As a **site owner** I can **prioritize which items are shown first on the site** so that I can **influence demand on offering of my choice**.
 
-4.9 As a **site owner** I can **add, edit and delete items** so that I can **control the offering to the potencial buyers**.
-
-4.10 As a **site owner** I can **prioritize which items are showing first on the site** so that I can **influence demand on offering of my choice**.
 
 ### **5. Epic: Blog**
 
 5.1 As a **site user** I can **read Artist's blog** so that I can **stay up to date with the Artist's developments**.
 
-5.2 As a **site user** I can **comment and like entries on Artist's blog** so that I can **stay engaged with the community gathered around the Artist**. (registered users)
+5.2 As a **site owner** I can **create, update and delete blog entries** so that I can **share content of my choice and build a sense of connection with my audience and prospective buyers**.
 
-5.3 As a **site owner** I can **create, update and delete blog entries** so that I can **share content of my choice and build a sense of community with my audience and prospective buyers**.
 
-### **6. Epic: Testimony**
-
-6.1 As a **site user** I can **write a testimony after my purchase** so that I can **share my experience and contribute to the community gathered around the Artist**. (registered users)
-
-6.2 As a **site owner** I can **control each testimony** so I can **maintain standards of the site's content**. 
-
-### **7. Epic: Checkout**
+### **6. Epic: Checkout**
 
 7.1 As a **site user** I can **smoothly go through purchase process** so that I can **acquire a chosen item**.
 
-7.2 As a **site owner** I can **monitor transactions status** so I can **ensure process of purchase and delivery is completed**.
+7.2 As a **site owner** I can **monitor transaction's status** so I can **ensure process of purchase and delivery is successfully completed**.
 
-### **8. Epic: Admin site**
+### **7. Epic: Admin site**
 
-8.1 As a **site admin** I can **create, update and delete user profiles in admin page** so that **all users have appropriate access to website functionality**. 
+8.1 As a **site admin** I can **create, update and delete user profiles in admin page** so that **all users have appropriate access to website functionality**.
 
-8.2 As a **site admin** I can **create, update and delete items and comments in admin page** so I can assure that **only content in line with my ethos and goals is made available**.
+8.2 As a **site admin** I can **create, update and delete items in admin page** so I can assure that **only content in line with my ethos and up to date is available on the website**.
 
-8.3 As a **site admin** I can **create, update and delete blog entries** so that **blog entries as means of engaging users and gathering information are used according to their purpose**.
+8.3 As a **site admin** I can **create, update and delete blog entries** so that **blog entries as means of communication and user engagement are used according to their purpose**.
 
-8.4 As a **site admin** I can **read, update and delete testimonials** so that **only content in line with my values is made available**. 
 
 [Table of Contents](#home)
 
