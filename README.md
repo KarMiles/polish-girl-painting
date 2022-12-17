@@ -104,7 +104,7 @@ Registered users
 
 1.1 As a **site user** I can **access site without logging in** so that I can **view content of the webpage**.
 
-1.2 As a **site user** I can **register** so that **I have access to personalized service**.
+1.2 As a **site user** I can **register** so that **I can reuse once entered information**.
 
 1.3 As a **site user** I can **log in using my username and password** so that I can **reuse once entered personal information**.
 
@@ -114,7 +114,9 @@ Registered users
 
 1.6 As a **site user** I receive **confirmation of logging in and logging out visible on webpage** so that I **instantly know if the operation was successful**.
 
-1.7 As a **site user** I can **enter my details once** so that I can **reuse them at any time**.
+1.7 As a **site user** I can **reset my password** so that I can **safely remain the website's registered user**.
+
+1.8 As a **site user** I can **read webpage's privacy policy** so that I can **know if my personal information is safe**.
 
 
 ### **2. Epic: Navigation**
@@ -138,7 +140,9 @@ Registered users
 
 3.3 As a **registered site user** I can **use website without having to re-enter my details** so that **my activity on the site requires minimum afford from my side**.
 
-3.4 As a **site user** I can **see imediately information about newest content** so I can **go directly to that content should I wish to do so**. 
+3.4 As a **site user** I can **see imediately information about newest content** so I can **go directly to that content should I wish to do so**.
+
+3.5 As a **site user** I can **change the language of the site by an automatic translator** so that I can **read the content in a different language**.
 
 
 ### **4. Epic: Offer**
@@ -200,7 +204,7 @@ Features with high and medium score between 8 and 25 points on scale 1-25 have b
 
 ## 1.iii. Structure <a name='structure'></a>
 
-## Website templates
+## Website templates TODO
 
 Templates are structured into the files listed below. Base template is used for the entire site for consistency and ease in user experience.
 Templates are placed in the folder templates and its subfolders.
@@ -229,11 +233,10 @@ Templates are placed in the folder templates and its subfolders.
 Code is built with utilization of Django framework into apps, files and folders listed below.
 
 ### Apps
-- accounts - functionality for managing users accounts.
-- blog - functionality designed for managing blogs, in this project used to manage posts on treatments being on offer. This includes posts, comments and likes.
-- booking - functionality for registered users for receiving requests for treatments on a date and time of user's choice.
-- contact - functionality for managing general queries from users.
-- poll - functionality for simple polls aiming at gathering ad hoc information on current topics from users and enhancing user engagement.
+- profiles - functionality for managing user profiles.
+- gallery - functionality designed for managing blogs, in this project used to manage posts with paintings being on offer. This includes posts and comments.
+- blog - functionality for Artirt's personal blog.
+- checkout - functionality for online sales transactions.
 
 ### Files
 Files for running specific apps:
@@ -256,7 +259,7 @@ Common files:
 - README.md - project's documentation.
 
 ### Folders
-- physioproject - main project for the website.
+- pgpproject - main project for the website.
 - app folders: accounts, blog, booking, contact, poll.
 - helpers - features not being core of the website, contains views for rendering 403, 404 and 500 error pages.
 - readme - contains files necessary for Readme document to show all of its intended content.
@@ -265,7 +268,7 @@ Common files:
 
 ## Data schema
 
-**Database**
+**Database** [#2](https://github.com/KarMiles/polish-girl-painting/issues/2)TODO
 
 A relational database was used for this project. 
 
@@ -276,10 +279,6 @@ During development process SQLite DB was initially used, then Postgres. For prod
 **Data schema diagram**
 
 ![screenshot of data schema](readme/docs/images/database/data_schema.jpg)
-
-Note:
-- User - Post.likes is many-to-many relationship.
-- Post.featured_image is a CloudinaryField.
 
 ---
 
