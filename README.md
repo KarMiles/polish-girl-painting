@@ -282,10 +282,10 @@ During development process SQLite DB was initially used, then Postgres. For prod
 
 ---
 
-## Models
+## Models [#2](https://github.com/KarMiles/polish-girl-painting/issues/2)TODO
 The following models represent the database structure for the website.
 
-### Model: User 
+### Model: User
 - This model represents a user and is based on Django allauth library.
 - This model contains the following fields: username, first_name, last_name, email, password, tel, is_staff, is_active, is_superuser.
 
@@ -372,20 +372,6 @@ Relationships
 </details>
 <br>
 
-### Model: Poll
-
-- Part of poll app.
-- Represents questions with options for polls presented to customers.
-
-Relationships
-- Poll model has one-to-many relationship with User model: a user (who must be part of staff) can create many polls.
-
-<details>
-<summary>Click here to view Poll model</summary>
-
-![screenshot of Poll model](readme/docs/images/database/poll_model.jpg)
-</details>
-<br>
 
 ### Definitions
 
@@ -405,7 +391,7 @@ Relationships
 - reverse_lazy - is an implementation of the reverse URL resolver, unlike the traditional reverse function, reverse_lazy won't execute until the value is needed. It is useful because it prevents 'Reverse Not Found' exceptions when working with URLs that may not be immediately known, which - in this project - is the case in CreatePost class.
 
 ___
-## 1.iv. Skeleton <a name='skeleton'></a>
+## 1.iv. Skeleton <a name='skeleton'></a> [#2](https://github.com/KarMiles/polish-girl-painting/issues/2)TODO
 
 Layout of the interface, navigation and information design for different screen sizes were planned with utilization of wireframes created in Balsamiq. 
 
@@ -490,8 +476,13 @@ Flow of information and decisions the website operates on are represented in the
 
 <details>
 <summary>Click here to view business logic flowchart</summary>
+Main chart
 
-![image](readme/docs/images/physiohealth_flowchart.jpeg)
+![image](readme/docs/images/pgp_flowchart.jpeg)
+
+Account management / logins
+
+![image](readme/docs/images/pgp_account_management.jpeg)
 </details>
 
 <br>
