@@ -1,4 +1,4 @@
-# PhysioClinic
+# PolishGirlPainting
 
 ![screenshot of Responsive Image](readme/docs/images/responsive_image.jpg)
 
@@ -64,6 +64,7 @@ The main goal of the project is to provide a platform for selling Artist's paint
 -	To provide functionality for commercial transactions related to the items for sale.
 -	To enable users to view pictures and details on specific art pieces.
 -	To enable all users to view the Artist's blog.
+-   To enable registered users to share their testimony about their interactions with the Artist.
 -	To enable all visitors to subscribe to email newsletter.
 -	To enable all users to contact the Artist using details in Contact section.
 
@@ -87,6 +88,7 @@ All users
 -	To view the Artist's collection and find details on each item.
 -	To be able to enter contact details and carry out a complete purchase transaction.
 -	To be able to contact the Artist.
+-   To share their experience in a Testimony.
 -	To open and then access account for easier future transactions.
 -	To have an aesthetically pleasing and functionally easy experience while using the webpage.
 
@@ -143,6 +145,8 @@ Registered users
 3.4 As a **site user** I can **see imediately information about newest content** so I can **go directly to that content should I wish to do so**.
 
 3.5 As a **site user** I can **change the language of the site by an automatic translator** so that I can **read the content in a different language**.
+
+3.6 As a **site user** I can **share my experiences in Testimony** so that **I feel that I contribute to the community gathered around the Artist**.
 
 
 ### **4. Epic: Offer**
