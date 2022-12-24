@@ -156,8 +156,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # Static files address for Django:
-STATIC_FILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-# Media files for Django:
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
+# Media files for Django
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
