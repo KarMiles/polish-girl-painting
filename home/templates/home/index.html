@@ -1,6 +1,31 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block content %}
-    <h1 class="display-4 text-success">Wow! File in home/templates/home/index.html works!</h1>
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col">
+
+            </div>
+        </div>
+    </div>
 {% endblock %}
+
+{% block content %}
+    <div class="container h-100">
+        <div class="row h-100">
+            <div class="col-7 col-md-6 my-auto">
+                <h1 class="display-4 logo-font text-black">
+                    New painting arrived!
+                </h1>
+                <div class="my-5">
+                    <h4>
+                        <!-- TODO add shop-now-button class in .css file -->
+                        <a href="" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Shop now</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
