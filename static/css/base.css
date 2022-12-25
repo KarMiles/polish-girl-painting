@@ -17,8 +17,12 @@ body {
     opacity: 0.6;
     min-width: 20rem;
     max-width: 30rem;
-    /* margin-left: 30px; */
     margin: auto;
+}
+
+.transbox h1 {
+    color: black;
+    opacity: 0.9;
 }
 
 /* from Bulma */
@@ -139,6 +143,11 @@ input[name='q']::placeholder {
 
     .header-container {
         padding-top: 160px;
+    }
+
+    .dropdown > a {
+        text-align: center;
+        width: 100%;
     }
 }
 
