@@ -7,3 +7,18 @@ body {
     color: red;
     background: rgb(234, 232, 255);
 }
+
+/* fixed top navbar only on medium screens and larger */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+    }
+
+    .header-container {
+        padding-top: 160px;
+    }
+}
