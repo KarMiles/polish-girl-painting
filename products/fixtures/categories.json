@@ -2,60 +2,46 @@
     "pk": 1,
     "model": "products.category",
     "fields": {
-        "name": "available",
-        "friendly_name": "Available"
-    }
-}, {
-    "pk": 2,
-    "model": "products.category",
-    "fields": {
-        "name": "not_available",
-        "friendly_name": "Not available"
-    }
-}, {
-    "pk": 3,
-    "model": "products.category",
-    "fields": {
         "name": "landscape",
         "friendly_name": "Landscape"
     }
 }, {
-    "pk": 4,
+    "pk": 2,
     "model": "products.category",
     "fields": {
         "name": "portrait",
         "friendly_name": "Portrait"
     }
 }, {
-    "pk": 5,
+    "pk": 3,
     "model": "products.category",
     "fields": {
         "name": "life",
         "friendly_name": "Life"
     }
 }, {
-    "pk": 6,
+    "pk": 4,
     "model": "products.category",
     "fields": {
         "name": "abstract",
         "friendly_name": "Abstract"
     }
 }, {
-    "pk": 7,
+    "pk": 5,
     "model": "products.category",
     "fields": {
         "name": "prints",
         "friendly_name": "Prints"
     }
 }, {
-    "pk": 8,
+    "pk": 6,
     "model": "products.category",
     "fields": {
         "name": "calendars",
         "friendly_name": "Calendars"
     }
 }, {
-    "pk": 9,
+    "pk": 7,
     "model": "products.category",
     "fields": {
         "name": "postcards",

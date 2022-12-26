@@ -1,0 +1,31 @@
+[{
+    "pk": 1,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5001340155",
+        "category": 1,
+        "title": "Nostalgic view",
+        "excerpt": "Oil painting, 2019, 35x40cm",
+        "description": "This is an example description of an item number one.",
+        "price": 100.00,
+        "image": "",
+        "priority": "",
+        "available": true,
+        "live": true
+    }
+}, {
+    "pk": 2,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5001340155",
+        "category": 1,
+        "title": "Fragility",
+        "excerpt": "Drawing, 2020, 50x70cm",
+        "description": "This is an example description of an item number two.",
+        "price": 75.00,
+        "image": "",
+        "priority": "",
+        "available": true,
+        "live": true
+    }
+}]
