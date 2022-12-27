@@ -1,6 +1,7 @@
 from django.db import models
 from cloudinary.models import CloudinaryField
 
+
 # Field choices
 
 PRIORITY_CHOICES = [
