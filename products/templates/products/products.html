@@ -19,7 +19,7 @@
             <!-- Segment name -->
             <div class="col-12 text-center mt-5">
                 <h2 class="logo-font">Products</h2>
-                <hr class="mb-1">
+                <hr class="mb-3">
             </div>
             
             <!-- Segment content -->
@@ -29,43 +29,46 @@
                 </div>
                 <div class="row">
                     {% for product in products %}
-                        <div class="col-md-4 col-xl-3">
-                            <div class="card h-100">
+                        {% if product.live %}
+                            <div class="col-md-4 col-xl-3">
+                                <div class="card h-100">
 
-                                <!-- Product image -->
-                                {% if product.image %}
-                                    <a href="">
-                                        <img src="{{ product.image.url }}" alt="{{ product.title }}" class="card-img-top img-fluid">
-                                    </a>
-                                {% else %}
-                                    <a href="">
-                                        <img src="{{ MEDIA_URL }}placeholder.jpg" alt="{{ product.title }}" class="card-image-top img-fluid">
-                                    </a>
-                                {% endif %}
-                                
-                                <!-- Product description -->
-                                <div class="card-body text-center">
-                                    <p class="mb-0 font-weight-bold">{{ product.title }}</p>
-                                    <hr class="hr-middle">
-                                    <p class="mb-0">{{ product.excerpt }}</p>
-                                </div>
-                                
-                                <!-- Product price & basket -->
-                                <div class="card-footer">
-                                    <div class="row">
-                                        <div class="col">
-                                            <p class="lead float-left">
-                                                <i class="fas fa-tag mr-1 text-muted"></i> &euro;{{ product.price }}
-                                            </p>
-                                            <p class="float-right">
-                                                <i class="fas fa-shopping-basket"></i>
-                                            </p>
+                                    <!-- Product image -->
+                                    {% if product.image %}
+                                        <a href="">
+                                            <img src="{{ product.image.url }}" alt="{{ product.title }}" class="card-img-top img-fluid">
+                                        </a>
+                                    {% else %}
+                                        <a href="">
+                                            <img src="{{ MEDIA_URL }}placeholder.jpg" alt="{{ product.title }}" class="card-image-top img-fluid">
+                                        </a>
+                                    {% endif %}
+                                    
+                                    <!-- Product description -->
+                                    <div class="card-body text-center">
+                                        <p class="mb-0 font-weight-bold">{{ product.title }}</p>
+                                        <hr class="hr-middle">
+                                        <p class="mb-0">{{ product.excerpt }}</p>
+                                    </div>
+                                    
+                                    <!-- Product price & basket -->
+                                    <div class="card-footer">
+                                        <div class="row">
+                                            <div class="col">
+                                                <hr>
+                                                <p class="lead float-left">
+                                                    <i class="fas fa-tag mr-1 text-muted"></i> &euro;{{ product.price }}
+                                                </p>
+                                                <p class="float-right">
+                                                    <i class="fas fa-shopping-basket"></i>
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
+                                </div>
                             </div>
-                        </div>
+                        {% endif %}
                     {% endfor %}
                 </div>
             </div>
