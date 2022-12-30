@@ -41,12 +41,27 @@
                                     <a href="">
                                         <img src="{{ MEDIA_URL }}placeholder.jpg" alt="{{ product.title }}" class="card-image-top img-fluid">
                                     </a>
-                                    MEDIA_URL is: {{ MEDIA_URL }}.
                                 {% endif %}
                                 
-                                <!-- Product title -->
+                                <!-- Product description -->
                                 <div class="card-body text-center">
-                                    <p class="mb-0">{{ product.title }}</p>
+                                    <p class="mb-0 font-weight-bold">{{ product.title }}</p>
+                                    <hr class="hr-middle">
+                                    <p class="mb-0">{{ product.excerpt }}</p>
+                                </div>
+                                
+                                <!-- Product price & basket -->
+                                <div class="card-footer">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="lead float-left">
+                                                <i class="fas fa-tag mr-1 text-muted"></i> &euro;{{ product.price }}
+                                            </p>
+                                            <p class="float-right">
+                                                <i class="fas fa-shopping-basket"></i>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
 
                             </div>

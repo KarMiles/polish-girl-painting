@@ -10,6 +10,15 @@ body {
     font-family: 'Lato';
 }
 
+.hr-middle {
+    width: 80% !important;
+    margin: .25rem 10% .25rem 10% !important;
+}
+
+.card-footer p {
+    font-size: small;
+}
+
 .transbox {
     background-color: #ffffff;
     min-height: 17em;
