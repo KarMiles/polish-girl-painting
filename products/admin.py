@@ -8,12 +8,13 @@ class ProductAdmin(admin.ModelAdmin):
         'title',
         'category',
         'excerpt',
-        'description',
         'price',
         'priority',
         'available',
         'live',
         'image',
+        'created_on',
+        'updated_on',
         'sku',
     )
 

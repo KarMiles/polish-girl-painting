@@ -27,6 +27,12 @@ body {
     font-size: small;
 }
 
+.image-container img {
+    max-height: 80vh;
+    object-fit: contain;
+    margin-top: 5px;
+}
+
 .transbox {
     background-color: #ffffff;
     min-height: 17em;
@@ -198,6 +204,9 @@ input[name='q']::placeholder {
     #top-banner {
         background: black !important;
         color: white !important;
+        position: sticky;
+        top: 0 !important;
+        margin-top: 0;
     }
 
     #top-banner h4 {

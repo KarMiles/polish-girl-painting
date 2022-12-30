@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col">
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container-fluid">
+        <div class="row">
+            
+            <!-- Segment content -->
+            <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+                <div class="image-container">
+                    {% if product.image %}
+                        <a href="{{ product.image.url }}" target="_blank">
+                            <img src="{{ product.image.url }}" alt="{{ product.title }}" class="card-img-top img-fluid">
+                        </a>
+                    {% else %}
+                        <a href="">
+                            <img src="{{ MEDIA_URL }}placeholder.jpg" alt="{{ product.title }}" class="card-image-top img-fluid">
+                        </a>
+                    {% endif %}
+                </div>
+
+                <!-- Product description -->
+                <div class="card-body text-center">
+                    <p class="mb-0 font-weight-bold">{{ product.title }}</p>
+                    <hr class="hr-middle">
+                    <p class="mb-0">{{ product.excerpt }}</p>
+                </div>
+                
+                <!-- Product price & basket -->
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col">
+                            <hr>
+                            <p class="lead float-left">
+                                <i class="fas fa-tag mr-1 text-muted"></i> &euro;{{ product.price }}
+                            </p>
+                            <p class="float-right">
+                                Add to basket
+                                <i class="fas fa-shopping-basket ml-1"></i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+

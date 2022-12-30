@@ -62,6 +62,10 @@ class Product(models.Model):
         blank=True)
     available = models.BooleanField(
         default=True)
+    created_on = models.DateTimeField(
+        auto_now_add=True)
+    updated_on = models.DateTimeField(
+        auto_now=True)
     live = models.BooleanField(
         default=False)
 
@@ -69,7 +73,7 @@ class Product(models.Model):
         """
         Order products by priority
         """
-        ordering = ['priority']
+        ordering = ['priority', 'created_on']
 
     def __str__(self):
         """

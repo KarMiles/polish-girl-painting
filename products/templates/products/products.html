@@ -35,11 +35,11 @@
 
                                     <!-- Product image -->
                                     {% if product.image %}
-                                        <a href="">
+                                        <a href="{% url 'product_detail' product.id %}">
                                             <img src="{{ product.image.url }}" alt="{{ product.title }}" class="card-img-top img-fluid">
                                         </a>
                                     {% else %}
-                                        <a href="">
+                                        <a href="{% url 'product_detail' product.id %}">
                                             <img src="{{ MEDIA_URL }}placeholder.jpg" alt="{{ product.title }}" class="card-image-top img-fluid">
                                         </a>
                                     {% endif %}
@@ -60,7 +60,8 @@
                                                     <i class="fas fa-tag mr-1 text-muted"></i> &euro;{{ product.price }}
                                                 </p>
                                                 <p class="float-right">
-                                                    <i class="fas fa-shopping-basket"></i>
+                                                    Add to basket
+                                                    <i class="fas fa-shopping-basket ml-1"></i>
                                                 </p>
                                             </div>
                                         </div>
