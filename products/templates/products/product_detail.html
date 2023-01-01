@@ -16,8 +16,8 @@
     <div class="container-fluid">
         <div class="row">
             
-            <!-- Segment content -->
-            <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+            <!-- Segment image -->
+            <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 mt-5">
                 <div class="image-container">
                     {% if product.image %}
                         <a href="{{ product.image.url }}" target="_blank">
@@ -30,19 +30,22 @@
                     {% endif %}
                 </div>
 
-                <!-- Product description -->
+                <!-- Product title & excerpt -->
                 <div class="card-body text-center">
                     <p class="mb-0 font-weight-bold">{{ product.title }}</p>
                     <hr class="hr-middle">
                     <p class="mb-0">{{ product.excerpt }}</p>
                 </div>
                 
-                <!-- Product price & basket -->
+                <!-- Product description, price & basket -->
                 <div class="card-footer">
                     <div class="row">
                         <div class="col">
+                            <p class="description">
+                                {{ product.description }}
+                            </p>
                             <hr>
-                            <p class="lead float-left">
+                            <p class="float-left">
                                 <i class="fas fa-tag mr-1 text-muted"></i> &euro;{{ product.price }}
                             </p>
                             <p class="float-right">

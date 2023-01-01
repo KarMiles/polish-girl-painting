@@ -28,9 +28,8 @@ body {
 }
 
 .image-container img {
-    max-height: 80vh;
+    max-height: 50vh !important;
     object-fit: contain;
-    margin-top: 5px;
 }
 
 .transbox {
@@ -46,6 +45,10 @@ body {
 .transbox h1 {
     color: black;
     opacity: 0.9;
+}
+
+.description {
+    margin-bottom: 2rem;
 }
 
 /* from Bulma */

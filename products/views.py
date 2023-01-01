@@ -14,6 +14,7 @@ def all_products(request):
     products = Product.objects.all()
     query = None
 
+    # Search functionality
     if request.GET:
         query = request.GET['q']
         if not query:
