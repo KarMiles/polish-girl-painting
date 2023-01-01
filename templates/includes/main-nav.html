@@ -17,8 +17,8 @@
                 Orientation
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="orientation-link">
-                <a href="" class="dropdown-item">Landscape</a>
-                <a href="" class="dropdown-item">Portrait</a>
+                <a href="{% url 'products' %}?category=landscape" class="dropdown-item">Landscape</a>
+                <a href="{% url 'products' %}?category=portrait" class="dropdown-item">Portrait</a>
                 <a href="{% url 'products' %}" class="dropdown-item">* All Items *</a>
             </div>
         </li>
