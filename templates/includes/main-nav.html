@@ -7,7 +7,7 @@
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="availability-link">
                 <a href="{% url 'products' %}?available=True" class="dropdown-item">Available</a>
-                <a href="{% url 'products' %}?!available=True" class="dropdown-item">Sold</a>
+                <a href="{% url 'products' %}?available=False" class="dropdown-item">Sold</a>
                 <a href="{% url 'products' %}" class="dropdown-item">* All Items *</a>
             </div>
         </li>
