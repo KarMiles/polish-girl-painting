@@ -45,13 +45,16 @@
                                 {{ product.description }}
                             </p>
                             <hr>
-                            <p class="float-left">
-                                <i class="fas fa-tag mr-1 text-muted"></i> &euro;{{ product.price }}
-                            </p>
-                            <p class="float-right">
-                                Add to basket
-                                <i class="fas fa-shopping-basket ml-1"></i>
-                            </p>
+                            {% if product.price %}
+                                <!-- Product price & basket -->
+                                <p class="float-left">
+                                    <i class="fas fa-tag mr-1 text-muted"></i> &euro;{{ product.price }}
+                                </p>
+                                <p class="float-right">
+                                    Add to basket
+                                    <i class="fas fa-shopping-basket ml-1"></i>
+                                </p>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

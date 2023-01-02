@@ -23,20 +23,25 @@
                     {% if search_term %}
                         {{ products|length }} item{% if products|length != 1 %}s {% endif %} found for <strong>{{ search_term }}</strong>
 
-                    <!-- Show if items are filtered by availability -->
+                    <!-- Show if items are filtered by availability TODO --> 
                     {% elif current_availability %}
-                        {{ products|length }} item{% if products|length != 1 %}s {% endif %} found for <strong>{{ products.available }}</strong>                      
+                        {{ products|length }} item{% if products|length != 1 %}s {% endif %} found <strong>{{ products.available }}</strong>                      
 
-                    <!-- Show if items are filtered by orientation -->
+                    <!-- Show if items are filtered by orientation TODO --> 
                     {% elif current_orientations %}
-                        {{ products|length }} item{% if products|length != 1 %}s {% endif %} found for <strong>{{ products.orientation }}</strong>                      
+                        {{ products|length }} item{% if products|length != 1 %}s {% endif %} found  <strong>{{ products.orientation }}</strong>                      
+                        {% for o in current_orientations %}
+                            <a href="{% url 'products' %}?orientation={{ o.orientation }}">
+                                {{ o.current_orientations }}
+                            </a>
+                        {% endfor %}
 
                     <!-- Show if items are filtered by categories -->
                     {% elif current_categories %}
                         {% for c in current_categories %}
-                        <a href="{% url 'products' %}?category={{ c.name }}">
-                            {{ c.friendly_name }}s
-                        </a>
+                            <a href="{% url 'products' %}?category={{ c.name }}">
+                                {{ c.friendly_name }}s
+                            </a>
                         {% endfor %}
 
                     {% else %}
@@ -56,7 +61,7 @@
                 <div class="row">
                     {% for product in products %}
                         {% if product.live %}
-                            <div class="col-md-4 col-xl-3">
+                            <div class="col-md-4 col-xl-3 mb-3">
                                 <div class="card h-100">
 
                                     <!-- Product image -->
@@ -78,21 +83,24 @@
                                     </div>
                                     
                                     <!-- Product price & basket -->
-                                    <div class="card-footer">
-                                        <div class="row">
-                                            <div class="col">
-                                                <hr>
-                                                <p class="float-left">
-                                                    <i class="fas fa-tag mr-1 text-muted"></i> &euro;{{ product.price }}
-                                                </p>
-                                                <p class="float-right">
-                                                    Add to basket
-                                                    <i class="fas fa-shopping-basket ml-1"></i>
-                                                </p>
+
+                                    {% if product.price %}
+                                        <div class="card-footer">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <hr>
+                                                    <p class="float-left">
+                                                        <i class="fas fa-tag mr-1 text-muted"></i> &euro;{{ product.price }}
+                                                    </p>
+                                                    <p class="float-right">
+                                                        Add to basket
+                                                        <i class="fas fa-shopping-basket ml-1"></i>
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-
+                                    {% endif %} 
+                                    
                                 </div>
                             </div>
                         {% endif %}
