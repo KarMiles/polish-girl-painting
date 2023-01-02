@@ -19,18 +19,6 @@ def all_products(request):
 
     if request.GET:
 
-        # Filter by category
-        if 'category' in request.GET:
-            categories = request.GET['category'].split(',')
-            products = products.filter(category__name__in=categories)
-            categories = Category.objects.filter(name__in=categories)
-
-        # Filter by orientation TODO
-        if 'orientation' in request.GET:
-            orientations = request.GET['orientation']
-            products = products.filter(orientation__in=orientations)
-            orientations = Product.objects.filter(orientation__in=orientations)
-
         # Search functionality
         if 'q' in request.GET:
             query = request.GET['q']
@@ -45,11 +33,30 @@ def all_products(request):
                 Q(description__icontains=query)
             products = products.filter(queries)
 
+        # Filter by availability
+        if 'available' in request.GET:
+            availability = request.GET['available'].split(',')
+            products = products.filter(available__in=availability)
+            availability = Product.objects.filter(available__in=availability)
+
+        # Filter by orientation
+        if 'orientation' in request.GET:
+            orientations = request.GET['orientation'].split(',')
+            products = products.filter(orientation__in=orientations)
+            orientations = Product.objects.filter(orientation__in=orientations)
+
+        # Filter by category
+        if 'category' in request.GET:
+            categories = request.GET['category'].split(',')
+            products = products.filter(category__name__in=categories)
+            categories = Category.objects.filter(name__in=categories)
+
     context = {
         'products': products,
         'search_term': query,
         'current_categories': categories,
         'current_orientations': orientations,
+        # 'current_availability': availability,
     }
 
     return render(request, 'products/products.html', context)

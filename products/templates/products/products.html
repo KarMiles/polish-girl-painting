@@ -19,14 +19,26 @@
             <!-- Segment summary -->
             <div class="col-12 text-center mt-5">
                 <h2>
-                    {% if current_categories %}
+                    <!-- Show if items are searched from searchbox -->
+                    {% if search_term %}
+                        {{ products|length }} item{% if products|length != 1 %}s {% endif %} found for <strong>{{ search_term }}</strong>
+
+                    <!-- Show if items are filtered by availability -->
+                    <!-- {% elif current_availabilitys %}
+                        {{ products|length }} item{% if products|length != 1 %}s {% endif %} found for <strong>{{ products.availability }}</strong>                       -->
+
+                    <!-- Show if items are filtered by orientation -->
+                    {% elif current_orientations %}
+                        {{ products|length }} item{% if products|length != 1 %}s {% endif %} found for <strong>{{ products.orientation }}</strong>                      
+
+                    <!-- Show if items are filtered by categories -->
+                    {% elif current_categories %}
                         {% for c in current_categories %}
                         <a href="{% url 'products' %}?category={{ c.name }}">
                             {{ c.friendly_name }}s
                         </a>
                         {% endfor %}
-                    {% elif search_term %}
-                        {{ products|length }} Item{% if products|length != 1 %}s {% endif %} found for <strong>{{ search_term }}</strong>
+
                     {% else %}
                         Products
                     {% endif %}
