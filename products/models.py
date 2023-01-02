@@ -75,18 +75,16 @@ class Product(models.Model):
         default="3 - Normal",
         null=True,
         blank=True)
+    highlight = models.BooleanField(
+        default=False)
     available = models.BooleanField(
         default=True)
-    highlight = models.BooleanField(
-        default=False,
-        null=True,
-        blank=True)
+    live = models.BooleanField(
+        default=False)
     created_on = models.DateTimeField(
         auto_now_add=True)
     updated_on = models.DateTimeField(
         auto_now=True)
-    live = models.BooleanField(
-        default=False)
 
     class Meta:
         """

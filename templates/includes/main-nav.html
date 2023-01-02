@@ -1,14 +1,18 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
 
+        <li class="nav-item">
+            <a href="{% url 'products' %}" class="logo-font font-weight-bold nav-link text-black mr-5">All Items</a>
+        </li>
+        
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="availability-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Availability
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="availability-link">
                 <a href="{% url 'products' %}?available=True" class="dropdown-item">Available</a>
-                <a href="{% url 'products' %}?available=False" class="dropdown-item">Sold</a>
-                <a href="{% url 'products' %}" class="dropdown-item">* All Items *</a>
+                <a href="{% url 'products' %}?available=False" class="dropdown-item">Not available</a>
+                <!-- <a href="{% url 'products' %}" class="dropdown-item">* All Items *</a> -->
             </div>
         </li>
 
@@ -19,7 +23,7 @@
             <div class="dropdown-menu border-0" aria-labelledby="orientation-link">
                 <a href="{% url 'products' %}?orientation=Landscape" class="dropdown-item">Landscape</a>
                 <a href="{% url 'products' %}?orientation=Portrait" class="dropdown-item">Portrait</a>
-                <a href="{% url 'products' %}" class="dropdown-item">* All Items *</a>
+                <!-- <a href="{% url 'products' %}" class="dropdown-item">* All Items *</a> -->
             </div>
         </li>
 
@@ -33,7 +37,7 @@
                 <a href="{% url 'products' %}?category=postcard" class="dropdown-item">Postcards</a>
                 <a href="{% url 'products' %}?category=calendar" class="dropdown-item">Calendars</a>
                 <a href="{% url 'products' %}?category=print" class="dropdown-item">Prints</a>
-                <a href="{% url 'products' %}" class="dropdown-item">* All Items *</a>
+                <!-- <a href="{% url 'products' %}" class="dropdown-item">* All Items *</a> -->
             </div>
         </li>
 

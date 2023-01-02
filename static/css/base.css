@@ -14,25 +14,21 @@ body {
 
 a:link {
     color: black;
-    background-color: transparent;
     text-decoration: none;
 }
 
 a:visited {
     color: black;
-    background-color: transparent;
     text-decoration: none;
 }
 
 a:hover {
     color: dimgray;
-    background-color: transparent;
     text-decoration: none;
 }
 
 a:active {
     color: grey;
-    background-color: transparent;
     text-decoration: none;
 }
 

@@ -17,6 +17,7 @@ def all_products(request):
     availability = None
     orientations = None
     categories = None
+    highlights = None
 
     if request.GET:
 
@@ -52,12 +53,19 @@ def all_products(request):
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
+        # Filter highlights
+        if 'highlight' in request.GET:
+            highlights = request.GET['highlight'].split(',')
+            products = products.filter(highlight__in=highlights)
+            highlights = Product.objects.filter(highlight__in=highlights)
+
     context = {
         'products': products,
         'search_term': query,
         'current_availability': availability,
         'current_orientations': orientations,
         'current_categories': categories,
+        'highlights': highlights,
     }
 
     return render(request, 'products/products.html', context)
