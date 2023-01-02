@@ -77,6 +77,10 @@ class Product(models.Model):
         blank=True)
     available = models.BooleanField(
         default=True)
+    highlight = models.BooleanField(
+        default=False,
+        null=True,
+        blank=True)
     created_on = models.DateTimeField(
         auto_now_add=True)
     updated_on = models.DateTimeField(

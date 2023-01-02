@@ -16,8 +16,9 @@
     <div class="container-fluid">
         <div class="row">
             
-            <!-- Segment image -->
             <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 mt-5">
+
+                <!-- Segment image -->
                 <div class="image-container">
                     {% if product.image %}
                         <a href="{{ product.image.url }}" target="_blank">
@@ -45,8 +46,8 @@
                                 {{ product.description }}
                             </p>
                             <hr>
+                            <!-- Product price & basket -->
                             {% if product.price %}
-                                <!-- Product price & basket -->
                                 <p class="float-left">
                                     <i class="fas fa-tag mr-1 text-muted"></i> &euro;{{ product.price }}
                                 </p>

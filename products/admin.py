@@ -14,6 +14,7 @@ class ProductAdmin(admin.ModelAdmin):
         'available',
         'live',
         'image',
+        'highlight',
         'created_on',
         'updated_on',
         'sku',
@@ -24,11 +25,14 @@ class ProductAdmin(admin.ModelAdmin):
     search_fields = [
         'title',
         'excerpt',
-        'description']
+        'description'
+    ]
 
     list_filter = (
         'available',
-        'live',)
+        'live',
+        'highlight',
+    )
 
 
 class CategoryAdmin(admin.ModelAdmin):
