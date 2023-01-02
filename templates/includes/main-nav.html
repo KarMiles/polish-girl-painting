@@ -17,8 +17,8 @@
                 Orientation
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="orientation-link">
-                <a href="{% url 'products' %}?category=landscape" class="dropdown-item">Landscape</a>
-                <a href="{% url 'products' %}?category=portrait" class="dropdown-item">Portrait</a>
+                <a href="{% url 'products' %}?orientation=Landscape" class="dropdown-item">Landscape</a>
+                <a href="{% url 'products' %}?orientation=Portrait" class="dropdown-item">Portrait</a>
                 <a href="{% url 'products' %}" class="dropdown-item">* All Items *</a>
             </div>
         </li>
@@ -28,32 +28,12 @@
                 Category
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="category-link">
-                <a href="" class="dropdown-item">Life</a>
-                <a href="" class="dropdown-item">Abstract</a>
-                <a href="" class="dropdown-item">Prints</a>
-                <a href="" class="dropdown-item">Calendars</a>
-                <a href="" class="dropdown-item">Postcards</a>
+                <a href="{% url 'products' %}?category=painting" class="dropdown-item">Paintings</a>
+                <a href="{% url 'products' %}?category=drawing" class="dropdown-item">Drawings</a>
+                <a href="{% url 'products' %}?category=postcard" class="dropdown-item">Postcards</a>
+                <a href="{% url 'products' %}?category=calendar" class="dropdown-item">Calendars</a>
+                <a href="{% url 'products' %}?category=print" class="dropdown-item">Prints</a>
                 <a href="{% url 'products' %}" class="dropdown-item">* All Items *</a>
-            </div>
-        </li>
-
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="price-order-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Price
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="price-order-link">
-                <a href="" class="dropdown-item">&#8599; Ascending</a>
-                <a href="" class="dropdown-item">&#8600; Descending</a>
-            </div>
-        </li>
-
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="created-order-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Newest
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="created-order-link">
-                <a href="" class="dropdown-item">Newest first</a>
-                <a href="" class="dropdown-item">Oldest first</a>
             </div>
         </li>
 

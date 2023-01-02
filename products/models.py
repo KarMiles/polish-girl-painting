@@ -3,12 +3,20 @@ from django.db import models
 
 # Field choices
 
+# Priority
 PRIORITY_CHOICES = [
     ("1 - Top", "Top"),
     ("2 - High", "High"),
     ("3 - Normal", "Normal"),
     ("4 - Low", "Low"),
     ("5 - Lowest", "Lowest"),
+]
+
+# Orientation
+ORIENTATION = [
+    ("Landscape", "Landscape"),
+    ("Portrait", "Portrait"),
+    ("N/A", "Not Applicable")
 ]
 
 
@@ -37,11 +45,6 @@ class Product(models.Model):
         max_length=254,
         null=True,
         blank=True)
-    category = models.ForeignKey(
-        'Category',
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL)
     title = models.CharField(
         max_length=254,
         unique=True)
@@ -52,6 +55,16 @@ class Product(models.Model):
         max_digits=6,
         decimal_places=2)
     image = models.ImageField(
+        null=True,
+        blank=True)
+    category = models.ForeignKey(
+        'Category',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL)
+    orientation = models.CharField(
+        max_length=9,
+        choices=ORIENTATION,
         null=True,
         blank=True)
     priority = models.CharField(

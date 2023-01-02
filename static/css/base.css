@@ -10,6 +10,33 @@ body {
     font-family: 'Lato';
 }
 
+/* Links */
+
+a:link {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: dimgray;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:active {
+    color: grey;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+
 .hr-middle {
     height: 0.25px;
     background: rgb(120, 120, 120);

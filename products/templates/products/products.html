@@ -16,11 +16,25 @@
     <div class="container-fluid">
         <div class="row">
 
-            <!-- Segment name -->
+            <!-- Segment summary -->
             <div class="col-12 text-center mt-5">
-                <h2 class="logo-font">Products</h2>
+                <h2>
+                    {% if current_categories %}
+                        {% for c in current_categories %}
+                        <a href="{% url 'products' %}?category={{ c.name }}">
+                            {{ c.friendly_name }}s
+                        </a>
+                        {% endfor %}
+                    {% elif search_term %}
+                        {{ products|length }} Item{% if products|length != 1 %}s {% endif %} found for <strong>{{ search_term }}</strong>
+                    {% else %}
+                        Products
+                    {% endif %}
+                </h2>
                 <hr class="mb-3">
             </div>
+
+        
             
             <!-- Segment content -->
             <div class="col">
