@@ -69,6 +69,8 @@ class Product(models.Model):
         choices=ORIENTATION,
         null=True,
         blank=True)
+    is_unique = models.BooleanField(
+        default=True)
     priority = models.CharField(
         max_length=10,
         choices=PRIORITY_CHOICES,
