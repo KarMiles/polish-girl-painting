@@ -10,6 +10,9 @@ body {
     font-family: 'Lato';
 }
 
+div.inline { float:left; }
+.clearBoth { clear:both; }
+
 /* Links */
 
 a:link {
