@@ -25,16 +25,11 @@
 
                     <!-- Show if items are filtered by availability TODO --> 
                     {% elif current_availability %}
-                        {{ products|length }} item{% if products|length != 1 %}s {% endif %} found <strong>{{ products.available }}</strong>                      
+                        {{ products|length }} item{% if products|length != 1 %}s {% endif %} found
 
-                    <!-- Show if items are filtered by orientation TODO --> 
+                    <!-- Show if items are filtered by orientation --> 
                     {% elif current_orientations %}
-                        {{ products|length }} item{% if products|length != 1 %}s {% endif %} found  <strong>{{ products.orientation }}</strong>                      
-                        {% for o in current_orientations %}
-                            <a href="{% url 'products' %}?orientation={{ o.orientation }}">
-                                {{ o.current_orientations }}
-                            </a>
-                        {% endfor %}
+                        {{ products|length }} item{% if products|length != 1 %}s {% endif %} found                      
 
                     <!-- Show if items are filtered by categories -->
                     {% elif current_categories %}
@@ -45,7 +40,7 @@
                         {% endfor %}
 
                     {% else %}
-                        Products
+                        All items
                     {% endif %}
                 </h2>
                 <hr class="mb-3">

@@ -11,8 +11,7 @@
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="availability-link">
                 <a href="{% url 'products' %}?available=True" class="dropdown-item">Available</a>
-                <a href="{% url 'products' %}?available=False" class="dropdown-item">Not available</a>
-                <!-- <a href="{% url 'products' %}" class="dropdown-item">* All Items *</a> -->
+                <a href="{% url 'products' %}?live=True&available=False" class="dropdown-item">Not available</a>
             </div>
         </li>
 
@@ -23,7 +22,6 @@
             <div class="dropdown-menu border-0" aria-labelledby="orientation-link">
                 <a href="{% url 'products' %}?orientation=Landscape" class="dropdown-item">Landscape</a>
                 <a href="{% url 'products' %}?orientation=Portrait" class="dropdown-item">Portrait</a>
-                <!-- <a href="{% url 'products' %}" class="dropdown-item">* All Items *</a> -->
             </div>
         </li>
 
@@ -37,7 +35,6 @@
                 <a href="{% url 'products' %}?category=postcard" class="dropdown-item">Postcards</a>
                 <a href="{% url 'products' %}?category=calendar" class="dropdown-item">Calendars</a>
                 <a href="{% url 'products' %}?category=print" class="dropdown-item">Prints</a>
-                <!-- <a href="{% url 'products' %}" class="dropdown-item">* All Items *</a> -->
             </div>
         </li>
 
