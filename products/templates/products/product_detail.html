@@ -48,7 +48,13 @@
 
                             <!-- ATTEMPTS to get TRUE if item is in bag -->
 
-                            INFO: <br>
+                            {% if show_add_to_bag == False %}
+                                <p>TRUE (show)</p>
+                            {% else %}
+                                <p>FALSE (don't show)</p>
+                            {% endif %}
+
+                            <!-- INFO: <br>
                             Show bag_items:<br>
                             {{ bag_items }} <br><br>
                             item.item_id is: {{ item.item_id }} <br>
@@ -74,7 +80,7 @@
                                     <br>
                                 {% else %}
                                     False: condition false as item.item_id 
-                                    {{ item.item_id }} is not equal {{ product.id }} <br>
+                                    {{ item.item_id }} is not equal product.id {{ product.id }} <br>
                                 {% endif %}
                             {% endfor %}
                             <br><br>
@@ -90,11 +96,13 @@
                             <br><br>
 
                             Attempt with simple IF condition:<br>
-                            {% if item.item_id == bag_items.item_id %}
+                            {% if bag_items.item_id == product.id %}
                                 condition true <br>
                             {% else %}
-                                {{ item.item_id }}
-                            {% endif %}                            
+                                condition false, <br>
+                                item.item_id is {{ item.item_id }}<br>
+                                product.id is {{ product.id }}<br>
+                            {% endif %}                             -->
 
                             <hr>
                             
@@ -108,8 +116,11 @@
                                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                                         {% csrf_token %}
                                         <div>
+                                            <!-- Show if item is not in basket -->
                                             <input type="submit" value="Add to Bag">
                                             <i class="fas fa-shopping-basket float-right mt-1"></i>
+
+                                            <!-- Show if item is already in basket -->
                                             <p>
                                                 Item is already in your bag
                                             </p>

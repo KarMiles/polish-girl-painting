@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
+
 # from django.db.models.functions import Lower
 
 from .models import Product, Category
@@ -78,8 +79,15 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
 
+    bag = request.session.get('bag', {})
+
+    show_add_to_bag = str(product_id) in bag.keys()
+
     context = {
         'product': product,
+        'show_add_to_bag': show_add_to_bag
+
     }
 
     return render(request, 'products/product_detail.html', context)
+
