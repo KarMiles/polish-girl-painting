@@ -80,31 +80,33 @@
                                     </div>
                                     
                                     <!-- Product price & add to basket link -->
-                                    {% if product.price %}
-                                        <div class="card-footer">
-                                            <div class="row">
-                                                <div class="col">
-                                                    <hr>
-                                                    {% if product.available %}
+                                    <div class="card-footer">
+                                        <div class="row">
+                                            <div class="col">
+                                                <hr>
+                                                {% if product.available and product.price %}
                                                     <p class="float-left">
                                                         <i class="fas fa-tag mr-1 text-muted"></i>
                                                         &euro;{{ product.price }}
                                                     </p>
-                                                    {% else %}
-                                                        <p class="text-center">
-                                                            Item is not available
-                                                        </p>
-                                                    {% endif %}
-                                                    <a href="{% url 'product_detail' product.id %}" {% if not product.available %}hidden{% endif %}>
+                                                    <a href="{% url 'product_detail' product.id %}">
                                                         <p class="float-right">
                                                             Add to bag
                                                             <i class="fas fa-shopping-basket ml-1"></i>
                                                         </p>
                                                     </a>
-                                                </div>
+                                                {% elif product.available and not product.price %}
+                                                    <p class="text-center">
+                                                        Please enquire about price
+                                                    </p>
+                                                {% else %}
+                                                    <p class="text-center">
+                                                        Item is not available for sale
+                                                    </p>
+                                                {% endif %}
                                             </div>
                                         </div>
-                                    {% endif %} 
+                                    </div>
                                     
                                 </div>
                             </div>

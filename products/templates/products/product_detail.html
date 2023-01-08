@@ -76,7 +76,7 @@
                                     <i class="fas fa-tag mr-1 text-muted"></i> &euro;{{ product.price }}
                                 </div>
                                 <!-- Add to bag -->
-                                <div class="col-4 float-right align-middle">
+                                <div class="col-5 float-right align-middle">
                                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                                         {% csrf_token %}
                                         <div>
