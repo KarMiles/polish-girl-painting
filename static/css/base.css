@@ -13,6 +13,7 @@ body {
 div.inline { float:left; }
 .clearBoth { clear:both; }
 
+
 /* Links */
 
 a:link {
@@ -62,7 +63,7 @@ a:active {
     background-color: #ffffff;
     min-height: 17em;
     border: 1px solid black;
-    opacity: 0.6;
+    opacity: 0.75;
     min-width: 20rem;
     max-width: 30rem;
     margin: auto;
@@ -93,6 +94,12 @@ a:active {
 .main-logo-link {
     width: fit-content;
 }
+
+/* TODO format first letter */
+.main-logo-link span::first-letter {
+    font-weight: 900;
+}
+
 
 .shop-now-button {
     background: black;
