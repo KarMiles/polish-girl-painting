@@ -29,7 +29,6 @@
                 {% if bag_items %}
                     <!-- {{ bag_items }}
                     <br>
-                    <br>
                     {{ request.session.bag }}
                     <br> -->
                     <div class="table-responsive rounded">
@@ -108,9 +107,10 @@
                                     <h6><strong>Bag Total: &euro;{{ total|floatformat:2 }}</strong></h6>
                                     <h6>Delivery: &euro;{{ delivery|floatformat:2 }}</h6>
                                     <h4 class="mt-4"><strong>Grand Total: &euro;{{ grand_total|floatformat:2 }}</strong></h4>
-                                    {% if free_delivery_delta > 0 %}
-                                        <p class="mb-1 text-danger">
-                                            You could get free delivery by spending just <strong>&euro;{{ free_delivery_delta }}</strong> more!
+                                    {% if free_delivery_delta == 0 %}
+                                        <p class="mb-1 text-info">
+                                            <!-- You could get free delivery by spending <strong>&euro;{{ free_delivery_delta }}</strong> more! -->
+                                            Your shopping is at least &euro;{{ free_delivery_threshold }}, you qualify for free delivery!
                                         </p>
                                     {% endif %}
                                 </td>

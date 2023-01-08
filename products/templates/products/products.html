@@ -72,24 +72,35 @@
                                     
                                     <!-- Product description -->
                                     <div class="card-body text-center">
-                                        <p class="mb-0 font-weight-bold">{{ product.title }}</p>
+                                        <a href="{% url 'product_detail' product.id %}">
+                                            <p class="mb-0 font-weight-bold">{{ product.title }}</p>
+                                        </a>
                                         <hr class="hr-middle">
                                         <p class="mb-0">{{ product.excerpt }}</p>
                                     </div>
                                     
-                                    <!-- Product price & basket -->
+                                    <!-- Product price & add to basket link -->
                                     {% if product.price %}
                                         <div class="card-footer">
                                             <div class="row">
                                                 <div class="col">
                                                     <hr>
+                                                    {% if product.available %}
                                                     <p class="float-left">
-                                                        <i class="fas fa-tag mr-1 text-muted"></i> &euro;{{ product.price }}
+                                                        <i class="fas fa-tag mr-1 text-muted"></i>
+                                                        &euro;{{ product.price }}
                                                     </p>
-                                                    <p class="float-right">
-                                                        Add to basket
-                                                        <i class="fas fa-shopping-basket ml-1"></i>
-                                                    </p>
+                                                    {% else %}
+                                                        <p class="text-center">
+                                                            Item is not available
+                                                        </p>
+                                                    {% endif %}
+                                                    <a href="{% url 'product_detail' product.id %}" {% if not product.available %}hidden{% endif %}>
+                                                        <p class="float-right">
+                                                            Add to bag
+                                                            <i class="fas fa-shopping-basket ml-1"></i>
+                                                        </p>
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>

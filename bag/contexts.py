@@ -21,8 +21,8 @@ def bag_contents(request):
             'product': product,
         })
 
-    if total < settings.FREE_DELIVERY_THRESHOLD:
-        min_charge = Decimal(settings.DELIVERY_MIN_CHARGE)
+    if total < settings.FREE_DELIVERY_THRESHOLD and total > 0:
+        min_charge = settings.DELIVERY_MIN_CHARGE
         delivery = max(
             total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100),
             min_charge)
