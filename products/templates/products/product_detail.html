@@ -45,37 +45,65 @@
                             <p class="description">
                                 {{ product.description }}
                             </p>
+
+                            <!-- ATTEMPTS to get TRUE if item is in bag -->
+
+                            INFO: <br>
                             Show bag_items:<br>
-                            {{ bag_items }}
+                            {{ bag_items }} <br><br>
+                            item.item_id is: {{ item.item_id }} <br>
+                            bag_items.item_id is: {{ bag_items.item_id }} <br>
                             <br><br>
 
-                            Attempt with for loop:<br>
+                            Attempt 1 with FOR loop:<br>
                             {% for item in bag_items %}
-                                {% if item.item_id == bag_items.item_id %}
-                                    condition true
+                                {% if item.item_id in bag_items.item_id %}
+                                    True: condition true
                                 {% else %}
-                                    {{ item.item_id }}
+                                    False: {{ item.item_id }}
                                 {% endif %}
                             {% endfor %}
                             <br><br>
 
-                            Attempt with simple if condition:<br>
+                            Attempt 2 with FOR loop:<br>
+                            Product id of this product is: {{ product.id }} <br>
+                            {% for item in bag_items %}
+                                {% if item.item_id == product.id %}
+                                    True: condition true as item.item_id {{ item.item_id }} 
+                                    is equal product.id {{ product.id }}
+                                    <br>
+                                {% else %}
+                                    False: condition false as item.item_id 
+                                    {{ item.item_id }} is not equal {{ product.id }} <br>
+                                {% endif %}
+                            {% endfor %}
+                            <br><br>
+
+                            Attempt 3 with FOR loop:<br>
+                            Product id of this product is: {{ product.id }} <br>
+                            {% for item in bag_items %}
+                                {% if item.item_id == product.id %}
+                                    True: condition true as item.item_id {{ item.item_id }} 
+                                    is equal product.id {{ product.id }}
+                                    {% endif %}
+                            {% endfor %}
+                            <br><br>
+
+                            Attempt with simple IF condition:<br>
                             {% if item.item_id == bag_items.item_id %}
                                 condition true <br>
-                                {{ bag_items.item_id }}
                             {% else %}
                                 {{ item.item_id }}
-                                {{ bag_items.item_id }}
                             {% endif %}                            
 
                             <hr>
-                            <!-- Product purchase -->
-                            {% if product.price %}
-                                <!-- Price info -->
-                                <div class="float-left">
-                                    <i class="fas fa-tag mr-1 text-muted"></i> &euro;{{ product.price }}
-                                </div>
-                                <!-- Add to bag -->
+                            
+                            <!-- Product price & add to basket link -->
+                            {% if product.available and product.price %}
+                                <p class="float-left">
+                                    <i class="fas fa-tag mr-1 text-muted"></i>
+                                    &euro;{{ product.price }}
+                                </p>
                                 <div class="col-5 float-right align-middle">
                                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                                         {% csrf_token %}
@@ -104,8 +132,16 @@
                                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                     </form>
                                 </div>    
+                            {% elif product.available and not product.price %}
+                                <p class="text-center">
+                                    Please enquire about price
+                                </p>
+                            {% else %}
+                                <p class="text-center">
+                                    Item is not available for sale
+                                </p>
                             {% endif %}
-                        </div>
+
                     </div>
                 </div>
 
