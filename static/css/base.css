@@ -95,12 +95,6 @@ a:active {
     width: fit-content;
 }
 
-/* TODO format first letter */
-.main-logo-link span::first-letter {
-    font-weight: 900;
-}
-
-
 .shop-now-button {
     background: black;
     color: white;

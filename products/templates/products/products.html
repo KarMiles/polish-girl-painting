@@ -23,13 +23,17 @@
                     {% if search_term %}
                         {{ products|length }} item{% if products|length != 1 %}s {% endif %} found for <strong>{{ search_term }}</strong>
 
-                    <!-- Show if items are filtered by availability TODO --> 
+                    <!-- Show if items are filtered by availability --> 
                     {% elif current_availability %}
-                        {{ products|length }} item{% if products|length != 1 %}s {% endif %} found
+                        {% if available == "True" %}
+                            Available items
+                        {% else %}
+                            Items not available
+                        {% endif %}
 
                     <!-- Show if items are filtered by orientation --> 
                     {% elif current_orientations %}
-                        {{ products|length }} item{% if products|length != 1 %}s {% endif %} found                      
+                        {{ orientation }}
 
                     <!-- Show if items are filtered by categories -->
                     {% elif current_categories %}

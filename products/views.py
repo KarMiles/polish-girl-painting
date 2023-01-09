@@ -15,7 +15,9 @@ def all_products(request):
 
     products = Product.objects.all()
     query = None
+    available = None
     availability = None
+    orientation = None
     orientations = None
     categories = None
     highlights = None
@@ -38,12 +40,14 @@ def all_products(request):
 
         # Filter by availability
         if 'available' in request.GET:
+            available = request.GET['available']
             availability = request.GET['available'].split(',')
             products = products.filter(available__in=availability)
             availability = Product.objects.filter(available__in=availability)
 
         # Filter by orientation
         if 'orientation' in request.GET:
+            orientation = request.GET['orientation']
             orientations = request.GET['orientation'].split(',')
             products = products.filter(orientation__in=orientations)
             orientations = Product.objects.filter(orientation__in=orientations)
@@ -63,7 +67,9 @@ def all_products(request):
     context = {
         'products': products,
         'search_term': query,
+        'available': available,
         'current_availability': availability,
+        'orientation': orientation,
         'current_orientations': orientations,
         'current_categories': categories,
         'highlights': highlights,
