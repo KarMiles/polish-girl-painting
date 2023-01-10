@@ -121,7 +121,7 @@ Registered users
 1.8 As a **site user** I can **read webpage's privacy policy** so that I can **know if my personal information is safe**.
 
 
-### **2. Epic: Navigation**
+### **2. Epic: Navigation** TODO: Add to Kaizen
 
 2.1 As a **site user** I can **navigate the service intuitively** so that I can **utilize all of its content**.
 
@@ -134,7 +134,7 @@ Registered users
 2.5 As a **site user** I can **easily go back to home page** so I can **restart my experience**.
 
 
-### **3. Epic: Customer engagement**
+### **3. Epic: Customer engagement** TODO: Add to Kaizen
 
 3.1 As a **site user** I can **locate company's social media accounts** so I can **stay in contact through alternative means**.
 
@@ -160,20 +160,20 @@ Registered users
 4.4 As a **site owner** I can **prioritize which items are shown first on the site** so that I can **influence demand on offering of my choice**.
 
 
-### **5. Epic: Blog**
+### **5. Epic: Blog** TODO: Add to Kaizen
 
 5.1 As a **site user** I can **read Artist's blog** so that I can **stay up to date with the Artist's developments**.
 
 5.2 As a **site owner** I can **create, update and delete blog entries** so that I can **share content of my choice and build a sense of connection with my audience and prospective buyers**.
 
 
-### **6. Epic: Checkout**
+### **6. Epic: Checkout** TODO: Add to Kaizen
 
 7.1 As a **site user** I can **smoothly go through purchase process** so that I can **acquire a chosen item**.
 
 7.2 As a **site owner** I can **monitor transaction's status** so I can **ensure process of purchase and delivery is successfully completed**.
 
-### **7. Epic: Admin site**
+### **7. Epic: Admin site** TODO: Add to Kaizen
 
 8.1 As a **site admin** I can **create, update and delete user profiles in admin page** so that **all users have appropriate access to website functionality**.
 

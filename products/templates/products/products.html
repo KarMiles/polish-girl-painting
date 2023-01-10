@@ -26,14 +26,14 @@
                     <!-- Show if items are filtered by availability --> 
                     {% elif current_availability %}
                         {% if available == "True" %}
-                            Available items
+                            Items available
                         {% else %}
                             Items not available
                         {% endif %}
 
                     <!-- Show if items are filtered by orientation --> 
                     {% elif current_orientations %}
-                        {{ orientation }}
+                        {{ orientation }}s
 
                     <!-- Show if items are filtered by categories -->
                     {% elif current_categories %}
