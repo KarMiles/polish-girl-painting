@@ -58,7 +58,7 @@
                                         {% csrf_token %}
                                         <div>
                                             <p text-right>
-                                                {% if product_in_bag and product.is_unique %}
+                                                {% if product_is_in_bag and product.is_unique %}
                                                     <!-- Show if item is unique and already is in basket -->
                                                     Item is in your <a href="{% url 'view_bag' %}">bag</a> 
                                                 {% else %}

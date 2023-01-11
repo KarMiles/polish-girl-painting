@@ -87,11 +87,11 @@ def product_detail(request, product_id):
 
     bag = request.session.get('bag', {})
 
-    product_in_bag = str(product_id) in bag.keys()
+    product_is_in_bag = str(product_id) in bag.keys()
 
     context = {
         'product': product,
-        'product_in_bag': product_in_bag
+        'product_is_in_bag': product_is_in_bag
 
     }
 
