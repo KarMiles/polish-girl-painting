@@ -20,15 +20,7 @@
 
                 <!-- Segment image -->
                 <div class="image-container text-center">
-                    {% if product.image %}
-                        <a href="{{ product.image.url }}" target="_blank">
-                            <img src="{{ product.image.url }}" alt="{{ product.title }}" class="card-img-top img-fluid">
-                        </a>
-                    {% else %}
-                        <a href="">
-                            <img src="{{ MEDIA_URL }}placeholder.jpg" alt="{{ product.title }}" class="card-image-top img-fluid">
-                        </a>
-                    {% endif %}
+                    {% include "bag/product-image.html" %}
                 </div>
 
                 <!-- Product title & excerpt -->

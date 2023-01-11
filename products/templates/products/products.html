@@ -64,15 +64,7 @@
                                 <div class="card h-100">
 
                                     <!-- Product image -->
-                                    {% if product.image %}
-                                        <a href="{% url 'product_detail' product.id %}">
-                                            <img src="{{ product.image.url }}" alt="{{ product.title }}" class="card-img-top img-fluid">
-                                        </a>
-                                    {% else %}
-                                        <a href="{% url 'product_detail' product.id %}">
-                                            <img src="{{ MEDIA_URL }}placeholder.jpg" alt="{{ product.title }}" class="card-image-top img-fluid">
-                                        </a>
-                                    {% endif %}
+                                    {% include "bag/product-image.html" %}
                                     
                                     <!-- Product description -->
                                     <div class="card-body text-center">

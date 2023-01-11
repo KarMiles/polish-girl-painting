@@ -48,12 +48,7 @@
                                     <!-- Image -->
                                     <td class="p-3 w-25">
                                         <a href="{% url 'product_detail' item.product.id %}">
-                                            <img class="img-fluid rounded" 
-                                                {% if item.product.image %}
-                                                    src="{{ item.product.image.url }}"
-                                                {% else %}
-                                                    src="{{ MEDIA_URL }}placeholder.jpg"
-                                                {% endif %}>
+                                            {% include "bag/product-image.html" %}
                                         </a>
                                     </td>
                                     <!-- Title & Excerpt -->
