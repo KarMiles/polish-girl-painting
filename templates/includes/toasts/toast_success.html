@@ -23,7 +23,7 @@ aria-label="Close">
                         <div class="col-3 my-1">
                             {% include "bag/product-image.html" %}
                         </div>
-                        <div class="col-3">
+                        <div class="col-9">
                             <p class="my-0"><strong>{{ item.product.title }}</strong></p>
                             {% if item.quantity > 1 %}
                                 <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
@@ -35,7 +35,7 @@ aria-label="Close">
             <div class="row">
                 <div class="col">
                     <strong><p class="mt-3 mb-1 text-black">
-                        Total {% if free_delivery_delta > 0 %} (Excl. delivery){% endif %}:
+                        Total {% if free_delivery_delta > 0 %} (excl. delivery){% endif %}:
                         <span class="float-right">&euro;{{total|floatformat:2 }}</span>
                     </p></strong>
                     {% if free_delivery_delta > 0 %}
@@ -43,7 +43,12 @@ aria-label="Close">
                             Spend <strong>&euro;{{ free_delivery_delta }}</strong> more to get free delivery!
                         </p>
                     {% endif %}
-
+                    <a href="{% url 'view_bag' %}" class="btn btn-black btn-block rounded-0">
+                        <span class="text-uppercase">Go to Secure Checkout</span>
+                        <span class="icon">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </a>
                 </div>
             </div>
         {% endif %}
