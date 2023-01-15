@@ -49,3 +49,25 @@ select:invalid,
 select option[value=""] {
     color: #aab7c4 !important;
 }
+
+#loading-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Ming */
+    /* background: rgba(59, 110, 113, .80); */
+    /* Indigo Dye */
+    background: rgba(39, 75, 100, .80);
+    z-index: 9999;
+}
+
+.loading-spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 100%;
+}
