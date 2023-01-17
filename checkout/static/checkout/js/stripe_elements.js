@@ -109,6 +109,7 @@ form.addEventListener('submit', function(ev) {
                 $('#submit-button').attr('disabled', false);
             } else {
                 if (result.paymentIntent.status === 'succeeded') {
+                    // hide to test if unsubmitted forms are dealt with:
                     form.submit();
                 }
             }
