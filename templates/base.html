@@ -76,8 +76,11 @@
                     </form>
 
                 </div>
+
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                     <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                        
+                        <!-- Account management -->
                         <li class="list-inline-item dropdown">
                             <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <div class="text-center">
@@ -90,7 +93,7 @@
                                     {% if request.user.is_superuser %}
                                         <a href="" class="dropdown-item">Product Management</a>
                                 {% endif %}
-                                    <a href="" class="dropdown-item">My Profile</a>
+                                    <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                                     <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                                 {% else %}
                                     <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
@@ -98,6 +101,8 @@
                                 {% endif %}
                             </div>
                         </li>
+
+                        <!-- Bag -->
                         <li class="list-inline-item">
                             <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
                                 <div class="text-center">
@@ -125,12 +130,11 @@
                     </button>
                     {% include 'includes/mobile-top-header.html' %}
                     {% include 'includes/main-nav.html' %}
-
                 </nav>
             </div>
 
             <!-- Banner -->
-            <div class="top-banner row text-center">
+            <div id="top-banner" class="row text-center">
                 <div class="col bg-black text-white">
                     <h4 class="logo-font my-1">
                         Click

@@ -243,6 +243,62 @@ input[name='q']::placeholder {
     overflow-y: auto;
 }
 
+/* Allauth form formatting */
+
+.allauth-form-inner-content p {
+    margin-top: 1.5rem; /* mt-4 */
+    color: #6c757d; /* text-secondary */
+}
+
+.allauth-form-inner-content input {
+    border-color: #000;
+    border-radius: 0;
+    border-width: 1px;
+    padding: 0.2rem 0.5rem;
+    width: 100%;
+}
+
+.allauth-form-inner-content label:not([for='id_remember']) {
+    display: none;
+}
+
+.allauth-form-inner-content input::placeholder {
+    color: #aab7c4;
+}
+
+.allauth-form-inner-content button,
+.allauth-form-inner-content input[type='submit'] {
+	/* btn */
+	display: inline-block;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #000;
+    border: 1px solid #000;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0;
+
+    /* standard bootstrap btn transitions */
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.allauth-form-inner-content button:hover,
+.allauth-form-inner-content input[type='submit']:hover {	
+	color: #fff;
+    background-color: #222;
+    border-color: #222;
+}
+
+.allauth-form-inner-content a {
+	color: #17a2b8; /* text-info */
+}
 
 /* MEDIA QUERIES */
 
@@ -274,7 +330,7 @@ input[name='q']::placeholder {
 }
 
 /* top padding for navbar collapsed on mobile */
-@media (max-width: 991px) {
+@media (max-width: 992px) {
     .header-container {
         padding-top: 116px;
     }
@@ -307,7 +363,7 @@ input[name='q']::placeholder {
         top: 0 !important;
         margin-top: 0;
     }
-
+    
     #top-banner h4 {
         font-size: .9rem;
     }
@@ -321,9 +377,5 @@ input[name='q']::placeholder {
     .btn.btn-black.rounded-0.btn-lg {
         padding: .375rem .375rem;
         font-size: .75rem;
-    }
-
-    .increment-qty, .decrement-qty {
-        padding: .25rem .5rem !important;
     }
 }
