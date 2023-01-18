@@ -7,7 +7,7 @@ from django.conf import settings
 from django_countries.fields import CountryField
 
 from products.models import Product
-# from profiles.models import UserProfile
+from profiles.models import UserProfile
 
 
 class Order (models.Model):
@@ -15,15 +15,15 @@ class Order (models.Model):
         max_length=32,
         null=False,
         editable=False)
-    # user_profile = models.ForeignKey(
-    #     UserProfile,
-    #     on_delete=models.SET_NULL,
-    #     null=True,
-    #     blank=True,
-    #     related_name='orders')
-    # Notes
-    # Add related name of orders to access the users
-    # by calling something like user.userprofile.orders
+    user_profile = models.ForeignKey(
+        UserProfile,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='orders')
+    # Note for user_profile's related_name:
+    # Add related_name of orders to access the users
+    # by calling sth like user.user_profile.orders
     full_name = models.CharField(
         max_length=50,
         null=False,
