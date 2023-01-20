@@ -51,18 +51,17 @@ class StripeWH_Handler:
         bag = intent.metadata.bag
         save_info = intent.metadata.save_info
 
-        # STRIPE UPDATE
-        # Get the Charge object
-        # stripe_charge = stripe.Charge.retrieve(
-        #     intent.latest_charge
-        # )
-
         # STRIPE UPDATE - OLD VERSION
         billing_details = intent.charges.data[0].billing_details
         shipping_details = intent.shipping
         grand_total = round(intent.charges.data[0].amount / 100, 2)
 
         # STRIPE UPDATE
+        # Get the Charge object
+        # stripe_charge = stripe.Charge.retrieve(
+        #     intent.latest_charge
+        # )
+
         # billing_details = stripe_charge.billing_details  # updated
         # shipping_details = intent.shipping
         # grand_total = round(stripe_charge.amount / 100, 2)  # updated
@@ -117,6 +116,7 @@ class StripeWH_Handler:
                 attempt += 1
                 time.sleep(1)
         if order_exists:
+            # print('EMAIL1')
             self._send_confirmation_email(order)
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} \
@@ -153,6 +153,7 @@ class StripeWH_Handler:
                 return HttpResponse(
                     content=f'Webhook received: {event["type"]} | ERROR: {e}',
                     status=500)
+        print('EMAIL2')
         self._send_confirmation_email(order)
         return HttpResponse(
             content=f'Webhook received: {event["type"]}\
