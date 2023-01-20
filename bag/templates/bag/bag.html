@@ -61,8 +61,6 @@
                                     <td class="py-3">
                                         <p class="my-0">&euro;{{ item.product.price }}</p>
                                     </td>
-
-
                                     <!-- Quantity -->
                                     <td class="py-3 w-25">
                                         {% if item.product.is_unique %}
@@ -92,7 +90,6 @@
                                             </a>
                                         {% endif %}
                                     </td>
-
                                     <!-- Subtotal -->
                                     <td class="py-3 text-right">
                                         <p class="my-0">&euro;{{ item.product.price | calc_subtotal:item.quantity }}</p>

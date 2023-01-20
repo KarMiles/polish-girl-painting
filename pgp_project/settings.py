@@ -125,6 +125,9 @@ ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS = True
+ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = False
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+
 
 WSGI_APPLICATION = 'pgp_project.wsgi.application'
 
@@ -196,6 +199,7 @@ STRIPE_CURRENCY = 'eur'
 STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET', '')
+DEFAULT_FROM_EMAIL = 'monikacurtofuentes@example.com'
 
 
 # E-Commerce settings
