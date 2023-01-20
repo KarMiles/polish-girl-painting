@@ -21,7 +21,13 @@
                 <h2>
                     <!-- Show if items are searched from searchbox -->
                     {% if search_term %}
-                        {{ products|length }} item{% if products|length != 1 %}s {% endif %} found for <strong>{{ search_term }}</strong>
+                        {% if products|length == 0 %}
+                            No
+                        {% else %}
+                            {{ products|length }} 
+                        {% endif %}
+                        item{% if products|length != 1 %}s {% endif %} 
+                        found for <strong>{{ search_term }}</strong>
 
                     <!-- Show if items are filtered by availability --> 
                     {% elif current_availability %}

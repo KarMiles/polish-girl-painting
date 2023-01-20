@@ -82,7 +82,7 @@ class Product(models.Model):
     available = models.BooleanField(
         default=True)
     live = models.BooleanField(
-        default=False)
+        default=True)
     created_on = models.DateTimeField(
         auto_now_add=True)
     updated_on = models.DateTimeField(
