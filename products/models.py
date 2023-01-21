@@ -84,9 +84,13 @@ class Product(models.Model):
     live = models.BooleanField(
         default=True)
     created_on = models.DateTimeField(
-        auto_now_add=True)
+        auto_now_add=True,
+        null=True,
+        blank=True)
     updated_on = models.DateTimeField(
-        auto_now=True)
+        auto_now=True,
+        null=True,
+        blank=True)
 
     class Meta:
         """
