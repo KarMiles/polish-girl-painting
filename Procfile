@@ -1,1 +1,1 @@
-web: gunicorn pgp-project.wsgi:application
+web: gunicorn pgp_project.wsgi:application
