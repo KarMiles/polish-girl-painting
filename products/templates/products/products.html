@@ -4,9 +4,7 @@
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
-            <div class="col">
-
-            </div>
+            <div class="col"></div>
         </div>
     </div>
 {% endblock %}
@@ -17,7 +15,7 @@
         <div class="row">
 
             <!-- Segment summary -->
-            <div class="col-12 text-center mt-5">
+            <div class="col-12 text-center">
                 <h2>
                     <!-- Show if items are searched from searchbox -->
                     {% if search_term %}
@@ -49,15 +47,12 @@
                             </a>
                         {% endfor %}
 
-
                     {% else %}
                         Gallery
                     {% endif %}
                 </h2>
                 <hr class="mb-3">
             </div>
-
-        
             
             <!-- Segment content -->
             <div class="col">

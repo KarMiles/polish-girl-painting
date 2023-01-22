@@ -14,6 +14,14 @@ div.inline { float:left; }
 .clearBoth { clear:both; }
 
 
+/* Text spacing */
+.no-space-before {
+    margin-left: -5px;
+    padding: 0;
+    letter-spacing: 0px;
+}
+
+
 /* Links */
 
 a:link {
@@ -77,6 +85,7 @@ a:active {
 .description {
     margin-bottom: 2rem;
 }
+
 
 /* from Bulma */
 .icon {
@@ -328,12 +337,6 @@ input[name='q']::placeholder {
     border-radius: 0;
 }
 
-.no-space-before {
-    margin-left: -5px;
-    padding: 0;
-    letter-spacing: 0px;
-}
-
 
 /* MEDIA QUERIES */
 
@@ -355,7 +358,7 @@ input[name='q']::placeholder {
     }
 
     .header-container {
-        padding-top: 160px;
+        padding-top: 200px;
     }
 
     .dropdown > a {

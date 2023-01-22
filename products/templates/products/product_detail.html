@@ -16,7 +16,7 @@
     <div class="container-fluid">
         <div class="row">
             
-            <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 mt-5">
+            <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 mt-3">
 
                 <!-- Segment image -->
                 <div class="image-container text-center">
@@ -31,7 +31,7 @@
 
                 <!-- Product title & excerpt -->
                 <div class="card-body text-center">
-                    <p class="mb-0 font-weight-bold">{{ product.title }}</p>
+                    <h2 class="mb-0 font-weight-bold">{{ product.title }}</h2>
                     <hr class="hr-middle">
                     <p class="mb-0">{{ product.excerpt }}</p>
                 </div>
@@ -65,15 +65,15 @@
                                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                                         {% csrf_token %}
                                         <div>
-                                            <p text-right>
+                                            <p class="text-right">
                                                 {% if product_is_in_bag and product.is_unique %}
                                                     <!-- Show if item is unique and already is in basket -->
                                                     Item is in your <a href="{% url 'view_bag' %}">bag</a> 
                                                 {% else %}
                                                     <!-- Show if item is not unique or is unique but is not in basket -->
-                                                    <input type="submit" value="Add to Bag">
+                                                    <input type="submit" value="Add to Bag" class="btn-outline-black">
+                                                    <i class="fas fa-shopping-basket float-right mt-1 ml-2"></i>
                                                 {% endif %}
-                                                <i class="fas fa-shopping-basket float-right mt-1"></i>
                                             </p>
                                             
                                         </div>
