@@ -59,7 +59,9 @@
                             </a>
                         </div>
                         <div class="col-7">
-                            <p class="my-0"><strong>{{ item.product.title }}</strong></p>
+                            <a href="{% url 'product_detail' item.product.id %}">
+                                <p class="my-0"><strong>{{ item.product.title }}</strong></p>
+                            </a>
                             {% if not item.product.is_unique %}
                                 <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
                             {% endif %}

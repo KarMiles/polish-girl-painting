@@ -50,8 +50,12 @@
                                     {% include "bag/product-info.html" %}
                                 </div>
                                 <div class="col-12 col-sm-6 order-sm-last">
-                                    <p class="my-0">Price each: &euro;{{ item.product.price }}</p>
-                                    <p><strong>Subtotal: </strong>&euro;{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                                    {% if not item.product.is_unique %}
+                                        <p class="my-0">Price each: &euro;{{ item.product.price }}</p>
+                                        <p><strong>Subtotal: </strong>&euro;{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                                    {% else %}
+                                    <p class="my-0">Price: &euro;{{ item.product.price }}</p>
+                                    {% endif %}
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     {% include "bag/quantity-form.html" %}
