@@ -15,7 +15,7 @@
 {% block content %}
     <div class="overlay"></div>
 
-    <div class="container mb-2">
+    <div class="container mb-2 col-12 col-md-10 offset-md-1">
         <div class="row">
             <div class="col">
                 <hr>
@@ -29,7 +29,7 @@
                 {% if bag_items %}
 
                     <!-- Bag visible on small screens -->
-                    <div class="d-block d-md-none mx-1">
+                    <div class="d-block d-md-none">
                         <div class="row">
                             <div class="col">
                                 {% include "bag/bag-total.html" %}
@@ -84,9 +84,9 @@
                                 <tr>
                                     <!-- Image -->
                                     <td class="p-3 w-25">
-                                        <a href="{% url 'product_detail' item.product.id %}">
+                                        
                                             {% include "bag/product-image.html" %}
-                                        </a>
+                                        
                                     </td>
                                     <!-- Title & Excerpt -->
                                     <td class="py-3">
