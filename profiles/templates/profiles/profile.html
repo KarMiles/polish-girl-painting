@@ -17,7 +17,7 @@
 
 {% block content %}
     <div class="overlay"></div>
-    <div class="container mt-4">
+    <div class="container">
         <div class="row">
             <div class="col">
                 <hr>
@@ -39,6 +39,7 @@
                     <button class="btn btn-black rounded-0 text-uppercase float-right">Update Information</button>
                 </form>
             </div>
+            {% if order_history %}
             <div class="col-12 col-lg-6">
                 <p class="text-muted">Order History</p>
                 <p>{{ order }}</p>
@@ -78,6 +79,7 @@
                     </table>
                 </div>
             </div>
+            {% endif %}
         </div>
     </div>
 

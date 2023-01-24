@@ -71,24 +71,25 @@
                                                     Item is in your <a href="{% url 'view_bag' %}">bag</a> 
                                                 {% else %}
                                                     <!-- Show if item is not unique or is unique but is not in basket -->
-                                                    <input type="submit" value="Add to Bag" class="btn-outline-black">
-                                                    <i class="fas fa-shopping-basket float-right mt-1 ml-2"></i>
+                                                    <input type="submit" value="Add to Bag &#128722;" class="btn-outline-black">
                                                 {% endif %}
                                             </p>
                                             
                                         </div>
 
                                         <!-- Show quantity input form only for non-unique items -->
-                                        <div class="mt-2" {% if product.is_unique %}hidden{% endif %}>
-                                            <span class="float-left">
-                                                <label for="quantity" class="mt-2 mr-2">Quantity:</label>
-                                            </span>
-                                            <span class="float-right">
-                                                <input class="form-control qty_input" type="number" 
-                                                    name="quantity" value="1" min="1" max="10" 
-                                                    data-item_id="{{ product.id }}" 
-                                                    id="id_qty_{{ product.id }}">
-                                            </span>
+                                        <div class="container mt-2" {% if product.is_unique %}hidden{% endif %}>
+                                            <div class="row justify-content-end text-right">
+                                                <div class="col order-1">
+                                                    <label for="quantity" class="block mr-2 text-right">Quantity:</label>
+                                                </div>
+                                                <div class="col order-2 px-0 align-self-end">
+                                                    <input class="form-control qty_input text-right" type="number" 
+                                                        name="quantity" value="1" min="1" max="10" 
+                                                        data-item_id="{{ product.id }}" 
+                                                        id="id_qty_{{ product.id }}">
+                                                </div>
+                                            </div>
                                         </div>
 
                                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
@@ -120,3 +121,9 @@
     </div>
 {% endblock %}
 
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+        $("#id_qty_{{ product.id }}").spinner();
+    </script>
+{% endblock %}

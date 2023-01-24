@@ -183,6 +183,19 @@ input[name='q']::placeholder {
     color: #aab7c4;
 }
 
+.form-control[type=number] {
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 0;
+    max-height: 1.8rem;
+    padding-right: 0.3rem;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+    opacity: 1 !important;
+}
+
 
 /* Bootstrap toasts formatting */
 
@@ -364,10 +377,6 @@ input[name='q']::placeholder {
     .dropdown > a {
         text-align: center;
         width: 100%;
-    }
-    
-    .hide-on-larger {
-        display: none;
     }
 }
 
