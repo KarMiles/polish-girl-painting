@@ -353,6 +353,21 @@ input[type=number]::-webkit-outer-spin-button {
 
 /* MEDIA QUERIES */
 
+/* hide elements on medium and larger screens */
+@media (min-width: 768px) {
+    .hide-on-md-up {
+        display: none;
+    }
+}
+
+/* hide elements on small screens */
+@media (max-width: 768px) {
+    .hide-on-sm {
+        display: none;
+        background-color: red;
+    }
+}
+
 /* enlarged container on xl screens */
 @media (min-width: 1200px) {
     .container {
@@ -360,7 +375,7 @@ input[type=number]::-webkit-outer-spin-button {
     }
 }
 
-/* fixed top navbar only on medium screens and larger */
+/* fixed top navbar only on large screens */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
         position: fixed;

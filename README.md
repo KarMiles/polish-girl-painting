@@ -167,13 +167,13 @@ Registered users
 5.2 As a **site owner** I can **create, update and delete blog entries** so that I can **share content of my choice and build a sense of connection with my audience and prospective buyers**.
 
 
-### **6. Epic: Checkout** TODO: Add to Kaizen
+### **6. Epic: Checkout**
 
 7.1 As a **site user** I can **smoothly go through purchase process** so that I can **acquire a chosen item**.
 
 7.2 As a **site owner** I can **monitor transaction's status** so I can **ensure process of purchase and delivery is successfully completed**.
 
-### **7. Epic: Admin site** TODO: Add to Kaizen
+### **7. Epic: Admin site**
 
 8.1 As a **site admin** I can **create, update and delete user profiles in admin page** so that **all users have appropriate access to website functionality**.
 
