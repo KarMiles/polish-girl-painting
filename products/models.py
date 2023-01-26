@@ -41,13 +41,13 @@ class Category(models.Model):
 
 
 class Product(models.Model):
+    title = models.CharField(
+        max_length=254,
+        unique=True)
     sku = models.CharField(
         max_length=254,
         null=True,
         blank=True)
-    title = models.CharField(
-        max_length=254,
-        unique=True)
     excerpt = models.TextField(
         blank=True)
     description = models.TextField()
