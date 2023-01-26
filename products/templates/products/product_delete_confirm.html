@@ -16,19 +16,21 @@
 <div class="overlay"></div>
 <div class="row">
     <div class="col-sm-8 mt-3 offset-sm-2">
-        <form method="post">{% csrf_token %}
-            <h1>
-                Delete?
-            </h1>
-            <p>
-                Are you sure you want to delete "{{ object }}"?
-            </p>
-            {{ form }}
-            <input type="submit" value="Confirm" class="btn btn-danger btn-attn btn-lg float-start">
-
-            <!-- Navigation - Cancel and go back to post -->
-            <a href="{% url 'product_detail' product.id %}" class="btn btn-lg"> Cancel </a>
-        </form>
+        <div class="mx-2">
+            <form method="post">{% csrf_token %}
+                <h2>
+                    Delete?
+                </h2>
+                <p>
+                    Are you sure you want to permanently delete <strong>{{ object }}</strong>?
+                </p>
+                {{ form }}
+                <input type="submit" value="Confirm" class="btn btn-lg btn-danger btn-attn  float-start rounded-0">
+    
+                <!-- Navigation - Cancel and go back to post -->
+                <a href="{% url 'product_detail' product.id %}" class="btn btn-lg btn-cancel btn-outline-black rounded-0"> Cancel </a>
+            </form>
+        </div>
     </div>
 </div>
 

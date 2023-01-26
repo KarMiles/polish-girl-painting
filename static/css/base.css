@@ -110,9 +110,19 @@ a:active {
     min-width: 260px;
 }
 
+/* .btn-lg {
+    font-size: 1.25rem !important;
+} */
+
 .btn-black {
     background: black;
     color: white !important;
+}
+
+.btn-cancel {
+    padding: 0.5rem 1rem !important;
+    font-size: 1.25rem !important;
+    line-height: 1.5 !important;
 }
 
 .btn-outline-black {
@@ -442,6 +452,6 @@ input[type=number]::-webkit-outer-spin-button {
     .btn.btn-outline-black.rounded-0.btn-lg,
     .btn.btn-black.rounded-0.btn-lg {
         padding: .375rem .375rem;
-        font-size: .75rem;
+        font-size: 0.75rem;
     }
 }
