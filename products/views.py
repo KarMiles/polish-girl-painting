@@ -1,6 +1,10 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.urls import reverse_lazy
+from django.views import generic, View
+from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 from django.db.models import Q
 
 # from django.db.models.functions import Lower
@@ -162,16 +166,50 @@ def edit_product(request, product_id):
     return render(request, template, context)
 
 
-@login_required
-def delete_product(request, product_id):
-    """ Delete a product from the store """
-    if not request.user.is_superuser:
-        messages.error(
-            request,
-            'Sorry, only store owners can do that.')
-        return redirect(reverse('home'))
+# @login_required
+# def delete_product(request, product_id):
+#     """ Delete a product from the store """
+#     if not request.user.is_superuser:
+#         messages.error(
+#             request,
+#             'Sorry, only store owners can do that.')
+#         return redirect(reverse('home'))
 
-    product = get_object_or_404(Product, pk=product_id)
-    product.delete()
-    messages.success(request, 'Product deleted!')
-    return redirect(reverse('products'))
+#     product = get_object_or_404(Product, pk=product_id)
+#     product.delete()
+#     messages.success(request, 'Product deleted!')
+#     return redirect(reverse('products'))
+
+
+class DeleteProduct(generic.DeleteView):
+    """
+    A view to delete a product
+    Args:
+        DeleteView: generic class based view
+    Returns:
+        Request confirmation of product deletion
+        Redirect to products page after delete
+    """
+    success_url = reverse_lazy('products')
+    queryset = Product.objects.all()
+    template_name = 'products/product_delete_confirm.html'
+
+    @method_decorator(login_required)
+    def delete(self, request, *args, **kwargs):
+        """
+        Call the delete() method on the fetched object,
+        then redirect to the success URL
+        and show confirmation message.
+        """
+        self.object = self.get_object()  \
+            # pylint: disable=attribute-defined-outside-init
+
+        success_url = self.get_success_url()
+        self.object.delete()
+
+        messages.add_message(
+            self.request,
+            messages.INFO,
+            'Post deleted successfully!')
+
+        return HttpResponseRedirect(success_url)
