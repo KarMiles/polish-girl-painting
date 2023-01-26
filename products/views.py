@@ -107,7 +107,7 @@ def product_detail(request, product_id):
 @login_required
 def add_product(request):
     """ Add a product to the store """
-    if not request.user.is_superuser:
+    if not request.user.is_staff:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
 
@@ -136,7 +136,7 @@ def add_product(request):
 @login_required
 def edit_product(request, product_id):
     """ Edit a product in the store """
-    if not request.user.is_superuser:
+    if not request.user.is_staff:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
 

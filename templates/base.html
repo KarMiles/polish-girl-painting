@@ -92,7 +92,7 @@
                             </a>
                             <div class="dropdown-menu border-0" aria-labelledby="user-options">
                                 {% if request.user.is_authenticated %}
-                                    {% if request.user.is_superuser %}
+                                    {% if request.user.is_staff %}
                                         <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
                                 {% endif %}
                                     <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
@@ -150,8 +150,7 @@
 
         <!-- Bootstrap toast -->
         {% if messages %}
-        <div class="alert alert-dismissable fade show" id="msg" role="alert">
-            <div class="message-container">
+            <div class="message-container alert alert-dismissable fade show" id="msg" role="alert">
                 {% for message in messages %}
                     {% with message.level as level %}
                         {% if level == 40 %}
@@ -164,10 +163,8 @@
                             {% include 'includes/toasts/toast_info.html' %}
                         {% endif %}
                     {% endwith %}
-
                 {% endfor %}
             </div>
-        </div>
         {% endif %}
 
 

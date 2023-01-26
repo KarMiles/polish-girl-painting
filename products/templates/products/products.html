@@ -90,7 +90,7 @@
                                     </div>
 
                                     <!-- Superuser section -->
-                                    {% if request.user.is_superuser %}
+                                    {% if request.user.is_staff %}
                                         <div class="text-center">
                                             <small>
                                                 <a href="{% url 'edit_product' product.id %}"  class="mr-1">Edit</a>
