@@ -61,7 +61,7 @@
                 <div class="row">
                     {% for product in products %}
                         {% if product.live or request.user.is_staff %}
-                            {% if products|length <= 3 %}
+                            {% if products|length < 3 %}
                                 <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 mb-3">
                             {% else %}
                                 <div class="col-md-4 col-xl-3 mb-3">
