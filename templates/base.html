@@ -41,6 +41,8 @@
         {% endblock %}
 
         {% block extra_js %}
+            <!-- Custom scripts for this template -->
+            <script src="{% static 'js/script.js' %}"></script>
         {% endblock %}
 
         <title>Monika Curto Fuentes {% block extra_title%}{% endblock %}</title>
@@ -148,6 +150,7 @@
 
         <!-- Bootstrap toast -->
         {% if messages %}
+        <div class="alert alert-dismissable fade show" id="msg" role="alert">
             <div class="message-container">
                 {% for message in messages %}
                     {% with message.level as level %}
@@ -164,6 +167,7 @@
 
                 {% endfor %}
             </div>
+        </div>
         {% endif %}
 
 
