@@ -35,6 +35,14 @@
                         </a>
                     </div>
 
+                    <div class="hide-on-md-up mb-5">
+                        <!-- Total -->
+                        {% include 'bag/bag-total.html' %}
+                        <p class="mt-3">
+                            Details of your shopping bag:
+                        </p>
+                    </div>
+
                     <div class="table-responsive-sm rounded">
                         <table class="table table-sm table-borderless">
                             <caption class="d-none">List of items in your shopping bag</caption>
@@ -78,7 +86,7 @@
                                     </td>
                                 </tr>
                             {% endfor %}
-                            <tr>
+                            <tr class="hide-on-sm">
                                 <!-- Total -->
                                 {% include 'bag/bag-total.html' %}
                             </tr>
