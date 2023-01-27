@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+from django.shortcuts import (
+    render, redirect, reverse, HttpResponse, get_object_or_404)
 from django.contrib import messages
 
 from products.models import Product
@@ -25,11 +26,16 @@ def add_to_bag(request, item_id):
 
     if item_id in list(bag.keys()):
         bag[item_id] += quantity
-        messages.success(request, f'Updated "{product.title}" quantity to {bag[item_id]}')
+        messages.success(
+            request,
+            f'Updated "{product.title}" quantity to {bag[item_id]}')
     else:
         bag[item_id] = quantity
         messages.success(request, f'Added "{product.title}" to your bag')
-    
+
+    print('THIS IS request:')
+    print(request)
+
     request.session['bag'] = bag
     return redirect(redirect_url)
 
@@ -45,7 +51,9 @@ def adjust_bag(request, item_id):
 
     if quantity > 0:
         bag[item_id] = quantity
-        messages.success(request, f'Updated "{product.title}" quantity to {bag[item_id]}')
+        messages.success(
+            request,
+            f'Updated "{product.title}" quantity to {bag[item_id]}')
     else:
         bag.pop(item_id)
         messages.success(request, f'Removed "{product.title}" from your bag')

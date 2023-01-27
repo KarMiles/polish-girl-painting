@@ -159,6 +159,24 @@ def checkout_success(request, order_number):
         if user_profile_form.is_valid():
             user_profile_form.save()
 
+    # Change product available status to false
+    bag = request.session.get('bag', {})
+
+    for item_id in bag.items():
+        try:
+            for id in item_id:
+                product = Product.objects.get(id=id)
+                if product.is_unique:
+                    product.available = False
+                    product.save()
+
+        except Product.DoesNotExist:
+            messages.error(request, (
+                "Product availability status\
+                    NOT changed!")
+            )
+
+    # Confirmation message
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \
         email will be sent to {order.email}.')
