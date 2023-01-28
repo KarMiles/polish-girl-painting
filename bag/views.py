@@ -33,9 +33,6 @@ def add_to_bag(request, item_id):
         bag[item_id] = quantity
         messages.success(request, f'Added "{product.title}" to your bag')
 
-    print('THIS IS request:')
-    print(request)
-
     request.session['bag'] = bag
     return redirect(redirect_url)
 

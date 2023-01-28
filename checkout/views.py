@@ -144,37 +144,37 @@ def checkout_success(request, order_number):
         order.user_profile = profile
         order.save()
 
-    # Save user info
-    if save_info:
-        profile_data = {
-            'default_phone_number': order.phone_number,
-            'default_country': order.country,
-            'default_postcode': order.postcode,
-            'default_town_or_city': order.town_or_city,
-            'default_street_address1': order.street_address1,
-            'default_street_address2': order.street_address2,
-            'default_county': order.county,
-        }
-        user_profile_form = UserProfileForm(profile_data, instance=profile)
-        if user_profile_form.is_valid():
-            user_profile_form.save()
+        # Save user info
+        if save_info:
+            profile_data = {
+                'default_phone_number': order.phone_number,
+                'default_country': order.country,
+                'default_postcode': order.postcode,
+                'default_town_or_city': order.town_or_city,
+                'default_street_address1': order.street_address1,
+                'default_street_address2': order.street_address2,
+                'default_county': order.county,
+            }
+            user_profile_form = UserProfileForm(profile_data, instance=profile)
+            if user_profile_form.is_valid():
+                user_profile_form.save()
 
     # Change product available status to false
     bag = request.session.get('bag', {})
 
     for item_id in bag.items():
-        try:
-            for id in item_id:
+        for id in item_id:
+            try:
                 product = Product.objects.get(id=id)
                 if product.is_unique:
                     product.available = False
                     product.save()
 
-        except Product.DoesNotExist:
-            messages.error(request, (
-                "Product availability status\
-                    NOT changed!")
-            )
+            except Product.DoesNotExist:
+                messages.error(request, (
+                    "Product availability needs to be checked. \
+                        We'll contact you soon.")
+                )
 
     # Confirmation message
     messages.success(request, f'Order successfully processed! \
