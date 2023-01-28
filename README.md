@@ -121,7 +121,7 @@ Registered users
 1.8 As a **site user** I can **read webpage's privacy policy** so that I can **know if my personal information is safe**.
 
 
-### **2. Epic: Navigation** TODO: Add to Kaizen
+### **2. Epic: Navigation**
 
 2.1 As a **site user** I can **navigate the service intuitively** so that I can **utilize all of its content**.
 
