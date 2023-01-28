@@ -20,7 +20,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col">
+            <div class="col-12 col-lg-8 offset-lg-2">
                 <hr>
                 <h2 class="logo-font mb-4">Thank You!</h2>
                 <hr>
@@ -32,7 +32,7 @@
         </div>
 
         <div class="row">
-            <div class="col-12 col-lg-7">
+            <div class="col-12 col-lg-8 offset-lg-2">
                 <div class="order-confirmation-wrapper p-2 border">
                     <div class="row">
                         <div class="col">
@@ -203,16 +203,16 @@
         </div>
 
         <div class="row">
-            <div class="col-12 col-lg-7 text-right">
+            <div class="col-12 col-lg-8 offset-lg-2 text-right">
                 {% if from_profile %}
-                    <a href="{% url 'profile' %}" class="btn btn-black rounded-0 my-2">
+                    <a href="{% url 'profile' %}" class="btn btn-black rounded-0 my-3">
                         <span class="icon mr-2">
                             <i class="fas fa-angle-left"></i>
                         </span>
                         <span class="text-uppercase">Return to Profile</span>
                     </a>
                 {% else %}
-                    <a href="{% url 'products' %}" class="btn btn-black rounded-0 my-2">
+                    <a href="{% url 'products' %}" class="btn btn-black rounded-0 my-3">
                         <span class="icon mr-2">
                             <i class="fas fa-chevron-left"></i>
                         </span>

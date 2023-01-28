@@ -20,6 +20,7 @@ def update_on_save(sender, instance, created, **kwargs):
         line item is related to),
         Call update_total() method on it.
     """
+    print('update signal received!')
     instance.order.update_total()
 
 
@@ -28,5 +29,5 @@ def update_on_delete(sender, instance, **kwargs):
     """
     Update order total on lineitem delete.
     """
-    # print('delete signal received!')
+    print('delete signal received!')
     instance.order.update_total()
