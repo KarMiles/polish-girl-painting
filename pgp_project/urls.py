@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from helpers.views import test_500_view
+from helpers.views import error_403_view, error_404_view, test_500_view
 
 
 urlpatterns = [
