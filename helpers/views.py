@@ -65,3 +65,8 @@ def test_500_view(request):
     """
     # Return an "Internal Server Error" 500 response code.
     raise Exception('test')
+
+
+def handler404(request, exception):
+    # 404 error handler
+    return render(request, 'errors/404.html', status=404)
