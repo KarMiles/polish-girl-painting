@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from helpers.views import error_403_view, error_404_view, test_500_view
+from helpers.views import test_500_view
 
 
 urlpatterns = [
@@ -34,10 +34,6 @@ urlpatterns = [
     path('profile/', include('profiles.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-# HANDLER403 = 'pgp_project.views.handler403'
-# HANDLER404 = 'pgp_project.views.handler404'
-# HANDLER404 = 'pgp_project.views.handler500'
-
 HANDLER403 = 'helpers.views.error_403_view'
-HANDLER404 = 'pgp_project.views.error_404_view'
+HANDLER404 = 'helpers.views.error_404_view'
 HANDLER500 = 'helpers.views.error_500_view'
