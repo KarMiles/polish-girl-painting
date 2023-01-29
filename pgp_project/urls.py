@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from helpers.views import (
+from helpers.views import (  # noqa  # pylint: disable=unused-import
     handler403, handler404, handler500,
     test_403_view, test_404_view, test_500_view)
 
