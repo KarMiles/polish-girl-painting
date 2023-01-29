@@ -9,7 +9,7 @@ from django.shortcuts import render
 
 # Views for error pages
 
-def error_403_view(request, _exception):
+def handler403(request, exception):
     """
     View to render 403 error page is called for unauthorized user.
     Args:
@@ -24,7 +24,7 @@ def error_403_view(request, _exception):
         status=403)
 
 
-def error_404_view(request, _exception):
+def handler404(request, exception):
     """
     View to render 404 error page when non-existent page is called.
     Args:
@@ -39,7 +39,7 @@ def error_404_view(request, _exception):
         status=404)
 
 
-def error_500_view(request):
+def handler500(request):
     """
     View to render 500 error page in case of server error
     Args:
@@ -51,7 +51,36 @@ def error_500_view(request):
         request,
         'errors/500.html',
         status=500)
-    # return render(request, '500.html')
+
+
+# Views for testing error pages
+
+def test_403_view(request):
+    """
+    View to render 404 error page when non-existent page is called.
+    Args:
+        request (object): HTTP request object
+        exception: exception error
+    Returns:
+        Render 403 error page
+    """
+    return render(
+        request,
+        'errors/403.html')
+
+
+def test_404_view(request):
+    """
+    View to render 404 error page when non-existent page is called.
+    Args:
+        request (object): HTTP request object
+        exception: exception error
+    Returns:
+        Render 404 error page
+    """
+    return render(
+        request,
+        'errors/404.html')
 
 
 def test_500_view(request):
@@ -67,6 +96,6 @@ def test_500_view(request):
     raise Exception('test')
 
 
-def handler404(request, exception):
-    # 404 error handler
-    return render(request, 'errors/404.html', status=404)
+# def handler404(request, exception):
+#     # 404 error handler
+#     return render(request, 'errors/404.html', status=404)

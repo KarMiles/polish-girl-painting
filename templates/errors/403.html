@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+    <div class="overlay"></div>
     <div class="container header-container">
         <div class="row">
             <div class="col"></div>
@@ -10,18 +11,20 @@
         <div class="row h-100">
             <div class="col-8 col-md-6 my-auto">
                 <h1 class="display-4 logo-font text-black">
-                    Error 403. You do not have access to resource requested.
+                    Error 403
                 </h1>
-                <p>
-                    Do you need to 
-                    <a href="{% url 'account_login' %}" class="dropdown-item">login</a>
-                    ?
-                </p>
+                <h4 class="mb-5">
+                    You do not have access to resource requested
+                </h4>
+                {% if not request.user.is_authenticated %}
+                    <p>
+                        Do you need to <a href="{% url 'account_login' %}">login</a>?
+                    </p>
+                {% endif %}
                 <div class="my-5">
                     <h4>
-                        <a href="{% url 'products' %}" 
-                            class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">
-                                Return to shop
+                        <a href="{% url 'products' %}">
+                            Return to shop
                         </a>
                     </h4>
                 </div>

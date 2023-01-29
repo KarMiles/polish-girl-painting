@@ -20,7 +20,9 @@ from django.conf.urls.static import static
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from helpers.views import handler404
+from helpers.views import (
+    handler403, handler404, handler500,
+    test_403_view, test_404_view, test_500_view)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,4 +32,7 @@ urlpatterns = [
     path('bag/', include('bag.urls')),
     path('checkout/', include('checkout.urls')),
     path('profile/', include('profiles.urls')),
+    path('403/', test_403_view, name='test_403_view'),
+    path('404/', test_404_view, name='test_404_view'),
+    path('500/', test_500_view, name='test_500_view'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
