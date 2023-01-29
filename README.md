@@ -134,15 +134,15 @@ Registered users
 2.5 As a **site user** I can **easily go back to home page** so I can **restart my experience**.
 
 
-### **3. Epic: Customer engagement** TODO: Add to Kaizen
+### **3. Epic: Customer engagement**
 
 3.1 As a **site user** I can **locate company's social media accounts** so I can **stay in contact through alternative means**.
 
-3.2 As a **site user** I can **subscribe to a newsletter** so I can **stay engaged and up do date with the Artist's offering and creative process**.
+3.2 As a **site user** I can **subscribe to a newsletter** so I can **stay engaged and stay up do date with the Artist's offering and creative process**.
 
 3.3 As a **registered site user** I can **use website without having to re-enter my details** so that **my activity on the site requires minimum afford from my side**.
 
-3.4 As a **site user** I can **see imediately information about newest content** so I can **go directly to that content should I wish to do so**.
+3.4 As a **site user** I can **see immediately information about newest content** so I can **go directly to that content should I wish to do so**.
 
 3.5 As a **site user** I can **change the language of the site by an automatic translator** so that I can **read the content in a different language**.
 
@@ -160,11 +160,13 @@ Registered users
 4.4 As a **site owner** I can **prioritize which items are shown first on the site** so that I can **influence demand on offering of my choice**.
 
 
-### **5. Epic: Blog** TODO: Add to Kaizen
+### **5. Epic: Blog**
 
 5.1 As a **site user** I can **read Artist's blog** so that I can **stay up to date with the Artist's developments**.
 
 5.2 As a **site owner** I can **create, update and delete blog entries** so that I can **share content of my choice and build a sense of connection with my audience and prospective buyers**.
+
+5.3 As a **site owner** I can **hide and unhide blog** so that I can **control visibility of the entire blog section of the site at any time**.
 
 
 ### **6. Epic: Checkout**
