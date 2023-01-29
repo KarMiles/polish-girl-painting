@@ -13,6 +13,27 @@ body {
 div.inline { float:left; }
 .clearBoth { clear:both; }
 
+/* Footer */
+.container-wrapper {
+    background-color: rgb(245, 245, 245);
+    color: grey;
+}
+
+/* MailChimp */
+#mc_embed_signup form {
+    margin: 0 20px !important;
+}
+
+#mc_embed_signup {
+    background:#fff;
+    clear:left;
+    font: 14px Helvetica,Arial,sans-serif;
+    /* width: 600px; */
+}
+
+.asterisk, .indicates-required {
+    visibility: hidden;
+}
 
 /* Text spacing */
 .no-space-before {
