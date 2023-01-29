@@ -39,5 +39,5 @@ urlpatterns = [
 # HANDLER404 = 'pgp_project.views.handler500'
 
 HANDLER403 = 'helpers.views.error_403_view'
-HANDLER404 = 'helpers.views.error_404_view'
+HANDLER404 = 'pgp_project.views.error_404_view'
 HANDLER500 = 'helpers.views.error_500_view'
