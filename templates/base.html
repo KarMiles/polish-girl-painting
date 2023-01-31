@@ -15,6 +15,8 @@
         {% endblock %}
 
         {% block corecss %}
+            <!-- MailChimp CSS -->
+            <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
             <!-- Bootstrap CSS -->
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
             <!-- Google Fonts -->
@@ -38,6 +40,8 @@
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
             <!-- Stripe -->
             <script src="https://js.stripe.com/v3/"></script>
+            <!-- MailChimp -->
+            <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
         {% endblock %}
 
         {% block extra_js %}
@@ -179,7 +183,7 @@
             <div class="container">
                 <section class="footer">
                     <div class="row">
-                        <div class="col-12 page-header mb-4">
+                        <div class="col-12 page-header mb-3">
                             <h2 class="text-uppercase mt-3">Stay in touch:</h2>
                             <hr class="block-divider block-divider--short">
                         </div>
@@ -194,45 +198,51 @@
                                 </a>
                             </p>
                             <p>
-                                <a href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="Visit our YouTube webpage (opens in new window)">
+                                <a href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="Visit my YouTube webpage (opens in new window)">
                                     <i class="fa fa-youtube mr-1"></i> Youtube
                                 </a>
                             </p>
                             <p>
-                                <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Visit our Facebook webpage (opens in new window)">
+                                <a href="https://www.facebook.com/monika.struk.7" target="_blank" rel="noopener" aria-label="Visit my Facebook webpage (opens in new window)">
                                     <i class="fab fa-facebook-square mr-1"></i> Facebook
                                 </a>
                             </p>
                         </div>
                         <div class="col-12 col-md-6">
+
                             <!-- Begin Mailchimp Signup Form -->
-                            <div id="mc_embed_signup">
-                                <form action="" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                            <div id="mc_embed_signup" class="pt-1">
+                                <form action="https://herokuapp.us21.list-manage.com/subscribe/post?u=811846b9b8fd89f4c5dd23f6f&amp;id=f7b9a49798&amp;f_id=00c4e7e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                                     <div id="mc_embed_signup_scroll">
-                                        <h3 class="pt-1">Subscribe!</h3>
-                                        <p>Get exclusive updates and offers by subscribing to my newsletter</p>            
+                                    <h3>Subscribe</h3>
                                     <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
                             <div class="mc-field-group">
                                 <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
-                                </label>
+                            </label>
                                 <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required>
                                 <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
+                            </div>
+                            <div class="mc-field-group">
+                                <label for="mce-FNAME">First Name </label>
+                                <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                                <span id="mce-FNAME-HELPERTEXT" class="helper_text"></span>
                             </div>
                                 <div id="mce-responses" class="clear foot">
                                     <div class="response" id="mce-error-response" style="display:none"></div>
                                     <div class="response" id="mce-success-response" style="display:none"></div>
                                 </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_9279cca0ef2ee4dc4d90b1f4b_057ab316a5" tabindex="-1" value=""></div>
+                                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_811846b9b8fd89f4c5dd23f6f_f7b9a49798" tabindex="-1" value=""></div>
                                     <div class="optionalParent">
                                         <div class="clear foot">
-                                            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-sm btn-outline-dark btt-link rounded-0 mb-2">
-                                            <p class="brandingLogo"><a href="http://eepurl.com/ifNcNb" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
+                                            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button rounded-0">
+                                            <p class="brandingLogo"><a href="http://eepurl.com/ijHg8D" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
                                         </div>
                                     </div>
                                 </div>
                             </form>
                             </div>
                             <!--End mc_embed_signup-->
+
                         </div>
 
                         <div class="col-12 mb-3">
