@@ -10,7 +10,6 @@ from django.contrib import messages
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from accounts.views import StaffRequiredMixin
 from .models import Post
 from .forms import PostForm
 
@@ -56,11 +55,10 @@ class CreatePost(generic.CreateView):
         return reverse('post_detail', args=[self.object.slug])
 
 
-class EditPost(StaffRequiredMixin, generic.UpdateView):
+class EditPost(generic.UpdateView):
     """
     A view to edit a post
     Args:
-        StaffRequiredMixin
         UpdateView: class based view
     Returns:
         Render of updated post with success message
@@ -94,11 +92,10 @@ class EditPost(StaffRequiredMixin, generic.UpdateView):
         return reverse('post_detail', args=[self.object.slug])
 
 
-class DeletePost(StaffRequiredMixin, generic.DeleteView):
+class DeletePost(generic.DeleteView):
     """
     A view to delete a post
     Args:
-        StaffRequiredMixin
         DeleteView: generic class based view
     Returns:
         Request confirmation of post deletion

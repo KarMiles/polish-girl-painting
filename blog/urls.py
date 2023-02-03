@@ -20,15 +20,15 @@ urlpatterns = [
         views.CreatePost.as_view(),
         name="post_create"),
     path(
-        "<slug:slug>",
+        "<slug:slug>/",
         views.PostDetail.as_view(),
         name="post_detail"),
     path(
-        "<slug:slug>/delete",
+        "delete/<slug:slug>/",
         views.DeletePost.as_view(),
         name="post_delete"),
     path(
-        "<slug:slug>/edit",
+        "edit/<slug:slug>/",
         views.EditPost.as_view(),
         name="post_edit"),
 ]
