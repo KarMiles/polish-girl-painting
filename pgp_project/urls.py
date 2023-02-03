@@ -32,6 +32,8 @@ urlpatterns = [
     path('bag/', include('bag.urls')),
     path('checkout/', include('checkout.urls')),
     path('profile/', include('profiles.urls')),
+    path("", include("blog.urls"), name="blog_urls"),
+    path('summernote/', include('django_summernote.urls')),
     path('403/', test_403_view, name='test_403_view'),
     path('404/', test_404_view, name='test_404_view'),
     path('500/', test_500_view, name='test_500_view'),
