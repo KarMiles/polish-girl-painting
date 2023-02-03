@@ -7,6 +7,8 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy, reverse
 from django.utils.text import slugify
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import AccessMixin
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -28,6 +30,7 @@ class CreatePost(generic.CreateView):
     form_class = PostForm
     success_url = reverse_lazy('blog_home')
 
+    @login_required
     def form_valid(self, form):
         """
         Set post author and slug to self instances
@@ -67,6 +70,7 @@ class EditPost(generic.UpdateView):
     form_class = PostForm
     queryset = Post.objects.all()
 
+    @login_required
     def form_valid(self, form):
         """
         Set post author and slug to self instances
@@ -105,6 +109,7 @@ class DeletePost(generic.DeleteView):
     queryset = Post.objects.all()
     template_name = 'blog/post_confirm_delete.html'
 
+    @login_required
     def delete(self, request, *args, **kwargs):
         """
         Call the delete() method on the fetched object,

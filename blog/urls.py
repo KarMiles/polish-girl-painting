@@ -14,7 +14,7 @@ urlpatterns = [
     path(
         "",
         views.PostList.as_view(),
-        name="blog_home"),
+        name="blog"),
     path(
         "post",
         views.CreatePost.as_view(),

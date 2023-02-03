@@ -2,15 +2,15 @@
     <ul class="navbar-nav w-auto mx-auto">
 
         <li class="nav-item d-block d-lg-none">
-            <a href="{% url 'home' %}" class="logo-font font-weight-bold nav-link text-black mr-5" id="home-link">Home</a>
+            <a href="{% url 'home' %}" class="logo-font font-weight-bold nav-link text-black mx-2" id="home-link">Home</a>
         </li>
 
         <li class="nav-item">
-            <a href="{% url 'products' %}" class="logo-font font-weight-bold nav-link text-black mr-5" id="all-products-link">Gallery</a>
+            <a href="{% url 'products' %}" class="logo-font font-weight-bold nav-link text-black mx-2" id="all-products-link">Gallery</a>
         </li>
         
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="availability-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-black mx-2" href="#" id="availability-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Availability
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="availability-link">
@@ -20,7 +20,7 @@
         </li>
 
         <li class="nav-item dropdown d-none">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="orientation-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-black mx-2" href="#" id="orientation-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Orientation
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="orientation-link">
@@ -40,6 +40,10 @@
                 <a href="{% url 'products' %}?category=postcard" class="dropdown-item">Postcards</a>
                 <a href="{% url 'products' %}?category=print" class="dropdown-item">Prints</a>
             </div>
+        </li>
+
+        <li class="nav-item">
+            <a href="{% url 'blog' %}" class="logo-font font-weight-bold nav-link text-black mx-2" id="blog-link">Blog</a>
         </li>
 
     </ul>

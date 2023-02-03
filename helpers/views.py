@@ -2,6 +2,7 @@
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django.shortcuts import render
+from django.contrib.auth.mixins import AccessMixin
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -97,3 +98,19 @@ def test_500_view(request):
     return render(
         request,
         'errors/500.html')
+
+
+# Access management
+
+class StaffRequiredMixin(AccessMixin):
+    """
+    Verify that the current user
+    is authenticated as member of staff.
+    """
+    def dispatch(self, request, *args, **kwargs):
+        """
+        Grant access only to staff users.
+        """
+        if not request.user.is_staff:
+            return self.handle_no_permission()
+        return super().dispatch(request, *args, **kwargs)
