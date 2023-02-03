@@ -21,6 +21,10 @@ class Post(models.Model):
     slug = models.SlugField(
         max_length=150,
         unique=True)
+    author = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name="blog_posts")
     content = models.TextField()
     featured_image = models.ImageField(
         null=True,
