@@ -26,7 +26,7 @@ class CreatePost(generic.CreateView):
     Returns:
         Render of post form with success message and context
     """
-    template_name = "blog/post_create.html"
+    template_name = "blog/post-create.html"
     form_class = PostForm
     success_url = reverse_lazy('blog_home')
 
@@ -66,7 +66,7 @@ class EditPost(generic.UpdateView):
     Returns:
         Render of updated post with success message
     """
-    template_name = "blog/post_create.html"
+    template_name = "blog/post-create.html"
     form_class = PostForm
     queryset = Post.objects.all()
 
@@ -107,7 +107,7 @@ class DeletePost(generic.DeleteView):
     """
     success_url = reverse_lazy('blog_home')
     queryset = Post.objects.all()
-    template_name = 'blog/post_confirm_delete.html'
+    template_name = 'blog/post-confirm-delete.html'
 
     @login_required
     def delete(self, request, *args, **kwargs):
@@ -142,9 +142,13 @@ class PostList(generic.ListView):
         Staff users see live and draft posts
     """
     model = Post
+    # context_object_name = 'post_list'
+
+    posts = Post.objects.all()
+
     template_name = "blog/blog.html"
-    paginate_by = 3
-    ordering = 'created_on'
+    # paginate_by = 3
+    ordering = '-created_on'
 
     def get_queryset(self):
         queryset = super().get_queryset()
@@ -176,7 +180,7 @@ class PostDetail(View):
 
         return render(
             request,
-            "blog/post_detail.html",
+            "blog/post-detail.html",
             {
                 "post": post,
             },

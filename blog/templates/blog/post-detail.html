@@ -18,7 +18,7 @@
         <div class="row">
             <div class="col">
                 <hr>
-                <h2 class="logo-font mb-3">Blog</h2>
+                <h2 class="logo-font mb-3">Blog details</h2>
                 <hr>
             </div>
         </div>
@@ -27,31 +27,38 @@
             <div class="col">
                 {% if 1 %}
 
+                    <!-- Back to page top button -->
+                    <div class="btt-button shadow-sm rounded-0 border border-black d-block d-md-none">
+                        <a class="btt-link d-flex h-100">
+                            <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+                        </a>
+                    </div>
+
                     <!-- Blog -->
                     <div class="container">
                         <div class="row">
 
-                            <!-- About Column -->
+                            <!-- Post Details Column -->
                             <div class="col-md-8 left mb-3">
-                                <div class="card">
-                                    <h4 class="card-header">About Me</h4>
+                                <div class="card p-2">
+                                    <h4 class="card-title">Post title: {{ post.title }}</h4>
+                                    <p class="card-text text-muted h6">{{ post.author.first_name }} | {{ post.created_on}} </p>
                                     <div class="card-body">
-                                        <p class="card-text">Example text about me.</p>
+                                        <div class="details-image"> 
+                                            {% if post.featured_image %}
+                                                <img src="{{ post.featured_image.url }}"
+                                                alt="featured photo massage and therapy related"
+                                                class="w-100">
+                                            {% endif %}
+                                        </div>
+                                        <p class="card-text">{{post.content|safe }}</p>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Sidebar Excerpt Column -->
                             {% include 'blog/blog-sidebar.html' %}
-
                         </div>
-                    </div>
-
-                    <!-- Back to page top button -->
-                    <div class="btt-button shadow-sm rounded-0 border border-black d-block d-md-none">
-                        <a class="btt-link d-flex h-100">
-                            <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
-                        </a>
                     </div>
 
                 {% else %}
@@ -74,35 +81,10 @@
 
 <script type="text/javascript">
 
-    // Update quantity on click
-    $('.update-link').click(function(e) {
-        var form = $(this).prev('.update-form');
-        form.submit();
-    })
-
-    $('.update-quantity').click(function(e) {
-        var form = $(this).prev('.update-form');
-        form.submit();
-    })
-
-    // Remove item and reaload on click
-    $('.remove-item').click(function(e) {
-        var csrfToken = "{{ csrf_token }}";
-        var itemId = $(this).attr('id').split('remove_')[1];
-        var url = `/bag/remove/${itemId}/`;
-        var data = {'csrfmiddlewaretoken': csrfToken};
-
-        $.post(url, data)
-        .done(function() {
-            location.reload();
-        });
-    })
-
     // Back to page top button script
     $('.btt-link').click(function(e) {
         window.scrollTo(0,0)
     })
-
 
 </script>
 

@@ -9,15 +9,41 @@
             <a href="{% url 'products' %}" class="logo-font font-weight-bold nav-link text-black mx-2" id="all-products-link">Gallery</a>
         </li>
         
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mx-2" href="#" id="availability-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Availability
+
+        <div class="dropdown">
+            <a id="dLabel" role="button" data-toggle="dropdown" class="logo-font font-weight-bold nav-link text-black mx-2" data-target="#" href="#">
+                Filter by...
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="availability-link">
-                <a href="{% url 'products' %}?available=True" class="dropdown-item">Available</a>
-                <a href="{% url 'products' %}?live=True&available=False" class="dropdown-item">Not available</a>
-            </div>
-        </li>
+            <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                <!-- <li><a href="#">Some action</a></li>
+                <li><a href="#">Some other action</a></li> -->
+                <li class="divider"></li>
+                <li class="dropdown-submenu">
+                    <a tabindex="-1" href="#">
+                        Availability
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a tabindex="-1" href="{% url 'products' %}?available=True">Available</a></li>
+                        <li><a tabindex="-1" href="{% url 'products' %}?live=True&available=False">Not available</a></li>
+                    </ul>
+                </li>
+                <li class="divider"></li>
+                <li class="dropdown-submenu">
+                    <a tabindex="-1" href="#">
+                        Category
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a tabindex="-1" href="{% url 'products' %}?category=calendar">Calendars</a></li>
+                        <li><a tabindex="-1" href="{% url 'products' %}?category=drawing">Drawings</a></li>
+                        <li><a tabindex="-1" href="{% url 'products' %}?category=painting">Paintings</a></li>
+                        <li><a tabindex="-1" href="{% url 'products' %}?category=postcard">Postcards</a></li>
+                        <li><a tabindex="-1" href="{% url 'products' %}?category=print">Prints</a></li>
+                        <li class="divider"></li>
+                    </ul>
+                </li>
+                <li class="divider"></li>
+            </ul>
+        </div>
 
         <li class="nav-item dropdown d-none">
             <a class="logo-font font-weight-bold nav-link text-black mx-2" href="#" id="orientation-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -26,19 +52,6 @@
             <div class="dropdown-menu border-0" aria-labelledby="orientation-link">
                 <a href="{% url 'products' %}?orientation=Landscape" class="dropdown-item">Landscape</a>
                 <a href="{% url 'products' %}?orientation=Portrait" class="dropdown-item">Portrait</a>
-            </div>
-        </li>
-
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="category-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Category
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="category-link">
-                <a href="{% url 'products' %}?category=calendar" class="dropdown-item">Calendars</a>
-                <a href="{% url 'products' %}?category=drawing" class="dropdown-item">Drawings</a>
-                <a href="{% url 'products' %}?category=painting" class="dropdown-item">Paintings</a>
-                <a href="{% url 'products' %}?category=postcard" class="dropdown-item">Postcards</a>
-                <a href="{% url 'products' %}?category=print" class="dropdown-item">Prints</a>
             </div>
         </li>
 
