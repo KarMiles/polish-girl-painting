@@ -140,6 +140,10 @@ a:active {
     color: white !important;
 }
 
+.btn-light {
+    border: 1px solid grey !important;
+}
+
 .btn-cancel {
     padding: 0.5rem 1rem !important;
     font-size: 1.25rem !important;
@@ -381,6 +385,11 @@ input[type=number]::-webkit-outer-spin-button {
     border-radius: 0;
 }
 
+/* Blog */
+
+.card{
+    box-shadow: 0 16px 48px #E3E7EB;
+}
 
 /* MEDIA QUERIES */
 

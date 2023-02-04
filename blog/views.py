@@ -143,7 +143,7 @@ class PostList(generic.ListView):
     """
     model = Post
     template_name = "blog/blog.html"
-    # paginate_by = 3
+    paginate_by = 3
     ordering = 'created_on'
 
     def get_queryset(self):
@@ -193,6 +193,6 @@ class PostDetail(View):
             order posts by creation time.
         """
         if self.request.user.is_staff:
-            return Post.objects.order_by("crated_on")
+            return Post.objects.order_by("created_on")
 
         return Post.objects.filter(live=True).order_by("created_on")
