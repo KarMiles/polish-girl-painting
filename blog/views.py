@@ -175,6 +175,7 @@ class PostDetail(View):
         Returns:
             Render post details page with context.
         """
+        model = Post  # Try to show list
         queryset = self.get_queryset()
         post = get_object_or_404(queryset, slug=slug)
 
@@ -183,6 +184,7 @@ class PostDetail(View):
             "blog/post-detail.html",
             {
                 "post": post,
+                "blog": model, # Try to show list
             },
         )
 
