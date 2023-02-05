@@ -2,26 +2,11 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col">
-
-            </div>
-        </div>
-    </div>
+    {% include "includes/page_header.html" with title="Post" subtitle="" %}
 {% endblock %}
 
 {% block content %}
     <div class="overlay"></div>
-
-    <div class="container mb-4 col-12 col-md-10 offset-md-1">
-        <div class="row">
-            <div class="col">
-                <hr>
-                <h2 class="logo-font mb-3">Blog details</h2>
-                <hr>
-            </div>
-        </div>
 
         <div class="row">
             <div class="col">
@@ -57,7 +42,7 @@
                             </div>
 
                             <!-- Sidebar Excerpt Column -->
-                            {% include 'blog/blog-sidebar.html' %}
+                            {% include 'includes/blog-sidebar.html' %}
                         </div>
                     </div>
 

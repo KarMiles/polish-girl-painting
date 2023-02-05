@@ -2,50 +2,40 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col">
-
-            </div>
-        </div>
-    </div>
+    {% include "includes/page_header.html" with title="Blog" subtitle="" %}
 {% endblock %}
 
 {% block content %}
     <div class="overlay"></div>
 
     <div class="container mb-4 col-12 col-md-10 offset-md-1">
-        <div class="row">
-            <div class="col">
-                <hr>
-                <h2 class="logo-font mb-3">Blog</h2>
-                <hr>
-            </div>
-        </div>
 
         <div class="row">
             <div class="col">
                 {% if 1 %}
 
                     <!-- Blog -->
-                    <div class="container">
-                        <div class="row">
-
-                            <!-- About Column -->
-                            <div class="col-md-8 left mb-3">
-                                <div class="card">
-                                    <h4 class="card-header">About Me</h4>
-                                    <div class="card-body">
-                                        <p class="card-text">Example text about me.</p>
-                                    </div>
-                                </div>
+                    {% for post in post_list %}
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ post.title }}</h5>
+                                <p class="card-text text-muted h6">
+                                    {{ post.author.first_name }} | {{ post.created_on}}
+                                </p>
+                                <!-- <p class="card-text">slug: {{ post.slug }}</p> -->
+                                <p class="card-text">
+                                    {{post.content|slice:":200"|safe }}
+                                </p>
+                                <a href="{% url 'post_detail' post.slug  %}"
+                                    class="btn btn-outline-black rounded-0 px-1 py-1">
+                                    <span class="text-uppercase mx-1">Read more</span>
+                                    <span class="icon">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
                             </div>
-
-                            <!-- Sidebar Excerpt Column -->
-                            {% include 'blog/blog-sidebar.html' %}
-
                         </div>
-                    </div>
+                    {% endfor %}
 
                     <!-- Back to page top button -->
                     <div class="btt-button shadow-sm rounded-0 border border-black d-block d-md-none">
@@ -72,38 +62,13 @@
 {% block postloadjs %}
 {{ block.super }}
 
-<script type="text/javascript">
+    <script type="text/javascript">
 
-    // Update quantity on click
-    $('.update-link').click(function(e) {
-        var form = $(this).prev('.update-form');
-        form.submit();
-    })
+        // Back to page top button script
+        $('.btt-link').click(function(e) {
+            window.scrollTo(0,0)
+        })
 
-    $('.update-quantity').click(function(e) {
-        var form = $(this).prev('.update-form');
-        form.submit();
-    })
-
-    // Remove item and reaload on click
-    $('.remove-item').click(function(e) {
-        var csrfToken = "{{ csrf_token }}";
-        var itemId = $(this).attr('id').split('remove_')[1];
-        var url = `/bag/remove/${itemId}/`;
-        var data = {'csrfmiddlewaretoken': csrfToken};
-
-        $.post(url, data)
-        .done(function() {
-            location.reload();
-        });
-    })
-
-    // Back to page top button script
-    $('.btt-link').click(function(e) {
-        window.scrollTo(0,0)
-    })
-
-
-</script>
+    </script>
 
 {% endblock %}
