@@ -12,7 +12,7 @@
 
         <div class="row">
             <div class="col">
-                {% if 1 %}
+                {% if post_list|length > 0 %}
 
                     <!-- Blog -->
                     {% for post in post_list %}
@@ -22,9 +22,11 @@
                                 <p class="card-text text-muted h6">
                                     {{ post.author.first_name }} | {{ post.created_on}}
                                 </p>
-                                <!-- <p class="card-text">slug: {{ post.slug }}</p> -->
                                 <p class="card-text">
-                                    {{post.content|slice:":200"|safe }}
+                                    {{post.content|stringformat:".200s"|safe }}
+                                    {% if post.content|length > 200 %}
+                                        ...
+                                    {% endif %}
                                 </p>
                                 <a href="{% url 'post_detail' post.slug  %}"
                                     class="btn btn-outline-black rounded-0 px-1 py-1">

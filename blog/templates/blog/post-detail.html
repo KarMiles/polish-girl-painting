@@ -8,54 +8,43 @@
 {% block content %}
     <div class="overlay"></div>
 
-        <div class="row">
-            <div class="col">
-                {% if 1 %}
+        <div class="container mb-4 col-12 col-md-10 offset-md-1">
 
-                    <!-- Back to page top button -->
-                    <div class="btt-button shadow-sm rounded-0 border border-black d-block d-md-none">
-                        <a class="btt-link d-flex h-100">
-                            <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+            <div class="row">
+                <div class="col">
+
+                    <!-- Post -->
+                    <div class="card p-2">
+                        <h4 class="card-title">Post title: {{ post.title }}</h4>
+                        <p class="card-text text-muted h6">{{ post.author.first_name }} | {{ post.created_on}} </p>
+                        <div class="card-body">
+                            <div class="details-image"> 
+                                {% if post.featured_image %}
+                                <img src="{{ post.featured_image.url }}"
+                                alt="featured photo massage and therapy related"
+                                class="w-100">
+                                {% endif %}
+                            </div>
+                            <p class="card-text">{{post.content|safe }}</p>
+                            <a href="{% url 'blog' %}"
+                            class="btn btn-outline-black rounded-0 px-1 py-1">
+                            <span class="icon">
+                                <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="text-uppercase mx-1">Back to Blog</span>
                         </a>
                     </div>
 
-                    <!-- Blog -->
-                    <div class="container">
-                        <div class="row">
-
-                            <!-- Post Details Column -->
-                            <div class="col-md-8 left mb-3">
-                                <div class="card p-2">
-                                    <h4 class="card-title">Post title: {{ post.title }}</h4>
-                                    <p class="card-text text-muted h6">{{ post.author.first_name }} | {{ post.created_on}} </p>
-                                    <div class="card-body">
-                                        <div class="details-image"> 
-                                            {% if post.featured_image %}
-                                                <img src="{{ post.featured_image.url }}"
-                                                alt="featured photo massage and therapy related"
-                                                class="w-100">
-                                            {% endif %}
-                                        </div>
-                                        <p class="card-text">{{post.content|safe }}</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Sidebar Excerpt Column -->
-                            {% include 'includes/blog-sidebar.html' %}
-                        </div>
-                    </div>
-
-                {% else %}
-                    <p class="lead mb-5">Blog is currently empty.</p>
-                    <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                        <span class="icon">
-                            <i class="fas fa-chevron-left"></i>
-                        </span>
-                        <span class="text-uppercase">Gallery</span>
-                    </a>
-                {% endif %}
+                </div>
             </div>
+            
+            <!-- Back to page top button -->
+            <div class="btt-button shadow-sm rounded-0 border border-black d-block d-md-none">
+                <a class="btt-link d-flex h-100">
+                    <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+                </a>
+            </div>
+
         </div>
     </div>
 
