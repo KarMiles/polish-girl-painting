@@ -130,7 +130,7 @@ def add_product(request):
     else:
         form = ProductForm()
 
-    template = 'products/add_product.html'
+    template = 'products/product_add.html'
     context = {
         'form': form,
     }
@@ -162,7 +162,7 @@ def edit_product(request, product_id):
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.title}')
 
-    template = 'products/edit_product.html'
+    template = 'products/product_edit.html'
     context = {
         'form': form,
         'product': product,
