@@ -98,6 +98,7 @@
                                 {% if request.user.is_authenticated %}
                                     {% if request.user.is_staff %}
                                         <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+                                        <a href="{% url 'post_add' %}" class="dropdown-item">Blog Management</a>
                                 {% endif %}
                                     <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                                     <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
