@@ -1,13 +1,22 @@
+"""Imports"""
+# 3rd party:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django import forms
+from django_summernote.widgets import SummernoteWidget
 from .widgets import CustomClearableFileInput
 from .models import Product, Category
 
 
 class ProductForm(forms.ModelForm):
-
+    """
+    Class for product forms
+    """
     class Meta:
         model = Product
         fields = '__all__'
+        widgets = {
+            'description': SummernoteWidget()
+        }
 
     image = forms.ImageField(
         label='Image',

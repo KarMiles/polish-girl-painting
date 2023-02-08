@@ -42,7 +42,7 @@
                         <div class="col">
 
                             <p class="description">
-                                {{ product.description }}
+                                {{ product.description|safe }}
                             </p>
                             <!-- Superuser section -->
                             {% if request.user.is_staff %}
