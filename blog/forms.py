@@ -3,6 +3,7 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django import forms
 from django_summernote.widgets import SummernoteWidget
+from .widgets import CustomClearableFileInput
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -18,12 +19,18 @@ class PostForm(forms.ModelForm):
         Show indicated fields in the blog form
         """
         model = Post
+        # fields = '__all__'
         fields = (
+            # 'author',
             'title',
             'content',
-            'featured_image',
             'highlight',
             'live',)
         widgets = {
             'content': SummernoteWidget()
         }
+
+    image = forms.ImageField(
+        label='Image',
+        required=False,
+        widget=CustomClearableFileInput)

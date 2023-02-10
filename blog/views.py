@@ -18,44 +18,22 @@ from .forms import PostForm
 
 # Views for blog app
 
-class CreatePost(generic.CreateView):
-    """
-    A view to create a post
-    Args:
-        CreateView: class based view
-    Returns:
-        Render of post form with success message and context
-    """
+class CreatePost(AccessMixin, generic.CreateView):
+
+    model = Post
     template_name = "blog/post_add.html"
     form_class = PostForm
-    success_url = reverse_lazy('blog_home')
+    success_url = reverse_lazy('blog')
 
-    @login_required
     def form_valid(self, form):
-        """
-        Set post author and slug to self instances
-        Send confirmation message
-        Args:
-            self (object): self.
-            form (object): form.
-        Returns:
-            The form
-        """
-        def __init__(self, form):
-            self.object = form.instance
-
         form.instance.author = self.request.user
-        form.instance.slug = slugify(form.instance.title)
-
-        response = super().form_valid(form)
+        form.save()
         messages.add_message(
             self.request,
             messages.INFO,
             'Post created successfully!')
-        return response
 
-    def get_success_url(self):
-        return reverse('post_detail', args=[self.object.slug])
+        return super().form_valid(form)
 
 
 class EditPost(generic.UpdateView):
@@ -71,7 +49,7 @@ class EditPost(generic.UpdateView):
     queryset = Post.objects.all()
 
     @login_required
-    def form_valid(self, form):
+    def form_valid(self, request, form):
         """
         Set post author and slug to self instances
         Send confirmation message
@@ -81,9 +59,9 @@ class EditPost(generic.UpdateView):
         Returns:
             The form
         """
-        def __init__(self, form):
+        def __init__(self, request, form):
             self.object = form.instance
-            self.object.author = self.request.user
+            # self.object.author = self.request.user
             self.object.slug = slugify(self.object.title)
 
         messages.add_message(
@@ -184,7 +162,6 @@ class PostDetail(View):
             "blog/post_detail.html",
             {
                 "post": post,
-                "blog": model, # Try to show list
             },
         )
 
