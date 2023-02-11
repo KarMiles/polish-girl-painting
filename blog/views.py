@@ -43,11 +43,12 @@ class EditPost(AccessMixin, generic.UpdateView):
     Returns:
         Render of updated post with success message
     """
-    template_name = "blog/post_add.html"
+    model = Post
+    template_name = "blog/post_edit.html"
     form_class = PostForm
     queryset = Post.objects.all()
 
-    def form_valid(self, request, form):
+    def form_valid(self, form):
         """
         Set post author and slug to self instances
         Send confirmation message
@@ -59,7 +60,6 @@ class EditPost(AccessMixin, generic.UpdateView):
         """
         def __init__(self, request, form):
             self.object = form.instance
-            # self.object.author = self.request.user
             self.object.slug = slugify(self.object.title)
 
         messages.add_message(
