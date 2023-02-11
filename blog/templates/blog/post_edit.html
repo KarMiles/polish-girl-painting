@@ -21,7 +21,7 @@
                         {% endif %}
                     {% endfor %}
                     <div class="text-right">
-                        <a class="btn btn-outline-black rounded-0" href="{% url 'post_edit' post.slug %}">Cancel</a>
+                        <a class="btn btn-outline-black rounded-0" href="{% url 'post_detail' post.slug %}">Cancel</a>
                         <a href="{% url 'post_delete' post.slug %}" class="btn btn-danger  float-start rounded-0">Delete</a>
                         <button class="btn btn-black rounded-0" type="submit">Update Post</button>
                     </div>
