@@ -14,7 +14,7 @@
                 <form method="POST" action="{% url 'post_add' %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}
-                        {% if field.name != 'image' %}
+                        {% if field.name != 'featured_image' %}
                             {{ field | as_crispy_field }}
                         {% else %}
                             {{ field }}

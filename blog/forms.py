@@ -3,10 +3,10 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django import forms
 from django_summernote.widgets import SummernoteWidget
-from .widgets import CustomClearableFileInput
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+from .widgets import CustomClearableFileInput
 from .models import Post
 
 
@@ -24,12 +24,13 @@ class PostForm(forms.ModelForm):
             'title',
             'content',
             'highlight',
-            'live',)
+            'live',
+            'featured_image')
         widgets = {
             'content': SummernoteWidget()
         }
 
-    image = forms.ImageField(
+    featured_image = forms.ImageField(
         label='Image',
         required=False,
         widget=CustomClearableFileInput)

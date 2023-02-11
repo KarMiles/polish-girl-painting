@@ -90,8 +90,7 @@ TEMPLATES = [
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
             os.path.join(BASE_DIR, 'templates', 'allauth'),
-            # os.path.join(BASE_DIR, 'templates', 'blog'),
-
+            # os.path.join(BASE_DIR, 'templates', 'custom_widget_templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
