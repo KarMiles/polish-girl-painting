@@ -19,7 +19,6 @@ class PostForm(forms.ModelForm):
         Show indicated fields in the blog form
         """
         model = Post
-        # fields = '__all__'
         fields = (
             # 'author',
             'title',

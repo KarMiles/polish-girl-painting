@@ -7,7 +7,6 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy, reverse
 from django.utils.text import slugify
 from django.contrib import messages
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import AccessMixin
 
 # Internal:
@@ -36,7 +35,7 @@ class CreatePost(AccessMixin, generic.CreateView):
         return super().form_valid(form)
 
 
-class EditPost(generic.UpdateView):
+class EditPost(AccessMixin, generic.UpdateView):
     """
     A view to edit a post
     Args:
@@ -48,7 +47,6 @@ class EditPost(generic.UpdateView):
     form_class = PostForm
     queryset = Post.objects.all()
 
-    @login_required
     def form_valid(self, request, form):
         """
         Set post author and slug to self instances
@@ -74,7 +72,7 @@ class EditPost(generic.UpdateView):
         return reverse('post_detail', args=[self.object.slug])
 
 
-class DeletePost(generic.DeleteView):
+class DeletePost(AccessMixin, generic.DeleteView):
     """
     A view to delete a post
     Args:
@@ -87,7 +85,6 @@ class DeletePost(generic.DeleteView):
     queryset = Post.objects.all()
     template_name = 'blog/post_delete_confirm.html'
 
-    @login_required
     def delete(self, request, *args, **kwargs):
         """
         Call the delete() method on the fetched object,
@@ -153,7 +150,6 @@ class PostDetail(View):
         Returns:
             Render post details page with context.
         """
-        model = Post  # Try to show list
         queryset = self.get_queryset()
         post = get_object_or_404(queryset, slug=slug)
 
