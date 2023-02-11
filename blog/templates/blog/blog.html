@@ -20,7 +20,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ post.title }}</h5>
                                 <p class="card-text text-muted h6">
-                                    {{ post.author.get_full_name|default:post.author.username }} | {{ post.created_on}}
+                                    {{ post.author.get_full_name|default:post.author.username }} | {{ post.created_on | date:"d F Y"}}
                                 </p>
                                 <p class="card-text">
                                     {{post.content|stringformat:".200s"|safe }}
