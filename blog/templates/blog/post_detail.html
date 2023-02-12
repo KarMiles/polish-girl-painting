@@ -14,18 +14,20 @@
                 <div class="col">
 
                     <!-- Post -->
-                    <div class="card p-2">
-                        <h4 class="card-title">{{ post.title }}</h4>
-                        <p class="card-text text-muted h6">{{ post.author.get_full_name|default:post.author.username }} | {{ post.created_on | date:"d F Y" }} </p>
+                    <div class="card px-2 py-3">
+                        <h4 class="card-title ml-3">{{ post.title }}</h4>
+                        <p class="card-text text-muted h6 ml-3">{{ post.author.get_full_name|default:post.author.username }} | {{ post.created_on | date:"d F Y" }} </p>
                         <div class="card-body">
-                            <div class="details-image"> 
+                            <div class="col-12 col-lg-5 float-right details-imaget mt-4 mb-3 ml-1"> 
                                 {% if post.featured_image %}
                                 <img src="{{ post.featured_image.url }}"
                                     alt="featured photo for the blog post"
                                     class="w-100">
                                 {% endif %}
                             </div>
-                            <p class="card-text">{{post.content|safe }}</p>
+                            <div class="col-12">
+                                <p class="card-text float-md-right">{{post.content|safe }}</p>
+                            </div>
                             
                             <!-- Superuser section -->
                             {% if request.user.is_staff %}
