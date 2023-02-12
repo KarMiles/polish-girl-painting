@@ -19,16 +19,16 @@
                         <div class="card mb-4">
                             <div class="card-body">
                                 <a href="{% url 'post_detail' post.slug  %}"
-                                    <h5 class="card-title">{{ post.title }}</h5>
+                                    <p class="card-title">{{ post.title }}<p>
                                 </a>
                                 <p class="card-text text-muted h6">
                                     {{ post.author.get_full_name|default:post.author.username }} | {{ post.created_on | date:"d F Y"}}
                                 </p>
                                 <div class="row">
                                     <div class="card-text col-12 col-lg-10 col-md-8">
-                                        <p class="text-limiter">
-                                            {{post.content|safe|stringformat:".300s" }}
-                                            {% if post.content|length > 300 %}
+                                        <p>
+                                            {{post.content|safe|stringformat:".250s" }}
+                                            {% if post.content|length > 250 %}
                                                 ...
                                             {% endif %}
                                         </p>

@@ -13,14 +13,6 @@ body {
 div.inline { float:left; }
 .clearBoth { clear:both; }
 
-.text-limiter {
-    width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-height: 5rem;
-}
-
 /* Footer */
 .container-wrapper {
     background-color: rgb(245, 245, 245);
@@ -79,6 +71,10 @@ a:active {
     background: rgb(120, 120, 120);
     width: 80%;
     margin: .25rem 10% .25rem 10%;
+}
+
+.card-title {
+    font-size: 1.5rem;
 }
 
 .card-footer {
