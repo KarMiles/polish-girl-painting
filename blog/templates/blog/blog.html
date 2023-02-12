@@ -26,8 +26,8 @@
                                 </p>
                                 <div class="row">
                                     <div class="card-text col-12 col-lg-10 col-md-8">
-                                        <p>
-                                            {{post.content|stringformat:".500s"|safe }}
+                                        <p class="text-limiter">
+                                            {{post.content|safe|stringformat:".500s" }}
                                             {% if post.content|length > 500 %}
                                                 ...
                                             {% endif %}

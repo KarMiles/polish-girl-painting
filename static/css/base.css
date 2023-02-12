@@ -13,6 +13,13 @@ body {
 div.inline { float:left; }
 .clearBoth { clear:both; }
 
+.text-limiter {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 /* Footer */
 .container-wrapper {
     background-color: rgb(245, 245, 245);
