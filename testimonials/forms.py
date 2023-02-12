@@ -8,7 +8,7 @@ from django import forms
 from .models import Testimonial
 
 
-class PostTestimonial(forms.ModelForm):
+class TestimonialForm(forms.ModelForm):
     """
     Class for testimonial forms
     """
