@@ -466,7 +466,6 @@ input[type=number]::-webkit-outer-spin-button {
 @media (max-width: 768px) {
     .hide-on-sm {
         display: none;
-        background-color: red;
     }
 }
 

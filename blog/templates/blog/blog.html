@@ -24,12 +24,23 @@
                                 <p class="card-text text-muted h6">
                                     {{ post.author.get_full_name|default:post.author.username }} | {{ post.created_on | date:"d F Y"}}
                                 </p>
-                                <p class="card-text">
-                                    {{post.content|stringformat:".200s"|safe }}
-                                    {% if post.content|length > 200 %}
-                                        ...
-                                    {% endif %}
-                                </p>
+                                <div class="row">
+                                    <div class="card-text col-12 col-lg-10 col-md-8">
+                                        <p>
+                                            {{post.content|stringformat:".500s"|safe }}
+                                            {% if post.content|length > 500 %}
+                                                ...
+                                            {% endif %}
+                                        </p>
+                                    </div>
+                                    <div class="col-4 col-lg-2 hide-on-sm float-right details-image mt-4"> 
+                                        {% if post.featured_image %}
+                                        <img src="{{ post.featured_image.url }}"
+                                            alt="featured photo for the blog post"
+                                            class="w-100">
+                                        {% endif %}
+                                    </div>
+                                </div>
 
                                 <!-- Superuser section -->
                                 {% if request.user.is_staff %}
