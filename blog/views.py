@@ -81,7 +81,7 @@ class DeletePost(AccessMixin, generic.DeleteView):
         Request confirmation of post deletion
         Redirect home after delete
     """
-    success_url = reverse_lazy('blog_home')
+    success_url = reverse_lazy('blog')
     queryset = Post.objects.all()
     template_name = 'blog/post_delete_confirm.html'
 
