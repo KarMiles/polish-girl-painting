@@ -14,7 +14,7 @@ from django.contrib.auth.models import User
 class Post(models.Model):
     """
     Class for the Post model
-    representing a description of a treatment
+    representing a post in the blog
     """
     title = models.CharField(
         max_length=150,
