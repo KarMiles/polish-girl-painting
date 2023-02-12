@@ -18,6 +18,7 @@ div.inline { float:left; }
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    max-height: 5rem;
 }
 
 /* Footer */
