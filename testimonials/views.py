@@ -1,11 +1,14 @@
 """Imports"""
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from django.shortcuts import render, redirect
-from django.views import generic
-from django.urls import reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.urls import reverse_lazy
+from django.views import generic, View
+from django.http import HttpResponseRedirect
 from django.contrib import messages
-from django.core.exceptions import PermissionDenied
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+from django.db.models import Q
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -15,83 +18,125 @@ from .forms import TestimonialForm
 
 # Views for testimonials app
 
-class TestimonialList(generic.ListView):
+def all_testimonials(request):
     """
-    A view to show testimonials
+    A view for all testimonials
+    including sorting and search queries
+    """
+    testimonials = Testimonial.objects.all()
+
+    context = {
+        'testimonials': testimonials,
+    }
+
+    return render(request, 'testimonials/testimonials.html', context)
+
+
+def testimonial_detail(request, testimonial_id):
+    """
+    A view to show individual testimonial details
+    """
+
+    testimonial = get_object_or_404(Testimonial, pk=testimonial_id)
+
+    context = {
+        'testimonial': testimonial,
+    }
+
+    return render(request, 'testimonials/testimonial_detail.html', context)
+
+
+@login_required
+def add_testimonial(request):
+    """ Add a testimonial to the store """
+    if not request.user.is_staff:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    # POST handler:
+    if request.method == 'POST':
+        form = TestimonialForm(request.POST, request.FILES)
+        if form.is_valid():
+            testimonial = form.save()
+            messages.success(request, 'Successfully added testimonial!')
+            return redirect(reverse('testimonial_detail', args=[testimonial.id]))
+        else:
+            messages.error(
+                request,
+                'Failed to add testimonial. Please ensure the form is valid.')
+    else:
+        form = TestimonialForm()
+
+    template = 'testimonials/testimonial_add.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def edit_testimonial(request, testimonial_id):
+    """ Edit a testimonial in the store """
+    if not request.user.is_staff:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    testimonial = get_object_or_404(Testimonial, pk=testimonial_id)
+
+    # POST handler
+    if request.method == 'POST':
+        form = TestimonialForm(request.POST, request.FILES, instance=testimonial)
+        if form.is_valid():
+            testimonial = form.save()
+            messages.success(request, 'Successfully updated testimonial!')
+            return redirect(reverse('testimonial_detail', args=[testimonial.id]))
+        else:
+            messages.error(
+                request,
+                'Failed to update testimonial. Please ensure the form is valid.')
+    else:
+        form = TestimonialForm(instance=testimonial)
+        messages.info(request, f'You are editing {testimonial.title}')
+
+    template = 'testimonials/testimonial_edit.html'
+    context = {
+        'form': form,
+        'testimonial': testimonial,
+    }
+
+    return render(request, template, context)
+
+
+class DeleteTestimonial(generic.DeleteView):
+    """
+    A view to delete a testimonial
     Args:
-        ListView: class based view
+        DeleteView: generic class based view
     Returns:
-        Render of testimonials
+        Request confirmation of testimonial deletion
+        Redirect to testimonials page after delete
     """
-    model = Testimonial
-    template_name = "testimonials.html"
-    context_object_name = 'testimonials'
+    success_url = reverse_lazy('testimonials')
+    queryset = Testimonial.objects.all()
+    template_name = 'testimonials/testimonial_delete_confirm.html'
 
-    def get_queryset(self):
+    @method_decorator(login_required)
+    def delete(self, request, *args, **kwargs):
         """
-        Filters testimonials by the query
-        Args:
-            self (object): Self object
-        Returns:
-            testimonials with status live
-            ordered by creation time
-        """
-        return Testimonial.objects.filter(
-            live=True,
-            user=self.request.user
-            ).order_by("created_on")
-
-    def get(self, *args, **kwargs):
-        """
-        Renders page with testimonials list
-        Args:
-            self (object): Self object
-            **kwargs: **kwargs
-        Returns:
-            Render testimonial page
-        """
-        if not self.request.user.is_authenticated:
-            raise PermissionDenied
-
-        return render(
-            self.request,
-            "testimonial.html",
-            {
-                "testimonials": self.get_queryset(),
-                "testimonial_form": TestimonialForm()
-            },
-        )
-
-    def post(self, _request):
-        """
-        A view to save data gathered in testimonial form
+        Call the delete() method on the fetched object,
+        then redirect to the success URL
         and show confirmation message.
-        Args:
-            self (object): Self object
-            request
-        Returns:
-            Save data, show confirmation message,
-            redirect to testimonial page after testimonial submit.
         """
-        if not self.request.user.is_authenticated:
-            raise PermissionDenied
+        self.object = self.get_object()  \
+            # pylint: disable=attribute-defined-outside-init
 
-        testimonial_form = TestimonialForm(data=self.request.POST)
+        success_url = self.get_success_url()
+        self.object.delete()
 
-        if testimonial_form.is_valid():
-            testimonial_form.instance.user = self.request.user
-            testimonial_form.save()
-            messages.add_message(
-                self.request,
-                messages.INFO,
-                'Testimonial request submitted!  We will respond shortly.')
-            return redirect(reverse('testimonial'))
-
-        return render(
+        messages.add_message(
             self.request,
-            "testimonial.html",
-            {
-                "testimonials": self.get_queryset(),
-                "testimonial_form": testimonial_form
-            }
-        )
+            messages.INFO,
+            'Post deleted successfully!')
+
+        return HttpResponseRedirect(success_url)

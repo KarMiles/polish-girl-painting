@@ -117,7 +117,6 @@ class PostList(generic.ListView):
         Staff users see live and draft posts
     """
     model = Post
-    # context_object_name = 'post_list'
 
     posts = Post.objects.all()
 

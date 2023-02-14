@@ -15,6 +15,22 @@ class Testimonial(models.Model):
     Class for the Testimonial model
     representing a testimonial written by user
     """
+    class Meta:
+        """
+        Order posts by creation time
+        """
+        ordering = ['-created_on']
+
+    def __str__(self):
+        """
+        Returns the testimonial content string
+        Args:
+            self (object): self.
+        Returns:
+            The testimonial content string
+        """
+        return self.content
+
     title = models.CharField(
         max_length=150,
         null=True,
@@ -30,19 +46,3 @@ class Testimonial(models.Model):
         auto_now=True)
     live = models.BooleanField(
         default=False)
-
-    class Meta:
-        """
-        Order posts by creation time
-        """
-        ordering = ['-created_on']
-
-    def __str__(self):
-        """
-        Returns the testimonial content string
-        Args:
-            self (object): self.
-        Returns:
-            The testimonial content string
-        """
-        return format(self.content)
