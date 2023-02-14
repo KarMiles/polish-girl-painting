@@ -1,1 +1,83 @@
-This is testimonials.html
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    {% include "includes/page_header.html" with title="Testimonials" subtitle="" %}
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+
+    <div class="container mb-4 col-12 col-md-10 offset-md-1">
+
+        <div class="row">
+            <div class="col">
+                {% if testimonial_list|length > 0 %}
+
+                    <!-- Testimonials -->
+                    {% for testimonial in testimonial_list %}
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <a href="{% url 'testimonial_detail' testimonial.id  %}"
+                                    <p class="card-title">{{ testimonial.title }}<p>
+                                </a>
+                                <p class="card-text text-muted h6">
+                                    {{ testimonial.author.get_full_name|default:testimonial.author.username }} | {{ testimonial.created_on | date:"d F Y"}}
+                                </p>
+                                <div class="row">
+                                    <div class="card-text col">
+                                        <p>
+                                            {{testimonial.content|safe }}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Superuser section -->
+                                {% if request.user.is_staff %}
+                                <div class="text-center">
+                                    <small>
+                                        <a href="{% url 'testimonial_edit' testimonial.id %}"  class="mr-1">Edit</a>
+                                        <a href="{% url 'testimonial_delete' testimonial.id %}" class="text-danger">Delete</a>
+                                    </small>
+                                </div>
+                                {% endif %}
+
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                    <!-- Back to page top button -->
+                    <div class="btt-button shadow-sm rounded-0 border border-black d-block d-md-none">
+                        <a class="btt-link d-flex h-100">
+                            <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+                        </a>
+                    </div>
+
+                {% else %}
+                    <p class="lead mb-5">Exciting content coming soon!</p>
+                    <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                        <span class="icon">
+                            <i class="fas fa-chevron-left"></i>
+                        </span>
+                        <span class="text-uppercase">Gallery</span>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+
+    <script type="text/javascript">
+
+        // Back to page top button script
+        $('.btt-link').click(function(e) {
+            window.scrollTo(0,0)
+        })
+
+    </script>
+
+{% endblock %}

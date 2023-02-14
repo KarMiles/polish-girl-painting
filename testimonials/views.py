@@ -87,7 +87,7 @@ def add_testimonial(request):
 
 
 @login_required
-def edit_testimonial(request, testimonial_id):
+def testimonial_edit(request, testimonial_id):
     """ Edit a testimonial in the store """
     if not request.user.is_staff:
         messages.error(request, 'Sorry, only store owners can do that.')

@@ -16,8 +16,8 @@ urlpatterns = [
         name='add_testimonial'),
     path(
         'edit/<int:testimonial_id>/',
-        views.edit_testimonial,
-        name='edit_testimonial'),
+        views.testimonial_edit,
+        name='testimonial_edit'),
     # path(
     #     'delete/<int:testimonial_id>/',
     #     views.delete_testimonial,
@@ -25,5 +25,5 @@ urlpatterns = [
     path(
         'delete/<pk>/',
         views.DeleteTestimonial.as_view(),
-        name='delete_testimonial'),
+        name='testimonial_delete'),
 ]
