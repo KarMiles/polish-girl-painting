@@ -20,11 +20,18 @@ class TestimonialsAdmin(admin.ModelAdmin):
         'title',
         'live',
         'created_on',
+        'updated_on',
         )
+
+    ordering = (
+        'created_on',
+        )
+
     search_fields = [
         'title',
         'content',
         ]
+        
     list_filter = (
         'live',
         )
