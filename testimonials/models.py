@@ -8,6 +8,18 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
+# Field choices
+
+# Priority
+PRIORITY_CHOICES = [
+    ("1 - Top", "Top"),
+    ("2 - High", "High"),
+    ("3 - Normal", "Normal"),
+    ("4 - Low", "Low"),
+    ("5 - Lowest", "Lowest"),
+]
+
+
 # Models for testimonials app
 
 class Testimonial(models.Model):
@@ -44,5 +56,11 @@ class Testimonial(models.Model):
         auto_now_add=True)
     updated_on = models.DateTimeField(
         auto_now=True)
+    priority = models.CharField(
+        max_length=10,
+        choices=PRIORITY_CHOICES,
+        default="3 - Normal",
+        null=True,
+        blank=True)
     live = models.BooleanField(
         default=False)

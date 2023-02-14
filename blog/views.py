@@ -109,10 +109,10 @@ class PostList(generic.ListView):
     """
     A view to show posts
     Args:
-        UpdateView: class based view
+        ListView: class based view
     Returns:
-        Render main page with paginated list of posts
-        Posts ordered by priority
+        Render page with list of posts
+        Posts ordered by date of creation
         Non-staff users see live posts only
         Staff users see live and draft posts
     """
@@ -122,7 +122,7 @@ class PostList(generic.ListView):
 
     template_name = "blog/blog.html"
     # paginate_by = 3
-    ordering = '-created_on'
+    ordering = ['-created_on']
 
     def get_queryset(self):
         queryset = super().get_queryset()

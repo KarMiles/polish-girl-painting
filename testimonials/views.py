@@ -8,7 +8,6 @@ from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
-from django.db.models import Q
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -18,18 +17,30 @@ from .forms import TestimonialForm
 
 # Views for testimonials app
 
-def all_testimonials(request):
+
+class TestimonialList(generic.ListView):
     """
-    A view for all testimonials
-    including sorting and search queries
+    A view to show testimonials
+    Args:
+        ListView: class based view
+    Returns:
+        Render page with a list of testimonials
+        Posts ordered by priority and date of creation
+        Non-staff users see live (aproved) testimonials only
+        Staff users see live and unapproved testimonials
     """
+    model = Testimonial
+
     testimonials = Testimonial.objects.all()
 
-    context = {
-        'testimonials': testimonials,
-    }
+    template_name = 'testimonials/testimonials.html'
+    ordering = ['priority', 'created_on']
 
-    return render(request, 'testimonials/testimonials.html', context)
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        if self.request.user.is_staff:
+            return queryset
+        return queryset.filter(live=True)
 
 
 def testimonial_detail(request, testimonial_id):
