@@ -1,5 +1,9 @@
+# 3rd party:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django.contrib import admin
 
+# Internal:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from .models import Product, Category
 
 
@@ -16,12 +20,15 @@ class ProductAdmin(admin.ModelAdmin):
         'updated_on',
     )
 
-    ordering = ('sku',)
+    ordering = (
+        'sku',
+        'title',
+        )
 
     search_fields = [
         'title',
         'excerpt',
-        'description'
+        'description',
     ]
 
     list_filter = (

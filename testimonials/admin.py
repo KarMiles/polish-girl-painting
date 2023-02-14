@@ -8,24 +8,23 @@ from django.contrib import admin
 from .models import Testimonial
 
 
-# Models for blog management in admin page
+# Models for testimonial management in admin page
 
 @admin.register(Testimonial)
 class TestimonialsAdmin(admin.ModelAdmin):
     """
-    Admin class for the blog model.
+    Admin class for the testimonial model.
     Section for managing testimonials.
     """
     list_display = (
         'title',
         'live',
         'created_on',
-        'updated_on')
-
+        )
     search_fields = [
         'title',
-        'content']
-
+        'content',
+        ]
     list_filter = (
         'live',
         )
