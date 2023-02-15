@@ -49,8 +49,10 @@ class Testimonial(models.Model):
         blank=True)
     author = models.ForeignKey(
         User,
-        on_delete=models.CASCADE,
-        related_name="testimonials")
+        on_delete=models.SET_NULL,
+        related_name="testimonials",
+        null=True,
+        blank=True)
     content = models.TextField()
     created_on = models.DateTimeField(
         auto_now_add=True)

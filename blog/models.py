@@ -24,8 +24,10 @@ class Post(models.Model):
         unique=True)
     author = models.ForeignKey(
         User,
-        on_delete=models.CASCADE,
-        related_name="blog_posts")
+        on_delete=models.SET_NULL,
+        related_name="blog_posts",
+        null=True,
+        blank=True)
     content = models.TextField()
     featured_image = models.ImageField(
         null=True,
