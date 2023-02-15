@@ -20,21 +20,14 @@ class TestimonialsAdmin(admin.ModelAdmin):
         'title',
         'live',
         'created_on',
-        'updated_on',
-        )
-
+        'updated_on')
     ordering = (
-        'created_on',
-        )
-
+        'created_on',)
     search_fields = [
         'title',
-        'content',
-        ]
-
+        'content']
     list_filter = (
-        'live',
-        )
+        'live',)
 
 
 # admin.site.register(Testimonial, TestimonialsAdmin)

@@ -12,8 +12,8 @@ urlpatterns = [
         name='testimonial_detail'),
     path(
         'add/',
-        views.add_testimonial,
-        name='add_testimonial'),
+        views.testimonial_add,
+        name='testimonial_add'),
     path(
         'edit/<int:testimonial_id>/',
         views.testimonial_edit,

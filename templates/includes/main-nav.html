@@ -15,8 +15,6 @@
                 Filter by...
             </a>
             <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-                <!-- <li><a href="#">Some action</a></li>
-                <li><a href="#">Some other action</a></li> -->
                 <li class="divider"></li>
                 <li class="dropdown-submenu">
                     <a tabindex="-1" href="#">
@@ -44,16 +42,6 @@
                 <li class="divider"></li>
             </ul>
         </div>
-
-        <li class="nav-item dropdown d-none">
-            <a class="logo-font font-weight-bold nav-link text-black mx-2" href="#" id="orientation-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Orientation
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="orientation-link">
-                <a href="{% url 'products' %}?orientation=Landscape" class="dropdown-item">Landscape</a>
-                <a href="{% url 'products' %}?orientation=Portrait" class="dropdown-item">Portrait</a>
-            </div>
-        </li>
 
         <li class="nav-item">
             <a href="{% url 'blog' %}" class="logo-font font-weight-bold nav-link text-black mx-2" id="blog-link">Blog</a>
