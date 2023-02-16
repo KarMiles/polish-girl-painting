@@ -103,18 +103,29 @@ def testimonial_edit(request, testimonial_id):
 
     # POST handler
     if request.method == 'POST':
-        form = TestimonialForm(request.POST, request.FILES, instance=testimonial)
+        form = TestimonialForm(
+            request.POST,
+            request.FILES,
+            instance=testimonial)
         if form.is_valid():
             testimonial = form.save()
-            messages.success(request, 'Successfully updated testimonial!')
-            return redirect(reverse('testimonial_detail', args=[testimonial.id]))
+            messages.success(
+                request,
+                'Successfully updated Testimonial!')
+            return redirect(
+                reverse(
+                    'testimonial_detail',
+                    args=[testimonial.id]))
         else:
             messages.error(
                 request,
-                'Failed to update testimonial. Please ensure the form is valid.')
+                'Failed to update testimonial. \
+                    Please ensure the form is valid.')
     else:
         form = TestimonialForm(instance=testimonial)
-        messages.info(request, f'You are editing {testimonial.title}')
+        messages.info(
+            request,
+            f'You are editing {testimonial.title}')
 
     template = 'testimonials/testimonial_edit.html'
     context = {
