@@ -60,17 +60,23 @@ def testimonial_detail(request, testimonial_id):
 @login_required
 def testimonial_add(request):
     """ Add a testimonial to the store """
-    if not request.user.is_staff:
-        messages.error(request, 'Sorry, only store owners can do that.')
+    if not request.user.is_authenticated:
+        messages.error(request, 'Sorry, only registered users can do that.')
         return redirect(reverse('home'))
 
     # POST handler:
     if request.method == 'POST':
         form = TestimonialForm(request.POST, request.FILES)
         if form.is_valid():
+            form.instance.author = request.user
             testimonial = form.save()
-            messages.success(request, 'Successfully added testimonial!')
-            return redirect(reverse('testimonial_detail', args=[testimonial.id]))
+            messages.success(
+                request,
+                'Thank you for sharing!')
+            return redirect(
+                reverse(
+                    'testimonial_detail',
+                    args=[testimonial.id]))
         else:
             messages.error(
                 request,
