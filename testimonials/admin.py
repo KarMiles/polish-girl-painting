@@ -21,8 +21,6 @@ class TestimonialsAdmin(admin.ModelAdmin):
         'live',
         'created_on',
         'updated_on')
-    ordering = (
-        'created_on',)
     search_fields = [
         'title',
         'content']
