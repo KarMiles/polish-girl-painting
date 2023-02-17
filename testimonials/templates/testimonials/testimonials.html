@@ -55,12 +55,20 @@
 
                 {% else %}
                     <p class="lead mb-5">Exciting content coming soon!</p>
-                    <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                        <span class="icon">
-                            <i class="fas fa-chevron-left"></i>
-                        </span>
-                        <span class="text-uppercase">Gallery</span>
-                    </a>
+                    <div class="mb-5">
+                        <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                            <span class="icon">
+                                <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="text-uppercase">Gallery</span>
+                        </a>
+                        <a href="{% url 'testimonial_add' %}" class="btn btn-black rounded-0 btn-lg">
+                            <span class="text-uppercase">Share my experience</span>
+                            <span class="icon">
+                                <i class="fas fa-feather-alt"></i>
+                            </span>
+                        </a>
+                    </div>
                 {% endif %}
             </div>
         </div>

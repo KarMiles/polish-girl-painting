@@ -215,6 +215,6 @@ class DeleteProduct(generic.DeleteView):
         messages.add_message(
             self.request,
             messages.INFO,
-            'Post deleted successfully!')
+            'Product deleted successfully!')
 
         return HttpResponseRedirect(success_url)

@@ -32,7 +32,7 @@ def profile(request):
     context = {
         'form': form,
         'orders': orders,
-        'on_profile_page': True
+        'hide_bag_toast': True
     }
 
     return render(request, template, context)

@@ -87,6 +87,7 @@ def testimonial_add(request):
     template = 'testimonials/testimonial_add.html'
     context = {
         'form': form,
+        'hide_bag_toast': True
     }
 
     return render(request, template, context)
@@ -95,9 +96,12 @@ def testimonial_add(request):
 @login_required
 def testimonial_edit(request, testimonial_id):
     """ Edit a testimonial in the store """
-    if not request.user.is_staff:
-        messages.error(request, 'Sorry, only store owners can do that.')
-        return redirect(reverse('home'))
+    if not request.user.is_authorized:
+        messages.error(
+            request,
+            'Sorry, only authorized users can do that.')
+        return redirect(
+            reverse('home'))
 
     testimonial = get_object_or_404(Testimonial, pk=testimonial_id)
 
@@ -131,40 +135,28 @@ def testimonial_edit(request, testimonial_id):
     context = {
         'form': form,
         'testimonial': testimonial,
+        'hide_bag_toast': True
     }
 
     return render(request, template, context)
 
 
-class DeleteTestimonial(generic.DeleteView):
-    """
-    A view to delete a testimonial
-    Args:
-        DeleteView: generic class based view
-    Returns:
-        Request confirmation of testimonial deletion
-        Redirect to testimonials page after delete
-    """
-    success_url = reverse_lazy('testimonials')
-    queryset = Testimonial.objects.all()
-    template_name = 'testimonials/testimonial_delete_confirm.html'
+@login_required
+def testimonial_delete(request, testimonial_id):
+    """ Delete a testimonial from the list """
+    if not request.user.is_authenticated:
+        messages.error(
+            request,
+            'Sorry, only authorised users can do that.')
+        return redirect(reverse('home'))
 
-    @method_decorator(login_required)
-    def delete(self, request, *args, **kwargs):
-        """
-        Call the delete() method on the fetched object,
-        then redirect to the success URL
-        and show confirmation message.
-        """
-        self.object = self.get_object()  \
-            # pylint: disable=attribute-defined-outside-init
+    testimonial = get_object_or_404(Testimonial, pk=testimonial_id)
+    testimonial.delete()
+    messages.success(request, 'Testimonial deleted!')
 
-        success_url = self.get_success_url()
-        self.object.delete()
+    template = 'testimonials/testimonials.html'
+    context = {
+        'hide_bag_toast': True
+    }
 
-        messages.add_message(
-            self.request,
-            messages.INFO,
-            'Post deleted successfully!')
-
-        return HttpResponseRedirect(success_url)
+    return render(request, template, context)
