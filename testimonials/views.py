@@ -58,54 +58,6 @@ def testimonial_detail(request, testimonial_id):
     return render(request, 'testimonials/testimonial_detail.html', context)
 
 
-# @login_required
-# def testimonial_add(self, request, id):
-#     """ Add a testimonial to the store """
-#     if not request.user.is_authenticated:
-#         messages.error(request, 'Sorry, only registered users can do that.')
-#         return redirect(reverse('home'))
-
-#     # POST handler:
-#     if request.method == 'POST':
-#         form = TestimonialForm(request.POST)
-#         if form.is_valid():
-#             form.instance.author = request.user
-#             testimonial = form.save()
-#             messages.success(
-#                 request,
-#                 'Testimonial added. Thank you for sharing!')
-
-#             # return redirect(
-#             #     reverse(
-#             #         'testimonial_detail',
-#             #         args=[testimonial.id]))
-            
-#             queryset = self.get_queryset()
-#             testimonial = get_object_or_404(queryset, pk=testimonial.id)
-
-#             template = 'testimonials/testimonial_detail.html'
-#             context = {
-#                 'form': form,
-#                 'hide_bag_toast': True
-#             }
-#             return render(request, template, context)
-
-#         else:
-#             messages.error(
-#                 request,
-#                 'Failed to add testimonial. Please ensure the form is valid.')
-#     else:
-#         form = TestimonialForm()
-
-#     template = 'testimonials/testimonial_add.html'
-#     context = {
-#         'form': form,
-#         'hide_bag_toast': True
-#     }
-
-#     return render(request, template, context)
-
-
 @login_required
 def testimonial_add(request):
     """ Add a testimonial to the store """
@@ -155,7 +107,7 @@ def testimonial_add(request):
 @login_required
 def testimonial_edit(request, testimonial_id):
     """ Edit a testimonial in the store """
-    if not request.user.is_authorized:
+    if not request.user.is_authenticated:
         messages.error(
             request,
             'Sorry, only authorized users can do that.')
@@ -174,11 +126,21 @@ def testimonial_edit(request, testimonial_id):
             testimonial = form.save()
             messages.success(
                 request,
-                'Successfully updated Testimonial!')
-            return redirect(
-                reverse(
-                    'testimonial_detail',
-                    args=[testimonial.id]))
+                f'Successfully updated {testimonial.title}!')
+            # return redirect(
+            #     reverse(
+            #         'testimonial_detail',
+            #         args=[testimonial.id]))
+
+            template = 'testimonials/testimonial_detail.html'
+            context = {
+                'form': form,
+                'testimonial': testimonial,
+                'hide_bag_toast': True
+            }
+
+            return render(request, template, context)
+
         else:
             messages.error(
                 request,
