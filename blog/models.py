@@ -45,7 +45,7 @@ class Post(models.Model):
         """
         Order posts by creation time
         """
-        ordering = ['created_on']
+        ordering = ['-created_on']
 
     def __str__(self):
         """
