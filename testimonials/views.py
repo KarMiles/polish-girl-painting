@@ -123,17 +123,18 @@ def testimonial_add(request):
                 request,
                 'Testimonial added. Thank you for sharing!')
 
-            return redirect(
-                reverse(
-                    'testimonial_detail',
-                    args=[testimonial.id]))
+            # return redirect(
+            #     reverse(
+            #         'testimonial_detail',
+            #         args=[testimonial.id]))
 
-            # template = 'testimonials/testimonial_detail.html'
-            # context = {
-            #     'form': form,
-            #     'hide_bag_toast': True
-            # }
-            # return render(request, template, context)
+            template = 'testimonials/testimonial_detail.html'
+            context = {
+                'form': form,
+                'testimonial': testimonial,
+                'hide_bag_toast': True
+            }
+            return render(request, template, context)
 
         else:
             messages.error(
