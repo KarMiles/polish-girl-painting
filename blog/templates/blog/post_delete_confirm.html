@@ -11,7 +11,8 @@
 <div class="row">
     <div class="col-sm-8 mt-3 offset-sm-2">
         <div class="mx-2 mb-5">
-            <form method="post">{% csrf_token %}
+            <form method="post">
+                {% csrf_token %}
                 <h2>
                     Delete?
                 </h2>
@@ -19,10 +20,12 @@
                     Are you sure you want to permanently delete <strong>{{ object }}</strong>?
                 </p>
                 {{ form }}
-                <input type="submit" value="Confirm" class="btn btn-lg btn-danger btn-attn  float-start rounded-0">
+                <input type="submit" value="Confirm" 
+                    class="btn btn-lg btn-danger btn-attn  float-start rounded-0">
     
                 <!-- Navigation - Cancel and go back to post -->
-                <a href="{% url 'post_detail' post.slug %}" class="btn btn-lg btn-cancel btn-outline-black rounded-0"> Cancel </a>
+                <a href="{% url 'post_detail' post.slug %}" 
+                    class="btn btn-lg btn-cancel btn-outline-black rounded-0"> Cancel </a>
             </form>
         </div>
     </div>

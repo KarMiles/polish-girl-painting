@@ -8,6 +8,7 @@ from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+from django.contrib.auth.mixins import AccessMixin
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -57,6 +58,54 @@ def testimonial_detail(request, testimonial_id):
     return render(request, 'testimonials/testimonial_detail.html', context)
 
 
+# @login_required
+# def testimonial_add(self, request, id):
+#     """ Add a testimonial to the store """
+#     if not request.user.is_authenticated:
+#         messages.error(request, 'Sorry, only registered users can do that.')
+#         return redirect(reverse('home'))
+
+#     # POST handler:
+#     if request.method == 'POST':
+#         form = TestimonialForm(request.POST)
+#         if form.is_valid():
+#             form.instance.author = request.user
+#             testimonial = form.save()
+#             messages.success(
+#                 request,
+#                 'Testimonial added. Thank you for sharing!')
+
+#             # return redirect(
+#             #     reverse(
+#             #         'testimonial_detail',
+#             #         args=[testimonial.id]))
+            
+#             queryset = self.get_queryset()
+#             testimonial = get_object_or_404(queryset, pk=testimonial.id)
+
+#             template = 'testimonials/testimonial_detail.html'
+#             context = {
+#                 'form': form,
+#                 'hide_bag_toast': True
+#             }
+#             return render(request, template, context)
+
+#         else:
+#             messages.error(
+#                 request,
+#                 'Failed to add testimonial. Please ensure the form is valid.')
+#     else:
+#         form = TestimonialForm()
+
+#     template = 'testimonials/testimonial_add.html'
+#     context = {
+#         'form': form,
+#         'hide_bag_toast': True
+#     }
+
+#     return render(request, template, context)
+
+
 @login_required
 def testimonial_add(request):
     """ Add a testimonial to the store """
@@ -72,11 +121,20 @@ def testimonial_add(request):
             testimonial = form.save()
             messages.success(
                 request,
-                'Thank you for sharing!')
+                'Testimonial added. Thank you for sharing!')
+
             return redirect(
                 reverse(
                     'testimonial_detail',
                     args=[testimonial.id]))
+
+            # template = 'testimonials/testimonial_detail.html'
+            # context = {
+            #     'form': form,
+            #     'hide_bag_toast': True
+            # }
+            # return render(request, template, context)
+
         else:
             messages.error(
                 request,
@@ -141,22 +199,36 @@ def testimonial_edit(request, testimonial_id):
     return render(request, template, context)
 
 
-@login_required
-def testimonial_delete(request, testimonial_id):
-    """ Delete a testimonial from the list """
-    if not request.user.is_authenticated:
-        messages.error(
-            request,
-            'Sorry, only authorised users can do that.')
-        return redirect(reverse('home'))
+class TestimonialDelete(generic.DeleteView):
+    """
+    A view to delete a testimonial
+    Args:
+        DeleteView: generic class based view
+    Returns:
+        Request confirmation of testimonial deletion
+        Redirect to testimonials list after delete
+    """
+    success_url = reverse_lazy('testimonials')
+    queryset = Testimonial.objects.all()
+    template_name = 'testimonials/testimonial_delete_confirm.html'
 
-    testimonial = get_object_or_404(Testimonial, pk=testimonial_id)
-    testimonial.delete()
-    messages.success(request, 'Testimonial deleted!')
+    # @method_decorator(login_required)
+    def delete(self, request, *args, **kwargs):
+        """
+        Call the delete() method on the fetched object,
+        then redirect to the success URL
+        and show confirmation message.
+        """
+        self.object = self.get_object()  \
+            # pylint: disable=attribute-defined-outside-init
 
-    template = 'testimonials/testimonials.html'
-    context = {
-        'hide_bag_toast': True
-    }
+        success_url = self.get_success_url()
+        print(success_url)
+        self.object.delete()
 
-    return render(request, template, context)
+        messages.add_message(
+            self.request,
+            messages.INFO,
+            'Testimonial deleted successfully!')
+
+        return HttpResponseRedirect(success_url)

@@ -24,11 +24,11 @@ urlpatterns = [
         views.PostDetail.as_view(),
         name="post_detail"),
     path(
-        "post_delete/<slug:slug>/",
-        views.DeletePost.as_view(),
-        name="post_delete"),
-    path(
         "post_edit/<slug:slug>/",
         views.EditPost.as_view(),
         name="post_edit"),
+    path(
+        "post_delete/<slug:slug>/",
+        views.DeletePost.as_view(),
+        name="post_delete"),
 ]
