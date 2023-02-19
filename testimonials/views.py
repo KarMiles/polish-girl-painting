@@ -122,10 +122,6 @@ def testimonial_edit(request, testimonial_id):
             messages.success(
                 request,
                 f'Successfully updated {testimonial.title}')
-            # return redirect(
-            #     reverse(
-            #         'testimonial_detail',
-            #         args=[testimonial.id]))
 
             template = 'testimonials/testimonial_detail.html'
             context = {
