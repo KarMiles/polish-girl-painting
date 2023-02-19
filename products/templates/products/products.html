@@ -83,6 +83,17 @@
                                         </a>
                                         <hr class="hr-middle">
                                         <p class="mb-0">{{ product.excerpt }}</p>
+
+                                        {% if request.user.is_staff and not product.live %}
+                                            <small>
+                                                <a href="{% url 'edit_product' product.id %}"  class="mr-1">
+                                                    <span class="text-danger">
+                                                        Product is not live
+                                                    </span>
+                                                </a>
+                                            </small>
+                                        {% endif %}
+
                                     </div>
 
                                     <!-- Superuser section -->
