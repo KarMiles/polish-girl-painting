@@ -152,8 +152,13 @@ def edit_product(request, product_id):
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
             product = form.save()
-            messages.success(request, 'Successfully updated product!')
-            return redirect(reverse('product_detail', args=[product.id]))
+            messages.success(
+                request,
+                'Successfully updated {{ product.title }}')
+            return redirect(
+                reverse(
+                    'product_detail',
+                    args=[product.id]))
         else:
             messages.error(
                 request,

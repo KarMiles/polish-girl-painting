@@ -35,7 +35,7 @@ class TestimonialList(generic.ListView):
     testimonials = Testimonial.objects.all()
 
     template_name = 'testimonials/testimonials.html'
-    ordering = ['priority', '-created_on']
+    ordering = ['live', 'priority', '-created_on']
 
     def get_queryset(self):
         queryset = super().get_queryset()
@@ -73,12 +73,7 @@ def testimonial_add(request):
             testimonial = form.save()
             messages.success(
                 request,
-                'Testimonial added. Thank you for sharing!')
-
-            # return redirect(
-            #     reverse(
-            #         'testimonial_detail',
-            #         args=[testimonial.id]))
+                'Thank you for sharing! Your Testimonial is pending approval.')
 
             template = 'testimonials/testimonial_detail.html'
             context = {
@@ -126,7 +121,7 @@ def testimonial_edit(request, testimonial_id):
             testimonial = form.save()
             messages.success(
                 request,
-                f'Successfully updated {testimonial.title}!')
+                f'Successfully updated {testimonial.title}')
             # return redirect(
             #     reverse(
             #         'testimonial_detail',
