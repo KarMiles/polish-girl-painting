@@ -2,6 +2,7 @@
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django import forms
+from allauth.account.adapter import get_adapter
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -20,4 +21,5 @@ class TestimonialForm(forms.ModelForm):
         fields = (
             'title',
             'content',
+            'live'
             )

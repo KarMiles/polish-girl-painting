@@ -107,7 +107,7 @@ def testimonial_add(request):
 @login_required
 def testimonial_edit(request, testimonial_id):
     """ Edit a testimonial in the store """
-    if not request.user.is_authenticated:
+    if not request.user.is_staff:
         messages.error(
             request,
             'Sorry, only authorized users can do that.')
