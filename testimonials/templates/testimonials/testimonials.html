@@ -36,12 +36,24 @@
                                 <div class="row">
                                     <div class="card-text col">
                                         <p>
-                                            {{testimonial.content|safe }}
+                                            {{ testimonial.content|safe|stringformat:".1000s" }}
+                                            {% if testimonial.content|length > 1000 %}
+                                                ...
+                                                </p>
+                                                <p>
+                                                    <a href="{% url 'testimonial_detail' testimonial.id  %}"
+                                                        class="btn btn-outline-black rounded-0 px-1 py-1 mx-2">
+                                                        <span class="text-uppercase mx-1">Read more</span>
+                                                        <span class="icon">
+                                                            <i class="fas fa-chevron-right"></i>
+                                                        </span>
+                                                    </a>
+                                            {% endif %}
                                         </p>
                                     </div>
                                 </div>
 
-                                <!-- Superuser section -->
+                                <!-- Staff section -->
                                 {% if request.user.is_staff %}
                                 <div class="text-center">
                                     <small>

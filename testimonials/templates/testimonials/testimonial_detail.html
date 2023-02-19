@@ -16,7 +16,17 @@
                     <!-- Post -->
                     <div class="card px-2 py-3">
                         <h4 class="card-title ml-3">{{ testimonial.title }}</h4>
-                        <p class="card-text text-muted h6 ml-3">{{ testimonial.author.get_full_name|default:testimonial.author.username }} | {{ testimonial.created_on | date:"d F Y" }} </p>
+                        <p class="card-text text-muted h6 ml-3">
+                            {{ testimonial.author.get_full_name|default:testimonial.author.username }} 
+                            | {{ testimonial.created_on | date:"d F Y" }}
+
+                            {% if not testimonial.live %}
+                                    |
+                                    <span class="text-danger">
+                                        Awaiting approval
+                                    </span>
+                            {% endif %}
+                        </p>
                         <div class="card-body">
                             <div class="col-12">
                                 <p class="card-text mb-2">{{testimonial.content|safe }}</p>
