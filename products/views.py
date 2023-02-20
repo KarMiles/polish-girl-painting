@@ -31,6 +31,7 @@ def all_products(request):
     orientation = None
     orientations = None
     categories = None
+    categories_all = Category.objects.all()
     highlights = None
 
     if request.GET:
@@ -83,6 +84,7 @@ def all_products(request):
         'orientation': orientation,
         'current_orientations': orientations,
         'current_categories': categories,
+        'categories_all': categories_all,
         'highlights': highlights,
     }
 

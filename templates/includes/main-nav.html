@@ -10,7 +10,7 @@
         </li>
         
 
-        <div class="dropdown">
+        <div class="dropdown d-none">
             <a id="dLabel" role="button" data-toggle="dropdown" class="logo-font font-weight-bold nav-link text-black mx-2" data-target="#" href="#">
                 Filter by...
             </a>
@@ -31,11 +31,15 @@
                         Category
                     </a>
                     <ul class="dropdown-menu">
+                        <!-- 
                         <li><a tabindex="-1" href="{% url 'products' %}?category=calendar">Calendars</a></li>
                         <li><a tabindex="-1" href="{% url 'products' %}?category=drawing">Drawings</a></li>
                         <li><a tabindex="-1" href="{% url 'products' %}?category=painting">Paintings</a></li>
                         <li><a tabindex="-1" href="{% url 'products' %}?category=postcard">Postcards</a></li>
-                        <li><a tabindex="-1" href="{% url 'products' %}?category=print">Prints</a></li>
+                        <li><a tabindex="-1" href="{% url 'products' %}?category=print">Prints</a></li> -->
+                        {% for cat in categories %}
+                            <li><a tabindex="-1" class="text-capitalize" href="{% url 'products' %}?category={{ cat }}">{{ cat }}s</a></li>
+                        {% endfor %}
                         <li class="divider"></li>
                     </ul>
                 </li>
@@ -49,6 +53,12 @@
 
         <li class="nav-item">
             <a href="{% url 'testimonials' %}" class="logo-font font-weight-bold nav-link text-black mx-2" id="testimonials-link">Testimonials</a>
+        </li>
+
+        <li class="nav-item">
+            <a href="{% url 'testimonials' %}" 
+                class="logo-font font-weight-bold nav-link text-black mx-2">
+            </a>
         </li>
 
     </ul>
