@@ -11,34 +11,42 @@
         
         {% if categories_all %}
         <div class="dropdown d-sm-none">
-            <a id="dLabel" role="button" data-toggle="dropdown" class="logo-font font-weight-bold nav-link text-black mx-2" data-target="#" href="#">
-                Filter by...
+
+            <a role="button" data-toggle="dropdown" class="logo-font font-weight-bold nav-link text-black mx-2" data-target="#" href="#">
+                Avalability
             </a>
-            <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-                <li class="divider"></li>
-                <li class="dropdown-submenu">
-                    <a tabindex="-1" href="#">
-                        Availability
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                <li>
+                    <a tabindex="-1" href="{% url 'products' %}?available=True">
+                        Available
                     </a>
-                    <ul class="dropdown-menu">
-                        <li><a tabindex="-1" href="{% url 'products' %}?available=True">Available</a></li>
-                        <li><a tabindex="-1" href="{% url 'products' %}?live=True&available=False">Not available</a></li>
-                    </ul>
                 </li>
                 <li class="divider"></li>
-                <li class="dropdown-submenu">
-                    <a tabindex="-1" href="#">
-                        Category
+                <li>
+                    <a tabindex="-1" href="{% url 'products' %}?available=False">
+                        Unavailable
                     </a>
-                    <ul class="dropdown-menu">
-                        {% for cat in categories_all %}
-                            <li><a tabindex="-1" class="text-capitalize" href="{% url 'products' %}?category={{ cat }}">{{ cat }}</a></li>
-                        {% endfor %}
-                        <li class="divider"></li>
-                    </ul>
                 </li>
-                <li class="divider"></li>
             </ul>
+        </div>
+        <div class="dropdown d-sm-none">
+
+            <a role="button" data-toggle="dropdown" class="logo-font font-weight-bold nav-link text-black mx-2" data-target="#" href="#">
+                Category
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+
+                {% for cat in categories_all %}
+                <li>
+                    <a tabindex="-1" href="{% url 'products' %}?category={{ cat }}" class="text-capitalize">
+                        {{ cat }}
+                    </a>
+                </li>
+                <li class="divider"></li>
+                {% endfor %}
+
+            </ul>
+
         </div>
         {% endif %}
 
