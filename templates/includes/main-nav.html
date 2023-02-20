@@ -9,8 +9,8 @@
             <a href="{% url 'products' %}" class="logo-font font-weight-bold nav-link text-black mx-2" id="all-products-link">Gallery</a>
         </li>
         
-
-        <div class="dropdown d-none">
+        {% if categories_all %}
+        <div class="dropdown">
             <a id="dLabel" role="button" data-toggle="dropdown" class="logo-font font-weight-bold nav-link text-black mx-2" data-target="#" href="#">
                 Filter by...
             </a>
@@ -26,7 +26,7 @@
                     </ul>
                 </li>
                 <li class="divider"></li>
-                <li class="dropdown-submenu">
+                <li class="dropdown-submenu  d-sm-none">
                     <a tabindex="-1" href="#">
                         Category
                     </a>
@@ -37,8 +37,8 @@
                         <li><a tabindex="-1" href="{% url 'products' %}?category=painting">Paintings</a></li>
                         <li><a tabindex="-1" href="{% url 'products' %}?category=postcard">Postcards</a></li>
                         <li><a tabindex="-1" href="{% url 'products' %}?category=print">Prints</a></li> -->
-                        {% for cat in categories %}
-                            <li><a tabindex="-1" class="text-capitalize" href="{% url 'products' %}?category={{ cat }}">{{ cat }}s</a></li>
+                        {% for cat in categories_all %}
+                            <li><a tabindex="-1" class="text-capitalize" href="{% url 'products' %}?category={{ cat }}">{{ cat }}</a></li>
                         {% endfor %}
                         <li class="divider"></li>
                     </ul>
@@ -46,6 +46,7 @@
                 <li class="divider"></li>
             </ul>
         </div>
+        {% endif %}
 
         <li class="nav-item">
             <a href="{% url 'blog' %}" class="logo-font font-weight-bold nav-link text-black mx-2" id="blog-link">Blog</a>

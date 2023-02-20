@@ -115,16 +115,21 @@
                     <h4 class="logo-font my-1">
 
                         <!-- Banner for Gallery -->
-                        <span class="navbar-nav w-auto mx-auto inline">
+                        <span class="navbar-nav w-auto mx-auto inline d-none d-sm-block">
                             {% if categories_all %}
                                 <div class="row col-10 offset-1">
                                     {% for cat in categories_all %}
                                         <div class="col">
-                                            <a tabindex="-1" class="text-white small" href="{% url 'products' %}?category={{ cat }}">{{ cat }}s</a>
+                                            <a tabindex="-1" class="text-white small" href="{% url 'products' %}?category={{ cat }}">{{ cat }}</a>
                                         </div>
                                     {% endfor %}
                                 </div>
                             {% endif %}
+                        </span>
+                        <span class="d-sm-none">
+                            Click
+                            <a href="{% url 'products' %}?highlight=True" class="text-white"><strong>here</strong></a>
+                            to see what's new!
                         </span>
 
                         <!-- Banner for other pages -->
