@@ -9,120 +9,132 @@
     <div class="overlay"></div>
 
     <div class="container col-12">
-    <div class="row">
-    
-    <!-- Testimonials -->
-    <div class="container mb-4 col-8">
-
         <div class="row">
-            <div class="col">
-                {% if testimonial_list|length > 0 %}
 
-                    <!-- Testimonials -->
-                    <div class="article">
-                        <h4 class="mx-2 mb-3">
-                            Feedback
-                        </h4>
-                        <!-- <p class="mb-4 mx-2">
-                            I'm ever-so grateful for all the feedback I am getting from my followers and customers. <br>
-                            I invite you to also share your impressions and experiences we had an opportunity to create together!
-                        </p> -->
-                    </div>
-                    {% for testimonial in testimonial_list %}
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <a href="{% url 'testimonial_detail' testimonial.id  %}"
-                                    <p class="card-title">{{ testimonial.title }}<p>
-                                </a>
-                                <p class="card-text text-muted h6">
-                                    {{ testimonial.author.get_full_name|default:testimonial.author.username }} 
-                                    | {{ testimonial.created_on | date:"d F Y"}}
-                                    {% if request.user.is_staff and not testimonial.live %}
-                                        <a href="{% url 'testimonial_edit' testimonial.id %}"  class="mr-1">
-                                            |
-                                            <span class="text-danger">
-                                                Awaiting approval
-                                            </span>
-                                        </a>
-                                    {% endif %}
+            <!-- About Me section -->
+            <div class="container mb-4 col-md-4 order-sm-first order-md-last">
+                <h4 class="mb-3">
+                    About Me
+                </h4>
+                <div class="card mb-4">
+        
+                    <div class="card-body">
+                        <a href=""
+                            <p class="card-title">{ { testimonial.title } }<p>
+                        </a>
+                        <div class="row">
+                            <div class="card-text col">
+                                <p>
+                                    About Me text.
                                 </p>
-                                <div class="row">
-                                    <div class="card-text col">
-                                        <p>
-                                            {{ testimonial.content|safe|stringformat:".1000s" }}
-                                            {% if testimonial.content|length > 1000 %}
-                                                ...
-                                                </p>
-                                                <p>
-                                                    <a href="{% url 'testimonial_detail' testimonial.id  %}"
-                                                        class="btn btn-outline-black rounded-0 px-1 py-1 mx-2">
-                                                        <span class="text-uppercase mx-1">Read more</span>
-                                                        <span class="icon">
-                                                            <i class="fas fa-chevron-right"></i>
-                                                        </span>
-                                                    </a>
-                                            {% endif %}
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <!-- Staff section -->
-                                {% if request.user.is_staff %}
-                                <div class="text-center">
-                                    <small>
-                                        <a href="{% url 'testimonial_edit' testimonial.id %}"  class="mr-1">Edit</a>
-                                        <a href="{% url 'testimonial_delete' testimonial.id %}" class="text-danger">Delete</a>
-                                    </small>
-                                </div>
-                                {% endif %}
-
                             </div>
                         </div>
-                    {% endfor %}
-
-                    <a href="{% url 'testimonial_add' %}" class="btn btn-black rounded-0 btn-lg">
-                        <span class="text-uppercase">Share my experience</span>
-                        <span class="icon">
-                            <i class="fas fa-feather-alt"></i>
-                        </span>
-                    </a>
-
-                    <!-- Back to page top button -->
-                    <div class="btt-button shadow-sm rounded-0 border border-black d-block d-md-none">
-                        <a class="btt-link d-flex h-100">
-                            <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
-                        </a>
+        
                     </div>
-
-                {% else %}
-                    <p class="lead mb-5">Exciting content coming soon!</p>
-                    <div class="mb-5">
-                        <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                            <span class="icon">
-                                <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="text-uppercase">Gallery</span>
-                        </a>
-                        <a href="{% url 'testimonial_add' %}" class="btn btn-black rounded-0 btn-lg">
-                            <span class="text-uppercase">Share my experience</span>
-                            <span class="icon">
-                                <i class="fas fa-feather-alt"></i>
-                            </span>
-                        </a>
-                    </div>
-                {% endif %}
+        
+                </div>
             </div>
+        
+            <!-- Testimonials -->
+            <div class="container mb-4 col-md-8">
+
+                <div class="row">
+                    <div class="col">
+                        {% if testimonial_list|length > 0 %}
+
+                            <div class="article">
+                                <h4 class="mx-2 mb-3">
+                                    Feedback
+                                </h4>
+                            </div>
+                            {% for testimonial in testimonial_list %}
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <a href="{% url 'testimonial_detail' testimonial.id  %}"
+                                            <p class="card-title">{{ testimonial.title }}<p>
+                                        </a>
+                                        <p class="card-text text-muted h6">
+                                            {{ testimonial.author.get_full_name|default:testimonial.author.username }} 
+                                            | {{ testimonial.created_on | date:"d F Y"}}
+                                            {% if request.user.is_staff and not testimonial.live %}
+                                                <a href="{% url 'testimonial_edit' testimonial.id %}"  class="mr-1">
+                                                    |
+                                                    <span class="text-danger">
+                                                        Awaiting approval
+                                                    </span>
+                                                </a>
+                                            {% endif %}
+                                        </p>
+                                        <div class="row">
+                                            <div class="card-text col">
+                                                <p>
+                                                    {{ testimonial.content|safe|stringformat:".1000s" }}
+                                                    {% if testimonial.content|length > 1000 %}
+                                                        ...
+                                                        </p>
+                                                        <p>
+                                                            <a href="{% url 'testimonial_detail' testimonial.id  %}"
+                                                                class="btn btn-outline-black rounded-0 px-1 py-1 mx-2">
+                                                                <span class="text-uppercase mx-1">Read more</span>
+                                                                <span class="icon">
+                                                                    <i class="fas fa-chevron-right"></i>
+                                                                </span>
+                                                            </a>
+                                                    {% endif %}
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Staff section -->
+                                        {% if request.user.is_staff %}
+                                        <div class="text-center">
+                                            <small>
+                                                <a href="{% url 'testimonial_edit' testimonial.id %}"  class="mr-1">Edit</a>
+                                                <a href="{% url 'testimonial_delete' testimonial.id %}" class="text-danger">Delete</a>
+                                            </small>
+                                        </div>
+                                        {% endif %}
+
+                                    </div>
+                                </div>
+                            {% endfor %}
+
+                            <a href="{% url 'testimonial_add' %}" class="btn btn-black rounded-0 btn-lg">
+                                <span class="text-uppercase">Share my experience</span>
+                                <span class="icon">
+                                    <i class="fas fa-feather-alt"></i>
+                                </span>
+                            </a>
+
+                            <!-- Back to page top button -->
+                            <div class="btt-button shadow-sm rounded-0 border border-black d-block d-md-none">
+                                <a class="btt-link d-flex h-100">
+                                    <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+                                </a>
+                            </div>
+
+                        {% else %}
+                            <p class="lead mb-5">Exciting content coming soon!</p>
+                            <div class="mb-5">
+                                <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                                    <span class="icon">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="text-uppercase">Gallery</span>
+                                </a>
+                                <a href="{% url 'testimonial_add' %}" class="btn btn-black rounded-0 btn-lg">
+                                    <span class="text-uppercase">Share my experience</span>
+                                    <span class="icon">
+                                        <i class="fas fa-feather-alt"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </div>
-
-    <!-- About Me section -->
-    <div class="aside mb-4 col-4">
-        <h4 class="mb-3">
-            About Me
-        </h4>
-    </div>
-
-    </div>
     </div>
 
 {% endblock %}
