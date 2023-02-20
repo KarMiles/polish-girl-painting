@@ -53,7 +53,7 @@
 
                                 <!-- Superuser section -->
                                 {% if request.user.is_staff %}
-                                <div class="text-center">
+                                <div class="text-center mb-3">
                                     <small>
                                         <a href="{% url 'post_edit' post.slug %}"  class="mr-1">Edit</a>
                                         <a href="{% url 'post_delete' post.slug %}" class="text-danger">Delete</a>

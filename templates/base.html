@@ -115,29 +115,39 @@
                     <h4 class="logo-font my-1">
 
                         <!-- Banner for Gallery -->
-                        <span class="navbar-nav w-auto mx-auto inline d-none d-sm-block">
+                        <span class="navbar-nav w-auto mx-auto inline">
                             {% if categories_all %}
-                                <div class="row col-10 offset-1">
-                                    {% for cat in categories_all %}
-                                        <div class="col">
-                                            <a tabindex="-1" class="text-white small" href="{% url 'products' %}?category={{ cat }}">{{ cat }}</a>
-                                        </div>
-                                    {% endfor %}
+                                <div class="col-10 offset-1 d-none d-sm-block">
+                                    <div class="row">
+                                        {% for cat in categories_all %}
+                                            <div class="col">
+                                                <a tabindex="-1" class="text-white small" href="{% url 'products' %}?category={{ cat }}">{{ cat }}</a>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
                                 </div>
+                                <span class="d-sm-none">
+                                    Click
+                                    <a href="{% url 'products' %}?highlight=True" class="text-white"><strong>here</strong></a>
+                                    to see what's new!!
+                                </span>
+                            {% else %}
+                                <span>
+                                    Click
+                                    <a href="{% url 'products' %}?highlight=True" class="text-white"><strong>here</strong></a>
+                                    to see what's new!
+                                </span>
                             {% endif %}
                         </span>
-                        <span class="d-sm-none">
-                            Click
-                            <a href="{% url 'products' %}?highlight=True" class="text-white"><strong>here</strong></a>
-                            to see what's new!
-                        </span>
+
 
                         <!-- Banner for other pages -->
-                        {% if not categories_all %}
+                        <!-- {% if not categories_all %}
                             Click
                             <a href="{% url 'products' %}?highlight=True" class="text-white"><strong>here</strong></a>
-                            to see what's new!
-                        {% endif %}
+                            to see what's new!!
+
+                        {% endif %} -->
                         
                     </h4>
                 </div>
