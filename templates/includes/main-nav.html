@@ -10,7 +10,7 @@
         </li>
         
         {% if categories_all %}
-        <div class="dropdown">
+        <div class="dropdown d-sm-none">
             <a id="dLabel" role="button" data-toggle="dropdown" class="logo-font font-weight-bold nav-link text-black mx-2" data-target="#" href="#">
                 Filter by...
             </a>
@@ -26,17 +26,11 @@
                     </ul>
                 </li>
                 <li class="divider"></li>
-                <li class="dropdown-submenu  d-sm-none">
+                <li class="dropdown-submenu">
                     <a tabindex="-1" href="#">
                         Category
                     </a>
                     <ul class="dropdown-menu">
-                        <!-- 
-                        <li><a tabindex="-1" href="{% url 'products' %}?category=calendar">Calendars</a></li>
-                        <li><a tabindex="-1" href="{% url 'products' %}?category=drawing">Drawings</a></li>
-                        <li><a tabindex="-1" href="{% url 'products' %}?category=painting">Paintings</a></li>
-                        <li><a tabindex="-1" href="{% url 'products' %}?category=postcard">Postcards</a></li>
-                        <li><a tabindex="-1" href="{% url 'products' %}?category=print">Prints</a></li> -->
                         {% for cat in categories_all %}
                             <li><a tabindex="-1" class="text-capitalize" href="{% url 'products' %}?category={{ cat }}">{{ cat }}</a></li>
                         {% endfor %}
