@@ -66,3 +66,27 @@ class Testimonial(models.Model):
         blank=True)
     live = models.BooleanField(
         default=False)
+
+
+class AboutMe(models.Model):
+    """
+    Class for the AboutMe model
+    representing a text written by staff user
+    """
+    def __str__(self):
+        """
+        Returns the testimonial content string
+        Args:
+            self (object): self.
+        Returns:
+            The testimonial content string
+        """
+        return self.title
+
+    title = models.CharField(
+        max_length=150,
+        null=True,
+        blank=True)
+    content = models.TextField()
+    live = models.BooleanField(
+        default=True)
