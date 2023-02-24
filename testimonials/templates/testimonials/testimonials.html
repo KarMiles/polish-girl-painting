@@ -26,6 +26,13 @@
                                             {% if testimonial.title %}
                                                 <p class="h3">{{ testimonial.title }}<p></p>
                                             {% endif %}
+                                            {% if request.user.is_staff and not testimonial.live %}
+                                            <a href="{% url 'testimonial_edit' testimonial.id %}"  class="mr-1">
+                                                <span class="text-danger">
+                                                    Not live
+                                                </span>
+                                            </a>
+                                        {% endif %}
                                             {{ testimonial.content | safe }}
                                             <!-- Staff section -->
                                             {% if request.user.is_staff %}
