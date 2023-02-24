@@ -10,8 +10,11 @@
             {% if request.user.is_staff %}
                 <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
                 <a href="{% url 'post_add' %}" class="dropdown-item">Blog Management</a>
+                <a href="{% url 'testimonial_add' %}" class="dropdown-item">About Me / Testimonials</a>
                 {% endif %}
-            <a href="{% url 'testimonial_add' %}" class="dropdown-item">Share my experience</a>
+            {% if request.user.is_staff == False %}
+                <a href="{% url 'testimonial_add' %}" class="dropdown-item">Share my experience</a>
+            {% endif %}
             <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
             <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
         {% else %}

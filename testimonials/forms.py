@@ -21,6 +21,7 @@ class TestimonialForm(forms.ModelForm):
         fields = (
             'title',
             'content',
+            'priority',
             'about_me',
             'live'
             )
