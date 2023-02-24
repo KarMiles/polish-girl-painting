@@ -17,21 +17,43 @@
                     About Me
                 </h4>
                 <div class="card mb-4">
-        
                     <div class="card-body">
-                        <a href=""
-                            <p class="card-title">{ { testimonial.title } }<p>
-                        </a>
+                            <p class="card-title">
+                                {% for testimonial in testimonial_list %}
+                                    {% if testimonial.about_me %}
+                                        {{ testimonial.title }}
+                                    {% endif %}
+                                {% endfor %}
+                            <p>
                         <div class="row">
                             <div class="card-text col">
                                 <p>
-                                    About Me text.
+                                    {% for testimonial in testimonial_list %}
+                                        {% if testimonial.about_me %}
+                                            {{ testimonial.content | safe }}
+                                        {% endif %}
+                                    {% endfor %}
                                 </p>
                             </div>
                         </div>
-        
                     </div>
-        
+
+                    <!-- Staff section -->
+                    <div class="mb-4">
+                        {% if request.user.is_staff %}
+                            {% for testimonial in testimonial_list %}
+                                {% if testimonial.about_me %}
+                                    <div class="text-center">
+                                        <small>
+                                            <a href="{% url 'testimonial_edit' testimonial.id %}"  class="mr-1">Edit</a>
+                                            <a href="{% url 'testimonial_delete' testimonial.id %}" class="text-danger">Delete</a>
+                                        </small>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+
                 </div>
             </div>
         
