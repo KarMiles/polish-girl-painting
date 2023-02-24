@@ -16,6 +16,7 @@
                     {{ form.title | as_crispy_field }}
                     {{ form.content | as_crispy_field }}
                     {% if request.user.is_staff %}
+                        {{ form.priority | as_crispy_field }}
                         {{ form.about_me | as_crispy_field }}
                         {{ form.live | as_crispy_field }}
                     {% endif %}

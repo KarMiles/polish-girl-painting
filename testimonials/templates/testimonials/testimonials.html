@@ -14,7 +14,7 @@
             <!-- About Me section -->
             <div class="container mb-4 col-md-4 order-sm-first order-md-last">
                 <h4 class="mb-3">
-                    About Me
+                    Personal note
                 </h4>
                 <div class="card mb-4">
                     <div class="card-body pt-0">
@@ -36,7 +36,7 @@
                                             {{ testimonial.content | safe }}
                                             <!-- Staff section -->
                                             {% if request.user.is_staff %}
-                                                <div class="text-center">
+                                                <div class="text-center mb-4">
                                                     <small>
                                                         <a href="{% url 'testimonial_edit' testimonial.id %}"  class="mr-1">Edit</a>
                                                         <a href="{% url 'testimonial_delete' testimonial.id %}" class="text-danger">Delete</a>
