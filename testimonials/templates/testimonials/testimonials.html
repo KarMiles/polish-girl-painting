@@ -59,57 +59,59 @@
                                 </h4>
                             </div>
                             {% for testimonial in testimonial_list %}
-                                <div class="card mb-4">
-                                    <div class="card-body">
-                                        {% if testimonial.title %}
-                                            <a href="{% url 'testimonial_detail' testimonial.id  %}"
-                                                <p class="card-title">{{ testimonial.title }}<p>
-                                            </a>
-                                        {% endif %}
-                                        <p class="card-text text-muted h6">
-                                            {{ testimonial.author.get_full_name|default:testimonial.author.username }} 
-                                            | {{ testimonial.created_on | date:"d F Y"}}
-                                            {% if request.user.is_staff and not testimonial.live %}
-                                                <a href="{% url 'testimonial_edit' testimonial.id %}"  class="mr-1">
-                                                    |
-                                                    <span class="text-danger">
-                                                        Awaiting approval
-                                                    </span>
+                                {% if testimonial.about_me == False %}
+                                    <div class="card mb-4">
+                                        <div class="card-body">
+                                            {% if testimonial.title %}
+                                                <a href="{% url 'testimonial_detail' testimonial.id  %}"
+                                                    <p class="card-title">{{ testimonial.title }}<p>
                                                 </a>
                                             {% endif %}
-                                        </p>
-                                        <div class="row">
-                                            <div class="card-text col">
-                                                <p>
-                                                    {{ testimonial.content|safe|stringformat:".1000s" }}
-                                                    {% if testimonial.content|length > 1000 %}
-                                                        ...
-                                                        </p>
-                                                        <p>
-                                                            <a href="{% url 'testimonial_detail' testimonial.id  %}"
-                                                                class="btn btn-outline-black rounded-0 px-1 py-1 mx-2">
-                                                                <span class="text-uppercase mx-1">Read more</span>
-                                                                <span class="icon">
-                                                                    <i class="fas fa-chevron-right"></i>
-                                                                </span>
-                                                            </a>
-                                                    {% endif %}
-                                                </p>
+                                            <p class="card-text text-muted h6">
+                                                {{ testimonial.author.get_full_name|default:testimonial.author.username }} 
+                                                | {{ testimonial.created_on | date:"d F Y"}}
+                                                {% if request.user.is_staff and not testimonial.live %}
+                                                    <a href="{% url 'testimonial_edit' testimonial.id %}"  class="mr-1">
+                                                        |
+                                                        <span class="text-danger">
+                                                            Awaiting approval
+                                                        </span>
+                                                    </a>
+                                                {% endif %}
+                                            </p>
+                                            <div class="row">
+                                                <div class="card-text col">
+                                                    <p>
+                                                        {{ testimonial.content|safe|stringformat:".1000s" }}
+                                                        {% if testimonial.content|length > 1000 %}
+                                                            ...
+                                                            </p>
+                                                            <p>
+                                                                <a href="{% url 'testimonial_detail' testimonial.id  %}"
+                                                                    class="btn btn-outline-black rounded-0 px-1 py-1 mx-2">
+                                                                    <span class="text-uppercase mx-1">Read more</span>
+                                                                    <span class="icon">
+                                                                        <i class="fas fa-chevron-right"></i>
+                                                                    </span>
+                                                                </a>
+                                                        {% endif %}
+                                                    </p>
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <!-- Staff section -->
-                                        {% if request.user.is_staff %}
-                                        <div class="text-center">
-                                            <small>
-                                                <a href="{% url 'testimonial_edit' testimonial.id %}"  class="mr-1">Edit</a>
-                                                <a href="{% url 'testimonial_delete' testimonial.id %}" class="text-danger">Delete</a>
-                                            </small>
-                                        </div>
-                                        {% endif %}
+                                            <!-- Staff section -->
+                                            {% if request.user.is_staff %}
+                                            <div class="text-center">
+                                                <small>
+                                                    <a href="{% url 'testimonial_edit' testimonial.id %}"  class="mr-1">Edit</a>
+                                                    <a href="{% url 'testimonial_delete' testimonial.id %}" class="text-danger">Delete</a>
+                                                </small>
+                                            </div>
+                                            {% endif %}
 
+                                        </div>
                                     </div>
-                                </div>
+                                {% endif %}
                             {% endfor %}
 
                             <a href="{% url 'testimonial_add' %}" class="btn btn-black rounded-0 btn-lg">
