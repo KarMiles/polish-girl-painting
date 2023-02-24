@@ -35,7 +35,6 @@ class TestimonialList(generic.ListView):
     testimonials = Testimonial.objects.all()
 
     template_name = 'testimonials/testimonials.html'
-    ordering = ['live', 'priority', '-created_on']
 
     def get_queryset(self):
         queryset = super().get_queryset()

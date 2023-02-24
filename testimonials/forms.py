@@ -2,10 +2,11 @@
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django import forms
+from django_summernote.widgets import SummernoteWidget
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from .models import Testimonial, AboutMe
+from .models import Testimonial
 
 
 class TestimonialForm(forms.ModelForm):
@@ -20,21 +21,9 @@ class TestimonialForm(forms.ModelForm):
         fields = (
             'title',
             'content',
+            'about_me',
             'live'
             )
-
-
-class AboutMeForm(forms.ModelForm):
-    """
-    Class for About Me section form
-    """
-    class Meta:
-        """
-        Show indicated fields in the aboutme form
-        """
-        model = AboutMe
-        fields = (
-            'title',
-            'content',
-            'live'
-            )
+        widgets = {
+            'content': SummernoteWidget()
+        }
