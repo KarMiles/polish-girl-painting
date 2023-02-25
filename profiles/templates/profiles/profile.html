@@ -24,7 +24,11 @@
                 <h2 class="logo-font mb-4">
                     My Profile
                     {% if user.username %}
-                    <span class="no-space-before">:</span>&nbsp; &nbsp;{{ user.username }}
+                        <span class="no-space-before">:</span>&nbsp; &nbsp;
+                        {{ user.username }}
+                        <div class="h4 text-capitalize mt-1">
+                            {{ user.get_full_name }}
+                        </div>
                     {% endif %}
                 </h2>
                 <hr>

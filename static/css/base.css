@@ -13,6 +13,10 @@ body {
 div.inline { float:left; }
 .clearBoth { clear:both; }
 
+.nowrap {
+    white-space: nowrap;
+}
+
 /* Footer */
 .container-wrapper {
     background-color: rgb(245, 245, 245);
