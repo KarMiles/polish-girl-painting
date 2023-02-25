@@ -22,16 +22,15 @@
                                     <p class="card-title">{{ post.title }}<p>
                                 </a>
                                 <p class="card-text text-muted h6">
-                                    {{ post.author.get_full_name|default:post.author.username }} 
-                                    | {{ post.created_on | date:"d F Y"}}
+                                    {{ post.created_on | date:"d F Y"}}
                                     {% if request.user.is_staff and not post.live %}
-                                    <a href="{% url 'post_edit' post.slug %}"  class="mr-1">
-                                        |
-                                        <span class="text-danger">
-                                            Post is not live
-                                        </span>
-                                    </a>
-                                {% endif %}
+                                        <a href="{% url 'post_edit' post.slug %}"  class="mr-1">
+                                            |
+                                            <span class="text-danger">
+                                                Post is not live
+                                            </span>
+                                        </a>
+                                    {% endif %}
                                 </p>
                                 <div class="row">
                                     <div class="card-text col-12 col-lg-10 col-md-8">
