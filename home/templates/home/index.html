@@ -20,7 +20,10 @@
 
                     <div class='container'>
                         {% if post_list|length > 0 %}
-                        <!-- Headline with posts marked for 'headline' -->
+                            <!-- Headline with posts marked as 'highlight' -->
+                            <h2 class="text-uppercase d-block d-lg-none text-black mb-2">
+                                Monika Curto Fuentes
+                            </h2>
                             {% for post in post_list %}
                                 <h3>
                                     <a href="{% url 'post_detail' post.slug  %}">
@@ -30,7 +33,7 @@
                                 <hr class="hr-middle-light">
                             {% endfor %}
                         {% else %}
-                            <!-- Default headline -->
+                            <!-- Default headline when highlights not existent -->
                             <h1 class="display-4 logo-font">
                                 Monika Curto Fuentes
                             </h1>
