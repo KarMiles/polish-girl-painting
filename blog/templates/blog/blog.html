@@ -95,14 +95,5 @@
 
 {% block postloadjs %}
 {{ block.super }}
-
-    <script type="text/javascript">
-
-        // Back to page top button script
-        $('.btt-link').click(function(e) {
-            window.scrollTo(0,0)
-        })
-
-    </script>
-
+    {% include "includes/back-to-top-button.html" %}
 {% endblock %}

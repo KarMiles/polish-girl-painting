@@ -24,6 +24,10 @@ div.inline { float:left; }
 }
 
 /* MailChimp */
+mc {
+    z-index: 1;
+}
+
 #mc_embed_signup form {
     margin: 0 20px !important;
 }
@@ -242,6 +246,7 @@ a.category-badge > span.badge:hover {
 .update-link,
 .remove-item {
     cursor: pointer;
+    z-index: 2;
 }
 
 input[name='q']::placeholder {
