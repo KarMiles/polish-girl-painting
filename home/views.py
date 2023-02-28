@@ -2,25 +2,31 @@
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django.shortcuts import render
-from django.views import generic, View
+# from django.views import generic
+from django.shortcuts import get_object_or_404
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from blog.models import Post
+from .models import HomeSettings
+
+
+def index(request):
+    """ A view to return the index page"""
+    template = 'home/index.html'
+
+    latest_settings = HomeSettings.objects.order_by('-id').first()
+    image = latest_settings
+
+    posts = Post.objects.filter(highlight=True).filter(live=True)
+    context = {
+        'background_image': image,
+        'posts': posts,
+    }
+
+    return render(request, template, context)
 
 
 # def index(request):
 #     """ A view to return the index page"""
 #     return render(request, 'home/index.html')
-
-
-class Index(generic.ListView):
-    """ A view to return the index page"""
-    model = Post
-    posts = Post.objects.all()
-    template_name = "home/index.html"
-    ordering = ['-created_on']
-
-    def get_queryset(self):
-        queryset = super().get_queryset()
-        return queryset.filter(highlight=True).filter(live=True)
