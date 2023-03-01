@@ -280,7 +280,7 @@ input[name='q']::placeholder {
 
 .form-control[type=number] {
     color: #000;
-    border: 1px solid #000;
+    border: 1px solid grey;
     border-radius: var(--custom-radius);
     max-height: 1.8rem;
     padding-right: 0.3rem;
