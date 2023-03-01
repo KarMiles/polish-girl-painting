@@ -9,7 +9,7 @@
         {% if request.user.is_authenticated %}
             {% if request.user.is_staff %}
                 <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
-                <a href="{% url 'post_add' %}" class="dropdown-item">Blog Management</a>
+                <a href="{% url 'post_add' %}" class="dropdown-item">Blog / Highlights</a>
                 <a href="{% url 'testimonial_add' %}" class="dropdown-item">About Me / Testimonials</a>
                 {% endif %}
             {% if request.user.is_staff == False %}

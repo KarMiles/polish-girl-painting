@@ -13,8 +13,12 @@ from . import views
 urlpatterns = [
     path(
         "",
-        views.PostList.as_view(),
+        views.post_list,
         name="blog"),
+    # path(
+    #     "",
+    #     views.PostList.as_view(),
+    #     name="blog"),
     path(
         "post",
         views.CreatePost.as_view(),

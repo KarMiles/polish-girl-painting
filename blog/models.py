@@ -61,3 +61,15 @@ class Post(models.Model):
         if not self.slug:
             self.slug = slugify(self.title)
         return super().save(*args, **kwargs)
+
+
+class BlogSettings(models.Model):
+    """
+    Contains settings for the blog
+    controllable by authorized user
+    """
+    class Meta:
+        verbose_name_plural = 'Settings'
+
+    live = models.BooleanField(
+        default=True)

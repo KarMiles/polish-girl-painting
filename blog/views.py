@@ -11,7 +11,7 @@ from django.contrib.auth.mixins import AccessMixin
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from .models import Post
+from .models import Post, BlogSettings
 from .forms import PostForm
 
 
@@ -129,6 +129,38 @@ class PostList(generic.ListView):
         if self.request.user.is_staff:
             return queryset
         return queryset.filter(live=True)
+
+
+def post_list(request):
+    """
+    A view to show posts
+    Args:
+        request
+    Returns:
+        Render page with list of posts
+        Posts ordered by date of creation
+        Non-staff users see live posts only
+        Staff users see live and draft posts
+    """
+    template = "blog/blog.html"
+
+    if request.user.is_staff:
+        posts = Post.objects.all()
+    else:
+        posts = Post.objects.filter(live=True)
+
+    blog_live_setting = BlogSettings.objects.order_by('-id').first()
+    if blog_live_setting is None or blog_live_setting.live is True:
+        blog_is_live = True
+    else:
+        blog_is_live = False
+
+    context = {
+        'posts': posts,
+        'blog_is_live': blog_is_live,
+    }
+
+    return render(request, template, context)
 
 
 class PostDetail(View):

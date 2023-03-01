@@ -6,8 +6,8 @@ from django.db import models
 
 class HomeSettings(models.Model):
     """
-    Contains settings for the webpage
-    controllable by user
+    Contains settings for the home page
+    controllable by authorized user
     """
     class Meta:
         verbose_name_plural = 'Settings'

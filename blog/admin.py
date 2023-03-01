@@ -6,7 +6,7 @@ from django_summernote.admin import SummernoteModelAdmin
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from .models import Post
+from .models import Post, BlogSettings
 
 
 # Models for blog management in admin page
@@ -34,3 +34,9 @@ class PostAdmin(SummernoteModelAdmin):
 
 # Decoration replaces class:
 # admin.site.register(Post)
+
+
+@admin.register(BlogSettings)
+class SettingsAdmin(admin.ModelAdmin):
+    list_display = (
+        'live',)
