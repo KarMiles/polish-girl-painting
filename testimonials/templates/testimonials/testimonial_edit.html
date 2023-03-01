@@ -22,9 +22,9 @@
                         {{ form.live | as_crispy_field }}
                     {% endif %}
                     <div class="text-right">
-                        <a class="btn btn-outline-black rounded-0" href="{% url 'testimonial_detail' testimonial.id %}">Cancel</a>
-                        <a href="{% url 'testimonial_delete' testimonial.id %}" class="btn btn-danger  float-start rounded-0">Delete</a>
-                        <button class="btn btn-black rounded-0" type="submit">Update</button>
+                        <a class="btn btn-outline-black corners" href="{% url 'testimonial_detail' testimonial.id %}">Cancel</a>
+                        <a href="{% url 'testimonial_delete' testimonial.id %}" class="btn btn-danger  float-start corners">Delete</a>
+                        <button class="btn btn-black corners" type="submit">Update</button>
                     </div>
                 </form>
             </div>            

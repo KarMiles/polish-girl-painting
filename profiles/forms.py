@@ -33,5 +33,5 @@ class UserProfileForm(forms.ModelForm):
             # Optional styling
             # self.fields[field].widget.attrs['class'] = (
             #     'border-black '
-            #     'rounded-0 ')
+            #     'corners ')
             self.fields[field].label = False

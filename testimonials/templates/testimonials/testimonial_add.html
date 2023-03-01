@@ -21,11 +21,11 @@
                         {{ form.live | as_crispy_field }}
                     {% endif %}
                     <div class="text-right">
-                        <a class="btn btn-outline-black rounded-0" href="{% url 'testimonials' %}">Cancel</a>
+                        <a class="btn btn-outline-black corners" href="{% url 'testimonials' %}">Cancel</a>
                         {% if request.user.is_staff %}
-                            <button class="btn btn-black rounded-0" type="submit">Add</button>
+                            <button class="btn btn-black corners" type="submit">Add</button>
                         {% else %}
-                            <button class="btn btn-black rounded-0" type="submit">Add Testimonial</button>
+                            <button class="btn btn-black corners" type="submit">Add Testimonial</button>
                         {% endif %}
                     </div>
                 </form>

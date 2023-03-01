@@ -95,7 +95,7 @@
                                                             </p>
                                                             <p>
                                                                 <a href="{% url 'testimonial_detail' testimonial.id  %}"
-                                                                    class="btn btn-outline-black rounded-0 px-1 py-1 mx-2">
+                                                                    class="btn btn-outline-black corners px-1 py-1 mx-2">
                                                                     <span class="text-uppercase mx-1">Read more</span>
                                                                     <span class="icon">
                                                                         <i class="fas fa-chevron-right"></i>
@@ -121,7 +121,7 @@
                                 {% endif %}
                             {% endfor %}
 
-                            <a href="{% url 'testimonial_add' %}" class="btn btn-black rounded-0 btn-lg">
+                            <a href="{% url 'testimonial_add' %}" class="btn btn-black corners btn-lg">
                                 <span class="text-uppercase">Share my experience</span>
                                 <span class="icon">
                                     <i class="fas fa-feather-alt"></i>
@@ -129,7 +129,7 @@
                             </a>
 
                             <!-- Back to page top button -->
-                            <div class="btt-button shadow-sm rounded-0 border border-black d-block d-md-none">
+                            <div class="btt-button shadow-sm corners border border-black d-block d-md-none">
                                 <a class="btt-link d-flex h-100">
                                     <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
                                 </a>
@@ -138,13 +138,13 @@
                         {% else %}
                             <p class="lead mb-5">Exciting content coming soon!</p>
                             <div class="mb-5">
-                                <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                                <a href="{% url 'products' %}" class="btn btn-outline-black corners btn-lg">
                                     <span class="icon">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="text-uppercase">Gallery</span>
                                 </a>
-                                <a href="{% url 'testimonial_add' %}" class="btn btn-black rounded-0 btn-lg">
+                                <a href="{% url 'testimonial_add' %}" class="btn btn-black corners btn-lg">
                                     <span class="text-uppercase">Share my experience</span>
                                     <span class="icon">
                                         <i class="fas fa-feather-alt"></i>
