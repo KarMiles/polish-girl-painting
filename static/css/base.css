@@ -33,6 +33,7 @@ div.inline { float:left; }
 .container-wrapper {
     background-color: rgb(245, 245, 245);
     color: grey;
+    font-family: var(--font-family-aux);
 }
 
 /* MailChimp */
