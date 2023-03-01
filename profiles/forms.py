@@ -1,4 +1,10 @@
+"""Imports"""
+# 3rd party:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django import forms
+
+# Internal:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from .models import UserProfile
 
 
@@ -30,8 +36,7 @@ class UserProfileForm(forms.ModelForm):
                 else:
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
-            # Optional styling
-            # self.fields[field].widget.attrs['class'] = (
-            #     'border-black '
-            #     'corners ')
+            self.fields[field].widget.attrs['class'] = (
+                'border-custom '
+                'corners ')
             self.fields[field].label = False

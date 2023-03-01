@@ -83,6 +83,8 @@ a:active {
 }
 
 
+/* Horisontal rulers */
+
 .hr-middle {
     height: 0.5px;
     background: rgba(120, 120, 120, .5);
@@ -97,6 +99,9 @@ a:active {
     margin: .25rem 10% .25rem 10%;
 }
 
+
+/* Cards */
+
 .card-title {
     font-size: 1.5rem;
 }
@@ -110,6 +115,9 @@ a:active {
 .card-footer p {
     font-size: small;
 }
+
+
+/* Footer */
 
 .footer-description {
     font-size: small;
@@ -131,10 +139,14 @@ a:active {
     object-fit: contain;
 }
 
+
+/* Semi-transparent box on welcome page */
+
 .transbox {
     background-color: #ffffff;
     min-height: 17em;
     border: 1px solid black;
+    /* border-radius: var(--custom-radius); */
     opacity: 0.75;
     min-width: 20rem;
     max-width: 30rem;
@@ -174,9 +186,8 @@ a:active {
     min-width: 260px;
 }
 
-/* .btn-lg {
-    font-size: 1.25rem !important;
-} */
+
+/* Buttons */
 
 .btn-black {
     background: black;
@@ -223,6 +234,11 @@ a:active {
 .border-black {
     border: 1px solid black !important;
 }
+
+.border-custom {
+    border: 1px solid grey !important;
+}
+
 
 .bg-black {
     background: #000 !important;
