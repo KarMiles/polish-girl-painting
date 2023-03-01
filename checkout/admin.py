@@ -1,6 +1,11 @@
+"""Imports"""
+# 3rd party:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django.contrib import admin
 
-from .models import Order, OrderLineItem
+# Internal:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+from .models import Order, OrderLineItem, CheckoutSettings
 
 
 class OrderLineItemAdminInline(admin.TabularInline):
@@ -58,6 +63,12 @@ class OrderAdmin(admin.ModelAdmin):
     )
 
     ordering = ('-date',)
+
+
+@admin.register(CheckoutSettings)
+class SettingsAdmin(admin.ModelAdmin):
+    list_display = (
+        'live',)
 
 
 admin.site.register(Order, OrderAdmin)

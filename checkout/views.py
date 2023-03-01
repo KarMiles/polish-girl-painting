@@ -1,13 +1,18 @@
+"""Imports"""
+# 3rd party:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django.shortcuts import render, redirect, reverse, \
     get_object_or_404, HttpResponse
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
 
+# Internal:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from .forms import OrderForm
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
-from .models import Order, OrderLineItem
+from .models import Order, OrderLineItem, CheckoutSettings
 
 from products.models import Product
 from bag.contexts import bag_contents
@@ -121,11 +126,18 @@ def checkout(request):
         messages.warning(request, 'Stripe public key is missing. \
             Did you forget to set it in your environment?')
 
+    checkout_live_setting = CheckoutSettings.objects.order_by('-id').first()
+    if checkout_live_setting is None or checkout_live_setting.live is True:
+        checkout_is_live = True
+    else:
+        checkout_is_live = False
+
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,
+        'checkout_is_live': checkout_is_live,
     }
 
     return render(request, template, context)

@@ -66,7 +66,7 @@ class Post(models.Model):
 class BlogSettings(models.Model):
     """
     Contains settings for the blog
-    controllable by authorized user
+    Lets authorized user show / hide all blog posts
     """
     class Meta:
         verbose_name_plural = 'Settings'
