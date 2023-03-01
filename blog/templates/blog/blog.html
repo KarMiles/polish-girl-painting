@@ -60,13 +60,12 @@
                                 </div>
                                 {% endif %}
 
-                                <a href="{% url 'post_detail' post.slug  %}"
-                                    class="btn btn-outline-black corners px-1 py-1">
-                                    <span class="text-uppercase mx-1">Read more</span>
-                                    <span class="icon">
-                                        <i class="fas fa-chevron-right"></i>
-                                    </span>
-                                </a>
+                                <div class="text-center mb-3">
+                                    <a href="{% url 'post_detail' post.slug  %}"
+                                        class="btn btn-outline-black corners px-1 py-1">
+                                        <span class="text-uppercase mx-1">Read more</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     {% endfor %}

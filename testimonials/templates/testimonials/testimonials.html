@@ -120,13 +120,15 @@
                                     </div>
                                 {% endif %}
                             {% endfor %}
-
-                            <a href="{% url 'testimonial_add' %}" class="btn btn-black corners btn-sm">
-                                <span class="text-uppercase">Share my experience</span>
-                                <span class="icon">
-                                    <i class="fas fa-feather-alt"></i>
-                                </span>
-                            </a>
+                            
+                            <div class="text-center mb-3">
+                                <a href="{% url 'testimonial_add' %}" class="btn btn-black corners btn-sm">
+                                    <span class="text-uppercase">Share my experience</span>
+                                    <span class="icon">
+                                        <i class="fas fa-feather-alt"></i>
+                                    </span>
+                                </a>
+                            </div>
 
                             <!-- Back to page top button -->
                             <div class="btt-button shadow-sm corners border border-black d-block d-md-none">
@@ -144,12 +146,14 @@
                                     </span>
                                     <span class="text-uppercase">Gallery</span>
                                 </a>
-                                <a href="{% url 'testimonial_add' %}" class="btn btn-black corners btn-sm">
-                                    <span class="text-uppercase">Share my experience</span>
-                                    <span class="icon">
-                                        <i class="fas fa-feather-alt"></i>
-                                    </span>
-                                </a>
+                                <div class="text-center mb-3">
+                                    <a href="{% url 'testimonial_add' %}" class="btn btn-black corners btn-sm">
+                                        <span class="text-uppercase">Share my experience</span>
+                                        <span class="icon">
+                                            <i class="fas fa-feather-alt"></i>
+                                        </span>
+                                    </a>
+                                </div>
                             </div>
                         {% endif %}
                     </div>
