@@ -61,7 +61,7 @@
                                     <i class="fas fa-tag mr-1 text-muted"></i>
                                     &euro;{{ product.price }}
                                 </p>
-                                <div class="col-8 float-right pr-0 mr-0">
+                                <div class="col-8 float-right pr-0 mr-0 corners">
                                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                                         {% csrf_token %}
                                         <div>
@@ -108,10 +108,13 @@
                     </div>
                 </div>
 
-                <div class="text-center">
-                    <hr class="w-50 font-black mb-1">
-                    <a href="{% url 'products' %}">
-                        <p>Continue shopping</p>
+                <div class="text-center my-5">
+                    <a href="{% url 'products' %}"
+                        class="btn btn-light corners px-1 py-1">
+                        <span class="text-uppercase mx-1">Continue shopping</span>
+                        <span class="icon">
+                            <i class="fas fa-chevron-right"></i>
+                        </span>
                     </a>
                 </div>
 

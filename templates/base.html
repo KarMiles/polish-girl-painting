@@ -20,7 +20,10 @@
             <!-- Bootstrap CSS -->
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
             <!-- Google Fonts -->
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=PT+Serif:wght@400;700&family=Tenor+Sans&display=swap" rel="stylesheet">
+
             <!-- Custom CSS/style -->
             <link rel="stylesheet" href="{% static 'css/base.css' %}">
             <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
@@ -70,7 +73,7 @@
                     <!-- Search box -->
                     <form method="GET" action="{% url 'products' %}">
                         <div class="input-group w-100">
-                            <input type="text" class="form-control border border-secondary corners" type="text" name="q" placeholder="Search my site">
+                            <input type="text" class="form-control border border-secondary corners top-nav" type="text" name="q" placeholder="Search my site">
                             <div class="input-group-append">
                                 <button class="form-control btn btn-light border border-secondary corners" type="submit">
                                     <span class="icon">
@@ -84,7 +87,7 @@
                 </div>
 
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                    <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                    <ul class="top-nav list-inline list-unstyled text-center text-lg-right my-0">
                         
                         <!-- My Account menu -->
                         {% include 'includes/sub-my-account.html' %}
@@ -126,13 +129,13 @@
                                         {% endfor %}
                                     </div>
                                 </div>
-                                <span class="d-sm-none">
+                                <span class="d-sm-none mt-1">
                                     Click
                                     <a href="{% url 'products' %}?highlight=True" class="text-white"><strong>here</strong></a>
                                     for new art!!
                                 </span>
                             {% else %}
-                                <span>
+                                <span class="mt-1">
                                     Click
                                     <a href="{% url 'products' %}?highlight=True" class="text-white"><strong>here</strong></a>
                                     for new art!

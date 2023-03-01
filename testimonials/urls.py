@@ -18,10 +18,6 @@ urlpatterns = [
         'edit/<int:testimonial_id>/',
         views.testimonial_edit,
         name='testimonial_edit'),
-    # path(
-    #     'delete/<int:testimonial_id>/',
-    #     views.delete_testimonial,
-    #     name='delete_testimonial'),
     path(
         'delete/<pk>/',
         views.TestimonialDelete.as_view(),
