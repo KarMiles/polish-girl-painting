@@ -1,11 +1,14 @@
+"""Imports"""
+# 3rd party:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import uuid
-
 from django.db import models
 from django.db.models import Sum
 from django.conf import settings
-
 from django_countries.fields import CountryField
 
+# Internal:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from products.models import Product
 from profiles.models import UserProfile
 
@@ -92,7 +95,7 @@ class Order (models.Model):
         Generate a random unique order number using UUID
         """
         return uuid.uuid4().hex.upper()
-    
+
     def update_total(self):
         """
         Update grand total each time a line item is added,
@@ -125,7 +128,7 @@ class Order (models.Model):
         if not self.order_number:
             self.order_number = self._generate_order_number()
         super().save(*args, **kwargs)
-    
+
     def __str__(self):
         return self.order_number
 
@@ -152,7 +155,7 @@ class OrderLineItem(models.Model):
         null=False,
         blank=False,
         editable=False)
-    
+
     def save(self, *args, **kwargs):
         """
         Override the original save method to set the lineitem total

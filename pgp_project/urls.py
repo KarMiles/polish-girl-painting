@@ -1,3 +1,17 @@
+"""Imports"""
+# 3rd party:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+from django.contrib import admin
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
+
+# Internal:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+from helpers.views import (  # noqa  # pylint: disable=unused-import
+    handler403, handler404, handler500,
+    test_403_view, test_404_view, test_500_view)
+
 """pgp_project URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -14,19 +28,6 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-"""Imports"""
-# 3rd party:
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from django.contrib import admin
-from django.urls import path, include
-from django.conf import settings
-from django.conf.urls.static import static
-
-# Internal:
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from helpers.views import (  # noqa  # pylint: disable=unused-import
-    handler403, handler404, handler500,
-    test_403_view, test_404_view, test_500_view)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

@@ -3,12 +3,10 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.urls import reverse_lazy
-from django.views import generic, View
+from django.views import generic
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.utils.decorators import method_decorator
-from django.contrib.auth.mixins import AccessMixin
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -17,7 +15,6 @@ from .forms import TestimonialForm
 
 
 # Views for testimonials app
-
 
 class TestimonialList(generic.ListView):
     """

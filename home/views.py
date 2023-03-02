@@ -2,8 +2,6 @@
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django.shortcuts import render
-# from django.views import generic
-from django.shortcuts import get_object_or_404
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -25,8 +23,3 @@ def index(request):
     }
 
     return render(request, template, context)
-
-
-# def index(request):
-#     """ A view to return the index page"""
-#     return render(request, 'home/index.html')

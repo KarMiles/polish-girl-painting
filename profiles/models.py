@@ -1,8 +1,10 @@
+"""Imports"""
+# 3rd party:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-
 from django_countries.fields import CountryField
 
 
@@ -54,5 +56,5 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
     """
     if created:
         UserProfile.objects.create(user=instance)
-    # Existing users: just save the profile
+    # Existing users: only save the profile
     instance.userprofile.save()

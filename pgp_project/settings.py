@@ -1,3 +1,16 @@
+"""Imports"""
+# 3rd party:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+import os
+import dj_database_url
+from pathlib import Path
+from os import path
+
+# Internal:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+if path.exists("env.py"):
+    import env  # noqa  # pylint: disable=unused-import
+
 """
 Django settings for pgp_project project.
 
@@ -9,15 +22,6 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
-import os
-import dj_database_url
-
-from pathlib import Path
-from os import path
-if path.exists("env.py"):
-    import env  # noqa  # pylint: disable=unused-import
-
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent

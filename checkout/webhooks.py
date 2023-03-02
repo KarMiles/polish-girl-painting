@@ -1,16 +1,20 @@
-"""
-    Core logic for this comes from:
-    https://stripe.com/docs/payments/handling-payment-events#build-your-own-webhook
-"""
-
+"""Imports"""
+# 3rd party:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django.conf import settings
 from django.http import HttpResponse
 from django.views.decorators.http import require_POST
 from django.views.decorators.csrf import csrf_exempt
+import stripe
 
+# Internal:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from checkout.webhook_handler import StripeWH_Handler
 
-import stripe
+"""
+    Core logic for this comes from:
+    https://stripe.com/docs/payments/handling-payment-events#build-your-own-webhook
+"""
 
 
 @require_POST

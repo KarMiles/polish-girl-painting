@@ -26,5 +26,3 @@ class TestimonialsAdmin(admin.ModelAdmin):
         'content']
     list_filter = (
         'live',)
-
-# admin.site.register(Testimonial, TestimonialsAdmin)
