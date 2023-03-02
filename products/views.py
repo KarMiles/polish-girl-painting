@@ -105,7 +105,6 @@ def product_detail(request, product_id):
     context = {
         'product': product,
         'product_is_in_bag': product_is_in_bag
-
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -135,6 +134,7 @@ def add_product(request):
     template = 'products/product_add.html'
     context = {
         'form': form,
+        'hide_bag_toast': True
     }
 
     return render(request, template, context)
@@ -156,7 +156,7 @@ def edit_product(request, product_id):
             product = form.save()
             messages.success(
                 request,
-                'Successfully updated {{ product.title }}')
+                f'Successfully updated { product.title }')
             return redirect(
                 reverse(
                     'product_detail',
@@ -173,6 +173,7 @@ def edit_product(request, product_id):
     context = {
         'form': form,
         'product': product,
+        'hide_bag_toast': True
     }
 
     return render(request, template, context)

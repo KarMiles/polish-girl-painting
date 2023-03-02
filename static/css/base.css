@@ -48,7 +48,7 @@ mc {
 #mc_embed_signup {
     background:#fff;
     clear:left;
-    font: 14px Helvetica,Arial,sans-serif;
+    /* font: 14px Helvetica,Arial,sans-serif; */
     /* width: 600px; */
 }
 
@@ -87,7 +87,7 @@ a:active {
 }
 
 
-/* Horisontal rulers */
+/* Rulers */
 
 .hr-middle {
     height: 0.5px;
@@ -102,6 +102,11 @@ a:active {
     width: 80%;
     margin: .25rem 10% .25rem 10%;
 }
+
+.box {
+    border: 1px solid lightgrey;
+    padding: 1rem;
+} 
 
 
 /* Cards */
@@ -193,6 +198,7 @@ button,
 .btn-lg, 
 .shop-now-button,
 .top-nav,
+.header-container,
 input[type="button"],
 input[type="submit"] {
     font-family: var(--font-family-aux);
