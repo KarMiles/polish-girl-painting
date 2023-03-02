@@ -33,7 +33,11 @@
                                     {% endif %}
                                 </p>
                                 <div class="row">
+                                    {% if post.featured_image %}
                                     <div class="card-text col-12 col-lg-10 col-md-8">
+                                    {% else %}
+                                    <div class="card-text col-12">
+                                    {% endif %}
                                         <p>
                                             {{post.content|safe|stringformat:".250s" }}
                                             {% if post.content|length > 250 %}
@@ -41,13 +45,13 @@
                                             {% endif %}
                                         </p>
                                     </div>
-                                    <div class="col-4 col-lg-2 hide-on-sm float-right details-image mt-4"> 
-                                        {% if post.featured_image %}
-                                        <img src="{{ post.featured_image.url }}"
-                                            alt="featured photo for the blog post"
-                                            class="w-100">
-                                        {% endif %}
-                                    </div>
+                                    {% if post.featured_image %}
+                                        <div class="col-4 col-lg-2 hide-on-sm float-right details-image mt-4"> 
+                                            <img src="{{ post.featured_image.url }}"
+                                                alt="featured photo for the blog post"
+                                                class="w-100">
+                                        </div>
+                                    {% endif %}
                                 </div>
 
                                 <!-- Superuser section -->
