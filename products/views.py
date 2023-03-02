@@ -157,10 +157,18 @@ def edit_product(request, product_id):
             messages.success(
                 request,
                 f'Successfully updated { product.title }')
-            return redirect(
-                reverse(
-                    'product_detail',
-                    args=[product.id]))
+            
+            template = 'products/product_edit.html'
+            context = {
+                'form': form,
+                'product': product,
+                'hide_bag_toast': True
+            }
+            return render(request, template, context)
+            # return redirect(
+            #     reverse(
+            #         'product_detail',
+            #         args=[product.id]))
         else:
             messages.error(
                 request,

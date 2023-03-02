@@ -124,6 +124,7 @@ a:active {
 }
 
 .footer-description {
+    font-family: var(--font-family-aux);
     font-size: small;
     color: #0000008C;
 }
