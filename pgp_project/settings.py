@@ -259,7 +259,7 @@ STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET', '')
 # Email
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    DEFAULT_FROM_EMAIL = 'monikacurtofuentes@example.com'
+    DEFAULT_FROM_EMAIL = 'monikacurtofuentes@monikaexample.com'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_USE_TLS = True
@@ -271,6 +271,8 @@ else:
 
 
 # E-Commerce settings
+# editable variables are in checkout app
+# edit via Admin page
 FREE_DELIVERY_THRESHOLD = 100
 STANDARD_DELIVERY_PERCENTAGE = 10
 DELIVERY_MIN_CHARGE = 2

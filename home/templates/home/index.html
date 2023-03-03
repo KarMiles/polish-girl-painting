@@ -20,15 +20,15 @@
                     <div class='container'>
                         {% if posts|length > 0 %}
                             <!-- Headline with posts marked as 'highlight' -->
-                            <h2 class="logo-font d-block d-lg-none text-black mb-2 font-weight-bold ">
+                            <h2 class="logo-font d-block d-lg-none text-black mb-2">
                                 Monika Curto Fuentes
                             </h2>
                             {% for post in posts %}
-                                <h3 class="mb-0">
+                                <h4 class="mb-0">
                                     <a href="{% url 'post_detail' post.slug  %}">
                                         {{ post.title }}
                                     </a>
-                                </h3>
+                                </h4>
                                 <hr class="hr-middle-light">
                             {% endfor %}
                         {% else %}

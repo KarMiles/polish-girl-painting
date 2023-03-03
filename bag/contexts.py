@@ -8,6 +8,7 @@ from django.shortcuts import get_object_or_404
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from products.models import Product
+from checkout.models import CheckoutSettings
 
 
 def bag_contents(request):
@@ -16,6 +17,11 @@ def bag_contents(request):
     total = 0
     product_count = 0
     bag = request.session.get('bag', {})
+
+    checkout_settings = CheckoutSettings.objects.order_by('-id').first()
+    fdt = checkout_settings.free_delivery_threshold
+    sdp = checkout_settings.standard_delivery_percentage
+    dmc = checkout_settings.delivery_min_charge
 
     for item_id, quantity in bag.items():
         product = get_object_or_404(Product, pk=item_id)
@@ -27,12 +33,11 @@ def bag_contents(request):
             'product': product,
         })
 
-    if total < settings.FREE_DELIVERY_THRESHOLD and total > 0:
-        min_charge = settings.DELIVERY_MIN_CHARGE
+    if total < fdt and total > 0:
         delivery = max(
-            total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100),
-            min_charge)
-        free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
+            total * Decimal(sdp / 100),
+            dmc)
+        free_delivery_delta = fdt - total
     else:
         delivery = 0
         free_delivery_delta = 0
@@ -45,7 +50,7 @@ def bag_contents(request):
         'product_count': product_count,
         'delivery': delivery,
         'free_delivery_delta': free_delivery_delta,
-        'free_delivery_threshold': settings.FREE_DELIVERY_THRESHOLD,
+        'free_delivery_threshold': CheckoutSettings.free_delivery_threshold,
         'grand_total': grand_total,
     }
 

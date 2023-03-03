@@ -68,7 +68,11 @@ class OrderAdmin(admin.ModelAdmin):
 @admin.register(CheckoutSettings)
 class SettingsAdmin(admin.ModelAdmin):
     list_display = (
-        'live',)
+        'live',
+        'free_delivery_threshold',
+        'standard_delivery_percentage',
+        'delivery_min_charge',
+    )
 
 
 admin.site.register(Order, OrderAdmin)

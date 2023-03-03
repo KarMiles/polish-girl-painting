@@ -6,6 +6,7 @@ from django.db import models
 from django.db.models import Sum
 from django.conf import settings
 from django_countries.fields import CountryField
+from decimal import Decimal
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -13,7 +14,7 @@ from products.models import Product
 from profiles.models import UserProfile
 
 
-class Order (models.Model):
+class Order(models.Model):
     order_number = models.CharField(
         max_length=32,
         null=False,
@@ -104,14 +105,18 @@ class Order (models.Model):
         self.order_total = self.lineitems.aggregate(
             Sum('lineitem_total'))['lineitem_total__sum'] or 0
 
-        fdt = settings.FREE_DELIVERY_THRESHOLD
-        sdp = settings.STANDARD_DELIVERY_PERCENTAGE
-        dmc = settings.DELIVERY_MIN_CHARGE
+        # fdt = settings.FREE_DELIVERY_THRESHOLD
+        # sdp = settings.STANDARD_DELIVERY_PERCENTAGE
+        # dmc = settings.DELIVERY_MIN_CHARGE
+        checkout_settings = CheckoutSettings.objects.order_by('-id').first()
+        fdt = checkout_settings.free_delivery_threshold
+        sdp = checkout_settings.standard_delivery_percentage
+        dmc = checkout_settings.delivery_min_charge
 
         if self.order_total < fdt:
             self.delivery_cost = (
                 max(
-                    self.order_total * sdp / 100,
+                    self.order_total * Decimal(sdp / 100),
                     dmc
                 )
             )
@@ -178,3 +183,18 @@ class CheckoutSettings(models.Model):
 
     live = models.BooleanField(
         default=True)
+    free_delivery_threshold = models.DecimalField(
+        max_digits=6,
+        decimal_places=2,
+        null=True,
+        blank=True)
+    standard_delivery_percentage = models.DecimalField(
+        max_digits=6,
+        decimal_places=2,
+        null=True,
+        blank=True)
+    delivery_min_charge = models.DecimalField(
+        max_digits=6,
+        decimal_places=2,
+        null=True,
+        blank=True)
