@@ -212,21 +212,52 @@ Features with high and medium score between 8 and 25 points on scale 1-25 have b
 
 ## Website templates TODO
 
-Templates are structured into the files listed below. Base template is used for the entire site for consistency and ease in user experience.
-Templates are placed in the folder templates and its subfolders.
+Templates are structured in folders named templates. Base template is used for the entire site for consistency and ease in user experience.
+Templates common for entire site, including base, allauth, error pages and includes are placed in the folder templates in the main directory. App-specific templates are placed in folders called templates within the appropriate apps. 
 
 <details>
 <summary>Click here to view table with templates, part 1</summary>
 
-![screenshot of Post model part 2](readme/docs/images/website_templates1.jpg)
+![screenshot of folder with templates](readme/docs/images/website_templates1.jpg)
 
 </details>
 
 <details>
 <summary>Click here to view table with templates, part 2</summary>
 
-![screenshot of Post model part 2](readme/docs/images/website_templates2.jpg)
+![screenshot of folder with templates](readme/docs/images/website_templates2.jpg)
 </details>
+
+<details>
+<summary>Click here to view table with templates, part 3</summary>
+
+![screenshot of folder with templates](readme/docs/images/website_templates3.jpg)
+</details>
+
+<details>
+<summary>Click here to view table with templates, part 4</summary>
+
+![screenshot of folder with templates](readme/docs/images/website_templates4.jpg)
+</details>
+
+<details>
+<summary>Click here to view table with templates, part 5</summary>
+
+![screenshot of folder with templates](readme/docs/images/website_templates5.jpg)
+</details>
+
+<details>
+<summary>Click here to view table with templates, part 6</summary>
+
+![screenshot of folder with templates](readme/docs/images/website_templates6.jpg)
+</details>
+
+<details>
+<summary>Click here to view table with templates, part 7</summary>
+
+![screenshot of folder with templates](readme/docs/images/website_templates7.jpg)
+</details>
+
 
 <br>
 
@@ -1173,33 +1204,32 @@ For development of this webpage elements of Agile software development methodolo
 
 - Python packages
 
-    The following packages are used for the project. All modules can be found in requirements.txt file.
-    - asgiref==3.5.2
-    - cloudinary==1.29.0
-    - dj-database-url==0.5.0
-    - dj3-cloudinary-storage==0.0.6
-    - Django==3.2.13
-    - django-allauth==0.51.0
-    - django-booking==0.7.2
-    - django-bootstrap-datepicker-plus==4.0.0
-    - django-bootstrap4==22.1
-    - django-cloudinary-storage==0.3.0
-    - django-contact-form==2.0.1
-    - django-countries==7.3.2
-    - django-crispy-forms==1.14.0
-    - django-hvad==1.8.0
-    - django-libs==2.0.3
-    - django-summernote==0.8.20.0
-    - django-widget-tweaks==1.4.12
-    - gunicorn==20.1.0
-    - oauthlib==3.2.0
-    - psycopg2==2.9.3
-    - PyJWT==2.4.0
-    - python3-openid==3.2.0
-    - pytz==2022.1
-    - requests-oauthlib==1.3.1
-    - sqlparse==0.4.2
-    - whitenoise==6.2.0
+    The following packages are used for the project. All modules can be found in requirements.txt file:
+
+-    asgiref==3.6.0
+-    boto3==1.26.54
+-    botocore==1.29.54
+-    cloudinary==1.30.0
+-    dj-database-url==0.5.0
+-    Django==3.2
+-    django-allauth==0.41.0
+-    django-countries==7.5
+-    django-crispy-forms==1.14.0
+-    django-storages==1.13.2
+-    django-summernote==0.8.20.0
+-    gunicorn==20.1.0
+-    jmespath==1.0.1
+-    oauthlib==3.2.2
+-    Pillow==9.3.0
+-    psycopg2==2.9.5
+-    python3-openid==3.2.0
+-    pytz==2022.7
+-    requests-oauthlib==1.3.1
+-    s3transfer==0.6.0
+-    sqlparse==0.4.3
+-    stripe==5.0.0
+-    tzdata==2022.7
+
 - Bootstrap (https://getbootstrap.com/) - used for consistent layout and responsiveness across all the website.
 
 ### Version management and deployment
