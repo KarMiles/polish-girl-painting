@@ -210,7 +210,7 @@ Features with high and medium score between 8 and 25 points on scale 1-25 have b
 
 ## 1.iii. Structure <a name='structure'></a>
 
-## Website templates TODO
+## Website templates
 
 Templates are structured in folders named templates. Base template is used for the entire site for consistency and ease in user experience.
 Templates common for entire site, including base, allauth, error pages and includes are placed in the folder templates in the main directory. App-specific templates are placed in folders called templates within the appropriate apps. 
@@ -270,10 +270,14 @@ Templates common for entire site, including base, allauth, error pages and inclu
 Code is built with utilization of Django framework into apps, files and folders listed below.
 
 ### Apps
+- bag - functionality for managing the shopping bag.
+- blog - functionality for managing the owner's blog.
+- checkout - functionality for managing the e-commerce transactions for the site.
+- home - functionality for managing the home page.
+- products - functionality for managing the gallery containing products available for sale or only exposed for the visitors' viewing.
 - profiles - functionality for managing user profiles.
-- gallery - functionality designed for managing blogs, in this project used to manage posts with paintings being on offer. This includes posts and comments.
-- blog - functionality for Artirt's personal blog.
-- checkout - functionality for online sales transactions.
+- testimonials - functionality for managing feedback posts from users, combined with About Me section. Both Testimonials entries, entered by visitors, and About Me entries, entered by the owner, share the same page and functionality. 
+
 
 ### Files
 Files for running specific apps:
@@ -293,14 +297,16 @@ Common files:
 - requirements.txt - lists Python libraries installed for the project to work.
 - settings.py - settings.
 - db.sqlite3 - database used in development.
+- custom_storages.py - contains settings for production-phase storage.
 - README.md - project's documentation.
 
 ### Folders
 - pgpproject - main project for the website.
-- app folders: accounts, blog, booking, contact, poll.
+- app folders: bag, blog, checkout, home, products, testimonials.
 - helpers - features not being core of the website, contains views for rendering 403, 404 and 500 error pages.
 - readme - contains files necessary for Readme document to show all of its intended content.
 - static - contains all static files, e.g. style.css, in one place for easy access and management.
+- media - contains dynamic media files.
 - templates folder contains html files both supplied with apps and custom-made.
 
 ## Data schema
