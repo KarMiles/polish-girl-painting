@@ -218,44 +218,44 @@ Templates common for entire site, including base, allauth, error pages and inclu
 <details>
 <summary>Click here to view table with templates, part 1</summary>
 
-![screenshot of folder with templates](readme/docs/images/website_templates1.jpg)
+![screenshot of folder with templates](readme/docs/images/templates-screenshots/website_templates1.jpg)
 
 </details>
 
 <details>
 <summary>Click here to view table with templates, part 2</summary>
 
-![screenshot of folder with templates](readme/docs/images/website_templates2.jpg)
+![screenshot of folder with templates](readme/docs/images/templates-screenshots/website_templates2.jpg)
 </details>
 
 <details>
 <summary>Click here to view table with templates, part 3</summary>
 
-![screenshot of folder with templates](readme/docs/images/website_templates3.jpg)
+![screenshot of folder with templates](readme/docs/images/templates-screenshots/website_templates3.jpg)
 </details>
 
 <details>
 <summary>Click here to view table with templates, part 4</summary>
 
-![screenshot of folder with templates](readme/docs/images/website_templates4.jpg)
+![screenshot of folder with templates](readme/docs/images/templates-screenshots/website_templates4.jpg)
 </details>
 
 <details>
 <summary>Click here to view table with templates, part 5</summary>
 
-![screenshot of folder with templates](readme/docs/images/website_templates5.jpg)
+![screenshot of folder with templates](readme/docs/images/templates-screenshots/website_templates5.jpg)
 </details>
 
 <details>
 <summary>Click here to view table with templates, part 6</summary>
 
-![screenshot of folder with templates](readme/docs/images/website_templates6.jpg)
+![screenshot of folder with templates](readme/docs/images/templates-screenshots/website_templates6.jpg)
 </details>
 
 <details>
 <summary>Click here to view table with templates, part 7</summary>
 
-![screenshot of folder with templates](readme/docs/images/website_templates7.jpg)
+![screenshot of folder with templates](readme/docs/images/templates-screenshots/website_templates7.jpg)
 </details>
 
 
@@ -593,20 +593,20 @@ Flow of information and decisions the website operates on are represented in the
 <summary>Click here to view business logic flowchart</summary>
 Main chart
 
-![image](readme/docs/images/flowchart.jpg)
+![image](readme/docs/images/business-logic/flowchart.jpg)
 
 Account management / logins
 
-![image](readme/docs/images/account_management.jpg)
+![image](readme/docs/images/business-logic/account_management.jpg)
 </details>
 
 <br>
 
 ## 1.v. Surface <a name='surface'></a>
-The values behind building the webpage for physical therapy clinic are clean simplicity, impeccable hygiene and a friendly, sublte environment. This is reflected in the webpage surface.
+The goal behind building the webpage for the Artist is priritising exposition of the Artist's items. Usage of colour is minimised to leave space to the art itself. This is reflected in the webpage surface.
 
 ### **Colour Palette**
-Colour palette reflects the clinic's dedication to hygiene and simplicity. For this purpose pastel colours are used, mainly blue and red with light shades of beige. Blue brings cleanliness and lightness to mind and red is commonly associated with health care while light beige binds them together in a subtle, friendly environment.
+Colour palette reflects the simplicity of an art gallery. For this purpose pastel colours are used, mainly blue and red with light shades of beige. Blue brings cleanliness and lightness to mind and red is commonly associated with health care while light beige binds them together in a subtle, friendly environment.
 
 Screenshot of colour palette:
 
@@ -614,9 +614,21 @@ Screenshot of colour palette:
 
 ### **Typography**
 
-A font chosen for the site had to be light, simple and easy to read to be coherent with the rest of the graphic design. For this purpose I chose font Raleway with fall-back font Lato. Both are available from Google Fonts service.
+Fonts chosen for the site had to be light, simple and easy to read to be coherent with the rest of the graphic design. For this purpose I chose fonts: 
+- PT Serif for the content with fall-back font Source Serif Pro. 
+- Josefin Sans for functional areas of the site: navigation, confirmations and alerts and footer.
+- Tenor Sans for text input areas.
 
-![screenshot of google fonts](readme/docs/images/surface/font_raleway.jpg)
+All fonts are available from Google Fonts service.
+
+<details>
+<summary>Screenshots of used fonts</summary>
+
+![image](readme\docs\images\surface\font_pt_serif.jpg)
+![image](readme\docs\images\surface\font_source_serif_pro.jpg)
+![image](readme\docs\images\surface\font_josefin_sans.jpg)
+![image](readme\docs\images\surface\font_tenor_sans.jpg)
+</details>
 
 ### **Imagery**
 Graphics for the site were chosen with the intention of maintaining the theme of a friendly and quiet environment of a physiotherapy practice. Pastelle hues of blue and beige / brown dominate the photos with the exception of the black-and-white hero image aiming to be a welcome accord for the guest. Contrast on the hero photo is slightly lowered to harmonize it with the rest of the site. 
@@ -1336,7 +1348,7 @@ For development of this webpage elements of Agile software development methodolo
 
 - Google Fonts (https://fonts.google.com/) - for selecting fonts and using them in the project.
 - Font Awesome (https://fontawesome.com/) - all the icons throughout the website are derived from this service.
-- Coolors.co (https://coolors.co/) - for generating colour pallette for the website.
+- Coolors.co (https://coolors.co/) - for generating colour palette for the website.
 - SmallPDF (https://smallpdf.com/) - PDF to jpg file conversion.
 
 ### Python libraries
