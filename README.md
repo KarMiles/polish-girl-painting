@@ -593,11 +593,11 @@ Flow of information and decisions the website operates on are represented in the
 <summary>Click here to view business logic flowchart</summary>
 Main chart
 
-![image](readme/docs/images/pgp_flowchart.jpeg)
+![image](readme/docs/images/flowchart.jpg)
 
 Account management / logins
 
-![image](readme/docs/images/pgp_account_management.jpeg)
+![image](readme/docs/images/account_management.jpg)
 </details>
 
 <br>
