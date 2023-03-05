@@ -444,7 +444,7 @@ Relationships
 <details>
 <summary>Click here to view the model</summary>
 
-![screenshot of Post model](readme/docs/images/database/homesettings_model.jpg)
+![screenshot of HomeSettings model](readme/docs/images/database/homesettings_model.jpg)
 </details>
 <br>
 
@@ -455,32 +455,55 @@ Relationships
 
 - Part of products app.
 - Represents all pieces of art in the gallery, both the ones available for sale and not available.
+- This model contains the following fields: title, sku, excerpt, description, price, image, category, orientation, is_unique, priority, highlight, available, live, created_on, updated_on.
 
 Relationships
 - It has one-to-many relationship with Category model (one category can be related with many products).
 - It has one-to-many relationship with OrderLineItem model (one product can be related with many line items).
 
 <details>
-<summary>Click here to view Contact model</summary>
+<summary>Click here to view Product model</summary>
 
-![screenshot of Contact model](readme/docs/images/database/product_model.jpg)
+![screenshot of Product model](readme/docs/images/database/product_model.jpg)
 </details>
+
+<br>
 
 ### Model: Category
 
 - Part of products app.
 - Represents categories of the pieces of art in the gallery.
+- This model contains the following fields: name, friendly_name.
 
 Relationships
 - It has one-to-many relationship with Product model (one category can be related with many products).
 
 <details>
-<summary>Click here to view Contact model</summary>
+<summary>Click here to view Category model</summary>
 
-![screenshot of Contact model](readme/docs/images/database/category_model.jpg)
+![screenshot of the model](readme/docs/images/database/category_model.jpg)
 </details>
 <br>
 
+
+***App: testimonials***
+
+### Model: Testimonial
+
+- Part of testimonials app.
+- Represents entries shown on the About Me page. Entries made by registered users need to be approved by owner and after approval are shown in the Testimonials / Feedback section. Entries made by owner and marked as "About Me" (about_me marked as True in the form) are shown on the same page in the About Me section.
+- This model contains the following fields: title, author, content, craeted_on, updated_on, priority, about_me, live.
+
+Relationships
+- It has one-to-many relationship with User model (one user can be related with many entries).
+
+<details>
+<summary>Click here to view Testimonial model</summary>
+
+![screenshot of Testimonial model](readme/docs/images/database/testimonial_model.jpg)
+</details>
+
+<br>
 
 ### Definitions
 

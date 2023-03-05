@@ -105,9 +105,6 @@ class Order(models.Model):
         self.order_total = self.lineitems.aggregate(
             Sum('lineitem_total'))['lineitem_total__sum'] or 0
 
-        # fdt = settings.FREE_DELIVERY_THRESHOLD
-        # sdp = settings.STANDARD_DELIVERY_PERCENTAGE
-        # dmc = settings.DELIVERY_MIN_CHARGE
         checkout_settings = CheckoutSettings.objects.order_by('-id').first()
         fdt = checkout_settings.free_delivery_threshold
         sdp = checkout_settings.standard_delivery_percentage
