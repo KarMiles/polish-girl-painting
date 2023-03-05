@@ -519,48 +519,43 @@ Relationships
 - BooleanField - allows for true / false statements.
 - Meta - class allowing for changing behaviour of the model fields, e.g. setting order in which data is presented.
 - verbose_name - allows to alter label accompanying a form field.
+- verbose_name_plural - allows to alter plural for a field, represented in Admin page.
 - `__str__(self)` -  allows to return an object converted into a string which can be used for the admin page and other purposes. 
 - reverse_lazy - is an implementation of the reverse URL resolver, unlike the traditional reverse function, reverse_lazy won't execute until the value is needed. It is useful because it prevents 'Reverse Not Found' exceptions when working with URLs that may not be immediately known, which - in this project - is the case in CreatePost class.
 
 ___
-## 1.iv. Skeleton <a name='skeleton'></a> [#2](https://github.com/KarMiles/polish-girl-painting/issues/2)TODO
+## 1.iv. Skeleton <a name='skeleton'></a>
 
 Layout of the interface, navigation and information design for different screen sizes were planned with utilization of wireframes created in Balsamiq. 
 
 <details>
-<summary>Wireframe: Home page - hero image</summary>
+<summary>Wireframe: Home page</summary>
 
-![image](readme/docs/images/wireframes/home_hero.png)
+![image](readme/docs/images/wireframes/home.png)
 </details>
 
 <details>
-<summary>Wireframe: Home page - content</summary>
+<summary>Wireframe: Gallery</summary>
 
-![image](readme/docs/images/wireframes/home_content.png)
+![image](readme/docs/images/wireframes/products.png)
 </details>
 
 <details>
-<summary>Wireframe: Poll - main</summary>
+<summary>Wireframe: Product details</summary>
 
-![image](readme/docs/images/wireframes/poll_main.png)
+![image](readme/docs/images/wireframes/product_detail.png)
 </details>
 
 <details>
-<summary>Wireframe: Poll - vote</summary>
+<summary>Wireframe: Blog</summary>
 
-![image](readme/docs/images/wireframes/poll_vote.png)
+![image](readme/docs/images/wireframes/blog.png)
 </details>
 
 <details>
-<summary>Wireframe: Poll - results</summary>
+<summary>Wireframe: About Me</summary>
 
-![image](readme/docs/images/wireframes/poll_result.png)
-</details>
-
-<details>
-<summary>Wireframe: Poll - create</summary>
-
-![image](readme/docs/images/wireframes/poll_create.png)
+![image](readme/docs/images/wireframes/about_me_testimony.png)
 </details>
 
 <details>
@@ -585,18 +580,6 @@ Layout of the interface, navigation and information design for different screen 
 <summary>Wireframe: Account - password reset</summary>
 
 ![image](readme/docs/images/wireframes/account_pass_reset.png)
-</details>
-
-<details>
-<summary>Wireframe: Direct communication - contact us</summary>
-
-![image](readme/docs/images/wireframes/contact.png)
-</details>
-
-<details>
-<summary>Wireframe: Direct communication - booking</summary>
-
-![image](readme/docs/images/wireframes/booking.png)
 </details>
 
 <br>
