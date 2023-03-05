@@ -311,13 +311,13 @@ Common files:
 
 ## Data schema
 
-**Database** [#2](https://github.com/KarMiles/polish-girl-painting/issues/2)TODO
+**Database**
 
 A relational database was used for this project. 
 
 During development process SQLite DB was initially used, then Postgres. For production Postgres was used as the main database for static files, and for deployment the data was migrated to Heroku Postgres.
 
-[Cloudinary](https://cloudinary.com) service was used for storing static and media files. 
+[Amazon Web Services (AWS)](https://aws.amazon.com/) service was used for storing static and media files. 
 
 **Data schema diagram**
 
@@ -325,7 +325,7 @@ During development process SQLite DB was initially used, then Postgres. For prod
 
 ---
 
-## Models [#2](https://github.com/KarMiles/polish-girl-painting/issues/2)TODO
+## Models
 The following models represent the database structure for the website.
 
 ### Model: User
@@ -333,85 +333,151 @@ The following models represent the database structure for the website.
 - This model contains the following fields: username, first_name, last_name, email, password, tel, is_staff, is_active, is_superuser.
 
 Relationships
-- It has one-to-many relationship with Contact model (one User can be related to many contact-us messages).
+- It has one-to-one relationship with UserProfile model (one User can be related to one UserProfile).
 - It has one-to-many relationship with Post model (one user can be related to many posts and many likes).
-- It has one-to-many relationship with Booking model (one user can be related to many bookings).
+- It has one-to-many relationship with Testimonial model (one user can be related to many testimonials).
 
+***App: profiles***
+
+### Model: UserProfile
+- Part of prifiles app.
+- This model one-to-one relationship with user model and represents the user's default contact details, applied mainly for shipment.
+- This model contains the following fields: user, default_phone_number, default_street_address1, default_street_address2, default_town_or_city, default_county, default_postcode, default_country.
+
+***App: blog***
 
 ### Model: Post
 - Part of blog app.
-- This model represents treatments offered by the company.
+- This model represents posts in blog run by the owner.
+- This model contains the following fields: title, slug, author, content, fetured_image, highlight, live, created_on, updated_on.
 
 Relationships
-- It has one-to-many relationship with User model.
-- It has one-to-many relationship with Booking model (a Post can be related to many Bookings).
-- It has one-to-many relationship with Comment model (a Post can be related to many Comments).
-
-Fields and attributes for the Post model
+- It has one-to-many relationship with User model (one user can be related to many posts).
 
 <details>
-<summary>Click here to view Post model - part 1</summary>
+<summary>Click here to view Post model</summary>
 
-![screenshot of Post model part 1](readme/docs/images/database/post_model_1.jpg)
-</details>
-
-<details>
-<summary>Click here to view Post model - part 2</summary>
-
-![screenshot of Post model part 2](readme/docs/images/database/post_model_2.jpg)
-</details>
-
-<details>
-<summary>Click here to view Post model - part 3</summary>
-
-![screenshot of Post model part 3](readme/docs/images/database/post_model_3.jpg)
+![screenshot of Post model part 1](readme/docs/images/database/post_model.jpg)
 </details>
 <br>
 
-### Model: Comment
-
+### Model: BlogSettings
 - Part of blog app.
-- This model represents comments registered users can write on treatments.
-
-Relationships
-- Comment model has one-to-many relationship with Post model (a post can have many comments)
+- This model is created to contain settings for the blog and has no relationships with other models.
 
 <details>
-<summary>Click here to view Comment model</summary>
+<summary>Click here to view BlogSettings model</summary>
 
-![screenshot of Comment model](readme/docs/images/database/comment_model.jpg)
+![screenshot of Post model part 2](readme/docs/images/database/blogsettings_model.jpg)
+</details>
+
+<br>
+
+
+***App: checkout***
+
+### Model: Order
+- Part of checkout app.
+- This model represents orders made by users.
+- This model contains the following fields: order_number, user_profile, full_name, email, phone_number, country, postcode, town_or_city, street_address1, street_address2, county, date, delivery_cost, order_total, grand_total, original_bag, stripe_pid.
+
+Relationships
+- It has one-to-many relationship with UserPrifile model (one user / UserProfile can be related with many orders).
+- It has one-to-many relationship with OrderLineItem model (one order can be related with many line items).
+
+<details>
+<summary>Click here to view the model (part 1)</summary>
+
+![screenshot of Post model part 1](readme/docs/images/database/order_model1.jpg)
+</details>
+
+<details>
+<summary>Click here to view the model (part 2)</summary>
+
+![screenshot of Post model part 2](readme/docs/images/database/order_model2.jpg)
 </details>
 <br>
 
-### Model: Booking 
-
-- Part of booking app.
-- Represents requests for appointments for specific treatments registered users can place via the webpage.
-- Bookings are ordered by time of creation in descending order.
+### Model: OrderLineItem
+- Part of checkout app.
+- This model represents items in an order made by user.
+- This model contains the following fields: order, product, quantity, lineitem_total.
 
 Relationships
-- Booking model has one-to-many relationship with User model (a user can place many booking requests).
-- Booking model has one-to-many relationship with Post model (a post/treatment can have many booking requests).
+- It has one-to-many relationship with Order model (one order can be related with many line items).
+- It has one-to-one relationship with Product model (one line item can be related with one product).
 
 <details>
-<summary>Click here to view Booking model</summary>
+<summary>Click here to view the model</summary>
 
-![screenshot of Booking model](readme/docs/images/database/booking_model.jpg)
+![screenshot of Post model part 1](readme/docs/images/database/orderlineitem_model.jpg)
 </details>
 <br>
 
-### Model: Contact
-
-- Part of contact app.
-- Represents messages all users can send via webpage in Contact Us section.
+### Model: CheckoutSettings
+- Part of checkout app.
+- This model represents settings for commercial transactions, alterable by owner in Admin page.
+- This model contains the following fields: live, free_delivery_threshold, standard_delivery_percentage, delivery_min_charge.
 
 Relationships
-- No relationships set in the Contact model. In ModelContactForm information is pulled about registered user, if available. This offers some benefits of one-to-many relationship with User model combined with flexibility of also serving unregistered users.
+- It has no relations with other models.
+
+<details>
+<summary>Click here to view the model</summary>
+
+![screenshot of CheckoutSettings model](readme/docs/images/database/checkoutsettings_model.jpg)
+</details>
+<br>
+
+
+***App: home***
+
+### Model: HomeSettings 
+
+- Part of home app.
+- Represents settings for the home app, altarable by owner on the Admin page.
+- This model contains the following field: background_image.
+
+Relationships
+- It has no relations with other models.
+
+<details>
+<summary>Click here to view the model</summary>
+
+![screenshot of Post model](readme/docs/images/database/homesettings_model.jpg)
+</details>
+<br>
+
+
+***App: products***
+
+### Model: Product
+
+- Part of products app.
+- Represents all pieces of art in the gallery, both the ones available for sale and not available.
+
+Relationships
+- It has one-to-many relationship with Category model (one category can be related with many products).
+- It has one-to-many relationship with OrderLineItem model (one product can be related with many line items).
 
 <details>
 <summary>Click here to view Contact model</summary>
 
-![screenshot of Contact model](readme/docs/images/database/contact_model.jpg)
+![screenshot of Contact model](readme/docs/images/database/product_model.jpg)
+</details>
+
+### Model: Category
+
+- Part of products app.
+- Represents categories of the pieces of art in the gallery.
+
+Relationships
+- It has one-to-many relationship with Product model (one category can be related with many products).
+
+<details>
+<summary>Click here to view Contact model</summary>
+
+![screenshot of Contact model](readme/docs/images/database/category_model.jpg)
 </details>
 <br>
 
