@@ -630,44 +630,23 @@ All fonts are available from Google Fonts service.
 ![image](readme\docs\images\surface\font_tenor_sans.jpg)
 </details>
 
+<br>
+
 ### **Imagery**
-Graphics for the site were chosen with the intention of maintaining the theme of a friendly and quiet environment of a physiotherapy practice. Pastelle hues of blue and beige / brown dominate the photos with the exception of the black-and-white hero image aiming to be a welcome accord for the guest. Contrast on the hero photo is slightly lowered to harmonize it with the rest of the site. 
+
+
+Graphics for the site were chosen with the intention of maintaining the theme of a minimalistic environment of an art gallery where it is the art itself that takes priority. The only image used outside the product list is the background for the home page. This image is by default the piece painted by the artist and can be overwritten in the Admin page.
+
+The design is dominated by Black and White with some Jet (very dark grey) and Gainsboro (very light grey) with addition of scant usage of colours Indigo Dye and Ming. Colours were chosen by the artist herself. 
 
 <br>
 <details>
-<summary>Click here to view image 1</summary>
+<summary>Click here to view image</summary>
 
-Image 1 serves as hero image and a placeholder.
-![image 1](readme/docs/images/surface/graphics/placeholder.jpg)
+Image of the artist's painting serves as hero image.
+![image 1](readme/docs/images/surface/home.jpg)
 </details>
 
-<br>
-<details>
-<summary>Click here to view image 2</summary>
-
-![image 2](readme/docs/images/surface/graphics/hello.jpg)
-</details>
-
-<br>
-<details>
-<summary>Click here to view image 3</summary>
-
-![image 3](readme/docs/images/surface/graphics/letter.jpg)
-</details>
-
-<br>
-<details>
-<summary>Click here to view image 4</summary>
-
-![image 4](readme/docs/images/surface/graphics/sincerely.jpg)
-</details>
-
-<br>
-<details>
-<summary>Click here to view image 5</summary>
-
-![image 5](readme/docs/images/surface/graphics/vote.jpg)
-</details>
 <br>
 
 ___
