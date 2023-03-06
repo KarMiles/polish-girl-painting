@@ -18,36 +18,36 @@
                         <h4 class="card-title ml-3">{{ post.title }}</h4>
                         <p class="card-text text-muted h6 ml-3">{{ post.author.get_full_name|default:post.author.username }} | {{ post.created_on | date:"d F Y" }} </p>
                         <div class="card-body">
-                            <div class="col-12 col-lg-5 float-right details-image mt-4 mb-3 ml-1"> 
+                            <div class="col-12 col-lg-5 float-right details-image mb-3 ml-1"> 
                                 {% if post.featured_image %}
                                 <img src="{{ post.featured_image.url }}"
                                     alt="featured photo for the blog post"
                                     class="w-100">
                                 {% endif %}
                             </div>
-                            <div class="col-12">
+                            <div class="col-12 col-lg-7">
                                 <p class="card-text float-md-right">{{post.content|safe }}</p>
                             </div>
-                            
-                            <!-- Superuser section -->
-                            {% if request.user.is_staff %}
-                            <div class="text-center">
-                                <small>
-                                    <a href="{% url 'post_edit' post.slug %}"  class="mr-1">Edit</a>
-                                    <a href="{% url 'post_delete' post.slug %}" class="text-danger">Delete</a>
-                                </small>
-                            </div>
-                            {% endif %}
-
-                            <div class="text-center my-3">
-                                <a href="{% url 'blog' %}"
-                                    class="btn btn-outline-black corners px-1 py-1">
-                                    <span class="text-uppercase mx-1">Back to Blog</span>
-                                </a>
-                            </div>
                         </div>
-                    </div>
+                        
+                        <!-- Superuser section -->
+                        {% if request.user.is_staff %}
+                        <div class="text-center">
+                            <small>
+                                <a href="{% url 'post_edit' post.slug %}"  class="mr-1">Edit</a>
+                                <a href="{% url 'post_delete' post.slug %}" class="text-danger">Delete</a>
+                            </small>
+                        </div>
+                        {% endif %}
+    
+                        <div class="text-center my-3">
+                            <a href="{% url 'blog' %}"
+                                class="btn btn-outline-black corners px-1 py-1">
+                                <span class="text-uppercase mx-1">Back to Blog</span>
+                            </a>
+                        </div>
 
+                    </div>
                 </div>
             </div>
 
