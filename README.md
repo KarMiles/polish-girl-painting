@@ -869,18 +869,13 @@ On successful login user is redirected to the main page and shown a temporary co
 </details>
 <br>
 
-When logged in user has easy access to information about their login status:
+When logged in user has easy access to information about their profile:
 <details>
-<summary>Login status on large screen </summary>
+<summary>Profile information</summary>
 
-![screenshot of image](readme/docs/images/testing/features/acc_mgt_username_large.jpg)
+![screenshot of image](readme/docs/images/testing/features/acc_mgt_profile_info.jpg)
 </details>
 
-<details>
-<summary>Login status on small screen </summary>
-
-![screenshot of image](readme/docs/images/testing/features/acc_mgt_username_small.jpg)
-</details>
 <br>
 
 Logged in user can sign out. After signout user is redirected to the main page and temporary confirmation message is shown:
@@ -1335,6 +1330,7 @@ For development of this webpage elements of Agile software development methodolo
 - PEP8 Online Validation Service: (http://pep8online.com) - for validating Python code.
 - Unittest (https://docs.djangoproject.com/en/3.2/topics/testing/overview/) - for Python unit testing
 - Google Chrome Developer Tools - built-in developer tools used to inspect page elements and help debug issues with the website functionality and layout.
+- [GIgnore X-Frame headers](https://chrome.google.com/webstore/detail/ignore-x-frame-headers/gleekbfjekiniecknbkamfmkohkpodhe/related) Google Chrome extension - for testing site responsiveness.
 
 ### Design stages
 - Lucidchart (www.lucidchart.com/) - used to create flowcharts.
