@@ -765,15 +765,14 @@ Access to navbar features:
 
 ### **Feature 2: Footer**
 The footer is displayed below all other content. Short information about the project and links to company's social media are placed there. Links are available to all users, open in a different tab for easy navigation and contain: 
-- Facebook, 
 - Instagram,
-- Twitter,
-- YouTube.
+- YouTube,
+- Facebook.
 
 <br>
 Click to view image:
 <details>
-<summary>Footer </summary>
+<summary>Footer</summary>
 
 ![screenshot of image](readme/docs/images/testing/features/footer.jpg)
 </details>
@@ -781,7 +780,7 @@ Click to view image:
 
 #### **Related user stories**
 
-3.3 As a **site user** I can **locate company's social media accounts** so I can **stay in contact through alternative means**.
+2.4 As a **site user** I can **find links to Artist's social media wherever I am on the webpage** so that **I can use alternative means of getting the content**.
 
 <br>
 
@@ -791,43 +790,32 @@ Click to view image:
 
 ### **Feature 3. Home page**
 
-On home page user is welcome with a hero picture whose goal is to draw attention and set a scene and mood of the site. In the middle of the hero page is a semi-transparent section with company name and slogan together with a small symbol indicating that more content is available below. To continue on to the content user can click the symbol or scroll down. 
-
-Below the hero image descriptions of available treatments are presented. Each description consists of following components:
-- title,
-- excerpt,
-- main content,
-- photo,
-- number of likes and comments,
-- status (visible only to staff users).
-Presentation follows responsive design.
+On home page user is welcomed with a hero picture whose goal is to draw attention and set a scene and mood of the site. In the middle of the hero page is a semi-transparent section with titles of blog entries the owner maked as highlights. Also, on small screens the logo-styled artit's name is moved here from the top navigation bar. To continue on to the content user can either click one of the links on the navigation bar or click one of the highlighted post titles in the welcome box.  Scrolling down will result in showing the footer. 
 
 <br>
-Click to view image:
-<details>
-<summary>Home screen with hero image </summary>
-
-![screenshot of image](readme/docs/images/testing/features/home_hero.jpg)
-</details>
 
 <details>
 <summary>Home screen on large screen </summary>
 
-![screenshot of image](readme/docs/images/testing/features/home_large_scr.jpg)
+![screenshot of image](readme\docs\images\surface\home.jpg)
 </details>
 
 <details>
 <summary>Home screen on small screen </summary>
 
-![screenshot of image](readme/docs/images/testing/features/home_small_scr.jpg)
+![screenshot of image](readme\docs\images\surface\home_small_scr.jpg)
 </details>
 <br>
 
 #### **Related user stories**
 
-3.1 As a **site user** I can **read and respond to available content** so **my experience on the site feels engaging and interactive**. 
+3.1 As a **site user** I can **locate company's social media accounts** so I can **stay in contact through alternative means**.
 
-4.1 As a **site user** I can **quickly get a general idea about services on offer** so that I can **prioritize which content to read more thoroughly**.
+3.2 As a **site user** I can **subscribe to a newsletter** so I can **stay engaged and stay up do date with the Artist's offering and creative process**.
+
+3.3 As a **registered site user** I can **use website without having to re-enter my details** so that **my activity on the site requires minimum afford from my side**.
+
+3.4 As a **site user** I can **see immediately information about newest content** so I can **go directly to that content should I wish to do so**.
 
 <br>
 
