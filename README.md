@@ -663,11 +663,12 @@ ___
 
 ### **Feature 1. Navigation bar**
 
-Navigation bar is present on top of the screen on all pages of the site. Aim of this feature is that the user always have access to easy navigation across the site without the need to use browser navigation features, e.g. 'back' button.
-
-Navigation bar is responsive to screen size, all buttons are visible on large screens, while on small screens navigation menu is available from the hamburger button. Logo, also serving as a 'home' button is always visible. 
+Navigation bar is present on top of the screen on all pages of the site. Aim of this feature is that the user always has access to easy navigation across the site without the need to use browser navigation features, e.g. 'back' button.
+The navigation bar consists of two parts: the main navigation bar and secondary bar below. The main bar contains links to Home page, search bar, My Account and Bag with submenu with links to the sections of the site: Gallery, Blog and About Me. The secondary bar contains a link to the highlights and in case user chooses Galery in the main navigation bar it lists categories of products. The list of categories works as an aditional navigation bar, allowing the user to filter through the products shown in the Gallery. List of categories can be edited by owner in Admin page.
 
 **Responsive design**
+
+Navigation bar is responsive to screen size, all buttons are visible on large screens, while on small screens navigation menu is available from the hamburger button. The artist's name serving as a logo also serves as a 'home' button and is visible on small to medium screens and is replaced by Home link in the hamburger menu on small screens. 
 
 Navigation menu is minimized to hamburger button on small screens:
 <details>
@@ -697,9 +698,9 @@ Navigation menu stretched on a larger screen:
 
 **Authorization - dependent navigation**
 
-Navigation menu is dependent on current user profile. Users without login are presented with the simplest menu due to limited authorization. This is visible in Contact Us option. Registered clients have added options of requesting specific treatments "Request appointment":
+Navigation menu is dependent on current user profile. Users without login are presented with the simplest menu due to limited authorization. This is reflected in My Account option. Staff users have access to Product, Blog and About Me/Testimonials Management. Registered clients have added option of checking and updating user information. 
 
-Navigation bar - unregistered user:
+My Account - unregistered user:
 <details>
 <summary>Click here to view image </summary>
 
@@ -707,31 +708,59 @@ Navigation bar - unregistered user:
 </details>
 <br>
 
-Contact Us - registered user:
+My Account - registered user:
 <details>
 <summary>Click here to view image </summary>
 
-![screenshot of navbar](readme/docs/images/testing/features/navbar_contact.jpg)
+![screenshot of navbar](readme/docs/images/testing/features/navbar_registered.jpg)
+</details>
+<br>
+
+My Account - staff:
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of navbar](readme/docs/images/testing/features/navbar_staff.jpg)
 </details>
 <br>
 
 Access to navbar features:
 
-| No. | Feature             | Not logged in | Logged in client | Staff | Admin |
-| --- | ------------------- | ------------- | ---------------- | ----- | ----- |
-| 1   | Navigation bar      | yes           | yes              | yes   | yes   |
-| 2   | Request appointment | no            | yes              | yes   | yes   |
-
+| No. | Feature                            | Not logged in | Logged in client | Staff | Admin |
+| --- | ---------------------------------- | ------------- | ---------------- | ----- | ----- |
+| 1   | Navigation bar                     | yes           | yes              | yes   | yes   |
+| 2   | Gallery, Blog, About Me            | yes           | yes              | yes   | yes   |
+| 3   | Login / Logout                     | yes           | yes              | yes   | yes   |
+| 4   | My Profile                         | no            | yes              | yes   | yes   |
+| 5   | Product Management                 | no            | no               | yes   | yes   |
+| 6   | Blog / Highlights Management       | no            | no               | yes   | yes   |
+| 7   | About Me / Testimonials Management | no            | no               | yes   | yes   |
+| 8   | Admin screen                       | no            | no               | no    | yes   |
 
 <br>
 
 #### **Related user stories**
 
-1.5 As a **site user** I can **easily see my current login status** so that **I know I'm in control of access to my enhanced service on currently used device**.
+1.2 As a **site user** I can **register** so that **I can reuse once entered information**.
+
+1.3 As a **site user** I can **log in using my username and password** so that I can **reuse once entered personal information**.
+
+1.4 As a **site user** I can **log out of my account** so that I know **my information stays confidential**.
+
+1.5 As a **site user** I can **easily see my current login status** so that **I can control my status for privacy protection**.
+
+1.6 As a **site user** I receive **confirmation of logging in and logging out visible on webpage** so that I **instantly know if the operation was successful**.
+
+1.7 As a **site user** I can **reset my password** so that I can **safely remain the website's registered user**.
 
 2.1 As a **site user** I can **navigate the service intuitively** so that I can **utilize all of its content**.
 
-2.3 As a **site user** I can **navigate the site on all kinds of devices** so that **I am not limited to any kind of device**.
+2.2 As a **site user** I can easily **browse through available items** so I can **decide which ones are most appropriate to me**.
+
+2.3 As a **site user** I can **navigate the site on all kinds of screens** so that **I am not limited to any kind of device**.
+
+2.5 As a **site user** I can **easily go back to home page** so I can **restart my experience**.
+
 <br>
 
 ### **Feature 2: Footer**
