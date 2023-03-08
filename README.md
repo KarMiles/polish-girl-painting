@@ -8,8 +8,8 @@ Users for testing:
 
 | Username     | Password | Status   |
 | ------------ | -------- | -------- |
-| ... | 1qazcde3 | staff    |
-| ... | 1qazcde3 | customer |
+| staff_user | 1qaz3edc | staff_user    |
+| user | 1qaz3edc | customer |
 
 <br>
 
@@ -946,62 +946,27 @@ In case a problem occurs when a user tries to access a page an error page is sho
 [Table of Contents](#home)
 
 ---
-### **Feature 5. Posts**
+### **Feature 5. Blog**
 
-In the blog app standard mechanisms of a blog are employed. Each post represents a treatment offered by the company. Posts can be created, edited and deleted by users with staff status. This can be done on the webpage after choosing appropriate button under a post (only visible to staff users) or on admin page by the administrator of the webpage. Users who are not logged in or are logged in as non-staff can see posts with status "live". Staff users can see both "live" and "draft" posts.
+In the blog app standard mechanisms of a blog are employed. Posts can be created, edited and deleted by users with staff status including admin. Adding a new post can be done by choosing a link Blog/Highlights under My Account or in admin page. Editing and deleting posts can be done on the webpage after choosing appropriate button under a post (only visible to staff users) or on admin page by the administrator of the webpage. Users who are not logged in or are logged in as non-staff can see posts with status "live". Staff users can see both "live" and "draft" posts.
 
-**Post list**
+**Blog**
 
 All users can view a list of posts with "live status"
 <details>
-<summary>Posts - guest </summary>
+<summary>Blog - guest </summary>
 
 ![screenshot of image](readme/docs/images/testing/features/posts_guest.jpg)
 </details>
-
-<details>
-<summary>Posts - guest, small screen</summary>
-
-![screenshot of image](readme/docs/images/testing/features/posts_guest_small.jpg)
-</details>
-
-<br>
-Staff users can see both "live" and "draft" posts and add new posts. 
-<details>
-<summary>Posts - staff</summary>
-
-![screenshot of image](readme/docs/images/testing/features/posts_staff.jpg)
-</details>
-
-<details>
-<summary>Posts - staff, small screen</summary>
-
-![screenshot of image](readme/docs/images/testing/features/posts_staff_small.jpg)
-</details>
 <br>
 
-**Post details**
+Staff users can see both "live" and "draft" posts and can add new, edit and delete posts. 
 
-Users can click on a treatment title or excerpt to see treatment details, number of likes and comments and comments content.
+<details>
+<summary>Post cut</summary>
 
-Each post consists of:
-- title
-- author and date of creation
-- excerpt
-- graphic illustration
-- main description of treatment
-- number of likes (with possibility to add a like for logged in users)
-- number of comments
-- price
-- comments
-- add comment form (logged in users)
-- edit and delete buttons (staff users)
-
-
-Functionality available on details page depends on user status: 
-- Non-logged in users can view information related to live posts, 
-- logged-in users / clients can also engage by liking the treatments and adding comments. 
-- Staff users can also edit and delete the treatments, with both live and draft status.
+![screenshot of image](readme/docs/images/testing/features/post_cut.jpg)
+</details>
 
 <details>
 <summary>Post details</summary>
@@ -1009,56 +974,37 @@ Functionality available on details page depends on user status:
 ![screenshot of image](readme/docs/images/testing/features/post_details.jpg)
 </details>
 
-<details>
-<summary>Post details, small screen</summary>
-
-![screenshot of image](readme/docs/images/testing/features/post_details_small.jpg)
-</details>
-
-<details>
-<summary>Post details, staff</summary>
-
-![screenshot of image](readme/docs/images/testing/features/post_details_staff.jpg)
-</details>
-
-<details>
-<summary>Post details, staff, small screen</summary>
-
-![screenshot of image](readme/docs/images/testing/features/post_details_staff_small.jpg)
-</details>
-
 <br>
 
-### Access to post features
+**Post details**
 
-| No. | Feature        | Not logged in | Logged in client | Staff | Admin |
-| --- | -------------- | ------------- | ---------------- | ----- | ----- |
-| 1   | Create post    | no            | no               | yes   | yes   |
-| 2   | Edit post      | no            | no               | yes   | yes   |
-| 3   | Delete post    | no            | no               | yes   | yes   |
-| 4   | Read post      | yes           | yes              | yes   | yes   |
-| 5   | Create comment | no            | yes              | yes   | yes   |
-| 6   | Edit comment   | no            | no               | no    | yes   |
-| 7   | Delete comment | no            | no               | no    | yes   |
-| 8   | Read comment   | yes           | yes              | yes   | yes   |
-| 9   | Like a post    | no            | yes              | yes   | yes   |
+To maintain seamless flow of blog posts on the blog page long posts are cut and show Read More button at the bottom. The button leads to a detail page presenting full content of the post.
 
+Each post consists of:
+- title
+- date of creation
+- optional graphic illustration
+- content
+
+Blog visibility is controlled in admin site in section Blog - Settings.
+
+### Access to blog features
+
+| No. | Feature     | Not logged in | Logged in client | Staff | Admin |
+| --- | ----------- | ------------- | ---------------- | ----- | ----- |
+| 1   | Create post | no            | no               | yes   | yes   |
+| 2   | Edit post   | no            | no               | yes   | yes   |
+| 3   | Delete post | no            | no               | yes   | yes   |
+| 4   | Read post   | yes           | yes              | yes   | yes   |
+| 5   | Hide blog   | no            | no               | no    | yes   |
 
 #### **Related user stories**
 
-4.1 As a **site user** I can **quickly get a general idea about services on offer** so that I can **prioritize which content to read more thoroughly**.
+5.1 As a **site user** I can **read Artist's blog** so that I can **stay up to date with the Artist's developments**.
 
-4.2 As a **site user** I can **read thoroughly about chosen treatments** so that I can **acquire content most appropriate to my requirements**.
+5.2 As a **site owner** I can **create, update and delete blog entries** so that I can **share content of my choice and build a sense of connection with my audience and prospective buyers**.
 
-4.3 As a **site user** I can **respond to content via likes and comments** for **increased sense of community** (registered users only).
-
-4.4 As a **site user** I can **take part in polls and see poll results** so I can **feel more engaged with the company and the health-oriented community**.
-
-4.5 As a **staff site user** I can **create, update and delete polls** so that **polls as means of engaging users and gathering information are used according to their purpose**.
-
-4.6 As a **site owner** I can **easily activate and deactivate content is visible to the public**.
-
-4.7 As a **site owner** I can **prioritize which treatments are showing first on the site** so that I can **influence demand on offering of my choice**. 
+5.3 As a **site owner** I can **hide and unhide blog** so that I can **control visibility of the entire blog section of the site at any time**.
 
 <br>
 
@@ -1066,9 +1012,9 @@ Functionality available on details page depends on user status:
 
 ---
 
-### **Feature 6. Polls**
+### **Feature 6. Products**
 
-Poll on this website is created with an intent to provide an easy and convenient way for company management to engage with actual and prospective clients and collect information on their views in current matters related to company's business. That information may then be utilized in the decision-making process in the areas like strategy or marketing. 
+Products page on this website is created with an intent to provide an easy and convenient way to present visitors with the artist's creations. Products can have their status checked as 'live' and only those are visible to non-staff users.  Items on display include the ones available and not available for sale. Only products with status 'available' can be added to bag and purchased. Staff users can edit and delete products by clicking option 'Edit' or 'Delete' under the product description. These options are only visible to staff users. Adding new products can be done by choosing option 'Product Management' under 'My Account'.
 
 <details>
 <summary>Poll, guest view</summary>
@@ -1183,6 +1129,15 @@ Features
 
 # 3. Marketing Strategy <a name='marketing-strategy'></a>
 
+## 3.i Search Engine Optimisation
+
+### Keywords
+- Short-tail keywords:
+art, art collection, art sale, art shop, buy art, oryginal art, authentic art, genuine art, polish art, artist, painting, painter, polish painter, drawing, calendar, print, 
+- Long-tail keywords:
+buy polish art, purchase polish art, polish art collection, genuine polish art, contemporary polish art, polish artist painter, 
+
+## 3.ii Marketing
 ___
 
 # 4. Testing <a name='testing'></a> 
