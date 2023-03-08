@@ -946,34 +946,96 @@ In case a problem occurs when a user tries to access a page an error page is sho
 [Table of Contents](#home)
 
 ---
-### **Feature 5. Blog**
+
+### **Feature 5. Products**
+
+Products page on this website is created with an intent to provide an easy and convenient way to present visitors with the artist's creations. Products can have their status checked as 'live' and only those are visible to non-staff users.  Items on display include the ones available and not available for sale. Only products with status 'available' can be added to bag and purchased. Staff users can edit and delete products by clicking option 'Edit' or 'Delete' under the product description. These options are only visible to staff users. Adding new products can be done by choosing option 'Product Management' under 'My Account'.
+
+Items are shown in order of priority and date of creation. 
+
+Each product consists of:
+- graphic illustration
+- title
+- excerpt
+- price
+- description - visible on product detail page.
+
+<details>
+<summary>Products, main page</summary>
+
+![screenshot of image](readme/docs/images/testing/features/products.jpg)
+</details>
+
+<details>
+<summary>Product details</summary>
+On product detail page user can see full description of the product and can add the product to a bag.
+
+![screenshot of image](readme/docs/images/testing/features/product_details.jpg)
+</details>
+
+<details>
+<summary>Product edit</summary>
+
+![screenshot of image](readme/docs/images/testing/features/product_edit_1.jpg)
+
+![screenshot of image](readme/docs/images/testing/features/product_edit_2.jpg)
+
+![screenshot of image](readme/docs/images/testing/features/product_edit_3.jpg)
+</details>
+
+<br>
+
+### Access to products features
+
+| No. | Feature                       | Not logged in | Logged in client | Staff | Admin |
+| --- | ----------------------------- | ------------- | ---------------- | ----- | ----- |
+| 1   | View products                 | yes           | yes              | yes   | yes   |
+| 2   | Create, Edit, Delete products | no            | no               | yes   | yes   |
+
+<br>
+
+#### **Related user stories**
+
+4.1 As a **site user** I can **quickly get a general idea about items on offer** so that I can **decide which content to get acquainted with more thoroughly**.
+
+4.2 As a **site user** I can **read details about a chosen item** so that I can **make the best decision about the purchase based on technical information (e.g. size) and my personal preferences**.
+
+4.3 As a **site owner** I can **create, update and delete item entries** so that I can **inform visitors on pieces on offer and pieces sold**.
+
+4.4 As a **site owner** I can **prioritize which items are shown first on the site** so that I can **influence demand on offering of my choice**.
+
+<br>
+
+[Table of Contents](#home)
+
+---
+
+### **Feature 6. Blog**
 
 In the blog app standard mechanisms of a blog are employed. Posts can be created, edited and deleted by users with staff status including admin. Adding a new post can be done by choosing a link Blog/Highlights under My Account or in admin page. Editing and deleting posts can be done on the webpage after choosing appropriate button under a post (only visible to staff users) or on admin page by the administrator of the webpage. Users who are not logged in or are logged in as non-staff can see posts with status "live". Staff users can see both "live" and "draft" posts.
 
 **Blog**
 
-All users can view a list of posts with "live status"
+All users can view a list of posts with "live" status.
 <details>
 <summary>Blog - guest </summary>
 
 ![screenshot of image](readme/docs/images/testing/features/posts_guest.jpg)
 </details>
-<br>
-
-Staff users can see both "live" and "draft" posts and can add new, edit and delete posts. 
 
 <details>
 <summary>Post cut</summary>
 
 ![screenshot of image](readme/docs/images/testing/features/post_cut.jpg)
 </details>
+<br>
 
+Staff users can see both "live" and non-live / draft posts and can add new, edit and delete posts. 
 <details>
-<summary>Post details</summary>
+<summary>Post edit</summary>
 
-![screenshot of image](readme/docs/images/testing/features/post_details.jpg)
+![screenshot of image](readme/docs/images/testing/features/post_edit.jpg)
 </details>
-
 <br>
 
 **Post details**
@@ -985,6 +1047,13 @@ Each post consists of:
 - date of creation
 - optional graphic illustration
 - content
+
+<details>
+<summary>Post details</summary>
+
+![screenshot of image](readme/docs/images/testing/features/post_details.jpg)
+</details>
+<br>
 
 Blog visibility is controlled in admin site in section Blog - Settings.
 
@@ -1012,71 +1081,6 @@ Blog visibility is controlled in admin site in section Blog - Settings.
 
 ---
 
-### **Feature 6. Products**
-
-Products page on this website is created with an intent to provide an easy and convenient way to present visitors with the artist's creations. Products can have their status checked as 'live' and only those are visible to non-staff users.  Items on display include the ones available and not available for sale. Only products with status 'available' can be added to bag and purchased. Staff users can edit and delete products by clicking option 'Edit' or 'Delete' under the product description. These options are only visible to staff users. Adding new products can be done by choosing option 'Product Management' under 'My Account'.
-
-<details>
-<summary>Poll, guest view</summary>
-
-![screenshot of image](readme/docs/images/testing/features/poll_guest.jpg)
-</details>
-
-<details>
-<summary>Poll, staff view</summary>
-Staff has additional option enabling poll creation.
-
-![screenshot of image](readme/docs/images/testing/features/poll_staff.jpg)
-</details>
-
-<details>
-<summary>Submit vote</summary>
-
-![screenshot of image](readme/docs/images/testing/features/poll_submit.jpg)
-</details>
-
-<details>
-<summary>Poll results</summary>
-
-![screenshot of image](readme/docs/images/testing/features/poll_result.jpg)
-</details>
-
-<details>
-<summary>Poll creation</summary>
-
-![screenshot of image](readme/docs/images/testing/features/poll_create.jpg)
-</details>
-
-### Access to poll features
-
-| No. | Feature      | Not logged in | Logged in client | Staff | Admin |
-| --- | ------------ | ------------- | ---------------- | ----- | ----- |
-| 1   | View polls   | yes           | yes              | yes   | yes   |
-| 2   | Cast vote    | yes           | yes              | yes   | yes   |
-| 3   | View results | yes           | yes              | yes   | yes   |
-| 4   | Create poll  | no            | no               | yes   | yes   |
-| 5   | Edit poll    | no            | no               | no    | yes   |
-| 6   | Delete poll  | no            | no               | no    | yes   |
-
-<br>
-
-#### **Related user stories**
-
-3.1 As a **site user** I can **read and respond to available content** so **my experience on the site feels engaging and interactive**. 
-
-3.2 As a **site user** I can **engage in activities that other users can also participate in** so I can **feel part of a wider community**.
-
-4.4 As a **site user** I can **take part in polls and see poll results** so I can **feel more engaged with the company and the health-oriented community**.
-
-4.5 As a **staff site user** I can **create, update and delete polls** so that **polls as means of engaging users and gathering information are used according to their purpose**.
-
-5.3 As a **site admin** I can **create, update and delete polls** so that **polls as means of engaging users and gathering information are used according to their purpose**.
-
-<br>
-
-[Table of Contents](#home)
-
----
 ### **Feature 8. Direct communication**
 
 #### **Contact us**
