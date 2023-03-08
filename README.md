@@ -1081,13 +1081,15 @@ Blog visibility is controlled in admin site in section Blog - Settings.
 
 ---
 
-### **Feature 8. Direct communication**
-
-#### **Contact us**
+### **Feature 8. About Me**
 
 Contact Us section consists of two parts:
-- General information about the company.
-- Contact form users can use to contact the company directly.
+- Personal note - introduction and general information about the artist.
+- Testimonials - feedback gained from users who already interacted with the artist.
+
+
+
+#### **Personal Information**
 
 This feature is available to all users. When a logged in user wishes to contact the company, fields with name and email address are pre-filled, if this information is available. Otherwise those fields are empty for user to fill. 
 
@@ -1099,7 +1101,7 @@ This feature is available to all users. When a logged in user wishes to contact 
 
 <br>
 
-#### **Booking**
+#### **Testimonials**
 
 The purpose of the Booking section is to give logged in clients an opportunity to request specific treatments. The form for this mode of communication offers a list of available treatments to choose from and date/time-picker to indicate preferred time of treatment. The fact that no user information is necessary to be filled by the user in this form adds to convenience. 
 
