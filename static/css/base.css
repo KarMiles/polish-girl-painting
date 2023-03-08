@@ -8,7 +8,6 @@
     --ming: #3b6e71;
     --gainsboro: #d9d9d9;
     --indigo-dye: #274b64;
-    --dark-gold: #EEBC1D;
     --danger: #a31a28;
 }
 
@@ -26,11 +25,7 @@ body {
 
 /* Colours */
 .dark-background {
-    background-color: black;
-}
-
-.text-gold {
-    color: var(--dark-gold) !important;
+    background-color: var(--indigo-dye);
 }
 
 .text-info {

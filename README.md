@@ -1081,34 +1081,33 @@ Blog visibility is controlled in admin site in section Blog - Settings.
 
 ---
 
-### **Feature 8. About Me**
+### **Feature 7. About Me**
 
-Contact Us section consists of two parts:
+About Me page consists of two parts:
 - Personal note - introduction and general information about the artist.
 - Testimonials - feedback gained from users who already interacted with the artist.
 
+Both parts utilize functionality of the same testimonials app. Entries in the Personal note section have 'about_me' key checked and can only be created by the staff user while entries in the Testimonials section have the 'about_me' key unchecked and can be created by any logged in user. In practice they will probably always be the customers. All entries need to have their key 'live' checked by the staff user to be visible to all visitors.  
 
+<details>
+<summary>About Me</summary>
+
+![screenshot of image](readme/docs/images/testing/features/about_me.jpg)
+</details>
+<br>
 
 #### **Personal Information**
 
-This feature is available to all users. When a logged in user wishes to contact the company, fields with name and email address are pre-filled, if this information is available. Otherwise those fields are empty for user to fill. 
-
-<details>
-<summary>Contact Us</summary>
-
-![screenshot of image](readme/docs/images/testing/features/contact.jpg)
-</details>
-
-<br>
+This feature is available for viewing to all users. Only staff users can create and edit posts in this section.
 
 #### **Testimonials**
 
-The purpose of the Booking section is to give logged in clients an opportunity to request specific treatments. The form for this mode of communication offers a list of available treatments to choose from and date/time-picker to indicate preferred time of treatment. The fact that no user information is necessary to be filled by the user in this form adds to convenience. 
+This feature is available for viewing to all users. By default new testimonials are added with their key 'live' unchecked and become visible only after a staff user checks the key 'live'. Until that time the posts are only visible to staff users with a note "Awaiting approval". Only registered users can create posts in this section.
 
 <details>
-<summary>Booking an appointment</summary>
+<summary>Testimonial form</summary>
 
-![screenshot of image](readme/docs/images/testing/features/booking.jpg)
+![screenshot of image](readme/docs/images/testing/features/testimonial_add.jpg)
 </details>
 
 <br>
