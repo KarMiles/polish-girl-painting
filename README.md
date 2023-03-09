@@ -1225,13 +1225,9 @@ Every unique item changes its status to not available after sale. In place of pr
 
 #### **Related user stories**
 
-4.1 As a **site user** I can **quickly get a general idea about items on offer** so that I can **decide which content to get acquainted with more thoroughly**.
+7.1 As a **site user** I can **smoothly go through purchase process** so that I can **acquire a chosen item**.
 
-4.2 As a **site user** I can **read details about a chosen item** so that I can **make the best decision about the purchase based on technical information (e.g. size) and my personal preferences**.
-
-4.3 As a **site owner** I can **create, update and delete item entries** so that I can **inform visitors on pieces on offer and pieces sold**.
-
-4.4 As a **site owner** I can **prioritize which items are shown first on the site** so that I can **influence demand on offering of my choice**.
+7.2 As a **site owner** I can **monitor transaction's status** so I can **ensure process of purchase and delivery is successfully completed**.
 
 <br>
 
