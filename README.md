@@ -148,6 +148,8 @@ Registered users
 
 3.6 As a **site user** I can **share my experiences in Testimony** so that **I feel that I contribute to the community gathered around the Artist**.
 
+3.7 As a **site owner** I can **present a basic personal introduction** so that **I know potential and current customers have a chance to build a personal connection with me as an artist**.
+
 
 ### **4. Epic: Offer**
 
@@ -1104,32 +1106,107 @@ This feature is available for viewing to all users. Only staff users can create 
 
 This feature is available for viewing to all users. By default new testimonials are added with their key 'live' unchecked and become visible only after a staff user checks the key 'live'. Until that time the posts are only visible to staff users with a note "Awaiting approval". Only registered users can create posts in this section.
 
+Users can add their testimonials by entering the testimonial content and - optionally - the title.
 <details>
-<summary>Testimonial form</summary>
+<summary>Testimonial form - user</summary>
 
-![screenshot of image](readme/docs/images/testing/features/testimonial_add.jpg)
+![screenshot of image](readme/docs/images/testing/features/testimonial_add_user.jpg)
+</details>
+<br>
+
+Staff can add entries which will be shown in Testimonials section (with key 'about_me' unchecked) or in Personal Note section (with key 'about_me' checked). Staff users can enter or edit title, content, priority, 'about me' option (which moves an entry to the Personal Note section), and 'live' option (which enables the entry's visibility to all users).
+<details>
+<summary>Testimonial form - staff</summary>
+
+![screenshot of image](readme/docs/images/testing/features/testimonial_add_staff.jpg)
 </details>
 
 <br>
 
-### Access to direct communication features
+### Access to About Me features
 
-| No. | Feature    | Not logged in | Logged in client | Staff | Admin |
-| --- | ---------- | ------------- | ---------------- | ----- | ----- |
-| 1   | Contact Us | yes           | yes              | yes   | yes   |
-| 2   | Booking    | no            | yes              | yes   | yes   |
+| No. | Feature                    | Not logged in | Logged in client | Staff | Admin |
+| --- | -------------------------- | ------------- | ---------------- | ----- | ----- |
+| 1   | Create Personal Note       | no            | no               | yes   | yes   |
+| 2   | Edit, delete Personal Note | no            | no               | yes   | yes   |
+| 3   | Create Testimonial         | no            | yes              | yes   | yes   |
+| 4   | Edit, delete Testimonial   | no            | no               | yes   | yes   |
 
-#### **User Stories related to feature 8**
+#### **User Stories related to feature 7**
 
-3.4 As a **site user** I can **use the website for communication with the company** so that I can **send general queries or request booking for a specific treatment**.
+3.6 As a **site user** I can **share my experiences in Testimony** so that **I feel that I contribute to the community gathered around the Artist**.
 
-3.5 As a **registered site user** I can **use website for communication without having to reenter my details** so that **sending my message requires minimum efford from my side**.
+3.7 As a **site owner** I can **present a basic personal introduction** so that **I know potential and current customers have a chance to build a personal connection with me as an artist**.
+
+
+---
+
+### **Feature 8. E-Commerce**
+
+In the Gallery section user is presented with a list of products with basic information about each item. There, after clicking on item image 
+
+Items are shown in order of priority and date of creation. 
+
+Each product consists of:
+- graphic illustration
+- title
+- excerpt
+- price
+- description - visible on product detail page.
+
+<details>
+<summary>Products, main page</summary>
+
+![screenshot of image](readme/docs/images/testing/features/products.jpg)
+</details>
+
+<details>
+<summary>Product details</summary>
+On product detail page user can see full description of the product and can add the product to a bag.
+
+![screenshot of image](readme/docs/images/testing/features/product_details.jpg)
+</details>
+
+<details>
+<summary>Product edit</summary>
+
+![screenshot of image](readme/docs/images/testing/features/product_edit_1.jpg)
+
+![screenshot of image](readme/docs/images/testing/features/product_edit_2.jpg)
+
+![screenshot of image](readme/docs/images/testing/features/product_edit_3.jpg)
+</details>
+
+<br>
+
+### Access to products features
+
+| No. | Feature                       | Not logged in | Logged in client | Staff | Admin |
+| --- | ----------------------------- | ------------- | ---------------- | ----- | ----- |
+| 1   | View products                 | yes           | yes              | yes   | yes   |
+| 2   | Create, Edit, Delete products | no            | no               | yes   | yes   |
+
+<br>
+
+#### **Related user stories**
+
+4.1 As a **site user** I can **quickly get a general idea about items on offer** so that I can **decide which content to get acquainted with more thoroughly**.
+
+4.2 As a **site user** I can **read details about a chosen item** so that I can **make the best decision about the purchase based on technical information (e.g. size) and my personal preferences**.
+
+4.3 As a **site owner** I can **create, update and delete item entries** so that I can **inform visitors on pieces on offer and pieces sold**.
+
+4.4 As a **site owner** I can **prioritize which items are shown first on the site** so that I can **influence demand on offering of my choice**.
+
+<br>
+
+[Table of Contents](#home)
+
+---
 
 ## 2.ii. Potential features <a name='features-next'></a>
 Features 
  - Wider array of ways to signup and login, e.g. via social media, Google,
- - Scheduling system for employees,
- - Automated booking process,
  - Graphic representation of poll results.
 
 # 3. Marketing Strategy <a name='marketing-strategy'></a>
