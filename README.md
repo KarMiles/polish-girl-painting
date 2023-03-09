@@ -1143,48 +1143,83 @@ Staff can add entries which will be shown in Testimonials section (with key 'abo
 
 ### **Feature 8. E-Commerce**
 
-In the Gallery section user is presented with a list of products with basic information about each item. There, after clicking on item image 
+In the Gallery section user is presented with a list of products with basic information about each item. There, after clicking on item image, item description, or a link 'Show details' the user is directed to product detail page. On the product detail page the user has the opportunity to add a product to a bag by clicking on a button 'Add to Bag'. 
 
-Items are shown in order of priority and date of creation. 
-
-Each product consists of:
-- graphic illustration
-- title
-- excerpt
-- price
-- description - visible on product detail page.
+**Bag**
 
 <details>
-<summary>Products, main page</summary>
+<summary>Product details - add to bag</summary>
 
-![screenshot of image](readme/docs/images/testing/features/products.jpg)
+![screenshot of image](readme/docs/images/testing/features/ecommerce_add_to_bag.jpg)
 </details>
-
-<details>
-<summary>Product details</summary>
-On product detail page user can see full description of the product and can add the product to a bag.
-
-![screenshot of image](readme/docs/images/testing/features/product_details.jpg)
-</details>
-
-<details>
-<summary>Product edit</summary>
-
-![screenshot of image](readme/docs/images/testing/features/product_edit_1.jpg)
-
-![screenshot of image](readme/docs/images/testing/features/product_edit_2.jpg)
-
-![screenshot of image](readme/docs/images/testing/features/product_edit_3.jpg)
-</details>
-
 <br>
 
-### Access to products features
+After adding a product to the bag user is presented with a temporary confirmation in form of the toast in the top right corner of the screen.
+<details>
+<summary>Add to bag confirmation</summary>
 
-| No. | Feature                       | Not logged in | Logged in client | Staff | Admin |
-| --- | ----------------------------- | ------------- | ---------------- | ----- | ----- |
-| 1   | View products                 | yes           | yes              | yes   | yes   |
-| 2   | Create, Edit, Delete products | no            | no               | yes   | yes   |
+![screenshot of image](readme/docs/images/testing/features/ecommerce_add_to_bag_toast.jpg)
+</details>
+<br>
+
+As a general rule products presented in the Gallery are unique art items. This is the reason why when such a unique product is already in the bag then button 'Add to Bag' is no longer available and a short information 'Item is in your bag' is presented in its place. Exceptions to this are taken into account and if an item is not unique (key 'is_unique' is unchecked in product details), then the 'Add to Bag button' will still appear, allowing the customer to add more than one item of the same product.
+
+<details>
+<summary>Product details - item in bag</summary>
+
+![screenshot of image](readme/docs/images/testing/features/ecommerce_add_to_bag_na.jpg)
+</details>
+
+<details>
+<summary>Bag page</summary>
+
+![screenshot of image](readme/docs/images/testing/features/ecommerce_bag.jpg)
+</details>
+<br>
+
+**Checkout**
+
+The checkout page consists of the following main parts:
+- User details
+- Delivery information
+- Order summary
+- Payment information
+
+For the checkout page information about the user is preloaded, if available. The information can be altered by the user and saved by checking the option 'Save this delivery information to my profile'. 
+
+Before completing the order user can adjust details or adjust items in the bag by clicking 'Adjust Bag' button. When satisfied user can click 'Complete Order' button. 
+
+<details>
+<summary>Checkout page</summary>
+
+![screenshot of image](readme/docs/images/testing/features/ecommerce_checkout.jpg)
+</details>
+<br>
+
+After confirming the purchase a confirmation page is shown with the summary of the transaction.
+<details>
+<summary>Checkout confirmation</summary>
+
+![screenshot of image](readme/docs/images/testing/features/ecommerce_checkout_confirmation.jpg)
+</details>
+<br>
+
+Every unique item changes its status to not available after sale. In place of price a note is presented under the item description 'Item is not available for sale' and no more transactions are possible for this item. It is still presented in the Gallery until the owner desides otherwise.
+
+<details>
+<summary>Item not available for sale</summary>
+
+![screenshot of image](readme/docs/images/testing/features/ecommerce_item_unavailable.jpg)
+</details>
+<br>
+
+### Access to e-commerce features
+
+| No. | Feature                          | Not logged in | Logged in client | Staff | Admin |
+| --- | -------------------------------- | ------------- | ---------------- | ----- | ----- |
+| 1   | Add and remove products to bag   | yes           | yes              | yes   | yes   |
+| 2   | Purchase items                   | yes           | yes              | yes   | yes   |
+| 3   | Save and edit saved user details | no            | yes              | yes   | yes   |
 
 <br>
 
