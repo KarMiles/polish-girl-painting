@@ -24,7 +24,6 @@ class StripeWH_Handler:
 
     def _send_confirmation_email(self, order):
         """Send user confirmation email"""
-        print(order.email)
         cust_email = order.email
         subject = render_to_string(
             'checkout/confirmation_emails/confirmation_email_subject.txt',
@@ -52,8 +51,8 @@ class StripeWH_Handler:
         Handle the payment_intent.succeeded webhook from Stripe
         """
         intent = event.data.object
-        print('intent is:')
-        print(intent)
+        # print('intent is:')
+        # print(intent)
         pid = intent.id
         bag = intent.metadata.bag
         save_info = intent.metadata.save_info
@@ -122,7 +121,6 @@ class StripeWH_Handler:
                 attempt += 1
                 time.sleep(1)
         if order_exists:
-            print('EMAIL1')
             self._send_confirmation_email(order)
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} \
@@ -159,7 +157,6 @@ class StripeWH_Handler:
                 return HttpResponse(
                     content=f'Webhook received: {event["type"]} | ERROR: {e}',
                     status=500)
-        print('EMAIL2')
         self._send_confirmation_email(order)
         return HttpResponse(
             content=f'Webhook received: {event["type"]}\

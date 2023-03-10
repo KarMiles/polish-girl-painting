@@ -1211,6 +1211,12 @@ Every unique item changes its status to not available after sale. In place of pr
 
 ![screenshot of image](readme/docs/images/testing/features/ecommerce_item_unavailable.jpg)
 </details>
+
+<details>
+<summary>Email confirmation after purchase</summary>
+
+![screenshot of image](readme/docs/images/testing/features/ecommerce_confirmation_email.jpg)
+</details>
 <br>
 
 ### Access to e-commerce features
