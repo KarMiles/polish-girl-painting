@@ -44,7 +44,7 @@ def webhook(request):
         return HttpResponse(content=e, status=400)
 
     # print('Success! Webhook works.')
-    return HttpResponse(status=200)
+    # return HttpResponse(status=200)
 
     # Set up a webhook handler
     handler = StripeWH_Handler(request)

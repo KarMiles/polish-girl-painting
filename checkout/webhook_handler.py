@@ -24,6 +24,7 @@ class StripeWH_Handler:
 
     def _send_confirmation_email(self, order):
         """Send user confirmation email"""
+        print(order.email)
         cust_email = order.email
         subject = render_to_string(
             'checkout/confirmation_emails/confirmation_email_subject.txt',
@@ -51,21 +52,22 @@ class StripeWH_Handler:
         Handle the payment_intent.succeeded webhook from Stripe
         """
         intent = event.data.object
+        print('intent is:')
         print(intent)
         pid = intent.id
         bag = intent.metadata.bag
         save_info = intent.metadata.save_info
 
         # STRIPE UPDATE - OLD VERSION
-        billing_details = intent.charges.data[0].billing_details
-        shipping_details = intent.shipping
-        grand_total = round(intent.charges.data[0].amount / 100, 2)
+        # billing_details = intent.charges.data[0].billing_details
+        # shipping_details = intent.shipping
+        # grand_total = round(intent.charges.data[0].amount / 100, 2)
 
         # STRIPE UPDATED
         # Get the Charge object
-        # stripe_charge = stripe.Charge.retrieve(
-        #     intent.latest_charge
-        # )
+        stripe_charge = stripe.Charge.retrieve(
+            intent.latest_charge
+        )
         billing_details = stripe_charge.billing_details  # updated
         shipping_details = intent.shipping
         grand_total = round(stripe_charge.amount / 100, 2)  # updated
