@@ -12,7 +12,7 @@ Grand Total: €{{ order.grand_total }}
 Your order will be shipped to {{ order.street_address1 }} in {{ order.town_or_city }}, {{ order.country }}.
 
 {% if order.phone_number %}
-    I've got your phone number on file as {{ order.phone_number }}.
+I've got your phone number on file as {{ order.phone_number }}.
 {% endif %}
 
 If you have any questions, feel free to contact me at {{ contact_email }}.

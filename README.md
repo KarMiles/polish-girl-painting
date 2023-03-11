@@ -177,6 +177,8 @@ Registered users
 
 7.2 As a **site owner** I can **monitor transaction's status** so I can **ensure process of purchase and delivery is successfully completed**.
 
+7.3 As a **site user** I can **receive a confirmation email after a transaction** so I can **be assured about the status of my order**.
+
 ### **7. Epic: Admin site**
 
 8.1 As a **site admin** I can **create, update and delete user profiles in admin page** so that **all users have appropriate access to website functionality**.
@@ -1235,6 +1237,8 @@ Every unique item changes its status to not available after sale. In place of pr
 
 7.2 As a **site owner** I can **monitor transaction's status** so I can **ensure process of purchase and delivery is successfully completed**.
 
+7.3 As a **site user** I can **receive a confirmation email after a transaction** so I can **be assured about the status of my order**.
+
 <br>
 
 [Table of Contents](#home)
@@ -1244,17 +1248,34 @@ Every unique item changes its status to not available after sale. In place of pr
 ## 2.ii. Potential features <a name='features-next'></a>
 Features 
  - Wider array of ways to signup and login, e.g. via social media, Google,
- - Graphic representation of poll results.
+ - Emails sent to users automatically on new blog entry.
 
 # 3. Marketing Strategy <a name='marketing-strategy'></a>
 
 ## 3.i Search Engine Optimisation
 
 ### Keywords
-- Short-tail keywords:
-art, art collection, art sale, art shop, buy art, oryginal art, authentic art, genuine art, polish art, artist, painting, painter, polish painter, drawing, calendar, print, 
-- Long-tail keywords:
-buy polish art, purchase polish art, polish art collection, genuine polish art, contemporary polish art, polish artist painter, 
+
+One of the marketing methods applied for the project was signalling a set of keywords for search engines. The aim was to select keywords with relatively high volume of searches and low competition in search results. In that process a tool [Google Keyword Planner](https://ads.google.com/home/tools/keyword-planner/) was used.
+
+
+<details>
+<summary>Keywords research</summary>
+
+![screenshot of image](readme/docs/images/marketing/google_keyword_planner_table.jpg)
+</details>
+<br>
+
+
+Short-tail keywords chosen:
+- polish artist, paintings online, polish painter, craft contemporary
+ 
+Long-tail keywords chosen:
+- polish female artist, contemporary art exhibitions, gallery of contemporary art, flower paintings for sale, modern art and contemporary art, landscape art for sale
+
+Owner-specific keywords:
+- monika curto fuentes, polish girl painting
+
 
 ## 3.ii Marketing
 ___
