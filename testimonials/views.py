@@ -115,9 +115,13 @@ def testimonial_edit(request, testimonial_id):
             instance=testimonial)
         if form.is_valid():
             testimonial = form.save()
+            if testimonial.title:
+                message = f'Successfully updated {testimonial.title}'
+            else:
+                message = 'You successfully updated your message'
             messages.success(
                 request,
-                f'Successfully updated {testimonial.title}')
+                message)
 
             template = 'testimonials/testimonial_detail.html'
             context = {
@@ -135,9 +139,13 @@ def testimonial_edit(request, testimonial_id):
                     Please ensure the form is valid.')
     else:
         form = TestimonialForm(instance=testimonial)
+        if testimonial.title:
+            message = f'You are editing {testimonial.title}'
+        else:
+            message = 'You are editing your message'
         messages.info(
             request,
-            f'You are editing {testimonial.title}')
+            message)
 
     template = 'testimonials/testimonial_edit.html'
     context = {

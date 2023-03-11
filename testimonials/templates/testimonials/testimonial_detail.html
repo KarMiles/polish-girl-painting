@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block page_header %}
-    {% include "includes/page_header.html" with title="Testimonial" subtitle="Thank you for sharing!" %}
+    {% include "includes/page_header.html" with title="Your input" subtitle="Thank you for sharing!" %}
 {% endblock %}
 
 {% block content %}
@@ -15,7 +15,9 @@
 
                     <!-- Post -->
                     <div class="card px-2 py-3">
-                        <h4 class="card-title ml-3">{{ testimonial.title }}</h4>
+                        {% if testimonial.title %}
+                            <h4 class="card-title ml-3">{{ testimonial.title }}</h4>
+                        {% endif %}
                         <p class="card-text text-muted h6 ml-3">
                             {{ testimonial.author.get_full_name|default:testimonial.author.username }} 
                             | {{ testimonial.created_on | date:"d F Y" }}

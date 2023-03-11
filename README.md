@@ -1256,7 +1256,9 @@ Features
 
 **Keywords**
 
-One of the marketing methods applied for the project was signalling a set of keywords for search engines. The aim was to select keywords with relatively high volume of searches and low competition in search results. In that process a tool [Google Keyword Planner](https://ads.google.com/home/tools/keyword-planner/) was used.
+One of the marketing methods applied for the project is signalling a set of keywords for search engines. The aim is to select keywords with relatively high volume of searches and low competition in search results. In that process a tool [Google Keyword Planner](https://ads.google.com/home/tools/keyword-planner/) was used.
+
+The chosen keywords are implemented in the site content where possible, e.g. as a slogan "The Polish Artist in Germany" situated under the links to highlighted blog posts on the welcome page, or in the About Me section.
 
 <details>
 <summary>Keywords research</summary>
@@ -1288,9 +1290,11 @@ Instructions for search engines**
 
 Links not usefull in respect of search engine analytics have been equipped with anchor tag noopener.
 
-**Images**
+Links to outside sites potentially valuable from search engine optimisation standpoint were added in About Me section. 
 
+**Meta Tags**
 
+Meta tags description and keywords have been added in the base page for the benefit of search engine optimisation.
 
 
 
