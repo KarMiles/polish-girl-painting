@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /accounts/
+Dissalow: /bag/
+Dissalow: /checkout/
+Sitemap: https://heroku-pgp-project.herokuapp.com/sitemap.xml

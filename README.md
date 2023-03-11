@@ -1296,6 +1296,20 @@ Links to outside sites potentially valuable from search engine optimisation stan
 
 Meta tags description and keywords have been added in the base page for the benefit of search engine optimisation.
 
+**Sitemaps**
+
+For directing search engines on the site two files were created:
+- sitemap.xml
+- robots.txt
+
+Inclusion protocol
+
+For enabling search engines to index the website Sitemaps was used. Sitemaps is a protocol in XML format meant for a webmaster to inform search engines about URLs on a website that are available for web crawling. For this purpose the file sitemap.xml was crated on the site [XML-Sitemaps](https://www.xml-sitemaps.com/) and placed in root folder. 
+
+Exclusion protocol
+
+To direct search engines to the sitemap and exclude chosen areas of the webpage from crawlers a file robots.txt is added in root folder. The files tells search robots to exclude folders: accounts, bag and checkout.  
+
 
 
 ## 3.ii Marketing
@@ -1459,6 +1473,10 @@ For development of this webpage elements of Agile software development methodolo
 - Coolors.co (https://coolors.co/) - for generating colour palette for the website.
 - SmallPDF (https://smallpdf.com/) - PDF to jpg file conversion.
 
+### Marketing and SEO
+- [Google Keyword Planner](https://ads.google.com/home/tools/keyword-planner/) - for selecting keywords.
+- XML-Sitemaps (https://www.xml-sitemaps.com/) - for creating sitemaps.xml file.
+
 ### Python libraries
 Third-party libraries were used for this project:
 - request
@@ -1509,12 +1527,8 @@ ___
 - [Sebhastian](https://www.freecodecamp.org/news/author/nsebhastian/) - "Click for more" tooltip.
 - [Vegibit](https://vegibit.com/how-to-use-httpresponseredirect-in-django) - HttpResponse description.
 
-### Text content
-- [Wikipedia](https://en.wikipedia.org/wiki/Massage) - general information on massage.
-- [Healthline](https://www.healthline.com) - hot stone massage.
-- [Sensemassage](https://www.sensemassage.co.uk/resources/hub/96-indian-head-massage) - Indian head massage.
-- [NHS](https://www.nhs.uk) - general health info and chiropractic knowledge.
-- [Sterling Ridge Orthopaedics](https://srosm.com/patient-education/blog/uses-of-resistance-bands-in-physical-therapy/) - resistance band therapy.
+### Knowledge
+- [Wikipedia](https://en.wikipedia.org/wiki/Sitemaps) - general information on sitemaps.
 
 ### Graphical content
 - [Unsplash](https://unsplash.com) - imagery.
