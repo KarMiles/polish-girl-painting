@@ -1254,10 +1254,9 @@ Features
 
 ## 3.i Search Engine Optimisation
 
-### Keywords
+**Keywords**
 
 One of the marketing methods applied for the project was signalling a set of keywords for search engines. The aim was to select keywords with relatively high volume of searches and low competition in search results. In that process a tool [Google Keyword Planner](https://ads.google.com/home/tools/keyword-planner/) was used.
-
 
 <details>
 <summary>Keywords research</summary>
@@ -1266,23 +1265,33 @@ One of the marketing methods applied for the project was signalling a set of key
 </details>
 <br>
 
-
 Short-tail keywords chosen:
 - polish artist, paintings online, polish painter, craft contemporary
  
 Long-tail keywords chosen:
-- polish female artist, contemporary art exhibitions, gallery of contemporary art, flower paintings for sale, modern art and contemporary art, landscape art for sale
+- polish female artist, contemporary art exhibitions, gallery of contemporary art, flower paintings for sale, modern art and contemporary art, landscape art for sale, european art painting
 
 Owner-specific keywords:
 - monika curto fuentes, polish girl painting
 
-### Semantic HTML Elements
+**Semantic HTML Elements**
 
 Standard semantic HTML elements were used in the project, used according to their intended purpose and in separation from content and presentation. This should help in the site's Search Engine Optimisation. The elements include:
 
 - textual meaning `<h1>`, `<strong>`, `<em>`
 - document structure `<header>`, `<footer>`, `<main>`, `<nav>`, `<aside>`, `<article>`
 - correlation tags `<ul>`
+
+Instructions for search engines**
+
+**Links**
+
+Links not usefull in respect of search engine analytics have been equipped with anchor tag noopener.
+
+**Images**
+
+
+
 
 
 ## 3.ii Marketing
