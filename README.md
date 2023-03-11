@@ -1276,6 +1276,14 @@ Long-tail keywords chosen:
 Owner-specific keywords:
 - monika curto fuentes, polish girl painting
 
+### Semantic HTML Elements
+
+Standard semantic HTML elements were used in the project, used according to their intended purpose and in separation from content and presentation. This should help in the site's Search Engine Optimisation. The elements include:
+
+- textual meaning `<h1>`, `<strong>`, `<em>`
+- document structure `<header>`, `<footer>`, `<main>`, `<nav>`, `<aside>`, `<article>`
+- correlation tags `<ul>`
+
 
 ## 3.ii Marketing
 ___

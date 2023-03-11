@@ -14,7 +14,7 @@
                 <div class="col">
 
                     <!-- Post -->
-                    <div class="card px-2 py-3">
+                    <article class="card px-2 py-3">
                         <h4 class="card-title ml-3">{{ post.title }}</h4>
                         <p class="card-text text-muted h6 ml-3">{{ post.author.get_full_name|default:post.author.username }} | {{ post.created_on | date:"d F Y" }} </p>
                         <div class="card-body">
@@ -47,7 +47,7 @@
                             </a>
                         </div>
 
-                    </div>
+                    </article>
                 </div>
             </div>
 
