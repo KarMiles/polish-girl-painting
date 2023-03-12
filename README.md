@@ -1296,7 +1296,7 @@ Links to outside sites potentially valuable from search engine optimisation stan
 
 Meta tags description and keywords have been added in the base page for the benefit of search engine optimisation.
 
-**Sitemaps**
+**Crawlers management**
 
 For directing search engines on the site two files were created:
 - sitemap.xml
@@ -1310,6 +1310,13 @@ Exclusion protocol
 
 To direct search engines to the sitemap and exclude chosen areas of the webpage from crawlers a file robots.txt is added in root folder. The files tells search robots to exclude folders: accounts, bag and checkout.  
 
+Registering sitemap
+
+Next step, not included in this project, would be creating a DNS certificate and deployment to a custom domain. Registering the sitemap can be done in [Google Search Console](https://search.google.com/search-console/welcome). 
+
+Testing robots file
+
+The following step would be testing the robots.txt file. 
 
 
 ## 3.ii Marketing
@@ -1476,6 +1483,8 @@ For development of this webpage elements of Agile software development methodolo
 ### Marketing and SEO
 - [Google Keyword Planner](https://ads.google.com/home/tools/keyword-planner/) - for selecting keywords.
 - XML-Sitemaps (https://www.xml-sitemaps.com/) - for creating sitemaps.xml file.
+- [Google Search Central](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap) - information on building and submitting a sitemap.
+- [Search Console Central](https://support.google.com/webmasters/answer/7451001) - on managing a sitemap using the Sitemaps report.
 
 ### Python libraries
 Third-party libraries were used for this project:
