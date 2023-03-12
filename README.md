@@ -1252,11 +1252,42 @@ Features
 
 # 3. Marketing Strategy <a name='marketing-strategy'></a>
 
+**Marketing introduction**
+
+For deciding on marketing strategy for the artist owning the website the following information and assumptions were taken into account:
+- Main user target groups are predominantly:
+    - young European aspiring professional adults,
+    - mature European adults with stable material situation, especially appreciating niche art.
+- Online platforms used by the users are mostly:
+    - Instagram,
+    - Facebook,
+    - Youtube.
+- Social media used by the users:
+    - Instagram (younger audience),
+    - Facebook (more mature audience),
+    - LinkedIn.
+- Users' need the website owner may target:
+    - Love for art and beauty - which can be addressed by selling art to them,
+    - Interest in artistic expression - which can be addressed by 
+        - providing them with blog and video content related to creative process and 
+        - opportunity to express their interest and experiences on the website in the Testimonials section,
+    - Aspirational needs (showing interest in arts in social circles) - which can be addressed by selling art and providing with opportunities - via blog and newsletter - to engage in cultural life via taking part in exhibitions and other artistic events.
+- Owner may want to run promotional activities. Tools for communication for running them with the help of the website include: 
+    - newsletter, 
+    - blog,
+    - highlights on welcome page (where a link to chosen art pieces is placed on secondary navigation bar and titles of highlighted blog entries take prominent space of the welcome box). 
+- Owner's goals related with the website:
+    - Selling her art,
+    - Sharing artistic process,
+    - Connecting with art-loving audience.
+- It is assumed that the owner focuses on organic growth of this activity and no signifficant marketing budget is planned. The main resource dedicated to the project is a limited amount of the artist's time.
+
+
 ## 3.i Search Engine Optimisation
 
 **Keywords**
 
-One of the marketing methods applied for the project is signalling a set of keywords for search engines. The aim is to select keywords with relatively high volume of searches and low competition in search results. In that process a tool [Google Keyword Planner](https://ads.google.com/home/tools/keyword-planner/) was used.
+One of the marketing methods applied for the project is signalling a set of keywords for search engines. Keywords are the tool for helping potential users find the webpage. The aim is to select keywords with relatively high volume of searches and low competition in search results. In that process a tool [Google Keyword Planner](https://ads.google.com/home/tools/keyword-planner/) was used.
 
 The chosen keywords are implemented in the site content where possible, e.g. as a slogan "The Polish Artist in Germany" situated under the links to highlighted blog posts on the welcome page, or in the About Me section.
 
@@ -1316,10 +1347,74 @@ Next step, not included in this project, would be creating a DNS certificate and
 
 Testing robots file
 
-The following step would be testing the robots.txt file. 
+The following step would be testing the robots.txt file. This can be done using [Google Testing Tool found](https://www.google.com/webmasters/tools/robots-testing-tool), following the steps below:
+- add the property, 
+- download a HTML verification file, 
+- upload the file to the site tested,
+- confirm successfull upload by visiting the uploaded file in the browser,
+- verify by clicking the link supplied on the Testing Tool page.
+
+## 3.ii Content Marketing
+
+**Content**
+
+While keywords help users find the website, content is what will keep them. It has been an intention during creating content for this project that is is:
+- useful, 
+- well informed and 
+- trustworthy for the user. 
+
+Maintaining those properties should positively influence search engines rankings for the site.
+
+Apart from AI a webpage may be rated by Google Raters. The content was also created with Google Raters guidelines in mind. In this respect a site is ranked high quality when it is:
+- expert,
+- authoritative,
+- trustworthy.
+
+For this reason the site in this project:
+- is upfront about what it represents,
+- is clear about the information and its sources,
+- cites sources to other trustworthy sites.
+
+More details can be found in the [Rater Guidelines](https://static.googleusercontent.com/media/guidelines.raterhub.com/en//searchqualityevaluatorguidelines.pdf). 
+
+Content ranking
+
+- CTR (Click Through Rate) - measures how often users click the link to the site on search result list,
+- Bounce Rate - rate by which users click return button after landing on the site,
+- Dwell Time - measures how long users stay on the site before returning to search results,
+- Session Time - measures how long the users stay on the site,
+- Pages per Session - reflects how many pages within the site users visit during a session.
+
+**Site modules**
+
+Content on the website in this project is managed via three main modules:
+1. Gallery - where the artists' creations are represented,
+2. Blog - where post may contain text, images, embedded video links and links to other materials on the web.
+3. About Me - this module is based on one app and is devided into two sections:
+    - Personal Note - where the owner can share her content,
+    - Testimonials - where visitors can share their experiences related to the topic of the webpage.
+
+All three modules complement each other in terms of content and have the potential of engaging users and encouraging them to come back to the website.
+
+**Social media marketing**
+
+Footer always present at the bottom of the website encourages users to engage in alternative means of contact via social media (Instagram, Youtube and Facebook). 
+
+**Email marketing**
+
+Also in the footer a short form giving users a possibility to subscribe to a newsletter has been placed. This provides the owner with additional marketing tools at her disposal, e.g. letting users know about new items in the Gallery, important events or promotions. Newsletter subscription is managed via [MailChimp](https://mailchimp.com/) service. 
+
+**Other marketing options**
+
+Other marketing options, not included in the scope of this project: 
+
+- Paid advertising: The website's appearance in search results can be boosted in the form of paid advertising.
+
+- Influencer marketing: The owner's reach of the target market can be enhanced through paid engagement of people with large followings and authority in the field.  
+
+- Affiliate marketing: extending the traffic to the website through paid recommendations from other parties.
 
 
-## 3.ii Marketing
 ___
 
 # 4. Testing <a name='testing'></a> 
