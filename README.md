@@ -975,6 +975,7 @@ Each product consists of:
 On product detail page user can see full description of the product and can add the product to a bag.
 
 ![screenshot of image](readme/docs/images/testing/features/product_details.jpg)
+
 </details>
 
 <details>
@@ -1254,12 +1255,12 @@ Features
 
 **Marketing introduction**
 
-For deciding on marketing strategy for the artist owning the website the following information and assumptions were taken into account:
-- Main user target groups are predominantly:
+When deciding on marketing strategy for this project the following information and assumptions were taken into account:
+- Main target groups are predominantly:
     - young European aspiring professional adults,
     - mature European adults with stable material situation, especially appreciating niche art.
-- Online platforms used by the users are mostly:
-    - Instagram,
+- Online platforms utilized by the users are mostly:
+    - Instagram (mostly the younger audience),
     - Facebook,
     - Youtube.
 - Social media used by the users:
@@ -1400,9 +1401,65 @@ All three modules complement each other in terms of content and have the potenti
 
 Footer always present at the bottom of the website encourages users to engage in alternative means of contact via social media (Instagram, Youtube and Facebook). 
 
+Because of Facebook's reach and amount of users it can be a valuable marketing tool for this project. An example business Facebook account has been open and is available under this [link](https://www.facebook.com/profile.php?id=100090875239254) at the time of writing this document. Below screenshots from this account can be found. 
+
+Main page lets the owner to present information to a wide audience and utilize Facebook's paid marketing tools if such decision arises.
+<details>
+<summary>Main page</summary>
+
+![screenshot of Facebook account 1](readme/docs/images/marketing/fb_main.jpg)
+</details>
+<br>
+
+In the Professional dashboard the page's performance can be closely monitored. Information like number of followers, reach and engagement of a post and new likes can be seen here. 
+<details>
+<summary>Professional dashboard</summary>
+
+Dashboard general information
+![screenshot of Facebook account 2](readme/docs/images/marketing/fb_pro_dashboard.jpg)
+
+Dashboard details example
+![screenshot of Facebook account 3](readme/docs/images/marketing/fb_pro_dashboard_details.jpg)
+</details>
+
+<details>
+<summary>Page details</summary>
+
+![screenshot of Facebook account 4](readme/docs/images/marketing/fb_intro.jpg)
+</details>
+
+<details>
+<summary>First post</summary>
+
+![screenshot of Facebook account 5](readme/docs/images/marketing/fb_post.jpg)
+</details>
+<br>
+
 **Email marketing**
 
-Also in the footer a short form giving users a possibility to subscribe to a newsletter has been placed. This provides the owner with additional marketing tools at her disposal, e.g. letting users know about new items in the Gallery, important events or promotions. Newsletter subscription is managed via [MailChimp](https://mailchimp.com/) service. 
+Also in the footer a short form giving users a possibility to subscribe to a newsletter has been placed. This provides the owner with additional marketing tools at her disposal, e.g. letting users know about new items in the Gallery, important events or promotions via email and ongoing analysis of newsletter signups. Newsletter subscription is managed via [MailChimp](https://mailchimp.com/) service. 
+
+<details>
+<summary>Subsription confirmation</summary>
+
+![screenshot of newsletter subcription1](readme/docs/images/marketing/newsletter_subcription_confirmation_page.jpg)
+</details>
+
+<details>
+<summary>Insight into audience</summary>
+
+![screenshot of newsletter subcription2](readme/docs/images/marketing/mailchimp_audience.jpg)
+</details>
+
+<details>
+<summary>Mailchimp analytics (sample data)</summary>
+
+![screenshot of newsletter subcription3](readme/docs/images/marketing/mailchimp_analytics.jpg)
+</details>
+
+
+
+<br>
 
 **Other marketing options**
 
