@@ -971,6 +971,23 @@ Each product consists of:
 </details>
 
 <details>
+<summary>Product search</summary>
+On top of the page user can perform a search on products by entering a phrase in a search box. 
+As a result of the page information on number of found products is shown together with a list of products adequate to the search criteria.
+
+![screenshot of image](readme/docs/images/testing/features/product_search.jpg)
+
+</details>
+
+<details>
+<summary>Product filtering by category</summary>
+On Galery page the announcements bar changes to a secondary navigation bar which visitor can use to filter products by category. Each name of category is a button which triggers filtering products shown on the page. 
+
+![screenshot of image](readme/docs/images/testing/features/products_filter_bar.jpg)
+
+</details>
+
+<details>
 <summary>Product details</summary>
 On product detail page user can see full description of the product and can add the product to a bag.
 
@@ -980,6 +997,8 @@ On product detail page user can see full description of the product and can add 
 
 <details>
 <summary>Product edit</summary>
+
+Product edit is only available to staff users, after clicking on Edit button.
 
 ![screenshot of image](readme/docs/images/testing/features/product_edit_1.jpg)
 
@@ -1504,6 +1523,7 @@ ___
 
 The website was tested on browsers:
 - Google Chrome
+- Apple Safari
 - Microsoft Edge
 - Opera
 - Mozilla Firefox
