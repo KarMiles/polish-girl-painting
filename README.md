@@ -988,6 +988,14 @@ On Galery page the announcements bar changes to a secondary navigation bar which
 </details>
 
 <details>
+<summary>Product filtering by availability</summary>
+An additional way for the user to filter products is availability. This functionality is triggered by buttons "Show available" and "Show unavailable" at the bottom of the Gallery.
+
+![screenshot of image](readme/docs/images/testing/features/products_filter_availability.jpg)
+
+</details>
+
+<details>
 <summary>Product details</summary>
 On product detail page user can see full description of the product and can add the product to a bag.
 
@@ -1015,6 +1023,7 @@ Product edit is only available to staff users, after clicking on Edit button.
 | --- | ----------------------------- | ------------- | ---------------- | ----- | ----- |
 | 1   | View products                 | yes           | yes              | yes   | yes   |
 | 2   | Create, Edit, Delete products | no            | no               | yes   | yes   |
+| 3   | Search, filter products       | yes           | yes              | yes   | yes   |
 
 <br>
 
