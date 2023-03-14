@@ -21,12 +21,12 @@
                 <!-- Segment image -->
                 <div class="image-container text-center">
                 {% if product.image %}
-                    <!-- Linked image on screens small and above -->
-                    <a href="{{ product.image.url }}" target="_blank" class="d-none d-sm-block">
+                    <!-- Linked image on screens medium and above -->
+                    <a href="{{ product.image.url }}" target="_blank" class="d-none d-md-block">
                         <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top img-fluid">
                     </a>
-                    <!-- Unlinked image on extra small screens -->
-                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top img-fluid d-sm-none">
+                    <!-- Unlinked image on small screens -->
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top img-fluid d-md-none">
                 {% else %}
                     <img src="{{ MEDIA_URL }}placeholder.jpg" alt="{{ product.name }}" class="card-img-top img-fluid">
                 {% endif %}
