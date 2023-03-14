@@ -1465,12 +1465,28 @@ Also in the footer a short form giving users a possibility to subscribe to a new
 
 Other marketing options, not included in the scope of this project: 
 
-- Paid advertising: The website's appearance in search results can be boosted in the form of paid advertising.
 
 - Influencer marketing: The owner's reach of the target market can be enhanced through paid engagement of people with large followings and authority in the field.  
 
 - Affiliate marketing: extending the traffic to the website through paid recommendations from other parties.
 
+- Paid advertising and analytics: The website's appearance in text and geographical search results can be boosted in the form of paid advertising like ones below:
+    - [Google My Business](https://www.google.com/business/) - usage of this service, which is free to register but paid for services, brings benefits mentioned below. The benefits need to be considered in line with potential risks such as negative reviews from users, unflattering photos.  
+        - additional way to connect to maket
+        - improved SEO
+        - strengthen reputation
+        - alerts on user interactions
+        - advanced analytics 
+
+    - [Google Ads](https://ads.google.com/) - promotional activities include ads in search results, ads in Google Shopping and display ads in form of a banner. Benefits for using Google Ads include:
+        - specific targeting
+        - results faster than in organic growth, using SEO alone
+        - access to [Google Keyword Planner](https://ads.google.com/home/tools/keyword-planner/) providing detailed insights into SEO keyword volume, competition and pricing.
+        - detailed analytics of success rate on promotional activity
+
+    - [Google Analytics](https://analytics.google.com/) 
+        - free to set up, highly customizable service providing detailed insights into metrics impacting the business's sales and measuring efficiency of web marketing strategies. Google Analytics can be combined with Google Ads. 
+        - this complex tool requires adding specific code to the webpage (which must be GDPR compliant) and may take time for meaningful analysis to be available. This code is equiped with appropriate GDPR comliance mechanism provided by [Privacy Policy Generator](https://www.privacypolicygenerator.info/). 
 
 ___
 
