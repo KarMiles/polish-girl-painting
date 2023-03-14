@@ -1492,7 +1492,7 @@ Other marketing options, not included in the scope of this project:
 
 Website built in this project collects user data and as such needs to comply with General Data Protection Regulation (GDPR). The full list of standards related to this regulation can be found under this [link](https://gdpr.eu/). At the bottom of every page, in the footer, a link is available to all users to view the page's Privacy Policy. This ensures transparency in informing users about how their data is being collected and processed. 
 
-The Privacy Policy is set up under the assumption that cookies are not used on this webpage. In case of a change in this area, e.g. when using Google Analytics, the Privacy Policy would need to be accordingly updated.
+The Privacy Policy is set up under the assumption that cookies are not used on this webpage. In case of a change in this area, e.g. when using Google Analytics, Facebook Pixel or Hotjar the Privacy Policy would need to be accordingly updated.
 
 <br>
 
@@ -1504,9 +1504,9 @@ ___
 
 The website was tested on browsers:
 - Google Chrome
-- Safari
 - Microsoft Edge
 - Opera
+- Mozilla Firefox
 
 First three browsers to test were chosen based on their market share according to [StatCounter](https://gs.statcounter.com/browser-market-share) as in August 2022.
 
