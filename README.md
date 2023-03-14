@@ -1488,6 +1488,14 @@ Other marketing options, not included in the scope of this project:
         - free to set up, highly customizable service providing detailed insights into metrics impacting the business's sales and measuring efficiency of web marketing strategies. Google Analytics can be combined with Google Ads. 
         - this complex tool requires adding specific code to the webpage (which must be GDPR compliant) and may take time for meaningful analysis to be available. This code is equiped with appropriate GDPR comliance mechanism provided by [Privacy Policy Generator](https://www.privacypolicygenerator.info/). 
 
+**GDPR Compliance**
+
+Website built in this project collects user data and as such needs to comply with General Data Protection Regulation (GDPR). The full list of standards related to this regulation can be found under this [link](https://gdpr.eu/). At the bottom of every page, in the footer, a link is available to all users to view the page's Privacy Policy. This ensures transparency in informing users about how their data is being collected and processed. 
+
+The Privacy Policy is set up under the assumption that cookies are not used on this webpage. In case of a change in this area, e.g. when using Google Analytics, the Privacy Policy would need to be accordingly updated.
+
+<br>
+
 ___
 
 # 4. Testing <a name='testing'></a> 
