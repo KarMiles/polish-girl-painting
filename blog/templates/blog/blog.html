@@ -12,12 +12,17 @@
 
         <div class="row">
             <div class="col">
+
                 {% if posts|length > 0 and blog_is_live %}
 
                     <!-- Blog -->
+
+                    <!-- show if posts exist -->
                     {% for post in posts %}
                         <div class="card mb-4">
+
                             <div class="card-body">
+                                
                                 <a href="{% url 'post_detail' post.slug  %}"
                                     <p class="card-title">{{ post.title }}<p>
                                 </a>
@@ -32,12 +37,15 @@
                                         </a>
                                     {% endif %}
                                 </p>
+                                
                                 <div class="row">
+
                                     {% if post.featured_image %}
                                     <div class="card-text col-12 col-lg-10 col-md-8">
                                     {% else %}
                                     <div class="card-text col-12">
                                     {% endif %}
+
                                         <p>
                                             {{post.content|safe|stringformat:".250s" }}
                                             {% if post.content|length > 250 %}
@@ -45,6 +53,7 @@
                                             {% endif %}
                                         </p>
                                     </div>
+                                    
                                     {% if post.featured_image %}
                                         <div class="col-4 col-lg-2 hide-on-sm float-right details-image mt-4"> 
                                             <img src="{{ post.featured_image.url }}"
@@ -52,6 +61,7 @@
                                                 class="w-100">
                                         </div>
                                     {% endif %}
+
                                 </div>
 
                                 <!-- Superuser section -->
@@ -72,7 +82,9 @@
                                     </a>
                                 </div>
                                 {% endif %}
+                                
                             </div>
+
                         </div>
                     {% endfor %}
 
@@ -84,6 +96,8 @@
                     </div>
 
                 {% else %}
+
+                    <!-- show if no posts exist -->
                     <p class="lead mb-5">Exciting content coming soon!</p>
                     <a href="{% url 'products' %}" class="btn btn-outline-black corners btn-lg">
                         <span class="icon">
@@ -91,7 +105,9 @@
                         </span>
                         <span class="text-uppercase">Gallery</span>
                     </a>
+
                 {% endif %}
+
             </div>
         </div>
     </div>

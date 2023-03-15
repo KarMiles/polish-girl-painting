@@ -1586,7 +1586,7 @@ ___
 For development of this webpage elements of Agile software development methodology have been used, including:
 
 - User stories (described in User Stories section).
-- Iterative and incremental development, utilizing cyclical flow of work in the areas mentioned below. An example of this might be adding a poll app after rough implementation and evaluating of blog functionality and after getting these operating adding accounts and booking apps. This flexible approach allowed to built on experience of building previous modules and avoid building unnecessary code.
+- Iterative and incremental development, utilizing cyclical flow of work in the areas mentioned below. An example of this might be adding a blog app after rough implementation and evaluating of products functionality, and then building on the above adding testimonials app. This flexible approach allowed to built on experience of building previous modules and avoid building unnecessary code. The process involves iterating through:
     - requirements
     - analysis and design
     - implementation
@@ -1602,18 +1602,23 @@ For development of this webpage elements of Agile software development methodolo
 
     <details>
     <summary>Example Issues table used in this project</summary>
+    General view
+    
+    ![screenshot](readme\docs\images\agile_kaizen.jpg)
 
-    ![screenshot](./readme/agile-issues.jpg)
+    Issue label
+
+    ![screenshot](readme\docs\images\agile_label.jpg)
     </details>
 
-    Kanban for this project can also be found [here](https://github.com/users/KarMiles/projects/5/views/1).
+    Kanban for this project can also be found [here](https://github.com/users/KarMiles/projects/6/views/1).
 
 ## 6.ii. Languages <a name="languages"></a>
 
 - HTML (https://www.w3schools.com/html/)
     - The main language this webpage's front-end is running on is HTML (HyperText Markup Language).
 - CSS (https://www.w3.org/Style/CSS/)
-    - For custom-made styling CSS (Cascading Style Sheets) language was used. 
+    - For custom-made styling CSS (Cascading Style Sheets) language was used. This was along usage of CSS framework [Bootstrap](https://getbootstrap.com/).
 - JavaScript (https://www.javascript.com/)
     - A limited use of custom-made JavaScript has been employed to enhance functionality of the website.
 - Python (https://www.python.org/) - within the Django framework Python 3 is the main language used to run its back-end logic. 
@@ -1628,30 +1633,29 @@ For development of this webpage elements of Agile software development methodolo
 - Python packages
 
     The following packages are used for the project. All modules can be found in requirements.txt file:
-
--    asgiref==3.6.0
--    boto3==1.26.54
--    botocore==1.29.54
--    cloudinary==1.30.0
--    dj-database-url==0.5.0
--    Django==3.2
--    django-allauth==0.41.0
--    django-countries==7.5
--    django-crispy-forms==1.14.0
--    django-storages==1.13.2
--    django-summernote==0.8.20.0
--    gunicorn==20.1.0
--    jmespath==1.0.1
--    oauthlib==3.2.2
--    Pillow==9.3.0
--    psycopg2==2.9.5
--    python3-openid==3.2.0
--    pytz==2022.7
--    requests-oauthlib==1.3.1
--    s3transfer==0.6.0
--    sqlparse==0.4.3
--    stripe==5.0.0
--    tzdata==2022.7
+    - asgiref==3.6.0
+    - boto3==1.26.54
+    - botocore==1.29.54
+    - cloudinary==1.30.0
+    - dj-database-url==0.5.0
+    - Django==3.2
+    - django-allauth==0.41.0
+    - django-countries==7.5
+    - django-crispy-forms==1.14.0
+    - django-storages==1.13.2
+    - django-summernote==0.8.20.0
+    - gunicorn==20.1.0
+    - jmespath==1.0.1
+    - oauthlib==3.2.2
+    - Pillow==9.3.0
+    - psycopg2==2.9.5
+    - python3-openid==3.2.0
+    - pytz==2022.7
+    - requests-oauthlib==1.3.1
+    - s3transfer==0.6.0
+    - sqlparse==0.4.3
+    - stripe==5.0.0
+    - tzdata==2022.7
 
 - Bootstrap (https://getbootstrap.com/) - used for consistent layout and responsiveness across all the website.
 
@@ -1663,6 +1667,7 @@ For development of this webpage elements of Agile software development methodolo
 ### Data storage
 - Cloudinary (https://cloudinary.com) - service used for storing and access to dynamic images.
 - Postgres (https://www.postgresql.org/) - the deployed project on Heroku uses the Postgres database.
+- AWS Amazon (https://aws.amazon.com/) - service added on Heroku deployment for static and dynamic files.
 - SQLite (https://www.sqlite.org/) - used as local database.
 
 ### Validation
