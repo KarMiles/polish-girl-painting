@@ -1667,7 +1667,7 @@ For development of this webpage elements of Agile software development methodolo
 ### Data storage
 - Cloudinary (https://cloudinary.com) - service used for storing and access to dynamic images.
 - Postgres (https://www.postgresql.org/) - the deployed project on Heroku uses the Postgres database.
-- AWS Amazon (https://aws.amazon.com/) - service added on Heroku deployment for static and dynamic files.
+- AWS Amazon (https://aws.amazon.com/) - service added for Heroku deployment for static and dynamic files.
 - SQLite (https://www.sqlite.org/) - used as local database.
 
 ### Validation
