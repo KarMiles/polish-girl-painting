@@ -1,6 +1,6 @@
 # PolishGirlPainting
 
-![screenshot of Responsive Image](readme/docs/images/responsive_image.jpg)
+![screenshot of Responsive Image](readme/docs/images/am_i_responsive.jpg)
 
 View the live site [here](https://polish-girl-painting.herokuapp.com/).
 
@@ -10,6 +10,8 @@ Users for testing:
 | ------------ | -------- | -------- |
 | staff_user | 1qaz3edc | staff_user    |
 | user | 1qaz3edc | customer |
+
+Administrator credentials are available on request for safety reasons.
 
 <br>
 
@@ -51,14 +53,16 @@ Users for testing:
 ## Introduction
 **The project concept**
 
-PolishGirlPainting is the webpage for an artist showcasing her work on the web and selling her paintings online. 
+PolishGirlPainting is the webpage for an artist Monika Curto Fuentes showcasing her work on the web and selling her paintings online. 
 Apart from allowing the Owner present her pictures for sale, the webpage also helps in developing her clientbase by building a community of people interested in her art.
+
+This is an educational project with a possibility of moving the project into the real world application.
 
 ___
 
 # 1. User Experience (UX) <a name='ux'></a> 
 ### **Project goals**
-The main goal of the project is to provide a platform for selling Artist's paintings and supporting this goal by engaging prospective and current clients interested in acquiring the paintings. This should be achieved through several sub-goals:
+The main goal of the project is to provide a platform for selling the Artist's paintings and supporting this goal by engaging prospective and current clients interested in acquiring the paintings. This should be achieved through several sub-goals:
 -	To enable owner (Artist) to post, edit, read and delete textual and graphical content directly related to her offering.
 -	To enable the owner to post in her personal blog.
 -	To provide functionality for commercial transactions related to the items for sale.
@@ -1683,7 +1687,7 @@ For development of this webpage elements of Agile software development methodolo
 - Lucidchart (www.lucidchart.com/) - used to create flowcharts.
 - Balsamiq Wireframes(https://balsamiq.com/) - used to create wireframes in the UX design stage.
 - SQL DRAW (https://drawsql.app/) – used to create database diagrams.
-- Am I Responsive (http://ami.responsivedesign.is/) - Mockup Generator was used to create the Mock up image for this README document.
+- Am I Responsive (https://techsini.com/multi-mockup/) - Mockup Generator was used to create the Mock up image for this README document.
 
 - Google Fonts (https://fonts.google.com/) - for selecting fonts and using them in the project.
 - Font Awesome (https://fontawesome.com/) - all the icons throughout the website are derived from this service.
