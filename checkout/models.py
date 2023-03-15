@@ -24,9 +24,6 @@ class Order(models.Model):
         null=True,
         blank=True,
         related_name='orders')
-    # Note for user_profile's related_name:
-    # Add related_name of orders to access the users
-    # by calling sth like user.user_profile.orders
     full_name = models.CharField(
         max_length=50,
         null=False,
