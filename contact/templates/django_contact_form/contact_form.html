@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% load i18n %}
+
+{% block page_header %}
+    {% include "includes/page_header.html" with title="Contact Me" subtitle="" %}
+{% endblock %}
+
+{% block head_title %}{% trans "Contact Us" %}{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+
+<div class=" mb-4 col-12 col-md-10 offset-md-1">
+
+    <h1>{% trans "Drop me a message!" %}</h1>
+
+    <div class="row">
+
+        <!-- Column with contact form -->
+        <div class="col-md-8">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2>{% trans "Your message:" %}</h2>
+                    <div>
+                        <form class="signup" id="contact_form" method="post">
+                        {% csrf_token %}
+                        {{ form | crispy }}
+                        <button class="btn btn-outline-black corners px-1 py-1 px-2" type="submit">{% trans "Send" %}</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Column with contact details -->
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                <div class="image-container">
+                    <h2>
+                        Where to find me
+                    </h2>
+                    <hr/>
+                </div>
+                <div>
+                    <p>
+                        Telephone
+                    </p>
+                    <p>
+                        e-mail
+                    </p>
+                    <p>
+                        Address
+                    </p>
+                </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

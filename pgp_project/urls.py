@@ -42,6 +42,7 @@ urlpatterns = [
         "testimonials/",
         include("testimonials.urls"),
         name="testimonials_urls"),
+    path('contact/', include('contact.urls')),
     path('summernote/', include('django_summernote.urls')),
     path('403/', test_403_view, name='test_403_view'),
     path('404/', test_404_view, name='test_404_view'),
