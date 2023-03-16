@@ -185,7 +185,7 @@ def checkout_success(request, order_number):
             except Product.DoesNotExist:
                 messages.error(request, (
                     "Product availability needs to be checked. \
-                        We'll contact you soon.")
+                        Please contact me directly!")
                 )
 
     # Confirmation message
