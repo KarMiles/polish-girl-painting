@@ -121,7 +121,6 @@ class PostList(generic.ListView):
     posts = Post.objects.all()
 
     template_name = "blog/blog.html"
-    # paginate_by = 3
     ordering = ['-created_on']
 
     def get_queryset(self):

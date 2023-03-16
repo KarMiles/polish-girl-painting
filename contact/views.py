@@ -16,11 +16,15 @@ class ContactFormView(FormView):
     """
     form_class = ContactForm
     recipient_list = None
-    success_url = reverse_lazy("django_contact_form_sent")
+    success_url = reverse_lazy("contact")
     template_name = "django_contact_form/contact_form.html"
 
     def form_valid(self, form):
         form.save()
+        messages.add_message(
+            self.request,
+            messages.INFO,
+            'Message sent successfully!')
         return super().form_valid(form)
 
     def get_form_kwargs(self):
