@@ -15,7 +15,7 @@ class ContactAdmin(admin.ModelAdmin):
     """
     Admin class for the contact model.
     """
-    list_display = ('name', 'email', 'subject', 'created_on')
-    search_fields = ['name', 'body', 'subject']
+    list_display = ('name', 'email', 'body', 'created_on')
+    search_fields = ['name', 'body', ]
     list_filter = ('created_on',)
-    list_display_links = ('subject',)
+    list_display_links = ('body',)

@@ -7,14 +7,14 @@ from django_contact_form.views import ContactFormView
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from .forms import ModelContactForm
+from .forms import ContactForm
 
 
 urlpatterns = [
     path(
         '',
         ContactFormView.as_view(
-            form_class=ModelContactForm
+            form_class=ContactForm
         ),
         name='contact'),
     path(

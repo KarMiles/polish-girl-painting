@@ -11,7 +11,7 @@ from .models import Contact
 # Forms for contact app
 
 
-class ModelContactForm(ContactForm):
+class ContactForm(ContactForm):
     """
     Class for Contact form
     Set data, files, request and recipient_list initially to None
@@ -38,7 +38,9 @@ class ModelContactForm(ContactForm):
         """
         data = self.get_message_dict()
         Contact.objects.create(
-            name=self.cleaned_data.get("name"),
+            # name=self.cleaned_data.get("name"),
+            # name=data['name'],
+            # name=data['initial.name'],
             email=self.cleaned_data.get("email"),
             subject=data['subject'],
             body=data['message'])
