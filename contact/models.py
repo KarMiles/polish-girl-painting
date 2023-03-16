@@ -18,6 +18,11 @@ class Contact(models.Model):
         related_name="contact",
         null=True,
         blank=True)
+    contact_name = models.CharField(
+        max_length=254,
+        null=False,
+        blank=False,
+        default="")
     email = models.EmailField(
         max_length=254,
         null=False,
