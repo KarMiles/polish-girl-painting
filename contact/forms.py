@@ -28,7 +28,8 @@ class ContactForm(ContactForm):
                 request.user.is_authenticated:
             kwargs['initial'] = {
                 'email': request.user.email,
-                'name': request.user.get_full_name() or request.user.username
+                # 'name': request.user.get_full_name() or request.user.username
+                'name': request.user
             }
         super().__init__(*args, data, files, request, recipient_list, **kwargs)
 
@@ -37,10 +38,16 @@ class ContactForm(ContactForm):
         Save gathered data
         """
         data = self.get_message_dict()
+        # name = self.request.user.username or self.cleaned_data.get("name")
         Contact.objects.create(
             # name=self.cleaned_data.get("name"),
             # name=data['name'],
+            # name=data['contact.name'],
             # name=data['initial.name'],
+            # name=data.name,
+            # name=name,
+            name=self.request.user,
+
             email=self.cleaned_data.get("email"),
             subject=data['subject'],
             body=data['message'])
