@@ -632,10 +632,10 @@ All fonts are available from Google Fonts service.
 <details>
 <summary>Screenshots of used fonts</summary>
 
-![image](readme\docs\images\surface\font_pt_serif.jpg)
-![image](readme\docs\images\surface\font_source_serif_pro.jpg)
-![image](readme\docs\images\surface\font_josefin_sans.jpg)
-![image](readme\docs\images\surface\font_tenor_sans.jpg)
+![image](readme/docs/images/surface/font_pt_serif.jpg)
+![image](readme/docs/images/surface/font_source_serif_pro.jpg)
+![image](readme/docs/images/surface/font_josefin_sans.jpg)
+![image](readme/docs/images/surface/font_tenor_sans.jpg)
 </details>
 
 <br>
@@ -805,13 +805,13 @@ On home page user is welcomed with a hero picture whose goal is to draw attentio
 <details>
 <summary>Home screen on large screen </summary>
 
-![screenshot of image](readme\docs\images\surface\home.jpg)
+![screenshot of image](readme/docs/images/surface/home.jpg)
 </details>
 
 <details>
 <summary>Home screen on small screen </summary>
 
-![screenshot of image](readme\docs\images\surface\home_small_scr.jpg)
+![screenshot of image](readme/docs/images/surface/home_small_scr.jpg)
 </details>
 <br>
 
@@ -1608,11 +1608,11 @@ For development of this webpage elements of Agile software development methodolo
     <summary>Example Issues table used in this project</summary>
     General view
     
-    ![screenshot](readme\docs\images\agile_kaizen.jpg)
+    ![screenshot](readme/docs/images/agile_kaizen.jpg)
 
     Issue label
 
-    ![screenshot](readme\docs\images\agile_label.jpg)
+    ![screenshot](readme/docs/images/agile_label.jpg)
     </details>
 
     Kanban for this project can also be found [here](https://github.com/users/KarMiles/projects/6/views/1).
