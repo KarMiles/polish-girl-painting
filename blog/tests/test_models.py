@@ -8,15 +8,16 @@ from django.contrib.auth import get_user_model
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from blog.models import Post
 
+
 User = get_user_model()
 
 
-class TestBlogModels(unittest.TestCase):
+class TestModels(unittest.TestCase):
     '''
     Test Post model
     '''
 
-    # TESTS SETUP
+    # --- TESTS SETUP ---
 
     @classmethod
     def setUpClass(cls):
@@ -24,7 +25,7 @@ class TestBlogModels(unittest.TestCase):
         Class method used for operations carried
         before all tests
         '''
-        print('\nTest_models starting')
+        print('\nBlog test_models starting')
 
     @classmethod
     def tearDownClass(cls):
@@ -32,7 +33,7 @@ class TestBlogModels(unittest.TestCase):
         Class method used for operations carried
         after all tests
         '''
-        print('\nTest_models complete')
+        print('\ncomplete')
 
     def setUp(self):
         '''
@@ -42,22 +43,20 @@ class TestBlogModels(unittest.TestCase):
         self.user = User(
             username='TestUser',
             email='test@mail.com',
-            password='1qaz3edc',
+            password='1qazcde3',
             is_staff='True'
         )
 
         # Create test post
         self.post = Post(
-            title='Test Title',
-            slug='test-title',
+            title='Ttitle',
+            slug='ttitle',
             author=self.user,
             content='tcontent',
         )
 
 
-    # TESTS
-
-    # blog
+    # --- TESTS ---
 
     def test_create_post(self):
         '''
@@ -73,7 +72,7 @@ class TestBlogModels(unittest.TestCase):
         Checks:
         1. string representation is equal to post title
         '''
-        self.assertEquals(str(self.post), 'Test Title')
+        self.assertEquals(str(self.post), 'Ttitle')
 
     def test_post_highlight_defaults_to_false(self):
         '''

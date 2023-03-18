@@ -7,17 +7,17 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy, reverse
 from django.utils.text import slugify
 from django.contrib import messages
-from django.contrib.auth.mixins import AccessMixin
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from .models import Post, BlogSettings
 from .forms import PostForm
+from helpers.views import StaffRequiredMixin
 
 
 # Views for blog app
 
-class CreatePost(AccessMixin, generic.CreateView):
+class CreatePost(StaffRequiredMixin, generic.CreateView):
 
     model = Post
     template_name = "blog/post_add.html"
@@ -35,7 +35,7 @@ class CreatePost(AccessMixin, generic.CreateView):
         return super().form_valid(form)
 
 
-class EditPost(AccessMixin, generic.UpdateView):
+class EditPost(StaffRequiredMixin, generic.UpdateView):
     """
     A view to edit a post
     Args:
@@ -72,7 +72,7 @@ class EditPost(AccessMixin, generic.UpdateView):
         return reverse('post_detail', args=[self.object.slug])
 
 
-class DeletePost(AccessMixin, generic.DeleteView):
+class DeletePost(StaffRequiredMixin, generic.DeleteView):
     """
     A view to delete a post
     Args:
@@ -122,6 +122,8 @@ class PostList(generic.ListView):
 
     template_name = "blog/blog.html"
     ordering = ['-created_on']
+
+    # queryset = self.get_queryset()
 
     def get_queryset(self):
         queryset = super().get_queryset()

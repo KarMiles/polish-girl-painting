@@ -20,7 +20,6 @@ class PostForm(forms.ModelForm):
         """
         model = Post
         fields = (
-            # 'author',
             'title',
             'content',
             'highlight',
