@@ -8,7 +8,7 @@ import unittest
 from blog.forms import PostForm
 
 
-class TestForm(unittest.TestCase):
+class TestPostForm(unittest.TestCase):
     '''
     This class is for testing Post form
     '''
@@ -46,17 +46,15 @@ class TestForm(unittest.TestCase):
             'slug': 'ttitle',
             'author': 'tauthor',
             'content': 'tcontent',
-            'excerpt': 'texcerpt',
-            'price': 'tprice',
-            'priority': '3 - Normal',
-            'status': '1'
+            'highlight': False,
+            'live': True,
         })
 
         self.assertFalse(form.is_valid())
         self.assertIn('title', form.errors.keys())
         self.assertEqual(form.errors['title'][0], 'This field is required.')
 
-    def test_post_title_is_required_filled(self):
+    def test_post_content_is_required_filled(self):
         '''
         Tests if form with field 'title' containing characters
         is valid.
@@ -65,25 +63,26 @@ class TestForm(unittest.TestCase):
         '''
         form = PostForm({
             'title': 'Ttitle',
-            'content': 'tcontent',
+            'content': '',
             'highlight': 'thighlight',
             'live': True,
             'featured_image': 'test.jpg',
         })
 
-        self.assertTrue(form.is_valid())
+        self.assertFalse(form.is_valid())
 
-    def test_excerpt_is_not_required(self):
+    def test_featured_image_is_not_required(self):
         '''
-        Tests that field 'excerpt' is not required.
+        Tests that field 'featured_image' is not required.
         Checks:
-        1. form is valid if 'excerpt' field is left blank
+        1. form is valid if 'featured_image' field is left blank
         '''
         form = PostForm({
             'title': 'Ttitle',
             'slug': 'ttitle',
             'author': 'tauthor',
             'content': 'tcontent',
+            'featured_image': '',
         })
 
         self.assertTrue(form.is_valid())
