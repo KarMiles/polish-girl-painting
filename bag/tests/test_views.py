@@ -147,11 +147,10 @@ class TestBagViews(unittest.TestCase):
         2. correct message is displayed after item is added to bag
         """
         product = Product.objects.get(title='Ttitle')
-        Product.objects.get(sku='test-sku')
         item_id = str(product.id)
         response = client.post(
             f'/bag/add/{product.id}/',
-            {"quantity": 1, 'sku': 'test-sku', "redirect_url": "view_bag"})
+            {"quantity": 1, 'item_id': item_id, "redirect_url": "view_bag"})
         bag = client.session['bag']
 
         self.assertEqual(list(bag.keys())[0], item_id)
@@ -159,7 +158,30 @@ class TestBagViews(unittest.TestCase):
         messages = list(get_messages(response.wsgi_request))
         self.assertEqual(str(messages[0]), 'Added "Ttitle" to your bag')
 
+    def test_adjust_bag_quantity_to_zero(self):
+        """
+        This test reduces the bag from 1 item to 0 items and verifies
+        """
+        product = Product.objects.get(title='Ttitle')
+        item_id = str(product.id)
+        bag = client.session['bag']
 
+        print(f'\n{bag}')
+        response = client.post(
+            f'/bag/remove/{product.id}/',
+            {"quantity": 1, 'item_id': item_id, "redirect_url": "remove_from_bag"})
+        print(bag)
+        self.assertEqual(list(bag.keys())[0], item_id)
+
+        response = client.post(
+            f'/bag/remove/{product.id}/', 
+            {'quantity': 0, "redirect_url": "remove_from_bag",})
+        self.assertRedirects(response, '/bag/')
+
+        # bag = client.session['bag']
+        # self.assertEqual(bag, {})
+        # messages = list(get_messages(response.wsgi_request))
+        # self.assertEqual(str(messages[1]), 'Removed "Ttitle" from your bag')
 
 
 if __name__ == '__main__':

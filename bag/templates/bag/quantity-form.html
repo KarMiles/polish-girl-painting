@@ -4,7 +4,7 @@
         id="qty-form">
         {% csrf_token %}
         <input class="form-control form-control-sm" type="number"
-            name="quantity" value="{{ item.quantity }}" min="1" 
+            name="quantity" value="{{ item.quantity }}" min="0" 
             {% if item.product.is_unique %}
                 max="1"
             {% else %}
