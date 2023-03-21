@@ -13,7 +13,7 @@ class TestPostForm(unittest.TestCase):
     '''
     This class is for testing Post form
     '''
-    # TESTS SETUP
+    # --- Tests setup ---
 
     @classmethod
     def setUpClass(cls):
@@ -31,7 +31,7 @@ class TestPostForm(unittest.TestCase):
         '''
         print('\ncomplete')
 
-    # TESTS
+    # --- Tests ---
 
     def test_post_title_is_required(self):
         '''
@@ -109,7 +109,8 @@ class TestCheckoutForm(unittest.TestCase):
     '''
     This class is for testing order form for the checkout
     '''
-    # TESTS SETUP
+
+    # --- Tests setup ---
 
     @classmethod
     def setUpClass(cls):
@@ -127,7 +128,7 @@ class TestCheckoutForm(unittest.TestCase):
         '''
         print('\ncomplete')
 
-    # TESTS
+    # --- Tests ---
 
     def test_add_order_form(self):
         """
@@ -135,7 +136,7 @@ class TestCheckoutForm(unittest.TestCase):
         """
         form = OrderForm({
             'full_name': 'Test Name',
-            'email': 'address@test.com',
+            'email': 'user@test.com',
             'phone_number': '0123456789',
             'postcode': 'ABC 123',
             'town_or_city': 'Test Town',

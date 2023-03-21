@@ -7,17 +7,18 @@ from django.contrib.auth import get_user_model
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from blog.models import Post
+from checkout.models import Order
 
 
 User = get_user_model()
 
 
-class TestModels(unittest.TestCase):
+class TestPostModels(unittest.TestCase):
     '''
     Test Post model
     '''
 
-    # --- TESTS SETUP ---
+    # --- Tests setup ---
 
     @classmethod
     def setUpClass(cls):
@@ -56,7 +57,7 @@ class TestModels(unittest.TestCase):
         )
 
 
-    # --- TESTS ---
+    # --- Tests ---
 
     def test_create_post(self):
         '''
@@ -85,3 +86,56 @@ class TestModels(unittest.TestCase):
         Tests that when no live status is chosen defaults to true
         '''
         self.assertEqual(self.post.live, True)
+
+
+class TestCheckoutModels(unittest.TestCase):
+    """
+    A class for testing checkout models
+    """
+
+    # --- Tests setup ---
+    
+    @classmethod
+    def setUpClass(cls):
+        '''
+        Class method used for operations carried
+        before all tests
+        '''
+        print('\nCheckout test_models starting')
+
+    @classmethod
+    def tearDownClass(cls):
+        '''
+        Class method used for operations carried
+        after all tests
+        '''
+        print('\ncomplete')
+
+    def setUp(self):
+        """
+        Create a test product and order
+        """
+        Order.objects.create(
+            full_name='Test Name',
+            email='user@test.com',
+            phone_number='123456789',
+            street_address1='Test Street',
+            town_or_city='Test City',
+            country='GB',
+        )
+
+    def tearDown(self):
+        """
+        Delete test products and orders
+        """
+        # Order.objects.all().delete()
+        Order.objects.filter(full_name='Test Name').delete()
+
+    # --- Tests ---
+
+    def test_order_str_method(self):
+        """
+        This test tests the order number string
+        """
+        order = Order.objects.get(email='user@test.com')
+        self.assertEqual(str(order), order.order_number)
