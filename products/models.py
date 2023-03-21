@@ -27,6 +27,10 @@ ORIENTATION = [
 
 
 class Product(models.Model):
+    """
+    Class for the Product model
+    representing items in Gallery
+    """
     title = models.CharField(
         max_length=254,
         unique=True)
@@ -80,7 +84,7 @@ class Product(models.Model):
 
     class Meta:
         """
-        Order products by priority
+        Order products by priority and creation date
         """
         ordering = ['priority', 'created_on']
 
@@ -97,6 +101,9 @@ class Product(models.Model):
 
 class Category(models.Model):
     class Meta:
+        """
+        Sets plural representation and orders categories by name
+        """
         verbose_name_plural = 'Categories'
         ordering = ['name']
 
