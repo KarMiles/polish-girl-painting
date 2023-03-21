@@ -1561,9 +1561,12 @@ There are no observed unfixed issues and bugs.
 
 **Fixed issues and changes to original design**
 
-*Database table issue*
+*Testing redirect*
 
-In app blog model Post, price has default value. This value was not showing when no price was entered. The reason for this bug was that the price column was added to the model post at later stage of development and the already existing posts didn't have that column. I've dealt with this problem with ```if``` statement in templates referring to this value. The alternative would be editing and saving all existing entries again which would add the price column in the database.
+When producing automatic tests for bag page it was not possible to utilize assertRedirects test on response utilizing post method. To peform the test assertEqual was used:
+
+    last_url, status_code = response.redirect_chain[-1]
+    self.assertEqual(last_url, '/bag/')
 
 *Contrast error on Wave test*
 

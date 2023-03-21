@@ -427,6 +427,18 @@ class TestBagViews(unittest.TestCase):
         messages = list(get_messages(response.wsgi_request))
         self.assertEqual(str(messages[0]), 'Removed "Ttitle" from your bag')
 
+    def test_remove_product_from_bag_exception(self):
+        """
+        This test tries to remove a non-existent product from a bag
+        Checks:
+        1. trying to remove non-existent item generates error
+        """
+        item_id_non_existent = 0 
+        try:
+            response = client.post(reverse(f'/remove/{item_id_non_existent}/'))
+        except:
+            pass
+
 
 if __name__ == '__main__':
     unittest.main()

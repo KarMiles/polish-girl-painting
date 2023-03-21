@@ -6,6 +6,7 @@ import unittest
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from blog.forms import PostForm
+from checkout.forms import OrderForm
 
 
 class TestPostForm(unittest.TestCase):
@@ -102,3 +103,49 @@ class TestPostForm(unittest.TestCase):
             'live',
             'featured_image'
         ))
+
+
+class TestCheckoutForm(unittest.TestCase):
+    '''
+    This class is for testing order form for the checkout
+    '''
+    # TESTS SETUP
+
+    @classmethod
+    def setUpClass(cls):
+        '''
+        Set up test data used
+        for all tests in TestViews class
+        '''
+        print('\nCheckout test_forms starting')
+
+    @classmethod
+    def tearDownClass(cls):
+        '''
+        Delete test data used
+        for all tests in TestViews class
+        '''
+        print('\ncomplete')
+
+    # TESTS
+
+    def test_add_order_form(self):
+        """
+        This test tests the order form object
+        """
+        form = OrderForm({
+            'full_name': 'Test Name',
+            'email': 'address@test.com',
+            'phone_number': '0123456789',
+            'postcode': 'ABC 123',
+            'town_or_city': 'Test Town',
+            'street_address1': 'Test Street Address 1',
+            'street_address2': 'Test Street Address 2',
+            'county': 'Test County',
+            'country': 'GB'
+            })
+        self.assertTrue(form.is_valid())
+
+
+if __name__ == '__main__':
+    unittest.main()
