@@ -133,9 +133,20 @@ class TestCheckoutModels(unittest.TestCase):
 
     # --- Tests ---
 
-    def test_order_str_method(self):
-        """
-        This test tests the order number string
-        """
+    def test_create_post_str_representation(self):
+        '''
+        Tests string representation for Order model
+        Checks:
+        1. string representation is equal to order number
+        '''
         order = Order.objects.get(email='user@test.com')
         self.assertEqual(str(order), order.order_number)
+
+    def test_create_order(self):
+        '''
+        Tests that order can be created using Order model
+        Checks:
+        1. test order in checkout is an instance of Order model
+        '''
+        order = Order.objects.get(email='user@test.com')
+        self.assertIsInstance(order, Order)
