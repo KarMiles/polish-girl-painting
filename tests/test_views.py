@@ -62,7 +62,7 @@ class TestViews(unittest.TestCase):
     Test view to show blog page
     '''
 
-    # TESTS SETUP
+    # --- Tests setup ---
 
     @classmethod
     def setUpClass(cls):
@@ -113,18 +113,20 @@ class TestViews(unittest.TestCase):
         Post.objects.filter(slug='ttitle').delete()
         print('\ncomplete')
 
-    # Function for checking if indicated template is used
     def assertTemplateUsed(self, response, template_name):
         """
         Asserts that the template with the given name
         was used in rendering the response.
+        Function for use in further tests.
+        Checks:
+        1. indicated template is used
         """
         self.assertIn(
             template_name,
             [t.name for t in response.templates if t.name is not None]
         )
 
-    # --- TESTS ---
+    # --- Tests ---
 
     def test_user_can_login(self):
         """
@@ -226,14 +228,15 @@ class TestViews(unittest.TestCase):
 
     def test_add_blog_post_page(self):
         '''
-        Test to check that Booking page displays correctly.
+        Test to check that blog page displays correctly.
         Checks:
         1. status code is 200 (success) in case of authorized user
         2. correct template is used
         for authorized user.
-        3. status code is not 200 in case of non-authorized user
+        3. status code is not 200 in case of customer
+        4.  status code is not 200 in case of non-logged in user
         '''
-        # Booking page loads for staff user
+        # Blog page loads for staff user
         login_staff()
         response = client.get('/blog/post')
         self.assertEqual(response.status_code, 200)
@@ -242,7 +245,14 @@ class TestViews(unittest.TestCase):
             'blog/post_add.html')
         logout()
 
-        # Booking page does not load for unauthorized user
+        # Blog page does not load for customer user
+        logout()
+        login_customer()
+        response = client.get('/blog/post')
+        self.assertNotEqual(response.status_code, 200)
+        logout()
+
+        # Blog page does not load for non-logged in user
         logout()
         response = client.get('/blog/post')
         self.assertNotEqual(response.status_code, 200)
@@ -319,7 +329,7 @@ class TestBagViews(unittest.TestCase):
             [t.name for t in response.templates if t.name is not None]
         )
 
-    # --- TESTS ---
+    # --- Tests ---
 
     # Test loading pages
 
@@ -355,7 +365,7 @@ class TestBagViews(unittest.TestCase):
 
     def test_adjust_bag_quantity_to_two(self):
         """
-        This test reduces the bag from 1 item to 0 items
+        This test reduces the bag from 1 item to 2 items
         Checks:
         1. correct item is adjusted
         """
@@ -374,7 +384,7 @@ class TestBagViews(unittest.TestCase):
 
         self.assertEqual(list(bag.keys())[0], item_id)
 
-    def test_adjust_bag_quantity(self):
+    def test_adjust_bag_quantity_message(self):
         """
         This verifies redirect after item quantity is adjusted in bag
         Checks:
@@ -426,18 +436,6 @@ class TestBagViews(unittest.TestCase):
 
         messages = list(get_messages(response.wsgi_request))
         self.assertEqual(str(messages[0]), 'Removed "Ttitle" from your bag')
-
-    def test_remove_product_from_bag_exception(self):
-        """
-        This test tries to remove a non-existent product from a bag
-        Checks:
-        1. trying to remove non-existent item generates error
-        """
-        item_id_non_existent = 0 
-        try:
-            response = client.post(reverse(f'/remove/{item_id_non_existent}/'))
-        except:
-            pass
 
 
 if __name__ == '__main__':

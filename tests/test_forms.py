@@ -89,6 +89,22 @@ class TestPostForm(unittest.TestCase):
 
         self.assertTrue(form.is_valid())
 
+    def test_excerpt_is_not_required(self):
+        '''
+        Tests that field 'featured_image' is not required.
+        Checks:
+        1. form is valid if 'featured_image' field is left blank
+        '''
+        form = PostForm({
+            'title': 'Ttitle',
+            'slug': 'ttitle',
+            'author': 'tauthor',
+            'excerpt': '',
+            'content': 'tcontent',
+        })
+
+        self.assertTrue(form.is_valid())
+
     def test_postform_fields_are_explicit_in_form_metaclass(self):
         """
         Tests that only fields in Meta class desplay in form.
