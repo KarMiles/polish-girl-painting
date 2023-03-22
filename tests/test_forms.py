@@ -7,6 +7,7 @@ import unittest
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from blog.forms import PostForm
 from checkout.forms import OrderForm
+from products.forms import ProductForm
 
 
 class TestPostForm(unittest.TestCase):
@@ -55,7 +56,7 @@ class TestPostForm(unittest.TestCase):
         self.assertIn('title', form.errors.keys())
         self.assertEqual(form.errors['title'][0], 'This field is required.')
 
-    def test_post_content_is_required_filled(self):
+    def test_post_content_is_required(self):
         '''
         Tests if form with field 'title' containing characters
         is valid.
@@ -130,7 +131,7 @@ class TestCheckoutForm(unittest.TestCase):
 
     # --- Tests ---
 
-    def test_add_order_form(self):
+    def test_add_order_form_is_valid(self):
         """
         This test tests the order form object
         """
@@ -146,6 +147,82 @@ class TestCheckoutForm(unittest.TestCase):
             'country': 'GB'
             })
         self.assertTrue(form.is_valid())
+
+
+class TestProductForm(unittest.TestCase):
+    '''
+    This class is for testing order form for the checkout
+    '''
+
+    # --- Tests setup ---
+
+    @classmethod
+    def setUpClass(cls):
+        '''
+        Set up test data used
+        for all tests in TestViews class
+        '''
+        print('\nProductForm test_forms starting')
+
+    @classmethod
+    def tearDownClass(cls):
+        '''
+        Delete test data used
+        for all tests in TestViews class
+        '''
+        print('\ncomplete')
+
+    # --- Tests ---
+
+    def test_product_form_is_valid(self):
+        """
+        Tests the product form object
+        Checks:
+        1. product form is valid
+        """
+        form = ProductForm({
+            'title': 'Test Title',
+            'description': 'Test description',
+            })
+        self.assertTrue(form.is_valid())
+
+    def test_product_title_is_required(self):
+        '''
+        Tests if the field 'title' is required.
+        Checks:
+        1. form is not valid if title is blank
+        2. there is an error message when field is empty
+        3. default message shows
+
+        '''
+        form = ProductForm({
+            'title': '',
+            'description': 'Test description',
+            })
+
+        self.assertFalse(form.is_valid())
+        self.assertIn('title', form.errors.keys())
+        self.assertEqual(form.errors['title'][0], 'This field is required.')
+
+    def test_product_description_is_required(self):
+        '''
+        Tests if the field 'description' is required.
+        Checks:
+        1. form is not valid if title is blank
+        2. there is an error message when field is empty
+        3. default message shows
+
+        '''
+        form = ProductForm({
+            'title': 'Test Title',
+            'description': '',
+            })
+
+        self.assertFalse(form.is_valid())
+        self.assertIn('description', form.errors.keys())
+        self.assertEqual(form.errors['description'][0], 'This field is required.')
+
+        
 
 
 if __name__ == '__main__':

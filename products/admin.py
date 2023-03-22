@@ -35,6 +35,7 @@ class ProductAdmin(admin.ModelAdmin):
         'available',
         'live',
         'highlight',
+        'orientation',
     )
 
 

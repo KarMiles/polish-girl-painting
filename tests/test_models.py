@@ -75,6 +75,14 @@ class TestPostModels(unittest.TestCase):
         '''
         self.assertEquals(str(self.post), 'Ttitle')
 
+    def test_post_save_method(self):
+        """
+        This tests the post str method
+        Checks:
+        1. post saves with correct slug
+        """
+        self.assertEqual(str(self.post.slug), 'ttitle')
+
     def test_post_highlight_defaults_to_false(self):
         '''
         Tests that when no highlight status is chosen defaults to false
@@ -113,7 +121,7 @@ class TestCheckoutModels(unittest.TestCase):
 
     def setUp(self):
         """
-        Create a test product and order
+        Create a test order
         """
         Order.objects.create(
             full_name='Test Name',
@@ -128,7 +136,6 @@ class TestCheckoutModels(unittest.TestCase):
         """
         Delete test products and orders
         """
-        # Order.objects.all().delete()
         Order.objects.filter(full_name='Test Name').delete()
 
     # --- Tests ---

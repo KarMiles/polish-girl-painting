@@ -39,6 +39,7 @@ class Product(models.Model):
         null=True,
         blank=True)
     excerpt = models.TextField(
+        null=True,
         blank=True)
     description = models.TextField()
     price = models.DecimalField(
