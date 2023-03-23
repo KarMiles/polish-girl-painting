@@ -1541,7 +1541,7 @@ The website was tested on browsers:
 - Opera
 - Mozilla Firefox
 
-First three browsers to test were chosen based on their market share according to [StatCounter](https://gs.statcounter.com/browser-market-share) as in August 2022.
+First three browsers to test were chosen based on their market share according to [StatCounter](https://gs.statcounter.com/browser-market-share) as in March 2023.
 
 ## 4.i. User story testing  <a name="user-story-testing"></a>
 

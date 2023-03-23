@@ -9,162 +9,172 @@
 
 <url>
   <loc>https://heroku-pgp-project.herokuapp.com/</loc>
-  <lastmod>2023-03-11T18:06:02+00:00</lastmod>
+  <lastmod>2023-03-22T20:20:36+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://heroku-pgp-project.herokuapp.com/accounts/signup/</loc>
-  <lastmod>2023-03-11T18:06:02+00:00</lastmod>
+  <lastmod>2023-03-22T20:20:36+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://heroku-pgp-project.herokuapp.com/accounts/login/</loc>
-  <lastmod>2023-03-11T18:06:02+00:00</lastmod>
+  <lastmod>2023-03-22T20:20:36+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://heroku-pgp-project.herokuapp.com/bag/</loc>
-  <lastmod>2023-03-11T18:06:02+00:00</lastmod>
+  <lastmod>2023-03-22T20:20:36+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://heroku-pgp-project.herokuapp.com/products/</loc>
-  <lastmod>2023-03-11T18:06:02+00:00</lastmod>
+  <lastmod>2023-03-22T20:20:36+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://heroku-pgp-project.herokuapp.com/blog/</loc>
-  <lastmod>2023-03-11T18:06:02+00:00</lastmod>
+  <lastmod>2023-03-22T20:20:36+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://heroku-pgp-project.herokuapp.com/testimonials/</loc>
-  <lastmod>2023-03-11T18:06:02+00:00</lastmod>
+  <lastmod>2023-03-22T20:20:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://heroku-pgp-project.herokuapp.com/contact/</loc>
+  <lastmod>2023-03-22T20:20:36+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://heroku-pgp-project.herokuapp.com/products/?highlight=True</loc>
-  <lastmod>2023-03-11T18:06:02+00:00</lastmod>
+  <lastmod>2023-03-22T20:20:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://heroku-pgp-project.herokuapp.com/blog/my-art-in-prestigious-gallery/</loc>
+  <lastmod>2023-03-22T20:20:36+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://heroku-pgp-project.herokuapp.com/blog/orders-will-resume-from-next-week/</loc>
-  <lastmod>2023-03-11T18:06:02+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://heroku-pgp-project.herokuapp.com/blog/test-post-no-2/</loc>
-  <lastmod>2023-03-11T18:06:02+00:00</lastmod>
+  <lastmod>2023-03-22T20:20:36+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://heroku-pgp-project.herokuapp.com/products/?available=True</loc>
-  <lastmod>2023-03-11T18:06:02+00:00</lastmod>
+  <lastmod>2023-03-22T20:20:36+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://heroku-pgp-project.herokuapp.com/accounts/password/reset/</loc>
-  <lastmod>2023-03-11T18:06:02+00:00</lastmod>
+  <lastmod>2023-03-22T20:20:36+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://heroku-pgp-project.herokuapp.com/products/?available=False</loc>
-  <lastmod>2023-03-11T18:06:02+00:00</lastmod>
+  <lastmod>2023-03-22T20:20:36+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://heroku-pgp-project.herokuapp.com/products/?category=calendars</loc>
-  <lastmod>2023-03-11T18:06:02+00:00</lastmod>
+  <lastmod>2023-03-22T20:20:36+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://heroku-pgp-project.herokuapp.com/products/?category=drawings</loc>
-  <lastmod>2023-03-11T18:06:02+00:00</lastmod>
+  <lastmod>2023-03-22T20:20:36+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://heroku-pgp-project.herokuapp.com/products/?category=paintings</loc>
-  <lastmod>2023-03-11T18:06:02+00:00</lastmod>
+  <lastmod>2023-03-22T20:20:36+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://heroku-pgp-project.herokuapp.com/products/?category=postcards</loc>
-  <lastmod>2023-03-11T18:06:02+00:00</lastmod>
+  <lastmod>2023-03-22T20:20:36+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://heroku-pgp-project.herokuapp.com/products/?category=prints</loc>
-  <lastmod>2023-03-11T18:06:02+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://heroku-pgp-project.herokuapp.com/products/2/</loc>
-  <lastmod>2023-03-11T18:06:02+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://heroku-pgp-project.herokuapp.com/products/1/</loc>
-  <lastmod>2023-03-11T18:06:02+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://heroku-pgp-project.herokuapp.com/products/4/</loc>
-  <lastmod>2023-03-11T18:06:02+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://heroku-pgp-project.herokuapp.com/products/5/</loc>
-  <lastmod>2023-03-11T18:06:02+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://heroku-pgp-project.herokuapp.com/products/7/</loc>
-  <lastmod>2023-03-11T18:06:02+00:00</lastmod>
+  <lastmod>2023-03-22T20:20:36+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://heroku-pgp-project.herokuapp.com/products/9/</loc>
-  <lastmod>2023-03-11T18:06:02+00:00</lastmod>
+  <lastmod>2023-03-22T20:20:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://heroku-pgp-project.herokuapp.com/products/1/</loc>
+  <lastmod>2023-03-22T20:20:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://heroku-pgp-project.herokuapp.com/products/2/</loc>
+  <lastmod>2023-03-22T20:20:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://heroku-pgp-project.herokuapp.com/products/4/</loc>
+  <lastmod>2023-03-22T20:20:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://heroku-pgp-project.herokuapp.com/products/5/</loc>
+  <lastmod>2023-03-22T20:20:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://heroku-pgp-project.herokuapp.com/products/7/</loc>
+  <lastmod>2023-03-22T20:20:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://heroku-pgp-project.herokuapp.com/products/11/</loc>
+  <lastmod>2023-03-22T20:20:36+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://heroku-pgp-project.herokuapp.com/products/3/</loc>
-  <lastmod>2023-03-11T18:06:02+00:00</lastmod>
+  <lastmod>2023-03-22T20:20:36+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://heroku-pgp-project.herokuapp.com/blog/blog-with-video/</loc>
-  <lastmod>2023-03-11T18:06:02+00:00</lastmod>
+  <lastmod>2023-03-22T20:20:36+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://heroku-pgp-project.herokuapp.com/blog/test-post-no-1/</loc>
-  <lastmod>2023-03-11T18:06:02+00:00</lastmod>
+  <lastmod>2023-03-22T20:20:36+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://heroku-pgp-project.herokuapp.com/testimonials/3/</loc>
-  <lastmod>2023-03-11T18:06:02+00:00</lastmod>
+  <lastmod>2023-03-22T20:20:36+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://heroku-pgp-project.herokuapp.com/testimonials/2/</loc>
-  <lastmod>2023-03-11T18:06:02+00:00</lastmod>
+  <lastmod>2023-03-22T20:20:36+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://heroku-pgp-project.herokuapp.com/accounts/login/?next=/testimonials/add/</loc>
-  <lastmod>2023-03-11T18:06:02+00:00</lastmod>
+  <lastmod>2023-03-22T20:20:36+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://heroku-pgp-project.herokuapp.com/accounts/signup/?next=%2Ftestimonials%2Fadd%2F</loc>
-  <lastmod>2023-03-11T18:06:02+00:00</lastmod>
+  <lastmod>2023-03-22T20:20:36+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://heroku-pgp-project.herokuapp.com/accounts/login/?next=%2Ftestimonials%2Fadd%2F</loc>
-  <lastmod>2023-03-11T18:06:02+00:00</lastmod>
+  <lastmod>2023-03-22T20:20:36+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 

@@ -157,7 +157,7 @@ def edit_product(request, product_id):
             messages.success(
                 request,
                 f'Successfully updated { product.title }')
-            
+
             template = 'products/product_edit.html'
             context = {
                 'form': form,
