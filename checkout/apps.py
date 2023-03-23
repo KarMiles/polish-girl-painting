@@ -12,4 +12,4 @@ class CheckoutConfig(AppConfig):
     name = 'checkout'
 
     def ready(self):
-        import checkout.signals
+        import checkout.signals  # pylint: disable=C0415, W0611

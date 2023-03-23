@@ -2,10 +2,10 @@
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import uuid
+from decimal import Decimal
 from django.db import models
 from django.db.models import Sum
 from django_countries.fields import CountryField
-from decimal import Decimal
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -14,6 +14,9 @@ from profiles.models import UserProfile
 
 
 class Order(models.Model):
+    """
+    A class for a model for an order on the website
+    """
     order_number = models.CharField(
         max_length=32,
         null=False,
@@ -128,10 +131,16 @@ class Order(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
+        """
+        String representation of order number
+        """
         return self.order_number
 
 
 class OrderLineItem(models.Model):
+    """
+    A model for a website order line item
+    """
     order = models.ForeignKey(
         Order,
         null=False,
@@ -172,6 +181,9 @@ class CheckoutSettings(models.Model):
     Lets authorized user show / hide checkout
     """
     class Meta:
+        """
+        Set up representation for Checkout settings on Admin page
+        """
         verbose_name_plural = 'Settings'
 
     live = models.BooleanField(

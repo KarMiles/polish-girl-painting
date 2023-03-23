@@ -9,7 +9,13 @@ from .models import Order
 
 
 class OrderForm(forms.ModelForm):
+    """
+    A class for the order form
+    """
     class Meta:
+        """
+        Set up fields for order form
+        """
         model = Order
         fields = (
             'full_name',

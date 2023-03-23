@@ -21,6 +21,9 @@ class OrderLineItemAdminInline(admin.TabularInline):
 
 
 class OrderAdmin(admin.ModelAdmin):
+    """
+    A class to set up Order Admin page
+    """
     inlines = (OrderLineItemAdminInline,)
 
     readonly_fields = (
@@ -67,6 +70,10 @@ class OrderAdmin(admin.ModelAdmin):
 
 @admin.register(CheckoutSettings)
 class SettingsAdmin(admin.ModelAdmin):
+    """
+    Class to set up e-commerce settings.
+    When Live status ON checkout enabled, otherwise disabled.
+    """
     list_display = (
         'live',
         'free_delivery_threshold',

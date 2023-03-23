@@ -1,19 +1,19 @@
 """Imports"""
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+import json
+import time
 from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
 import stripe
-import json
-import time
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from .models import Order, OrderLineItem
-from products.models import Product
 from profiles.models import UserProfile
+from products.models import Product
+from .models import Order, OrderLineItem
 
 
 class StripeWH_Handler:
@@ -51,19 +51,10 @@ class StripeWH_Handler:
         Handle the payment_intent.succeeded webhook from Stripe
         """
         intent = event.data.object
-        # print('intent is:')
-        # print(intent)
         pid = intent.id
         bag = intent.metadata.bag
         save_info = intent.metadata.save_info
 
-        # STRIPE UPDATE - OLD VERSION
-        # billing_details = intent.charges.data[0].billing_details
-        # shipping_details = intent.shipping
-        # grand_total = round(intent.charges.data[0].amount / 100, 2)
-
-        # STRIPE UPDATED
-        # Get the Charge object
         stripe_charge = stripe.Charge.retrieve(
             intent.latest_charge
         )

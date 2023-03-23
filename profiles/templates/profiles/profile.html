@@ -27,7 +27,11 @@
                         <span class="no-space-before">:</span>&nbsp; &nbsp;
                         {{ user.username }}
                         <div class="h4 text-capitalize mt-1">
-                            {{ user.get_full_name }}
+                            {% if user.get_full_name %}
+                                {{ user.get_full_name }}
+                            {% else %}
+                                {{ full_name }}
+                            {% endif %}
                         </div>
                     {% endif %}
                 </h2>

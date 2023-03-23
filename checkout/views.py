@@ -1,6 +1,8 @@
 """Imports"""
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+import json
+import stripe
 from django.shortcuts import render, redirect, reverse, \
     get_object_or_404, HttpResponse
 from django.views.decorators.http import require_POST
@@ -9,20 +11,24 @@ from django.conf import settings
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from .forms import OrderForm
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
-from .models import Order, OrderLineItem, CheckoutSettings
-
 from products.models import Product
 from bag.contexts import bag_contents
-
-import stripe
-import json
+from .models import Order, OrderLineItem, CheckoutSettings
+from .forms import OrderForm
 
 
 @require_POST
 def cache_checkout_data(request):
+    """
+    This function caches the bag, order and user data and catches an error
+    if it doesn't go through.
+    Args:
+        request (object)
+    Returns:
+        A HTTP response with the relevant status and a message.
+    """
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -37,16 +43,38 @@ def cache_checkout_data(request):
             processed right now. Please try again later.')
         return HttpResponse(content=e, status=400)
 
+def full_name_from_last_order(request):
+
+    profile = get_object_or_404(UserProfile, user=request.user)
+    orders = profile.orders.all()
+
+    if orders:
+        return orders.last().full_name
+
 
 def checkout(request):
+    """
+    This function processes the checkout: 
+    the bag contents, user info and the payment, with validation.
+    Args:
+        request (object)
+    Returns:
+        The request object, the checkout template and the context.
+    """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     if request.method == 'POST':
         bag = request.session.get('bag', {})
 
+        # if no full name in profile attempt to get from last order:
+        if request.POST['full_name']:
+            full_name = request.POST['full_name']
+        else:
+            full_name = full_name_from_last_order(request)
+
         form_data = {
-            'full_name': request.POST['full_name'],
+            'full_name': full_name,
             'email': request.POST['email'],
             'phone_number': request.POST['phone_number'],
             'country': request.POST['country'],
@@ -80,13 +108,13 @@ def checkout(request):
                     )
                     order.delete()
                     return redirect(reverse('view_bag'))
-
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(
                 reverse('checkout_success', args=[order.order_number]))
-        else:
-            messages.error(request, 'There was an error with your form. \
-                Please check your information.')
+
+        messages.error(request, 'There was an error with your form. \
+            Please check your information.')
+
     else:
         bag = request.session.get('bag', {})
         if not bag:
@@ -108,8 +136,15 @@ def checkout(request):
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
+
+                # if no full name in profile attempt to get from last order:
+                if profile.user.get_full_name():
+                    full_name = profile.user.get_full_name()
+                else:
+                    full_name = full_name_from_last_order(request)
+
                 order_form = OrderForm(initial={
-                    'full_name': profile.user.get_full_name(),
+                    'full_name': full_name,
                     'email': profile.user.email,
                     'phone_number': profile.default_phone_number,
                     'country': profile.default_country,
@@ -129,10 +164,7 @@ def checkout(request):
             Did you forget to set it in your environment?')
 
     checkout_live_setting = CheckoutSettings.objects.order_by('-id').first()
-    if checkout_live_setting is None or checkout_live_setting.live is True:
-        checkout_is_live = True
-    else:
-        checkout_is_live = False
+    checkout_is_live = checkout_live_setting is None or checkout_live_setting.live
 
     template = 'checkout/checkout.html'
     context = {

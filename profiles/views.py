@@ -32,10 +32,16 @@ def profile(request):
 
     orders = profile.orders.all()
 
+    if orders:
+        full_name_from_last_order = orders.last().full_name
+    else:
+        full_name_from_last_order = ""
+
     template = 'profiles/profile.html'
     context = {
         'form': form,
         'orders': orders,
+        'full_name': full_name_from_last_order,
         'hide_bag_toast': True
     }
 
