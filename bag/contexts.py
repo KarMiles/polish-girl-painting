@@ -2,7 +2,6 @@
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from decimal import Decimal
-from django.conf import settings
 from django.shortcuts import get_object_or_404
 
 # Internal:
@@ -12,7 +11,13 @@ from checkout.models import CheckoutSettings
 
 
 def bag_contents(request):
-
+    """
+    A context containing the bag contents
+    Args:
+        request (object): HTTP request object.
+    Returns:
+        The context with bag contents
+    """
     bag_items = []
     total = 0
     product_count = 0
@@ -33,7 +38,7 @@ def bag_contents(request):
             'product': product,
         })
 
-    if total < fdt and total > 0:
+    if 0 < total < fdt:
         delivery = max(
             total * Decimal(sdp / 100),
             dmc)
@@ -50,7 +55,7 @@ def bag_contents(request):
         'product_count': product_count,
         'delivery': delivery,
         'free_delivery_delta': free_delivery_delta,
-        'free_delivery_threshold': CheckoutSettings.free_delivery_threshold,
+        'free_delivery_threshold': fdt,
         'grand_total': grand_total,
     }
 

@@ -27,7 +27,7 @@ class PostAdmin(SummernoteModelAdmin):
         'title',
         'content']
     prepopulated_fields = {'slug': ('title',)}
-    summernote_fields = ('content')
+    summernote_fields = ('content',)
     list_filter = (
         'live',
         'highlight')
@@ -38,5 +38,10 @@ class PostAdmin(SummernoteModelAdmin):
 
 @admin.register(BlogSettings)
 class SettingsAdmin(admin.ModelAdmin):
+    """
+    Admin class for managing blog settings.
+    When 'live' blog is active and posts are visible,
+    otherwise all posts are hidden.
+    """
     list_display = (
         'live',)

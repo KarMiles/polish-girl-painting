@@ -10,15 +10,21 @@ from django.contrib import messages
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+from helpers.views import StaffRequiredMixin
 from .models import Post, BlogSettings
 from .forms import PostForm
-from helpers.views import StaffRequiredMixin
 
 
 # Views for blog app
 
 class CreatePost(StaffRequiredMixin, generic.CreateView):
-
+    """
+    A view to create a post
+    Args:
+        CreateView: class based view
+    Returns:
+        Render of post form with success message and context
+    """
     model = Post
     template_name = "blog/post_add.html"
     form_class = PostForm
@@ -58,7 +64,7 @@ class EditPost(StaffRequiredMixin, generic.UpdateView):
         Returns:
             The form
         """
-        def __init__(self, request, form):
+        def __init__(self, form):
             self.object = form.instance
             self.object.slug = slugify(self.object.title)
 
@@ -151,10 +157,7 @@ def post_list(request):
         posts = Post.objects.filter(live=True)
 
     blog_live_setting = BlogSettings.objects.order_by('-id').first()
-    if blog_live_setting is None or blog_live_setting.live is True:
-        blog_is_live = True
-    else:
-        blog_is_live = False
+    blog_is_live = blog_live_setting.live or blog_live_setting is None
 
     context = {
         'posts': posts,

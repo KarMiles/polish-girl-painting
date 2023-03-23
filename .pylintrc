@@ -3,6 +3,7 @@
 [MASTER]
 ignore = migrations
 ; disable = no-member, broad-except, invalid-name, unused-variable, too-few-public-methods
+disable = no-member, broad-except, invalid-name, too-few-public-methods
 
 
 [DESIGN]

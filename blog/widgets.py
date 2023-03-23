@@ -5,8 +5,10 @@ from django.forms.widgets import ClearableFileInput
 from django.utils.translation import gettext_lazy as _
 
 
-# custom class inheriting the built-in ClearableFileInput:
 class CustomClearableFileInput(ClearableFileInput):
+    """
+    Widget to set up custom image input in forms
+    """
     # override the clear_checkbox_label:
     clear_checkbox_label = _('Remove')
     initial_text = _('Current Image')

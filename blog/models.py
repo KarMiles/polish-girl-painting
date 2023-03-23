@@ -69,6 +69,9 @@ class BlogSettings(models.Model):
     Lets authorized user show / hide all blog posts
     """
     class Meta:
+        """
+        Set expression to display for blog settings on admin page
+        """
         verbose_name_plural = 'Settings'
 
     live = models.BooleanField(
