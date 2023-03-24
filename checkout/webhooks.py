@@ -11,10 +11,8 @@ import stripe
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from checkout.webhook_handler import StripeWH_Handler
 
-"""
-    Core logic for this comes from:
-    https://stripe.com/docs/payments/handling-payment-events#build-your-own-webhook
-"""
+# Core logic for this comes from:
+# https://stripe.com/docs/payments/handling-payment-events#build-your-own-webhook
 
 
 @require_POST

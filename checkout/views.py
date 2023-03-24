@@ -44,12 +44,22 @@ def cache_checkout_data(request):
         return HttpResponse(content=e, status=400)
 
 def full_name_from_last_order(request):
-
+    """
+    If full name not existent in User profile, 
+    attempt to get it from last order
+    Args: 
+        request (object): request.
+    Returns:
+        Full name string.
+    """
     profile = get_object_or_404(UserProfile, user=request.user)
     orders = profile.orders.all()
+    result = ""
 
     if orders:
-        return orders.last().full_name
+        result = orders.last().full_name
+
+    return result
 
 
 def checkout(request):
@@ -209,9 +219,9 @@ def checkout_success(request, order_number):
     bag = request.session.get('bag', {})
 
     for item_id in bag.items():
-        for id in item_id:
+        for id_number in item_id:
             try:
-                product = Product.objects.get(id=id)
+                product = Product.objects.get(id=id_number)
                 if product.is_unique:
                     product.available = False
                     product.save()
