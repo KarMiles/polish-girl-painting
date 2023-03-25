@@ -6,12 +6,11 @@ View the live site [here](https://polish-girl-painting.herokuapp.com/).
 
 Users for testing:
 
-| Username     | Password | Status   |
-| ------------ | -------- | -------- |
-| staff_user | 1qaz3edc | staff_user    |
-| user | 1qaz3edc | customer |
+- user (role: customer)
+- staff_user (role: staff)
+- admin (owner)
 
-Administrator credentials are available on request for safety reasons.
+Administrator credential are given in assessment submition form.
 
 <br>
 
@@ -140,7 +139,8 @@ Registered users
 
 ### **3. Epic: Customer engagement**
 
-3.1 As a **site user** I can **locate company's social media accounts** so I can **stay in contact through alternative means**.
+3.1 As a **site user** I can **locate convenient routes of comunication with owner, including company's social media accounts** so I can **stay in contact through alternative means**.
+
 
 3.2 As a **site user** I can **subscribe to a newsletter** so I can **stay engaged and stay up do date with the Artist's offering and creative process**.
 
@@ -284,7 +284,7 @@ Code is built with utilization of Django framework into apps, files and folders 
 - home - functionality for managing the home page.
 - products - functionality for managing the gallery containing products available for sale or only exposed for the visitors' viewing.
 - profiles - functionality for managing user profiles.
-- testimonials - functionality for managing feedback posts from users, combined with About Me section. Both Testimonials entries, entered by visitors, and About Me entries, entered by the owner, share the same page and functionality. 
+- testimonials - functionality for managing feedback posts from users, combined with About section. Both Testimonials entries, entered by visitors, and About entries, entered by the owner, share the same page and functionality. 
 
 
 ### Files
@@ -499,7 +499,7 @@ Relationships
 ### Model: Testimonial
 
 - Part of testimonials app.
-- Represents entries shown on the About Me page. Entries made by registered users need to be approved by owner and after approval are shown in the Testimonials / Feedback section. Entries made by owner and marked as "About Me" (about_me marked as True in the form) are shown on the same page in the About Me section.
+- Represents entries shown on the About page. Entries made by registered users need to be approved by owner and after approval are shown in the Testimonials / Feedback section. Entries made by owner and marked as "About" (about_me marked as True in the form) are shown on the same page in the About section.
 - This model contains the following fields: title, author, content, craeted_on, updated_on, priority, about_me, live.
 
 Relationships
@@ -516,7 +516,7 @@ Relationships
 ### Definitions
 
 - ManyToManyField - class used for many-to-many relationships, when a model needs to reference multiple instances of a different model. In an example of blog app, in Post model, a post can be liked by many users and a user can like many posts.
-- ForeignKey - class used for one-to-many relationships. ForeignKey is a Django ORM (Object-Relational Mapper) field-to-column mapping for creating and working with relationships between tables in relational databases. In an example of booking app, a post (treatment) can have many bookings but a booking relates only to one post.
+- ForeignKey - class used for one-to-many relationships. ForeignKey is a Django ORM (Object-Relational Mapper) field-to-column mapping for creating and working with relationships between tables in relational databases.
 - cascade used on on_delete - means that rows in the child table will be deleted when rows in the parent table are deleted.
 - CharField - class used for small- to large-sized strings, can have max_length (maximum length) specified. 
 - SlugField - class used for creating a slug, which is a short label for something, containing only letters, numbers, underscores or hyphens, generally used in URLs. SlugField can also have Max_length specified.
@@ -561,7 +561,7 @@ Layout of the interface, navigation and information design for different screen 
 </details>
 
 <details>
-<summary>Wireframe: About Me</summary>
+<summary>Wireframe: About</summary>
 
 ![image](readme/docs/images/wireframes/about_me_testimony.png)
 </details>
@@ -657,6 +657,8 @@ Image of the artist's painting serves as hero image.
 
 <br>
 
+[Table of Contents](#home)
+
 ___
 
 # 2. Features <a name='features'></a>
@@ -665,14 +667,12 @@ ___
 
 <br>
 
-[Table of Contents](#home)
-
 ---
 
 ### **Feature 1. Navigation bar**
 
 Navigation bar is present on top of the screen on all pages of the site. Aim of this feature is that the user always has access to easy navigation across the site without the need to use browser navigation features, e.g. 'back' button.
-The navigation bar consists of two parts: the main navigation bar and secondary bar below. The main bar contains links to Home page, search bar, My Account and Bag with submenu with links to the sections of the site: Gallery, Blog and About Me. The secondary bar contains a link to the highlights and in case user chooses Galery in the main navigation bar it lists categories of products. The list of categories works as an aditional navigation bar, allowing the user to filter through the products shown in the Gallery. List of categories can be edited by owner in Admin page.
+The navigation bar consists of two parts: the main navigation bar and secondary bar below. The main bar contains links to Home page, search bar, My Account and Bag with submenu with links to the sections of the site: Gallery, Blog and About. The secondary bar contains a link to the highlights and in case user chooses Galery in the main navigation bar it lists categories of products. The list of categories works as an aditional navigation bar, allowing the user to filter through the products shown in the Gallery. List of categories can be edited by owner in Admin page.
 
 **Responsive design**
 
@@ -706,7 +706,7 @@ Navigation menu stretched on a larger screen:
 
 **Authorization - dependent navigation**
 
-Navigation menu is dependent on current user profile. Users without login are presented with the simplest menu due to limited authorization. This is reflected in My Account option. Staff users have access to Product, Blog and About Me/Testimonials Management. Registered clients have added option of checking and updating user information. 
+Navigation menu is dependent on current user profile. Users without login are presented with the simplest menu due to limited authorization. This is reflected in My Account option. Staff users have access to Product, Blog and About/Testimonials Management. Registered clients have added option of checking and updating user information. 
 
 My Account - unregistered user:
 <details>
@@ -737,12 +737,12 @@ Access to navbar features:
 | No. | Feature                            | Not logged in | Logged in client | Staff | Admin |
 | --- | ---------------------------------- | ------------- | ---------------- | ----- | ----- |
 | 1   | Navigation bar                     | yes           | yes              | yes   | yes   |
-| 2   | Gallery, Blog, About Me            | yes           | yes              | yes   | yes   |
+| 2   | Gallery, Blog, About               | yes           | yes              | yes   | yes   |
 | 3   | Login / Logout                     | yes           | yes              | yes   | yes   |
 | 4   | My Profile                         | no            | yes              | yes   | yes   |
 | 5   | Product Management                 | no            | no               | yes   | yes   |
 | 6   | Blog / Highlights Management       | no            | no               | yes   | yes   |
-| 7   | About Me / Testimonials Management | no            | no               | yes   | yes   |
+| 7   | About / Testimonials Management    | no            | no               | yes   | yes   |
 | 8   | Admin screen                       | no            | no               | no    | yes   |
 
 <br>
@@ -817,7 +817,8 @@ On home page user is welcomed with a hero picture whose goal is to draw attentio
 
 #### **Related user stories**
 
-3.1 As a **site user** I can **locate company's social media accounts** so I can **stay in contact through alternative means**.
+3.1 As a **site user** I can **locate convenient routes of comunication with owner, including company's social media accounts** so I can **stay in contact through alternative means**.
+
 
 3.2 As a **site user** I can **subscribe to a newsletter** so I can **stay engaged and stay up do date with the Artist's offering and creative process**.
 
@@ -935,7 +936,7 @@ In case a problem occurs when a user tries to access a page an error page is sho
 
 #### **Related user stories**
 
-1.1 As a **site user** I can **access site without logging in** so that I can **read information about available treatments**.
+1.1 As a **site user** I can **access site without logging in** so that I can **read information about available products**.
 
 1.2 As a **site user** I can **register** so that **I have access to personalized service**.
 
@@ -1118,16 +1119,16 @@ Blog visibility is controlled in admin site in section Blog - Settings.
 
 ---
 
-### **Feature 7. About Me**
+### **Feature 7. About**
 
-About Me page consists of two parts:
+About page consists of two parts:
 - Personal note - introduction and general information about the artist.
 - Testimonials - feedback gained from users who already interacted with the artist.
 
 Both parts utilize functionality of the same testimonials app. Entries in the Personal note section have 'about_me' key checked and can only be created by the staff user while entries in the Testimonials section have the 'about_me' key unchecked and can be created by any logged in user. In practice they will probably always be the customers. All entries need to have their key 'live' checked by the staff user to be visible to all visitors.  
 
 <details>
-<summary>About Me</summary>
+<summary>About</summary>
 
 ![screenshot of image](readme/docs/images/testing/features/about_me.jpg)
 </details>
@@ -1149,7 +1150,7 @@ Users can add their testimonials by entering the testimonial content and - optio
 </details>
 <br>
 
-Staff can add entries which will be shown in Testimonials section (with key 'about_me' unchecked) or in Personal Note section (with key 'about_me' checked). Staff users can enter or edit title, content, priority, 'about me' option (which moves an entry to the Personal Note section), and 'live' option (which enables the entry's visibility to all users).
+Staff can add entries which will be shown in Testimonials section (with key 'about_me' unchecked) or in Personal Note section (with key 'about_me' checked). Staff users can enter or edit title, content, priority, 'About' option (which moves an entry to the Personal Note section), and 'live' option (which enables the entry's visibility to all users).
 <details>
 <summary>Testimonial form - staff</summary>
 
@@ -1158,7 +1159,7 @@ Staff can add entries which will be shown in Testimonials section (with key 'abo
 
 <br>
 
-### Access to About Me features
+### Access to About features
 
 | No. | Feature                    | Not logged in | Logged in client | Staff | Admin |
 | --- | -------------------------- | ------------- | ---------------- | ----- | ----- |
@@ -1172,11 +1173,41 @@ Staff can add entries which will be shown in Testimonials section (with key 'abo
 3.6 As a **site user** I can **share my experiences in Testimony** so that **I feel that I contribute to the community gathered around the Artist**.
 
 3.7 As a **site owner** I can **present a basic personal introduction** so that **I know potential and current customers have a chance to build a personal connection with me as an artist**.
+<br>
 
+[Table of Contents](#home)
 
 ---
 
-### **Feature 8. E-Commerce**
+### **Feature 8. Contact**
+
+Contact page contains a simple contact form given to user's disposal should they wish to contact the page owner directly.
+
+Login is not required to use its functionality, albeit for logged in users the user name and email address details are automatically prefilled. Owner has access to the messages on the Admin page. 
+
+<details>
+<summary>Contact</summary>
+
+![screenshot of image](readme/docs/images/testing/features/contact.jpg)
+</details>
+
+<br>
+
+### Access to About features
+
+| No. | Feature                    | Not logged in | Logged in client | Staff | Admin |
+| --- | -------------------------- | ------------- | ---------------- | ----- | ----- |
+| 1   | Send direct message        | yes           | yes              | yes   | yes   |
+
+#### **User Stories related to feature 8**
+
+3.1 As a **site user** I can **locate convenient routes of comunication with owner, including company's social media accounts** so I can **stay in contact through alternative means**.
+
+3.3 As a **registered site user** I can **use website without having to re-enter my details** so that **my activity on the site requires minimum afford from my side**.
+
+---
+
+### **Feature 9. E-Commerce**
 
 In the Gallery section user is presented with a list of products with basic information about each item. There, after clicking on item image, item description, or a link 'Show details' the user is directed to product detail page. On the product detail page the user has the opportunity to add a product to a bag by clicking on a button 'Add to Bag'. 
 
@@ -1322,7 +1353,7 @@ When deciding on marketing strategy for this project the following information a
 
 One of the marketing methods applied for the project is signalling a set of keywords for search engines. Keywords are the tool for helping potential users find the webpage. The aim is to select keywords with relatively high volume of searches and low competition in search results. In that process a tool [Google Keyword Planner](https://ads.google.com/home/tools/keyword-planner/) was used.
 
-The chosen keywords are implemented in the site content where possible, e.g. as a slogan "The Polish Artist in Germany" situated under the links to highlighted blog posts on the welcome page, or in the About Me section.
+The chosen keywords are implemented in the site content where possible, e.g. as a slogan "The Polish Artist in Germany" situated under the links to highlighted blog posts on the welcome page, or in the About section.
 
 <details>
 <summary>Keywords research</summary>
@@ -1354,7 +1385,7 @@ Instructions for search engines**
 
 Links not usefull in respect of search engine analytics have been equipped with anchor tag noopener.
 
-Links to outside sites potentially valuable from search engine optimisation standpoint were added in About Me section. 
+Links to outside sites potentially valuable from search engine optimisation standpoint were added in About section. 
 
 **Meta Tags**
 
@@ -1423,7 +1454,7 @@ Content ranking
 Content on the website in this project is managed via three main modules:
 1. Gallery - where the artists' creations are represented,
 2. Blog - where post may contain text, images, embedded video links and links to other materials on the web.
-3. About Me - this module is based on one app and is devided into two sections:
+3. About - this module is based on one app and is devided into two sections:
     - Personal Note - where the owner can share her content,
     - Testimonials - where visitors can share their experiences related to the topic of the webpage.
 
@@ -1547,11 +1578,11 @@ First three browsers to test were chosen based on their market share according t
 
 User stories were tested with current features and passed the tests.
 
-[Click here for User story testing](readme/user_story_testing.md)
+[Click here for User story testing](readme/docs/user_story_testing.md)
 
 ## 4.ii. Automated testing
 
-[Click here for automated testing](readme/automated_testing.md)
+[Click here for automated testing](readme/docs/automated_testing.md)
 
 ## 4.iii. Known issues during development and testing <a name="known-issues"></a>
 
@@ -1563,7 +1594,7 @@ There are no observed unfixed issues and bugs.
 
 *Testing redirect*
 
-When producing automatic tests for bag page it was not possible to utilize assertRedirects test on response utilizing post method. To peform the test assertEqual was used:
+When producing automatic tests for bag page it was not possible to utilize assertRedirects test on response with post method. To peform the test assertEqual was used instead:
 
     last_url, status_code = response.redirect_chain[-1]
     self.assertEqual(last_url, '/bag/')
@@ -1720,7 +1751,7 @@ Third-party libraries were used for this project:
     - from django.http import HttpResponseRedirect - for redirecting to a page in the process of running a function or a class.
     - from django.shortcuts import redirect - while in case of HttpResponseRedirect the first argument can only be a url, redirect can accept a model, view, or url as it's "to" argument. redirect will ultimately return a HttpResponseRedirect.
     - from django.shortcuts import get_object_or_404 - calls get() on a given model manager, but it raises Http404 instead of the model’s DoesNotExist exception.
-    - from django.views import generic, View - generic class-based views designed to display data, in this project posts representing treatments.
+    - from django.views import generic, View - generic class-based views designed to display data, in this project posts representing products.
     - from django.urls import path - returns an element for inclusion in urlpatterns.
     - from django.urls import include - function that takes a full Python import path to another URLconf module that should be “included” in this place. 
     - from django.urls import reverse_lazy, reverse - the reverse function allows to retrieve url details from urls.py files through the name provided in the path. reverse_lazy is useful for when there is a need to use a URL reversal before your project’s URLConf is loaded (success_url is then used).
