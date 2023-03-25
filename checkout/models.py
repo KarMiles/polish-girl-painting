@@ -106,11 +106,6 @@ class Order(models.Model):
         self.order_total = self.lineitems.aggregate(
             Sum('lineitem_total'))['lineitem_total__sum'] or 0
 
-        # _shop = shop()
-        # fdt = _shop['fdt']
-        # sdp = _shop['sdp']
-        # dmc = _shop['dmc']
-
         checkout_settings = CheckoutSettings.objects.order_by('-id').first()
 
         if checkout_settings:

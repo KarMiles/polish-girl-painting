@@ -57,11 +57,6 @@ def bag_contents(request):
     sdp = _shop['sdp']
     dmc = _shop['dmc']
 
-    # checkout_settings = CheckoutSettings.objects.order_by('-id').first()
-    # fdt = checkout_settings.free_delivery_threshold
-    # sdp = checkout_settings.standard_delivery_percentage
-    # dmc = checkout_settings.delivery_min_charge
-
     for item_id, quantity in bag.items():
         product = get_object_or_404(Product, pk=item_id)
         total += quantity * product.price

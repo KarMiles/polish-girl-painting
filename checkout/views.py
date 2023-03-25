@@ -43,11 +43,12 @@ def cache_checkout_data(request):
             processed right now. Please try again later.')
         return HttpResponse(content=e, status=400)
 
+
 def full_name_from_last_order(request):
     """
-    If full name not existent in User profile, 
+    If full name not existent in User profile,
     attempt to get it from last order
-    Args: 
+    Args:
         request (object): request.
     Returns:
         Full name string.
@@ -64,7 +65,7 @@ def full_name_from_last_order(request):
 
 def checkout(request):
     """
-    This function processes the checkout: 
+    This function processes the checkout:
     the bag contents, user info and the payment, with validation.
     Args:
         request (object)
