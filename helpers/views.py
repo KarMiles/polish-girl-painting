@@ -10,7 +10,7 @@ from django.contrib.auth.mixins import AccessMixin
 
 # Views for error pages
 
-def handler403(request, exception):
+def handler403(request, exception):  # pylint: disable=W0613
     """
     View to render 403 error page is called for unauthorized user.
     Args:
@@ -25,7 +25,7 @@ def handler403(request, exception):
         status=403)
 
 
-def handler404(request, exception):
+def handler404(request, exception):  # pylint: disable=W0613
     """
     View to render 404 error page when non-existent page is called.
     Args:

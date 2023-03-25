@@ -15,6 +15,9 @@ class ProductForm(forms.ModelForm):
     Class for product forms
     """
     class Meta:
+        """
+        Show indicated fields in the product form
+        """
         model = Product
         fields = '__all__'
         widgets = {
@@ -37,5 +40,5 @@ class ProductForm(forms.ModelForm):
         friendly_names = [(c.id, c.get_friendly_name()) for c in categories]
         self.fields['category'].choices = friendly_names
 
-        for field_name, field in self.fields.items():
+        for field_name, field in self.fields.items():  # pylint: disable=W0612
             field.widget.attrs['class'] = 'border-custom corners'

@@ -7,7 +7,9 @@ from django.utils.translation import gettext_lazy as _
 
 # custom class inheriting the built-in ClearableFileInput:
 class CustomClearableFileInput(ClearableFileInput):
-    # override the clear_checkbox_label:
+    """
+    Class to override the clear_checkbox_label with custom settings
+    """
     clear_checkbox_label = _('Remove')
     initial_text = _('Current Image')
     input_text = _('')

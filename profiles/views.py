@@ -7,19 +7,25 @@ from django.contrib.auth.decorators import login_required
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+from checkout.models import Order
 from .models import UserProfile
 from .forms import UserProfileForm
-from checkout.models import Order
 
 
 @login_required
 def profile(request):
-    """ Display the user's profile. """
-    profile = get_object_or_404(UserProfile, user=request.user)
+    """
+    Display the user's profile.
+    Args:
+        request (object): HTTP request object.
+    Returns:
+        Render user profile with update confirmation message.
+    """
+    user_profile = get_object_or_404(UserProfile, user=request.user)
 
     # POST handler:
     if request.method == 'POST':
-        form = UserProfileForm(request.POST, instance=profile)
+        form = UserProfileForm(request.POST, instance=user_profile)
         if form.is_valid():
             form.save()
             messages.success(request, 'Profile updated successfully')
@@ -28,9 +34,9 @@ def profile(request):
                 request,
                 ('Update failed. Please make sure the form is valid.'))
     else:
-        form = UserProfileForm(instance=profile)
+        form = UserProfileForm(instance=user_profile)
 
-    orders = profile.orders.all()
+    orders = user_profile.orders.all()
 
     if orders:
         full_name_from_last_order = orders.last().full_name
@@ -49,6 +55,15 @@ def profile(request):
 
 
 def order_history(request, order_number):
+    """
+    A view to update order history for the user
+    Args:
+        request (object): HTTP request object,
+        order_number (string): order number.
+    Returns:
+        Success message,
+        Render user's order history.
+    """
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, (

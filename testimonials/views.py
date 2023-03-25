@@ -78,11 +78,9 @@ def testimonial_add(request):
                 'hide_bag_toast': True
             }
             return render(request, template, context)
-
-        else:
-            messages.error(
-                request,
-                'Failed to add testimonial. Please ensure the form is valid.')
+        messages.error(
+            request,
+            'Failed to add testimonial. Please ensure the form is valid.')
     else:
         form = TestimonialForm()
 
@@ -131,12 +129,10 @@ def testimonial_edit(request, testimonial_id):
             }
 
             return render(request, template, context)
-
-        else:
-            messages.error(
-                request,
-                'Failed to update testimonial. \
-                    Please ensure the form is valid.')
+        messages.error(
+            request,
+            'Failed to update testimonial. \
+                Please ensure the form is valid.')
     else:
         form = TestimonialForm(instance=testimonial)
         if testimonial.title:

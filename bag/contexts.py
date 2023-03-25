@@ -10,6 +10,20 @@ from products.models import Product
 from checkout.models import CheckoutSettings
 
 
+def shop():
+    checkout_settings = CheckoutSettings.objects.order_by('-id').first()
+    shop_delivery_settings = {
+        'fdt': checkout_settings.free_delivery_threshold,
+        'sdp': checkout_settings.standard_delivery_percentage,
+        'dmc': checkout_settings.delivery_min_charge,
+    }
+
+    fdt = shop_delivery_settings.get("fdt", 100)
+    sdp = shop_delivery_settings.get("sdp", 5)
+    dmc = shop_delivery_settings.get("dmc", 2)
+
+    return {'fdt': fdt, 'sdp': sdp, 'dmc': dmc}
+
 def bag_contents(request):
     """
     A context containing the bag contents
@@ -22,6 +36,12 @@ def bag_contents(request):
     total = 0
     product_count = 0
     bag = request.session.get('bag', {})
+
+    # shop = shop.objects.all()
+    # shop = shop()
+
+    # fdt = shop.fdt
+    # fdt = shop['fdt']
 
     checkout_settings = CheckoutSettings.objects.order_by('-id').first()
     fdt = checkout_settings.free_delivery_threshold

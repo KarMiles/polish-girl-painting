@@ -1,3 +1,4 @@
+"""Imports"""
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django.contrib import admin
@@ -8,6 +9,9 @@ from .models import Product, Category
 
 
 class ProductAdmin(admin.ModelAdmin):
+    """
+    Admin class for managing product app.
+    """
     list_display = (
         'title',
         'category',
@@ -40,6 +44,10 @@ class ProductAdmin(admin.ModelAdmin):
 
 
 class CategoryAdmin(admin.ModelAdmin):
+    """
+    Admin class for managing product categories.
+    Owner can add, delete and edit categories here.
+    """
     list_display = (
         'friendly_name',
         'name',

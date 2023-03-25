@@ -97,10 +97,14 @@ class Product(models.Model):
         Returns:
             The product title string
         """
-        return self.title
+        return format(self.title)
 
 
 class Category(models.Model):
+    """
+    Class for the Category model
+    representing categories of products shown in Gallery
+    """
     class Meta:
         """
         Sets plural representation and orders categories by name
@@ -116,7 +120,10 @@ class Category(models.Model):
         blank=True)
 
     def __str__(self):
-        return self.name
+        return format(self.name)
 
     def get_friendly_name(self):
+        """
+        Friendly name for form iteration
+        """
         return self.friendly_name

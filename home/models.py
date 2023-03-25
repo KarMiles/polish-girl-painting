@@ -10,6 +10,10 @@ class HomeSettings(models.Model):
     controllable by authorized user
     """
     class Meta:
+        """
+        Set expression to display for Home Settings on admin page.
+        Owner can change background image in this section.
+        """
         verbose_name_plural = 'Settings'
 
     background_image = models.ImageField(

@@ -41,7 +41,7 @@ class Testimonial(models.Model):
         Returns:
             The testimonial content string
         """
-        return self.content
+        return format(self.content)
 
     title = models.CharField(
         max_length=150,
