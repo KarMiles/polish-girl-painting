@@ -2,6 +2,7 @@
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from decimal import Decimal
+from django.conf import settings
 from django.shortcuts import get_object_or_404
 
 # Internal:
@@ -11,18 +12,32 @@ from checkout.models import CheckoutSettings
 
 
 def shop():
-    checkout_settings = CheckoutSettings.objects.order_by('-id').first()
-    shop_delivery_settings = {
-        'fdt': checkout_settings.free_delivery_threshold,
-        'sdp': checkout_settings.standard_delivery_percentage,
-        'dmc': checkout_settings.delivery_min_charge,
-    }
+    """
+    Retrieve checkout settings from Checkout Settings in Admin page,
+    present defaults if custom settings not available.
+    Args:
+        none
+    Returns:
+        delivery settings (dict)
+    """
+    if CheckoutSettings.objects.exists():
+        # custom checkout settings
+        checkout_settings = CheckoutSettings.objects.order_by('-id').first()
+        delivery_settings = {
+            'fdt': checkout_settings.free_delivery_threshold,
+            'sdp': checkout_settings.standard_delivery_percentage,
+            'dmc': checkout_settings.delivery_min_charge,
+        }
+    else:
+        # default checkout settings
+        delivery_settings = {
+            'fdt': settings.FREE_DELIVERY_THRESHOLD,
+            'sdp': settings.STANDARD_DELIVERY_PERCENTAGE,
+            'dmc': settings.DELIVERY_MIN_CHARGE,
+        }
 
-    fdt = shop_delivery_settings.get("fdt", 100)
-    sdp = shop_delivery_settings.get("sdp", 5)
-    dmc = shop_delivery_settings.get("dmc", 2)
+    return delivery_settings
 
-    return {'fdt': fdt, 'sdp': sdp, 'dmc': dmc}
 
 def bag_contents(request):
     """
@@ -37,16 +52,15 @@ def bag_contents(request):
     product_count = 0
     bag = request.session.get('bag', {})
 
-    # shop = shop.objects.all()
-    # shop = shop()
+    _shop = shop()
+    fdt = _shop['fdt']
+    sdp = _shop['sdp']
+    dmc = _shop['dmc']
 
-    # fdt = shop.fdt
-    # fdt = shop['fdt']
-
-    checkout_settings = CheckoutSettings.objects.order_by('-id').first()
-    fdt = checkout_settings.free_delivery_threshold
-    sdp = checkout_settings.standard_delivery_percentage
-    dmc = checkout_settings.delivery_min_charge
+    # checkout_settings = CheckoutSettings.objects.order_by('-id').first()
+    # fdt = checkout_settings.free_delivery_threshold
+    # sdp = checkout_settings.standard_delivery_percentage
+    # dmc = checkout_settings.delivery_min_charge
 
     for item_id, quantity in bag.items():
         product = get_object_or_404(Product, pk=item_id)

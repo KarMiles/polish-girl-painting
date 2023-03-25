@@ -3,6 +3,7 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import uuid
 from decimal import Decimal
+from django.conf import settings
 from django.db import models
 from django.db.models import Sum
 from django_countries.fields import CountryField
@@ -11,6 +12,7 @@ from django_countries.fields import CountryField
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from products.models import Product
 from profiles.models import UserProfile
+# from bag.contexts import shop
 
 
 class Order(models.Model):
@@ -104,10 +106,21 @@ class Order(models.Model):
         self.order_total = self.lineitems.aggregate(
             Sum('lineitem_total'))['lineitem_total__sum'] or 0
 
+        # _shop = shop()
+        # fdt = _shop['fdt']
+        # sdp = _shop['sdp']
+        # dmc = _shop['dmc']
+
         checkout_settings = CheckoutSettings.objects.order_by('-id').first()
-        fdt = checkout_settings.free_delivery_threshold
-        sdp = checkout_settings.standard_delivery_percentage
-        dmc = checkout_settings.delivery_min_charge
+
+        if checkout_settings:
+            fdt = checkout_settings.free_delivery_threshold
+            sdp = checkout_settings.standard_delivery_percentage
+            dmc = checkout_settings.delivery_min_charge
+        else:
+            fdt = settings.FREE_DELIVERY_THRESHOLD
+            sdp = settings.STANDARD_DELIVERY_PERCENTAGE
+            dmc = settings.DELIVERY_MIN_CHARGE
 
         if self.order_total < fdt:
             self.delivery_cost = (
@@ -177,8 +190,9 @@ class OrderLineItem(models.Model):
 
 class CheckoutSettings(models.Model):
     """
-    Contains settings for the checkout
-    Lets authorized user show / hide checkout
+    Model for checkout settings
+    These settings let authorized user activate / deactivate checkout
+    and set custom delivery charges
     """
     class Meta:
         """

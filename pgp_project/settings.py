@@ -257,6 +257,12 @@ STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET', '')
 
+# E-Commerce settings
+# default values
+# custom values are editable on checkout Admin Settings page
+FREE_DELIVERY_THRESHOLD = 100
+STANDARD_DELIVERY_PERCENTAGE = 10
+DELIVERY_MIN_CHARGE = 2
 
 # Email
 if 'DEVELOPMENT' in os.environ:
