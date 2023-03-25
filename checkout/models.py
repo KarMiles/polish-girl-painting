@@ -12,7 +12,6 @@ from django_countries.fields import CountryField
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from products.models import Product
 from profiles.models import UserProfile
-# from bag.contexts import shop
 
 
 class Order(models.Model):

@@ -11,7 +11,7 @@ from products.models import Product
 from checkout.models import CheckoutSettings
 
 
-def shop():
+def delivery_fees():
     """
     Retrieve checkout settings from Checkout Settings in Admin page,
     present defaults if custom settings not available.
@@ -52,11 +52,6 @@ def bag_contents(request):
     product_count = 0
     bag = request.session.get('bag', {})
 
-    _shop = shop()
-    fdt = _shop['fdt']
-    sdp = _shop['sdp']
-    dmc = _shop['dmc']
-
     for item_id, quantity in bag.items():
         product = get_object_or_404(Product, pk=item_id)
         total += quantity * product.price
@@ -66,6 +61,11 @@ def bag_contents(request):
             'quantity': quantity,
             'product': product,
         })
+
+    _delivery_fees = delivery_fees()
+    sdp = _delivery_fees['sdp']
+    dmc = _delivery_fees['dmc']
+    fdt = _delivery_fees['fdt']
 
     if 0 < total < fdt:
         delivery = max(

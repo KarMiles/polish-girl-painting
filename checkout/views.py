@@ -78,7 +78,7 @@ def checkout(request):
     if request.method == 'POST':
         bag = request.session.get('bag', {})
 
-        # if no full name in profile attempt to get from last order:
+        # if no full name present in profile attempt to get from last order:
         if request.POST['full_name']:
             full_name = request.POST['full_name']
         else:
