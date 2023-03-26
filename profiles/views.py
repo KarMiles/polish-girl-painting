@@ -36,7 +36,7 @@ def profile(request):
     else:
         form = UserProfileForm(instance=user_profile)
 
-    orders = user_profile.orders.all()
+    orders = user_profile.orders.order_by('-date').all()
 
     if orders:
         full_name_from_last_order = orders.last().full_name

@@ -788,6 +788,8 @@ Click to view image:
 
 #### **Related user stories**
 
+1.8 As a **site user** I can **read webpage's privacy policy** so that I can **know if my personal information is safe**.
+
 2.4 As a **site user** I can **find links to Artist's social media wherever I am on the webpage** so that **I can use alternative means of getting the content**.
 
 <br>
@@ -819,10 +821,7 @@ On home page user is welcomed with a hero picture whose goal is to draw attentio
 
 3.1 As a **site user** I can **locate convenient routes of comunication with owner, including company's social media accounts** so I can **stay in contact through alternative means**.
 
-
 3.2 As a **site user** I can **subscribe to a newsletter** so I can **stay engaged and stay up do date with the Artist's offering and creative process**.
-
-3.3 As a **registered site user** I can **use website without having to re-enter my details** so that **my activity on the site requires minimum afford from my side**.
 
 3.4 As a **site user** I can **see immediately information about newest content** so I can **go directly to that content should I wish to do so**.
 
@@ -949,6 +948,8 @@ In case a problem occurs when a user tries to access a page an error page is sho
 1.6 As a **site user** I receive **confirmation of logging in and logging out visible on webpage** so that I **instantly know if the operation was successful**.
 
 1.7 As a **staff site user** I can **access enhanced functionality** so that I can **add, edit and delete content on webpage**.
+
+3.3 As a **registered site user** I can **use website without having to re-enter my details** so that **my activity on the site requires minimum afford from my side**.
 
 <br>
 
