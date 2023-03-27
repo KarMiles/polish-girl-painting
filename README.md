@@ -280,11 +280,12 @@ Code is built with utilization of Django framework into apps, files and folders 
 ### Apps
 - bag - functionality for managing the shopping bag.
 - blog - functionality for managing the owner's blog.
+- contact - contact form for direct messages from users to owner.
 - checkout - functionality for managing the e-commerce transactions for the site.
 - home - functionality for managing the home page.
 - products - functionality for managing the gallery containing products available for sale or only exposed for the visitors' viewing.
 - profiles - functionality for managing user profiles.
-- testimonials - functionality for managing feedback posts from users, combined with About section. Both Testimonials entries, entered by visitors, and About entries, entered by the owner, share the same page and functionality. 
+- testimonials - functionality for managing feedback posts from users, combined with About section. Both Testimonial entries, entered by visitors, and About entries, entered by the owner, share the same page and functionality but are graphically seperated. 
 
 
 ### Files
@@ -381,6 +382,22 @@ Relationships
 
 <br>
 
+***App: contact***
+
+### Model: Contact 
+
+- Represents messages recorded by visitors on the webpage, viewable by owner on the Admin page in section Contact / Messages.
+- This model contains the following fieldss: name, contact_name, email, subject, body, created_on.
+
+Relationships
+- It has one-to-many relationship with User (one user can send many messages).
+
+<details>
+<summary>Click here to view the model</summary>
+
+![screenshot of HomeSettings model](readme/docs/images/database/contact_model.jpg)
+</details>
+<br>
 
 ***App: checkout***
 
@@ -647,11 +664,11 @@ Graphics for the site were chosen with the intention of maintaining the theme of
 
 The design is dominated by Black and White with some Jet (very dark grey) and Gainsboro (very light grey) with addition of scant usage of colours Indigo Dye and Ming. Colours were chosen by the artist herself. 
 
-<br>
+Image of the artist's painting serves as hero image. Owner can change the image in the admin page.
+
 <details>
 <summary>Click here to view image</summary>
 
-Image of the artist's painting serves as hero image.
 ![image 1](readme/docs/images/surface/home.jpg)
 </details>
 
@@ -1294,6 +1311,8 @@ Every unique item changes its status to not available after sale. In place of pr
 | 2   | Purchase items                   | yes           | yes              | yes   | yes   |
 | 3   | Save and edit saved user details | no            | yes              | yes   | yes   |
 
+After user completes checkout the transaction is processed by Stripe system. 
+
 <br>
 
 #### **Related user stories**
@@ -1568,12 +1587,11 @@ ___
 
 The website was tested on browsers:
 - Google Chrome
-- Apple Safari
 - Microsoft Edge
 - Opera
 - Mozilla Firefox
 
-First three browsers to test were chosen based on their market share according to [StatCounter](https://gs.statcounter.com/browser-market-share) as in March 2023.
+The choice of browsers to test were influenced by their market share according to [StatCounter](https://gs.statcounter.com/browser-market-share) as in March 2023.
 
 ## 4.i. User story testing  <a name="user-story-testing"></a>
 
@@ -1702,6 +1720,7 @@ For development of this webpage elements of Agile software development methodolo
 - GitPod (https://gitpod.io/) - used as IDE and the tool for version control in the project.
 - GitHub (https://github.com/) - used to maintain repository of the project.
 - Heroku (https://www.heroku.com) - used for deployment of the application.
+- Stripe (https://stripe.com/docs) - used for management of e-commerce transactions
 
 ### Data storage
 - Cloudinary (https://cloudinary.com) - service used for storing and access to dynamic images.

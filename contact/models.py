@@ -34,6 +34,12 @@ class Contact(models.Model):
     created_on = models.DateTimeField(
         auto_now_add=True)
 
+    class Meta:
+        """
+        Set expression to display for contact settings on admin page
+        """
+        verbose_name_plural = 'Messages'
+
     def __str__(self):
         """
         Returns the message body string
