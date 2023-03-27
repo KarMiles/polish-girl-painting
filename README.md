@@ -1625,7 +1625,7 @@ As a result of  [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org
 - Contrast toggle button has been added to navigation bar letting user further increase contrast across all the site.
 
 ## 4.iv. Validation testing:<a name="validation-testing"></a>
-[Click here for Validation testing](readme/validation_testing.md)
+[Click here for Validation testing](readme/docs/validation_testing.md)
 
 <br>
 
