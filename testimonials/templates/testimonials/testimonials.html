@@ -24,7 +24,7 @@
                                     {% for testimonial in testimonial_list %}
                                         {% if testimonial.about_me %}
                                             {% if testimonial.title %}
-                                                <p class="h3">{{ testimonial.title }}<p></p>
+                                                <p class="h3 mt-4">{{ testimonial.title }}<p></p>
                                             {% endif %}
                                             {% if request.user.is_staff and not testimonial.live %}
                                             <a href="{% url 'testimonial_edit' testimonial.id %}"  class="mr-1">

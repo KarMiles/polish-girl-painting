@@ -7,388 +7,51 @@ All tests have been performed using Google Chrome inspect tools on small, medium
 ## User stories
 
 ___
-## 1. Epic: Account management
 
-1.1 As a **site user** I can **access site without logging in** so that I can **read information about available treatments**.
+| User story                                                                                                                                                                                                        | Feature                                                                            | Action                                                                                                                                                                                                                                                                                                   | Expected result                                                                                                                                                                                                                                                             | Actual result |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+|  **1. Epic: Account management**                                                                                                                                                                          |                                                                                    |                                                                                                                                                                                                                                                                                                          |                                                                                                                                                                                                                                                                             |               |
+| 1.1 As a **site user** I can **access site without logging in** so that I can **view content of the webpage**.                                                                                        | Navigation bar<br>Home page<br>Account management | Enter site to see main page or navigate to a subpage by choosing option on navbar                                                                                                                                                                                                                        | Public information is accessible to all users                                                                                                                                                                                                                               | As expected   |
+| 1.2 As a **site user** I can **register** so that **I can reuse once entered information**.                                                                                                           | Navigation bar<br>Account management                         | In navigation bar user clicks "My Account" and then "Register"                                                                                                                                                                                                                                           | User's profile is created, User receives email with a request for confirmation. After Confirmation user profile is created.                                                                                                                                                 | As expected   |
+| 1.3 As a **site user** I can **log in using my username and password** so that I can **reuse once entered personal information**.                                                                     | Navigation bar<br>Account management                         | In navigation bar user clicks "Login" and then enters user credentials to login.                                                                                                                                                                                                                         | User's data is remembered and reused where available.                                                                                                                                                                                                                       | As expected   |
+| 1.4 As a **site user** I can **log out of my account** so that I know **my information stays confidential**.                                                                                          | Navigation bar<br>Account management                         | In navigation bar user clicks "Logout" and then confirms on page presented.                                                                                                                                                                                                                              | User is logged out.                                                                                                                                                                                                                                                         | As expected   |
+| 1.5 As a **site user** I can **easily see my current login status** so that **I can control my status for privacy protection**.                                                                       | Navigation bar<br>Account management                         | In navigation bar user clicks "My Profile" .                                                                                                                                                                                                                                                             | On "My Profile" information related to user profile is presented together with previous orders.                                                                                                                                                                             | As expected   |
+| 1.6 As a **site user** I receive **confirmation of logging in and logging out visible on webpage** so that I **instantly know if the operation was successful**.                                      | Navigation bar<br>Account management                         | User logs in or logs out.                                                                                                                                                                                                                                                                                | Temporary confirmation message is shown on web page with confirmation about change in login status.                                                                                                                                                                         | As expected   |
+| 1.7 As a **site user** I can **reset my password** so that I can **safely remain the website's registered user**.                                                                                     | Navigation bar<br>Account management                         | In navigation bar user clicks "Login" and then "Forgot password?"                                                                                                                                                                                                                                        | Page with password reset form is shown which visitor can use to reset password. After clicking "Reset password" an email is sent with further instructions.                                                                                                                 | As expected   |
+| 1.8 As a **site user** I can **read webpage's privacy policy** so that I can **know if my personal information is safe**.                                                                             | Footer                                                                  | Visitor goes to the footer and clicks "Privacy policy"                                                                                                                                                                                                                                                   | The privacy policy page opens in a seperate tab or window.                                                                                                                                                                                                                  | As expected   |
+| **2. Epic: Navigation**                                                                                                                                                                                  |                                                                                    |                                                                                                                                                                                                                                                                                                          |                                                                                                                                                                                                                                                                             |               |
+| 2.1 As a **site user** I can **navigate the service intuitively** so that I can **utilize all of its content**.                                                                                       | Navigation bar                                                          | Visitor enters welcome page.                                                                                                                                                                                                                                                                             | Welcome page is presented with distinct semantic division: header, navigation bar, main body and the footer. This is consistent throughout the site.                                                                                                                        | As expected   |
+| 2.2 As a **site user** I can easily **browse through available items** so I can **decide which ones are most appropriate to me**.                                                                     | Navigation bar                                                          | User choses options in the navigation menu and buttons available on the site                                                                                                                                                                                                                             | User gets to expected content by choosing options                                                                                                                                                                                                                           | As expected   |
+| 2.3 As a **site user** I can **navigate the site on all kinds of screens** so that **I am not limited to any kind of device**.                                                                        | Navigation bar                                                          | User views site on various screens                                                                                                                                                                                                                                                                       | Responsive design makes content available and visually accessible on all screen sizes                                                                                                                                                                                       | As expected   |
+| 2.4 As a **site user** I can **find links to Artist's social media wherever I am on the webpage** so that **I can use alternative means of getting the content**.                                     | Footer                                                                  | User scrolls down to Footer while being anywhere on the site and clicks on the link with a chosen social media link                                                                                                                                                                                      | A new tab or window opens with the artist's social media account.                                                                                                                                                                                                           | As expected   |
+| 2.5 As a **site user** I can **easily go back to home page** so I can **restart my experience**.                                                                                                      | Navigation bar                                                          | On a large screen user clicks on large logo-styled name of the artist or "Home" link in navigation bar, on smaller screen the logo-styled name is replaced with a hamburger menu where "Home" link is the first option.                                                                                  | User is directed to home page.                                                                                                                                                                                                                                              | As expected   |
+| **3. Epic: Customer engagement**                                                                                                                                                                         |                                                                                    |                                                                                                                                                                                                                                                                                                          |                                                                                                                                                                                                                                                                             |               |
+| 3.1 As a **site user** I can **locate a convenient routes of comunication with owner, including company's social media accounts** so I can **stay in contact through alternative means**.             | Footer<br>Home page<br>Contact                    | User scrolls down to Footer while being anywhere on the site and clicks on the link with a chosen social media link.<br>User clicks on "Contact" link.                                                                                                                                                   | After clicking on social media link a new tab or window opens.<br>After clicking on "Contact" link page with a contact form opens.                                                                                                                                          | As expected   |
+| 3.2 As a **site user** I can **subscribe to a newsletter** so I can **stay engaged and stay up do date with the Artist's offering and creative process**.                                             | Footer<br>Home page                                          | User fills the subscription form in the footer.                                                                                                                                                                                                                                                          | User is subscribed to the owner's newsletter in the MailChimp service. Confirmation page opens in a new tab or window where the user can read details of the subscription, alter it or request a confirmation email.                                                        | As expected   |
+| 3.3 As a **registered site user** I can **use website without having to re-enter my details** so that **my activity on the site requires minimum afford from my side**.                               | Account management<br>Contact                                | Where needed the user enters user details.                                                                                                                                                                                                                                                               | Details are remembered and reused every time the user is logged in and the information is needed.                                                                                                                                                                           | As expected   |
+| 3.4 As a **site user** I can **see immediately information about newest content** so I can **go directly to that content should I wish to do so**.                                                    | Home page                                                               | When on home page user clicks on the link in the headline "Click here for new art!" for new items and blog titles in the headline box for the highlighted blog posts.                                                                                                                                    | The page with the new items or chosen blog posts opens.                                                                                                                                                                                                                     | As expected   |
+| 3.5 As a **site user** I can **change the language of the site by an automatic translator** so that I can **read the content in a different language**.                                               | ---                                                                               | Visitor engages an automatic translator (e.g. Google Tranlator)                                                                                                                                                                                                                                          | All words on the website are available to automatic translation.                                                                                                                                                                                                            | As expected   |
+| 3.6 As a **site user** I can **share my experiences in Testimony** so that **I feel that I contribute to the community gathered around the Artist**.                                                  | About                                                                   | Registered user clicks "About" in navigation bar and chooses "Share my experience" link.                                                                                                                                                                                                                 | Page with a form to add a testimonial is available to the user to fill and save. Testimonial is saved without "live" status and is only visible to staff users. Only after changing status to "live" by a staff user the testimonial becomes visible to all visitors.       | As expected   |
+| 3.7 As a **site owner** I can **present a basic personal introduction** so that **I know potential and current customers have a chance to build a personal connection with me as an artist**.         | About                                                                   | Owner clicks "About Me / Testimonials" option under "My Account"                                                                                                                                                                                                                                         | Page with a form to add a post is available to the owner to fill and save.                                                                                                                                                                                                  | As expected   |
+| **4. Epic: Offer**                                                                                                                                                                                       |                                                                                    |                                                                                                                                                                                                                                                                                                          |                                                                                                                                                                                                                                                                             |               |
+| 4.1 As a **site user** I can **quickly get a general idea about items on offer** so that I can **decide which content to get acquainted with more thoroughly**.                                       | Products                                                                | User navigates the page with general information on products with buttons.                                                                                                                                                                                                                               | General information shown on Gallery page.                                                                                                                                                                                                                                  | As expected   |
+| 4.2 As a **site user** I can **read details about a chosen item** so that I can **make the best decision about the purchase based on technical information (e.g. size) and my personal preferences**. | Products                                                                | Click on items of interest to read expanded information.                                                                                                                                                                                                                                                 | Detailed information with possibility to add to bag shown on items chosen by user.                                                                                                                                                                                          | As expected   |
+| 4.3 As a **site owner** I can **create, update and delete item entries** so that I can **inform visitors on pieces on offer and pieces sold**.                                                        | Products                                                                | Admin or authorized staff user clicks "Product Management" under "My Account" and fills a form with a new item.<br>To edit item click Edit link under the item.<br>To delete item click Delete link under the item. Add, edit and delete activity requires confirmation by clicking "Confirm" button.    | Items added, edited or deleted. Changes with "live" status are immediately seen by all users. Changes without "live" status are immediately seen by staff users.                                                                                                            | As expected   |
+| 4.4 As a **site owner** I can **prioritize which items are shown first on the site** so that I can **influence demand on offering of my choice**.                                                     | Products                                                                | 1. When adding or editing an item authorized user can choose item's priority.<br>2. When adding or editing an item authorized user can choose option "highlight"                                                                                                                                       | 1. Items in Gallery are ordered by priority. E.g. Christmas postcards can be shown on top of the Gallery in the holiday season and in the bottom of the page otherwise.<br>2. Highlighted items are shown after a visitor clicks on the link in "Click here for new art!" | As expected   |
+| **5. Epic: Blog**                                                                                                                                                                                        |                                                                                    |                                                                                                                                                                                                                                                                                                          |                                                                                                                                                                                                                                                                             |               |
+| 5.1 As a **site user** I can **read Artist's blog** so that I can **stay up to date with the Artist's developments**.                                                                                 | Blog                                                                    | User clicks "Blog" link in the navigation bar.                                                                                                                                                                                                                                                           | Blog with all  posts marked as "live" are presented on Blog page. Posts with long tests are shortened, all content is visible after clicking "Read more" button.                                                                                                            | As expected   |
+| 5.2 As a **site owner** I can **create, update and delete blog entries** so that I can **share content of my choice and build a sense of connection with my audience and prospective buyers**.        | Blog                                                                    | To create a blog post owner clicks "Blog / Highlights" under "My Account".<br>To edit posts click Edit under the post.<br>To delete a post click Delete under the post.                                                                                                                                  | Appropriate form to create / edit a post is shown. Create, edit and delete activities require confirmation by clicking "Confirm" button.                                                                                                                                    | As expected   |
+| 5.3 As a **site owner** I can **hide and unhide blog** so that I can **control visibility of the entire blog section of the site at any time**.                                                       | Blog                                                                    | In admin page admin clicks on Blog / Settings, clicks on the check button and saves "Live" as checked or unchecked.                                                                                                                                                                                      | When option "Live" is checked all live posts are visible on the Blog page. No posts are visible otherwise.                                                                                                                                                                  | As expected   |
+| **6. Epic: Checkout**                                                                                                                                                                                    |                                                                                    |                                                                                                                                                                                                                                                                                                          |                                                                                                                                                                                                                                                                             |               |
+| 7.1 As a **site user** I can **smoothly go through purchase process** so that I can **acquire a chosen item**.                                                                                        | Feature 9. E-Commerce                                                              | Purchase process consists of 3 simple steps:<br>1. Click "Add to Bag" on chosen product.<br>2. Go to Bag using the "Bag" link in top right corner to check or adjust items.<br>3. Click "Secure Checkout" to fill checkout form and click "Complete order" (form is pre-filled if data is available). | As a result of completing the order the order is registered in database and in the Stripe service. User receives email confirmation with status of the transaction.                                                                                                         | As expected   |
+| 7.2 As a **site owner** I can **monitor transaction's status** so I can **ensure process of purchase and delivery is successfully completed**.                                                        | Feature 9. E-Commerce                                                              | Owner opens Checkout / Orders section in the admin page.<br>Seperate and detailed monitoring is available in the Stripe system.                                                                                                                                                                          | The order is registered in database and in the Stripe service. Owner can see the transactions in the site's admin window. All transactions and their status are registered, dealt with and visible in Stripe.                                                               | As expected   |
+| 7.3 As a **site user** I can **receive a confirmation email after a transaction** so I can **be assured about the status of my order**.                                                               | Feature 9. E-Commerce                                                              | User completes checkout.                                                                                                                                                                                                                                                                                 | Confirmation email is sent to user's email address.                                                                                                                                                                                                                         | As expected   |
+| **7. Epic: Admin site**                                                                                                                                                                                  |                                                                                    |                                                                                                                                                                                                                                                                                                          |                                                                                                                                                                                                                                                                             |               |
+| 8.1 As a **site admin** I can **create, update and delete user profiles in admin page** so that **all users have appropriate access to website functionality**.                                       | Account management                                                      | Admin goes to "Authentication and authorization" / Users and monitors and edits user data.                                                                                                                                                                                                               | User data updated as needed.                                                                                                                                                                                                                                                | As expected   |
+| 8.2 As a **site admin** I can **create, update and delete items in admin page** so I can assure that **only content in line with my ethos and up to date is available on the website**.               | Products                                                                | Admin goes to "Products" / Products and monitors and edits product data. In addition under Products / Categories owner can add, delete and edit product categories.                                                                                                                                      | Product data updated as needed and desplayed approprately in product descriptions in Gallery. Categories updated as filtering links in the navigation menu in Gallery.                                                                                                      | As expected   |
+| 8.3 As a **site admin** I can **create, update and delete blog entries** so that **blog entries as means of communication and user engagement are used according to their purpose**.                  | Blog                                                                    | Admin goes to Blog / Posts and monitors and edits posts. Also in Blog, under Settings the admin can change visibility of the blog.                                                                                                                                                                       | Posts updated as needed.                                                                                                                                                                                                                                                    | As expected   |
 
-<details>
-<summary>Click here to see screenshot</summary>
-Overview:
 
-![screenshot](../readme/docs/images/testing/user_stories/home_unregistered.jpg)
-Detailed view:
 
-![screenshot](../readme/docs/images/testing/user_stories/post_details.jpg)
-</details>
 
-1.2 As a **site user** I can **register** so that **I have access to personalized service**.
 
-<details>
-<summary>Click here to see screenshot</summary>
-
-![screenshot](../readme/docs/images/testing/user_stories/register_link.jpg)
-</details>
-
-<details>
-<summary>Click here to see screenshot</summary>
-
-![screenshot](../readme/docs/images/testing/user_stories/register_page.jpg)
-</details>
-
-1.3 As a **site user** I can **log in using my username and password** so that I can **access site's enhanced functionality**.
-
-<details>
-<summary>Click here to see screenshot</summary>
-
-![screenshot](../readme/docs/images/testing/user_stories/login.jpg)
-</details>
-
-1.4 As a **site user** I can **log out of my account** so that I know **my information stays confidential**.
-
-<details>
-<summary>Click here to see screenshot</summary>
-
-![screenshot](../readme/docs/images/testing/user_stories/logout.jpg)
-</details>
-
-1.5 As a **site user** I can **easily see my current login status** so that **I know I'm in control of access to my enhanced service on currently used device**.
-
-<details>
-<summary>Click here to see screenshot</summary>
-
-![screenshot](../readme/docs/images/testing/user_stories/logout_status.jpg)
-</details>
-
-1.6 As a **site user** I receive **confirmation of logging in and logging out visible on webpage** so that I **instantly know if the operation was successful**.
-
-<details>
-<summary>Click here to see screenshot</summary>
-
-![screenshot](../readme/docs/images/testing/user_stories/login_conf.jpg)
-</details>
-
-<details>
-<summary>Click here to see screenshot</summary>
-
-![screenshot](../readme/docs/images/testing/user_stories/logout_conf.jpg)
-</details>
-
-1.7 As a **staff site user** I can **access enhanced functionality** so that I can **add, edit and delete content on webpage**.
-
-<details>
-<summary>Click here to see screenshot</summary>
-
-![screenshot](../readme/docs/images/testing/user_stories/crud_home.jpg)
-</details>
-
-<details>
-<summary>Click here to see screenshot</summary>
-
-![screenshot](../readme/docs/images/testing/user_stories/crud_details.jpg)
-</details>
-
-<details>
-<summary>Click here to see screenshot</summary>
-
-![screenshot](../readme/docs/images/testing/user_stories/crud_poll.jpg)
-</details>
-
-| User story | Feature                               | Action                                                                                                      | Expected result                                                    | Actual result |
-|------------|---------------------------------------|-------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------|---------------|
-| 1.1        | Home page, Navbar, Account management | Enter site to see main page or navigate to a subpage by choosing option on navbar                            | Public information is accessible to all users                      | As expected.  |
-| 1.2, 1.3   | Account management                    | Click Login on navbar to register or login to see information and functionality appropriate to user profile | Customized information and functionality available to user         | As expected.  |
-| 1.4        | Account management, Navbar            | Click Login on navbar and chose logout option                                                               | User logged out, privacy protected after user leaving device       | As expected.  |
-| 1.5        | Account management, Navbar            | Login or logout                                                                                             | Current login status shown in top right corner for logged in users | As expected.  |
-| 1.6        | Account management                    | User loges in or loges out                                                                                  | Temporary message shows on top of the webpage                      | As expected.  |
-| 1.7        | Account management                    | Staff user loges in and choses one of the add/edit/delete options                                          | All changes done by authorized user recorded in database.          | As expected.  |
-
-
-<br>
-
-___
-## 2. Epic: Navigation
-
-2.1 As a **site user** I can **navigate the service intuitively** so that I can **utilize all of its content**.
-
-<details>
-<summary>Click here to see screenshot</summary>
-
-![screenshot](../readme/docs/images/testing/user_stories/navigation.jpg)
-</details>
-
-2.2 As a **site user** I can easily **browse through available treatments** so I can **decide which ones are most appropriate to me**.
-
-<details>
-<summary>Click here to see screenshot</summary>
-
-![screenshot](../readme/docs/images/testing/user_stories/navigation_browse.jpg)
-</details>
-
-2.3 As a **site user** I can **navigate the site on all kinds of devices** so that **I am not limited to any kind of device**.
-
-<details>
-<summary>Click here to see screenshot</summary>
-
-![screenshot](../readme/docs/images/testing/user_stories/navigation_small.jpg)
-</details>
-
-| User story | Feature                               | Action                                                                       | Expected result                                                                      | Actual result |
-|------------|---------------------------------------|------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|---------------|
-| 2.1, 2.2   | Navbar, additional navigation buttons | User choses options in the navigation menu and buttons available on the site | User gets to expected content by choosing options                                     | As expected.  |
-| 2.3        | All visual features                   | User views site on various screens                                           | Responsive design makes content available and visually accessible on all screen sizes | As expected.  |
-
-
-<br>
-
-___
-## 3. Epic: Customer engagement
-
-3.1 As a **site user** I can **read and respond to available content** so **my experience on the site feels engaging and interactive**. 
-
-<details>
-<summary>Click here to see screenshot</summary>
-
-![screenshot](../readme/docs/images/testing/user_stories/engagement_details.jpg)
-</details>
-
-3.2 As a **site user** I can **engage in activities that other users can also participate in** so I can **feel part of a wider community**.
-
-<details>
-<summary>Click here to see screenshot</summary>
-
-![screenshot](../readme/docs/images/testing/user_stories/engagement_details.jpg)
-</details>
-
-<details>
-<summary>Click here to see screenshot</summary>
-
-![screenshot](../readme/docs/images/testing/user_stories/engagement_poll.jpg)
-</details>
-
-<details>
-<summary>Click here to see screenshot</summary>
-
-![screenshot](../readme/docs/images/testing/user_stories/engagement_poll_results.jpg)
-</details>
-
-3.3 As a **site user** I can **locate company's social media accounts** so I can **stay in contact through alternative means**.
-
-<details>
-<summary>Click here to see screenshot</summary>
-
-![screenshot](../readme/docs/images/testing/user_stories/engagement_social.jpg)
-</details>
-
-3.4 As a **site user** I can **use the website for communication with the company** so that I can **send general queries or request booking for a specific treatment**.
-
-<details>
-<summary>Click here to see screenshot</summary>
-
-![screenshot](../readme/docs/images/testing/user_stories/engagement_message.jpg)
-</details>
-
-<details>
-<summary>Click here to see screenshot</summary>
-
-![screenshot](../readme/docs/images/testing/user_stories/engagement_booking.jpg)
-</details>
-
-3.5 As a **registered site user** I can **use website for communication without having to re-enter my details** so that **sending my message requires minimum afford from my side**.
-
-<details>
-<summary>Click here to see screenshot</summary>
-
-![screenshot](../readme/docs/images/testing/user_stories/convenience_message_prefilled.jpg)
-</details>
-
-<details>
-<summary>Click here to see screenshot</summary>
-
-![screenshot](../readme/docs/images/testing/user_stories/convenience_booking_prefilled.jpg)
-</details>
-
-3.6 As a **site owner** I can **control content showing on the website** so that **the whole website content is in line with company values and supports its mission**.
-
-<details>
-<summary>Click here to see screenshot</summary>
-Posts with status "draft" are only visible to staff.
-
-![screenshot](../readme/docs/images/testing/user_stories/control_draft.jpg)
-</details>
-
-<details>
-<summary>Click here to see screenshot</summary>
-
-![screenshot](../readme/docs/images/testing/user_stories/control_details.jpg)
-</details>
-
-| User story         | Feature                                                 | Action                                                                                                                                                                                    | Expected result                                                                                                     | Actual result |
-|--------------------|---------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|---------------|
-| 3.1, 3.2, 3.4, 3.5 | Account, management, Posts, Polls, Direct communication | After loging in user navigates to chosen features: taking part in polls, liking or commenting on posts, sending messages and booking requests.                                            | User can take part in engaging activities: polls, liking, commenting, sending direct messages and booking requests. | As expected.  |
-| 3.3                | Footer                                                  | Click on links                                                                                                                                                                            | User opens new window with link to chosen social media account                                                      | As expected.  |
-| 3.5                | Home page, Account management, Posts, Polls             | Authorized user can add, edit and delete chosen content. Authorized user can control visibility of posts by changing live/draft status, approve or delete comments, add or delete polls.  | Information shown on site is controlled by authorized users.                                                        | As expected.  |
-
-
-<br>
-
-___
-## 4. Epic: Company offer
-
-4.1 As a **site user** I can **quickly get a general idea about services on offer** so that I can **prioritize which content to read more thoroughly**.
-
-<details>
-<summary>Click here to see screenshot</summary>
-
-![screenshot](../readme/docs/images/testing/user_stories/offer_home.jpg)
-</details>
-
-4.2 As a **site user** I can **read thoroughly about chosen treatments** so that I can **acquire content most appropriate to my requirements**.
-
-<details>
-<summary>Click here to see screenshot</summary>
-After clicking on treatment title detailed treatment description and comment functionality is available:
-
-![screenshot](../readme/docs/images/testing/user_stories/offer_details_main.jpg)
-
-![screenshot](../readme/docs/images/testing/user_stories/control_details_comments.jpg)
-</details>
-
-4.3 As a **site user** I can **respond to content via likes and comments** for **increased sense of community** (registered users only).
-
-<details>
-<summary>Click here to see screenshot</summary>
-
-![screenshot](../readme/docs/images/testing/user_stories/offer_details_comments_likes.jpg)
-</details>
-
-4.4 As a **site user** I can **take part in polls and see poll results** so I can **feel more engaged with the company and the health-oriented community**.
-
-<details>
-<summary>Click here to see screenshot</summary>
-
-![screenshot](../readme/docs/images/testing/user_stories/poll_guest.jpg)
-
-![screenshot](../readme/docs/images/testing/user_stories/poll_submit.jpg)
-
-![screenshot](../readme/docs/images/testing/user_stories/poll_result.jpg)
-</details>
-
-4.5 As a **staff site user** I can **create and delete polls** so that **polls as means of engaging users and gathering information are used according to their purpose**.
-
-<details>
-<summary>Click here to see screenshot</summary>
-
-![screenshot](../readme/docs/images/testing/user_stories/crud_poll.jpg)
-</details>
-
-4.6 As a **site owner** I can **activate and deactivate content visible to the public**.
-
-<details>
-<summary>Click here to see screenshot</summary>
-Posts can be created, deleted and made visible or hidden by staff users:
-
-![screenshot](../readme/docs/images/testing/user_stories/offer_post_status.jpg)
-</details>
-
-<details>
-<summary>Click here to see screenshot</summary>
-Polls can be created and deleted by staff users:
-
-![screenshot](../readme/docs/images/testing/user_stories/crud_poll.jpg)
-</details>
-
-<details>
-<summary>Click here to see screenshot</summary>
-Content can also be manipulated in the Admin window:
-
-![screenshot](../readme/docs/images/testing/user_stories/admin_posts.jpg)
-
-![screenshot](../readme/docs/images/testing/user_stories/admin_comments.jpg)
-</details>
-
-4.7 As a **site owner** I can **prioritize which treatments are showing first on the site** so that I can **influence demand on offering of my choice**. 
-
-<details>
-<summary>Click here to see screenshot</summary>
-Priority functionality can be set by staff users:
-
-![screenshot](../readme/docs/images/testing/user_stories/offer_post_priority.jpg)
-
-Priority can also be manipulated in the Admin window:
-
-![screenshot](../readme/docs/images/testing/user_stories/offer_posts_priority.jpg)
-</details>
-
-| User story | Feature                                            | Action                                                                                                                                                                                                         | Expected result                                                                           | Actual result |
-|------------|----------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|---------------|
-| 4.1, 4.2   | Home page                                          | Navigate between pages with general information on treatments with buttons on the sides and at the bottom of the page. Click on posts of interest to read expanded information.                                | General information shown on home page, detailed information shown on chosen treatments.  | As expected.  |
-| 4.3        | Post detail pages                                  | Login, then click likes, add comments                                                                                                                                                                          | Likes added to posts. Comments added to posts after approval.                             | As expected.  |
-| 4.4        | Polls                                              | Click Polls on navbar, see polls, after choosing a poll add vote. View poll results.                                                                                                                            | User sees polls, choses a poll and offers their vote. User sees results.                  | As expected.  |
-| 4.5        | Polls                                              | Add a poll. See poll results. Delete a poll.                                                                                                                                                                   | Site owner receives feedback from users on current topics touched in polls.               | As expected.  |
-| 4.6        | Home page, detail pages, Polls, Account management | After loging in authorized user can change status of a poll (live – public / draft – visible only to staff), control visibility of comments, add and delete polls. Admin also controls status of other users.  | Visibility of content of the webpage and status of registered users is fully controlled.  | As expected.  |
-| 4.7        | Home page                                          | Choose priority of a post when adding or editing.                                                                                                                                                              | Posts are shown in order of priority.                                                     | As expected.  |
-
-
-<br>
-
-___
-## 5. Epic: Site admin
-
-5.1 As a **site admin** I can **create, update and delete user profiles in admin page** so that **all users have appropriate access to site services**.
-
-<details>
-<summary>Click here to see screenshot</summary>
-Add and delete functionality:
-
-![screenshot](../readme/docs/images/testing/user_stories/admin_users_add_delete.jpg)
-
-Edit functionality:
-
-![screenshot](../readme/docs/images/testing/user_stories/admin_users_edit.jpg)
-</details>
-
-5.2 As a **site admin** I can **create, update and delete posts and comments in admin page** so I can assure that **only content in line with company's ethos and goals is made available**.
-
-<details>
-<summary>Click here to see screenshot</summary>
-Add and delete functionality:
-
-![screenshot](../readme/docs/images/testing/user_stories/admin_posts_add_delete.jpg)
-
-Edit functionality:
-
-![screenshot](../readme/docs/images/testing/user_stories/admin_posts_edit.jpg)
-</details>
-
-5.3 As a **site admin** I can **create, update and delete polls** so that **polls as means of engaging users and gathering information are used according to their purpose**.
-
-<details>
-<summary>Click here to see screenshot</summary>
-Add and delete functionality:
-
-![screenshot](../readme/docs/images/testing/user_stories/admin_polls_add_delete.jpg)
-
-Edit functionality:
-
-![screenshot](../readme/docs/images/testing/user_stories/admin_polls_edit.jpg)
-</details>
-
-5.4 As a **site admin** I can **read, update and delete booking requests** so that **booking requests are dealt with**.
-
-<details>
-<summary>Click here to see screenshot</summary>
-Add and delete functionality:
-
-![screenshot](../readme/docs/images/testing/user_stories/admin_bookings_add_delete.jpg)
-
-Edit functionality:
-
-![screenshot](../readme/docs/images/testing/user_stories/admin_bookings_edit.jpg)
-</details>
-
-| User story | Feature            | Action                                                   | Expected result                                                                               | Actual result |
-|------------|--------------------|----------------------------------------------------------|-----------------------------------------------------------------------------------------------|---------------|
-| 5.1        | Account management | Create, update, delete user profiles via Admin site.     | All user profiles are up to date and with appropriate access to information and functionality | As expected.  |
-| 5.2        | Account management | Create, update, delete posts and comments via Admin site. | All content visible to users is in line with company’s ethos and goals.                       | As expected.  |
-| 5.3        | Account management | Create, update, delete polls via Admin site.             | Polls are visible to users as needed.                                                         | As expected.  |
-| 5.4        | Account management | Read booking requests on Admin site.                     | Bookings read and responded to as needed.                                                     | As expected.  |
