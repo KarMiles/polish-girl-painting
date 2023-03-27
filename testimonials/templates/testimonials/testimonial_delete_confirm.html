@@ -16,7 +16,13 @@
                     Delete?
                 </h2>
                 <p>
-                    Are you sure you want to permanently delete <strong>{{ object.title }}</strong>?
+                    Are you sure you want to permanently delete 
+                    {% if object.title %}
+                        <strong>{{ object.title }}</strong>
+                    {% else %}
+                        this post
+                    {% endif %}
+                    ?
                 </p>
                 {{ form }}
                 <input type="submit" value="Confirm" 
