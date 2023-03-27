@@ -10,23 +10,27 @@ The following validators were used for testing code correctness:
 No errors or warnings were found by [W3C Markup Validator](https://validator.w3.org/)  throughout the site.
 <details>
     <summary>Home</summary>
-    <img src="./images/testing/validation/validation-html-index.jpg">
+    <img src="./images/testing/validation/validation-html-home.jpg">
 </details>
 <details>
-    <summary>Polls</summary>
-    <img src="./images/testing/validation/validation-html-polls.jpg">
+    <summary>Gallery</summary>
+    <img src="./images/testing/validation/validation-html-gallery.jpg">
 </details>
 <details>
-    <summary>Login</summary>
-    <img src="./images/testing/validation/validation-html-login.jpg">
+    <summary>Blog</summary>
+    <img src="./images/testing/validation/validation-html-blog.jpg">
 </details>
 <details>
     <summary>Contact</summary>
     <img src="./images/testing/validation/validation-html-contact.jpg">
 </details>
 <details>
-    <summary>Booking</summary>
-    <img src="./images/testing/validation/validation-html-booking.jpg">
+    <summary>About</summary>
+    <img src="./images/testing/validation/validation-html-about.jpg">
+</details>
+<details>
+    <summary>Login</summary>
+    <img src="./images/testing/validation/validation-html-login.jpg">
 </details>
 <details>
     <summary>404</summary>
