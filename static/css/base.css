@@ -23,6 +23,12 @@ body {
     font-family: var(--font-family-content);
 }
 
+/* Navigation bar */
+
+.navbar-nav {
+    margin-bottom: 0;
+}
+
 /* Colours */
 .dark-background {
     background-color: var(--indigo-dye);
@@ -119,13 +125,16 @@ a:active {
 
 
 /* Forms */
+
 input,
 .textinput,
 .form-control {
     font-family: var(--font-clear);
 }
 
+
 /* Footer */
+
 .container-wrapper {
     background-color: rgb(245, 245, 245);
     color: grey;
@@ -366,8 +375,8 @@ input[type=number]::-webkit-outer-spin-button {
 .arrow-up {
     width: 0; 
     height: 0; 
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent; 
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent; 
     border-bottom: 10px solid black;
     position: absolute;
     top: -10px;

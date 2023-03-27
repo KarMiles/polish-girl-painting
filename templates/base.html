@@ -95,7 +95,7 @@
                 </div>
 
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                    <ul class="top-nav list-inline list-unstyled text-center text-lg-right my-0">
+                    <div class="top-nav list-inline list-unstyled text-center text-lg-right my-0">
                         
                         <!-- My Account menu -->
                         {% include 'includes/sub-my-account.html' %}
@@ -103,7 +103,7 @@
                         <!-- Bag link -->
                         {% include 'includes/sub-bag.html' %}
 
-                    </ul>
+                    </div>
                 </div>
             </div>
 
@@ -267,7 +267,7 @@
         <!-- /.footer -->
 
         {% block postloadjs %}
-            <script type="text/javascript">
+            <script>
                 $('.toast').toast('show');
             </script>
         {% endblock %} 
