@@ -1,4 +1,4 @@
-<nav class="collapse navbar-collapse" id="main-nav">
+<nav class="collapse navbar-collapse" id="main-nav" aria-label="Page navigation">
     <div class="navbar-nav w-auto mx-auto">
 
         <div class="nav-item">
@@ -15,8 +15,8 @@
             <a role="button" data-toggle="dropdown" id="dropdownMenuAvailability" class="logo-font  nav-link text-black mx-2" data-target="#" href="#">
                 Avalability
             </a>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuAvailability">
-                <li>
+            <ul class="dropdown-menu" role="menu">
+                <li aria-labelledby="dropdownMenuAvailability">
                     <a tabindex="-1" href="{% url 'products' %}?available=True">
                         Available
                     </a>
@@ -34,10 +34,10 @@
             <a role="button" data-toggle="dropdown" id="dropdownMenuCategories" class="logo-font  nav-link text-black mx-2" data-target="#" href="#">
                 Category
             </a>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCategories">
+            <ul class="dropdown-menu" role="menu">
 
                 {% for cat in categories_all %}
-                <li>
+                <li aria-labelledby="dropdownMenuCategories">
                     <a tabindex="-1" href="{% url 'products' %}?category={{ cat }}" class="text-capitalize">
                         {{ cat }}
                     </a>
