@@ -140,14 +140,9 @@ input,
     background-color: rgb(245, 245, 245);
 }
 
-.container-wrapper *,
-.indicates-required {
-    color: var(--jet-light) !important;
+.container-wrapper * {
     font-family: var(--font-family-aux);
-}
-
-.indicates-required {
-    font-size: .8rem !important;
+    color: var(--jet-light);
 }
 
 .footer-author {
@@ -189,8 +184,12 @@ mc {
 }
 
 .asterisk, .indicates-required {
-    color: grey !important;
+    color: var(--jet-light) !important;
     /* visibility: hidden; */
+}
+
+.brandingLogo {
+    opacity: .6;
 }
 
 
