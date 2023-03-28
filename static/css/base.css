@@ -146,6 +146,10 @@ input,
     font-family: var(--font-family-aux);
 }
 
+.indicates-required {
+    font-size: .8rem !important;
+}
+
 .footer-author {
     font-family: var(--font-family-aux);
     font-size: small;
