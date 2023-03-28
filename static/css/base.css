@@ -185,7 +185,7 @@ mc {
 
 .asterisk, .indicates-required {
     color: var(--jet-light) !important;
-    font-size: 1rem;
+    font-size: .9rem !important;
 }
 
 .brandingLogo {
