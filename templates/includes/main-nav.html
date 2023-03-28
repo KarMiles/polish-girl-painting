@@ -12,10 +12,10 @@
         {% if categories_all %}
         <div class="dropdown d-sm-none">
 
-            <a role="button" data-toggle="dropdown" id="dropdownMenu" class="logo-font  nav-link text-black mx-2" data-target="#" href="#">
+            <a role="button" data-toggle="dropdown" id="dropdownMenuAvailability" class="logo-font  nav-link text-black mx-2" data-target="#" href="#">
                 Avalability
             </a>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuAvailability">
                 <li>
                     <a tabindex="-1" href="{% url 'products' %}?available=True">
                         Available
@@ -31,10 +31,10 @@
         </div>
         <div class="dropdown d-sm-none">
 
-            <a role="button" data-toggle="dropdown" class="logo-font  nav-link text-black mx-2" data-target="#" href="#">
+            <a role="button" data-toggle="dropdown" id="dropdownMenuCategories" class="logo-font  nav-link text-black mx-2" data-target="#" href="#">
                 Category
             </a>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCategories">
 
                 {% for cat in categories_all %}
                 <li>
