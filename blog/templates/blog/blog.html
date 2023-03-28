@@ -23,10 +23,12 @@
 
                             <div class="card-body">
                                 {% if post.title %}
-                                    <a href="{% url 'post_detail' post.slug  %}">
-                                        <p class="card-title">{{ post.title }}<p>
-                                        <span hidden>Go to post {{ post.title }}</span>
-                                    </a>
+                                    <p class="card-title">
+                                        <a href="{% url 'post_detail' post.slug  %}">
+                                            {{ post.title }}
+                                            <span hidden>Go to post {{ post.title }}</span>
+                                        </a>
+                                    <p>
                                 {% endif %}
                                 <p class="card-text text-muted h6">
                                     {{ post.created_on | date:"d F Y"}}
