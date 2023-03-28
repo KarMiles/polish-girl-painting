@@ -70,9 +70,11 @@
                                     <div class="card mb-4">
                                         <div class="card-body">
                                             {% if testimonial.title %}
-                                                <a href="{% url 'testimonial_detail' testimonial.id  %}"
-                                                    <p class="card-title">{{ testimonial.title }}<p>
+                                            <p class="card-title">
+                                                <a href="{% url 'testimonial_detail' testimonial.id  %}">
+                                                    {{ testimonial.title }}
                                                 </a>
+                                            </p>
                                             {% endif %}
                                             <p class="card-text text-muted h6">
                                                 {{ testimonial.author.get_full_name|default:testimonial.author.username }} 
