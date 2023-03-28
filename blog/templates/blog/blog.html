@@ -25,6 +25,7 @@
                                 {% if post.title %}
                                     <a href="{% url 'post_detail' post.slug  %}">
                                         <p class="card-title">{{ post.title }}<p>
+                                        <span hidden>Go to post {{ post.title }}</span>
                                     </a>
                                 {% endif %}
                                 <p class="card-text text-muted h6">
