@@ -140,8 +140,9 @@ input,
     background-color: rgb(245, 245, 245);
 }
 
-.container-wrapper * {
-    color: var(--jet-light);
+.container-wrapper *,
+.indicates-required {
+    color: var(--jet-light) !important;
     font-family: var(--font-family-aux);
 }
 
