@@ -6,7 +6,7 @@
 
 The following validators were used for testing code correctness:
 ### W3C Markup Validator 
-
+<!-- #TODO [#2](https://github.com/KarMiles/polish-girl-painting/issues/2) -->
 No errors or warnings were found by [W3C Markup Validator](https://validator.w3.org/)  throughout the site.
 <details>
     <summary>Home</summary>
@@ -71,8 +71,21 @@ Testing for accessibility of the site was carried out with the employment of [WA
     <img src="./images/testing/validation/validation-accessibility-home.jpg">
 </details>
 <details>
-    <summary>Polls</summary>
-    <img src="./images/testing/validation/validation-accessibility-polls.jpg">
+    <summary>Gallery</summary>
+     <!-- #TODO [#2](https://github.com/KarMiles/polish-girl-painting/issues/2) -->
+    <img src="./images/testing/validation/validation-accessibility-products.jpg">
+</details>
+<details>
+    <summary>Blog</summary>
+    <img src="./images/testing/validation/validation-accessibility-blog.jpg">
+</details>
+<details>
+    <summary>About</summary>
+    <img src="./images/testing/validation/validation-accessibility-testimonials.jpg">
+</details>
+<details>
+    <summary>Contact</summary>
+    <img src="./images/testing/validation/validation-accessibility-contact.jpg">
 </details>
 <details>
     <summary>Login</summary>

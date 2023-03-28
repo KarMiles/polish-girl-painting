@@ -24,7 +24,7 @@
                                     {% for testimonial in testimonial_list %}
                                         {% if testimonial.about_me %}
                                             {% if testimonial.title %}
-                                                <p class="h3 mt-4">{{ testimonial.title }}</p>
+                                                <div class="h3 mt-4">{{ testimonial.title }}</div>
                                             {% endif %}
                                             {% if request.user.is_staff and not testimonial.live %}
                                             <a href="{% url 'testimonial_edit' testimonial.id %}"  class="mr-1">
@@ -94,15 +94,15 @@
                                                         {{ testimonial.content|safe|stringformat:".1000s" }}
                                                         {% if testimonial.content|length > 1000 %}
                                                             ...
-                                                            </p>
-                                                            <p>
-                                                                <a href="{% url 'testimonial_detail' testimonial.id  %}"
-                                                                    class="btn btn-outline-black corners px-1 py-1 mx-2">
-                                                                    <span class="text-uppercase mx-1">Read more</span>
-                                                                    <span class="icon">
-                                                                        <i class="fas fa-chevron-right"></i>
-                                                                    </span>
-                                                                </a>
+                                                    </p>
+                                                    <p>
+                                                        <a href="{% url 'testimonial_detail' testimonial.id  %}"
+                                                            class="btn btn-outline-black corners px-1 py-1 mx-2">
+                                                            <span class="text-uppercase mx-1">Read more</span>
+                                                            <span class="icon">
+                                                                <i class="fas fa-chevron-right"></i>
+                                                            </span>
+                                                        </a>
                                                         {% endif %}
                                                     </p>
                                                 </div>
