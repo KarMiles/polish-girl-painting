@@ -68,7 +68,7 @@ Optimal visibility and functionality on various devices was tested throughout th
 Testing for accessibility of the site was carried out with the employment of [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/). Initially contrast errors were found. These errors were addressed by increasing contrast on fonts against background and introducing Contrast toggle button in the top left corner. Switching to increased contrast sets font colours outside original colour scheme but enhances reading comfort for users with such visual needs. This functionality works accross all the website. Alerts were addressed where needed.
 <details>
     <summary>Home</summary>
-    <img src="./images/testing/validation/validation-accessibility-index.jpg">
+    <img src="./images/testing/validation/validation-accessibility-home.jpg">
 </details>
 <details>
     <summary>Polls</summary>
