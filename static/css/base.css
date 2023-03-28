@@ -138,6 +138,9 @@ input,
 
 .container-wrapper {
     background-color: rgb(245, 245, 245);
+}
+
+.container-wrapper * {
     color: var(--jet-light);
     font-family: var(--font-family-aux);
 }
