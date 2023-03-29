@@ -30,7 +30,41 @@
 
 <!-- My Account link -->
 <div class="d-block d-lg-none">
-    {% include 'includes/my-account-link.html' %}
+    <div class="list-inline-item dropdown top-nav">
+        <a class="text-black nav-link" href="#" id="account-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="text-center">
+                <div><i class="far fa-user-circle"></i></div>
+                <p class="my-0">
+                    {% if request.user.is_authenticated %}
+                        {% if user.first_name %}
+                            {{ user.first_name }}
+                        {% else %}
+                            {{ user }}
+                        {% endif %}
+                    {% else %}
+                        My Account
+                    {% endif %}
+                </p>
+            </div>
+        </a>
+        <div class="dropdown-menu border-0" aria-labelledby="account-options">
+            {% if request.user.is_authenticated %}
+                {% if request.user.is_staff %}
+                    <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+                    <a href="{% url 'post_add' %}" class="dropdown-item">Blog / Highlights</a>
+                    <a href="{% url 'testimonial_add' %}" class="dropdown-item">About / Testimonials</a>
+                    {% endif %}
+                {% if request.user.is_staff == False %}
+                    <a href="{% url 'testimonial_add' %}" class="dropdown-item">Share my experience</a>
+                {% endif %}
+                <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+            {% else %}
+                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+            {% endif %}
+        </div>
+    </div>
 </div>
 
 <!-- Bag link -->

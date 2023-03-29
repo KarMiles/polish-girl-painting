@@ -29,7 +29,7 @@ This application is deployed from GitHub using Heroku in following steps:
     <details>
     <summary>Click here to see screenshot</summary>
 
-    ![screenshot](../readme/docs/images/testing/deployment/heroku_signup.jpg)
+    ![screenshot](./images/testing/deployment/heroku_signup.jpg)
     </details>
 
 2. Create new app by clicking "New" and then "Create new app".
@@ -37,7 +37,7 @@ This application is deployed from GitHub using Heroku in following steps:
     <details>
     <summary>Click here to see screenshot</summary>
 
-    ![screenshot](../readme/docs/images/testing/deployment/heroku_create_new_app.jpg)
+    ![screenshot](./images/testing/deployment/heroku_create_new_app.jpg)
     </details>
 
 3. Add app name and region and click on "Create app".
@@ -45,7 +45,7 @@ This application is deployed from GitHub using Heroku in following steps:
     <details>
     <summary>Click here to see screenshot</summary>
 
-    ![screenshot](../readme/docs/images/testing/deployment/heroku_create_name_region.jpg)
+    ![screenshot](./images/testing/deployment/heroku_create_name_region.jpg)
     </details>
 
 4. Choose "Settings".
@@ -53,7 +53,7 @@ This application is deployed from GitHub using Heroku in following steps:
     <details>
     <summary>Click here to see screenshot</summary>
 
-    ![screenshot](../readme/docs/images/testing/deployment/heroku_settings.jpg)
+    ![screenshot](./images/testing/deployment/heroku_settings.jpg)
     </details>
 
 5. Under "Config Vars" add credentials, e.g. creds.json, secret key.
@@ -61,7 +61,7 @@ This application is deployed from GitHub using Heroku in following steps:
     <details>
     <summary>Click here to see screenshot</summary>
 
-    ![screenshot](../readme/docs/images/testing/deployment/heroku_config_vars.jpg)
+    ![screenshot](./images/testing/deployment/heroku_config_vars.jpg)
     </details>
 
 6. Set buildpacks by selecting "Add buildpacks" (I then chose "Python") and "Save changes".
@@ -69,7 +69,7 @@ This application is deployed from GitHub using Heroku in following steps:
     <details>
     <summary>Click here to see screenshot</summary>
 
-    ![screenshot](../readme/docs/images/testing/deployment/heroku_buildpacks.jpg)
+    ![screenshot](./images/testing/deployment/heroku_buildpacks.jpg)
     </details>
 
 7. Go to "Deploy", at "Deployment method" click "Connect to GitHub" and confirm.
@@ -77,7 +77,7 @@ This application is deployed from GitHub using Heroku in following steps:
     <details>
     <summary>Click here to see screenshot</summary>
 
-    ![screenshot](../readme/docs/images/testing/deployment/heroku_deploy.jpg)
+    ![screenshot](./images/testing/deployment/heroku_deploy.jpg)
     </details>
 
 8. Enter repository name, click on it when it appears below.
@@ -85,7 +85,7 @@ This application is deployed from GitHub using Heroku in following steps:
     <details>
     <summary>Click here to see screenshot</summary>
 
-    ![screenshot](../readme/docs/images/testing/deployment/heroku_connect_repo.jpg)
+    ![screenshot](./images/testing/deployment/heroku_connect_repo.jpg)
     </details>
 
 9. Select the branch for building the app.
@@ -93,7 +93,7 @@ This application is deployed from GitHub using Heroku in following steps:
     <details>
     <summary>Click here to see screenshot</summary>
 
-    ![screenshot](../readme/docs/images/testing/deployment/heroku_branch.jpg)
+    ![screenshot](./images/testing/deployment/heroku_branch.jpg)
     </details>
 
 10. Clicking "Enable Automatic Deploys" will keep the app updated with GitHub repository. This feature is not used for this project.
@@ -101,7 +101,7 @@ This application is deployed from GitHub using Heroku in following steps:
     <details>
     <summary>Click here to see screenshot</summary>
 
-    ![screenshot](../readme/docs/images/testing/deployment/heroku_automatic.jpg)
+    ![screenshot](./images/testing/deployment/heroku_automatic.jpg)
     </details>
 
 Ad. 5. Config Vars and coresponding keys in project files for this project:
