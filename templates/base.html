@@ -128,15 +128,15 @@
                         <!-- Banner for Gallery -->
                         <span class="navbar-nav w-auto mx-auto inline">
                             {% if categories_all %}
-                                <div class="col-10 offset-1 d-none d-sm-block">
-                                    <div class="row">
+                                <span class="col-10 offset-1 d-none d-sm-block">
+                                    <span class="row">
                                         {% for cat in categories_all %}
-                                            <div class="col">
+                                            <span class="col">
                                                 <a tabindex="-1" class="text-white small" href="{% url 'products' %}?category={{ cat }}" rel="noopener">{{ cat }}</a>
-                                            </div>
+                                            </span>
                                         {% endfor %}
-                                    </div>
-                                </div>
+                                    </span>
+                                </span>
                                 <span class="d-sm-none mt-1">
                                     Click
                                     <a href="{% url 'products' %}?highlight=True" class="text-white" rel="noopener"><strong>here</strong></a>
