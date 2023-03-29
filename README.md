@@ -723,7 +723,15 @@ Navigation menu stretched on a larger screen:
 
 **Authorization - dependent navigation**
 
-Navigation menu is dependent on current user profile. Users without login are presented with the simplest menu due to limited authorization. This is reflected in My Account option. Staff users have access to Product, Blog and About/Testimonials Management. Registered clients have added option of checking and updating user information. 
+Navigation menu is dependent on current user profile. This is reflected in options available under the icon My Account:
+
+- Without logging in users are presented with the simplest menu: Register, Login. 
+- Customer users after logging in have access to options: Share my experience, My Profile, Logout.
+- Staff users have access to Product, Blog and About/Testimonials Management. 
+
+Registered clients have a possibility of checking and updating user information and adding their testimony.
+
+Staff users' authorisation is expanded by reading, adding, editing and deleting information related to products, blogs and testimonies. This is supported by appropriate links throughout the website.
 
 My Account - unregistered user:
 <details>
@@ -1339,6 +1347,8 @@ Features
 **Marketing introduction**
 
 When deciding on marketing strategy for this project the following information and assumptions were taken into account:
+
+- Business model is Business - to - Customer,
 - Main target groups are predominantly:
     - young European aspiring professional adults,
     - mature European adults with stable material situation, especially appreciating niche art.
@@ -1364,7 +1374,7 @@ When deciding on marketing strategy for this project the following information a
     - Selling her art,
     - Sharing artistic process,
     - Connecting with art-loving audience.
-- It is assumed that the owner focuses on organic growth of this activity and no signifficant marketing budget is planned. The main resource dedicated to the project is a limited amount of the artist's time.
+- It is assumed that the owner focuses on organic growth of this activity and no signifficant marketing budget is planned. The main resource dedicated to the project is a limited amount of the artist's time focused on creation of custom content and building engagement with potential buyers.
 
 
 ## 3.i Search Engine Optimisation
@@ -1403,13 +1413,15 @@ Instructions for search engines**
 
 **Links**
 
-Links not usefull in respect of search engine analytics have been equipped with anchor tag noopener.
+Links not usefull in respect of search engine analytics have been equipped with anchor tag nofollow (in respect of SEO) and noopener (in respect of safety of the site).
 
 Links to outside sites potentially valuable from search engine optimisation standpoint were added in About section. 
 
 **Meta Tags**
 
 Meta tags description and keywords have been added in the base page for the benefit of search engine optimisation.
+
+Base template has been equipped with canonical link for search engine recognition of the original site.
 
 **Crawlers management**
 
@@ -1618,11 +1630,6 @@ When producing automatic tests for bag page it was not possible to utilize asser
     last_url, status_code = response.redirect_chain[-1]
     self.assertEqual(last_url, '/bag/')
 
-*Contrast error on Wave test*
-
-As a result of  [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/) indicating contrast error on accessibility test, two steps have been taken:
-- some of the text colours have been changed from the original design to increase contrast,
-- Contrast toggle button has been added to navigation bar letting user further increase contrast across all the site.
 
 ## 4.iv. Validation testing:<a name="validation-testing"></a>
 [Click here for Validation testing](readme/docs/validation_testing.md)
@@ -1632,7 +1639,7 @@ As a result of  [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org
 ___
 # 5. Deployment <a name="deployment"></a> 
 [Click here for Deployment file](readme/deployment.md)
-
+<!-- TODO: Add deployment discription [#2](https://github.com/KarMiles/polish-girl-painting/issues/2) -->
 <br>
 
 ___
@@ -1688,7 +1695,7 @@ For development of this webpage elements of Agile software development methodolo
     - For testing Django unit test was utilized.
 
 - Python packages
-
+    <!-- TODO: Update before final deployment [#2](https://github.com/KarMiles/polish-girl-painting/issues/2) -->
     The following packages are used for the project. All modules can be found in requirements.txt file:
     - asgiref==3.6.0
     - boto3==1.26.54
@@ -1735,7 +1742,6 @@ For development of this webpage elements of Agile software development methodolo
 - PEP8 Online Validation Service: (http://pep8online.com) - for validating Python code.
 - Unittest (https://docs.djangoproject.com/en/3.2/topics/testing/overview/) - for Python unit testing
 - Google Chrome Developer Tools - built-in developer tools used to inspect page elements and help debug issues with the website functionality and layout.
-- [GIgnore X-Frame headers](https://chrome.google.com/webstore/detail/ignore-x-frame-headers/gleekbfjekiniecknbkamfmkohkpodhe/related) Google Chrome extension - for testing site responsiveness.
 
 ### Design stages
 - Lucidchart (www.lucidchart.com/) - used to create flowcharts.
@@ -1800,17 +1806,15 @@ ___
 - [Stackoverflow](https://stackoverflow.com/questions/224602/how-do-you-make-div-elements-display-inline/224626#224626) - inline version of div in html, by [Darryl Hein](https://stackoverflow.com/users/5441/darryl-hein)
 - [Fullstackpython](https://www.fullstackpython.com/django-apps-config-appconfig-examples.html) - AppConfig description and other more general Python knowledge.
 - [Djangoproject](https://docs.djangoproject.com/en/4.0/ref/models/fields/#field-types) - choices for priority levels.
-- [Prettyprinted](https://prettyprinted.com/tutorials/creating-a-poll-app-in-django) - poll implementation.
-- [Sebhastian](https://www.freecodecamp.org/news/author/nsebhastian/) - "Click for more" tooltip.
 - [Vegibit](https://vegibit.com/how-to-use-httpresponseredirect-in-django) - HttpResponse description.
+- [Stackoverflow](https://stackoverflow.com/questions/22728763/how-to-provide-canonical-url-with-django-httpresponseredirect) - for best canonical link solution.
 
 ### Knowledge
 - [Wikipedia](https://en.wikipedia.org/wiki/Sitemaps) - general information on sitemaps.
 
 ### Graphical content
-- [Unsplash](https://unsplash.com) - imagery.
+- [Monika Curto Fuentes](https://www.instagram.com/polishgirlpainting/) - graphical representations of original art collection used for building this site.
 - [Nicepng](https://www.nicepng.com) - favicon.
-- [Favicon.co](https://favicon.io/favicon-converter) - favicon conversion.
 - [Coolors](https://coolors.co) - colour palette creation.
 - [Font Awesome](https://fontawesome.com/) - sourcing icons.
 
@@ -1821,6 +1825,7 @@ ___
 
 ## Acknowledgements
 I would like to thank everyone who contributed to development of this project, especially:
+- The artist Monika Curto Fuentes for letting me use representations of her art collection and her very warm cooperation in carrying this project to its successful completion.
 - My mentor Mo Shami for his invaluable guidance and advice.
 - Educational Team at [Code Institute](https://codeinstitute.net/) for all educational materials and Tutor support which made this project possible.
 - All visual artists and coders who make products of their work available to others online.

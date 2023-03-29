@@ -5,7 +5,6 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy, reverse
-from django.utils.text import slugify
 from django.contrib import messages
 
 # Internal:
@@ -64,10 +63,6 @@ class EditPost(StaffRequiredMixin, generic.UpdateView):
         Returns:
             The form
         """
-        def __init__(self, form):
-            self.object = form.instance
-            self.object.slug = slugify(self.object.title)
-
         messages.add_message(
             self.request,
             messages.INFO,

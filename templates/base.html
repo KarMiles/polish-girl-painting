@@ -54,6 +54,7 @@
         {% endblock %}
 
         <title>Monika Curto Fuentes {% block extra_title%}{% endblock %}</title>
+        <link rel="canonical" href="{{ request.build_absolute_uri }}">
         <meta name="description" content="Monika Curto Fuentes, Female Polish Artist Painter in Germany, Online art gallery and shop">
         <meta name="keywords" 
             content="monika curto fuentes, polish girl painting, polish artist, paintings online, polish painter, 
@@ -95,7 +96,7 @@
                 </div>
 
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                    <div class="top-nav list-inline list-unstyled text-center text-lg-right my-0 d-none d-lg-block">
+                    <div class="top-nav list-inline list-unstyled text-center text-lg-right my-0 d-none d-lg-block hide-on-md-up">
                         <!-- My Account menu -->
                         {% include 'includes/sub-my-account.html' %}
                         <!-- Bag link -->

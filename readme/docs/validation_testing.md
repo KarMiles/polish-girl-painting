@@ -71,8 +71,8 @@ Testing for accessibility of the site was carried out with the employment of [WA
     <img src="./images/testing/validation/validation-accessibility-home.jpg">
 </details>
 <details>
-    <summary>Gallery</summary>
      <!-- #TODO [#2](https://github.com/KarMiles/polish-girl-painting/issues/2) -->
+    <summary>Gallery</summary>
     <img src="./images/testing/validation/validation-accessibility-products.jpg">
 </details>
 <details>
@@ -88,12 +88,12 @@ Testing for accessibility of the site was carried out with the employment of [WA
     <img src="./images/testing/validation/validation-accessibility-contact.jpg">
 </details>
 <details>
-    <summary>Login</summary>
-    <img src="./images/testing/validation/validation-accessibility-login.jpg">
-</details>
-<details>
     <summary>Contact</summary>
     <img src="./images/testing/validation/validation-accessibility-contact.jpg">
+</details>
+<details>
+    <summary>Login</summary>
+    <img src="./images/testing/validation/validation-accessibility-login.jpg">
 </details>
 <details>
     <summary>404</summary>
@@ -104,26 +104,30 @@ Testing for accessibility of the site was carried out with the employment of [WA
 
 ### Performance
 Performance testing was done in [Lighthouse](https://developers.google.com/web/tools/lighthouse), part of the Google Chrome Developer Tools.
- All performance tests ended with score between 90-100.
+ Most performance tests ended with score between 80-100 with one below. Due to the fact that detailed graphics are important for presentation of art items this compromise has been accepted in case of the Gallery page.
 <details>
     <summary>Home</summary>
-    <img src="./images/testing/validation/validation-performance-index.jpg">
+    <img src="./images/testing/validation/validation-performance-home.jpg">
 </details>
 <details>
-    <summary>Polls</summary>
-    <img src="./images/testing/validation/validation-performance-polls.jpg">
+    <summary>Gallery</summary>
+    <img src="./images/testing/validation/validation-performance-products.jpg">
 </details>
 <details>
-    <summary>Login</summary>
-    <img src="./images/testing/validation/validation-performance-login.jpg">
+    <summary>Blog</summary>
+    <img src="./images/testing/validation/validation-performance-blog.jpg">
+</details>
+<details>
+    <summary>About</summary>
+    <img src="./images/testing/validation/validation-performance-testimonials.jpg">
 </details>
 <details>
     <summary>Contact</summary>
     <img src="./images/testing/validation/validation-performance-contact.jpg">
 </details>
 <details>
-    <summary>Booking</summary>
-    <img src="./images/testing/validation/validation-performance-booking.jpg">
+    <summary>Login</summary>
+    <img src="./images/testing/validation/validation-performance-login.jpg">
 </details>
 
 <br>
@@ -134,11 +138,9 @@ Performance testing was done in [Lighthouse](https://developers.google.com/web/t
 
 Pycodestyle validation tool has been used to identify and remedy errors in Python code with special attention to *unused variables* and *unused imports*.
 
-Setup for pycodestyle validation in contained in [setup.cfg](../setup.cfg) file.
-
 <details>
     <summary>Results</summary>
-    <img src="./images/testing/validation/validation-pycodestyle-result.jpg">
+    <img src="./images/testing/validation/validation-pycodestyle_results.jpg">
 </details>
 
 <br>
@@ -147,7 +149,8 @@ Setup for pycodestyle validation in contained in [setup.cfg](../setup.cfg) file.
 
 Pylint validation tool has been used to identify and remedy errors in Python code with special attention to *missing docstrings*.
 
-Setup for pycodestyle validation in contained in [.pylintrc](../.pylintrc) file.
+Setup for pycodestyle validation in contained in [.pylintrc](/.pylintrc) file.
+
 
 Ignored positives in this project:
 
@@ -155,21 +158,11 @@ Ignored positives in this project:
 
     ![Unused import env](./images/testing/validation/validation-pylint-env.jpg)
 
-- Too few public methods - ignored for consistency of the code among its various apps. This way even though the Poll form in CreatePollForm class is simpler than other forms in the project, it still utilizes the same mechanisms as the more complex ones. File: poll/forms.py
+- R0914: Too many local variables, R0912: Too many branches, Too many statements - ignored where number of variables were very close to recomended amounts (e.g. 16/15) and functions and classes were devided into clearly visible parts and appropriately described.
 
-- Unused argument 'request' - ignored as most likely a false positive, in that the request needs to be passed to the function, as that's an argument that the function expects, even if it isn't directly accessed. File: booking/views.py 
+- R0801: Similar lines in 2 files - ignored due to different applications for the similar lines and reusing the code would not bare benefits in simplifying the code.
 
-    ```def post(self, _request):```
-
-- No value for argument 'request' in method call (no-value-for-parameter) - apparently pylint doesn't recognize data in new user form, as code works correctly this message has been disabled. File: accounts/views.py
-
-    <details>
-    <summary>Click here to see screenshot</summary>
-
-    ![Unused import env](./images/testing/validation/validation-pylint-request.jpg)
-    </details>
-
-- Attribute defined outside init - definition of delete function is derived directly from Django package and expanded by flash message upon success. File: blog/views.py
+- W0612: Unused variable init 
 
     <details>
     <summary>Click here to see screenshot</summary>

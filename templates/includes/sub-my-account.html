@@ -2,7 +2,17 @@
     <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
             <div><i class="far fa-user-circle"></i></div>
-            <p class="my-0">My Account</p>
+            <p class="my-0">
+                {% if request.user.is_authenticated %}
+                    {% if user.first_name %}
+                        {{ user.first_name }}
+                    {% else %}
+                        {{ user }}
+                    {% endif %}
+                {% else %}
+                    My Account
+                {% endif %}
+            </p>
         </div>
     </a>
     <div class="dropdown-menu border-0" aria-labelledby="user-options">
