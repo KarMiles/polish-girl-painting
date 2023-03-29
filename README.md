@@ -1741,7 +1741,7 @@ For development of this webpage elements of Agile software development methodolo
 - HTML Markup Validation Service (https://validator.w3.org/) - for validating HTML code.
 - CSS Validation Service (https://jigsaw.w3.org/css-validator/) - for validating CSS code.
 - JSHint (https://jshint.com/) - for validating JavaScript code.
-- PEP8 Online Validation Service: (http://pep8online.com) - for validating Python code.
+- PEP8 Code Institute Python Linter: (https://pep8ci.herokuapp.com/) - for validating Python code.
 - Unittest (https://docs.djangoproject.com/en/3.2/topics/testing/overview/) - for Python unit testing
 - Google Chrome Developer Tools - built-in developer tools used to inspect page elements and help debug issues with the website functionality and layout.
 

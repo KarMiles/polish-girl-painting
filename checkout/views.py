@@ -175,7 +175,8 @@ def checkout(request):
             Did you forget to set it in your environment?')
 
     checkout_live_setting = CheckoutSettings.objects.order_by('-id').first()
-    checkout_is_live = checkout_live_setting is None or checkout_live_setting.live
+    checkout_is_live = checkout_live_setting is None \
+        or checkout_live_setting.live
 
     template = 'checkout/checkout.html'
     context = {

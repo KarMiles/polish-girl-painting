@@ -10,7 +10,8 @@ from .models import OrderLineItem
 
 
 @receiver(post_save, sender=OrderLineItem)
-def update_on_save(sender, instance, created, **kwargs):  # pylint: disable=W0613
+def update_on_save(
+        sender, instance, created, **kwargs):  # pylint: disable=W0613
     """
     Update order total on lineitem update/create.
     Functioon which handles signals

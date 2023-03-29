@@ -50,7 +50,8 @@ class UserProfile(models.Model):
 
 
 @receiver(post_save, sender=User)
-def create_or_update_user_profile(sender, instance, created, **kwargs):  # pylint: disable=W0613
+def create_or_update_user_profile(
+        sender, instance, created, **kwargs):  # pylint: disable=W0613
     """
     Create or update the user profile
     """

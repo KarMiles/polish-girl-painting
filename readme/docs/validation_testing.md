@@ -162,37 +162,43 @@ Ignored positives in this project:
 
 - R0801: Similar lines in 2 files - ignored due to different applications for the similar lines and reusing the code would not bare benefits in simplifying the code.
 
-- W0612: Unused variable init 
-
-    <details>
-    <summary>Click here to see screenshot</summary>
-
-    ![Unused import env](./images/testing/validation/validation-pylint-delete.jpg)
-    </details>
 
 <br>
 
 **PEP8 Online**
 
-For testing Python code PEP8 Online service was used. All tests resulted with "All right" status.
+During production ```pycodestyle``` was used for linting the code.
+
+For testing the Python code [CI Python Linter](https://pep8ci.herokuapp.com/) online service was used. All tests resulted with "All clear" status.
+
+bag
 
 <details>
-<summary>accounts/apps.py</summary>
+<summary>bag/apps.py</summary>
 
-![screenshot](./images/testing/pep8/accounts_apps.jpg)
+![screenshot](./images/testing/pep8/bag_apps.jpg)
 </details>
 
 <details>
-<summary>accounts/forms.py</summary>
+<summary>bag/contexts.py</summary>
 
-![screenshot](./images/testing/pep8/accounts_forms.jpg)
+![screenshot](./images/testing/pep8/bag_contexts.jpg)
 </details>
 
 <details>
-<summary>accounts/views.py</summary>
+<summary>bag/views.py</summary>
 
-![screenshot](./images/testing/pep8/accounts_views.jpg)
+![screenshot](./images/testing/pep8/bag_views.jpg)
 </details>
+
+<details>
+<summary>bag/urls.py</summary>
+
+![screenshot](./images/testing/pep8/bag_urls.jpg)
+</details>
+<br>
+
+blog
 
 <details>
 <summary>blog/admin.py</summary>
@@ -229,42 +235,60 @@ For testing Python code PEP8 Online service was used. All tests resulted with "A
 
 ![screenshot](./images/testing/pep8/blog_views.jpg)
 </details>
+<br>
+
+checkout
 
 <details>
-<summary>booking/admin.py</summary>
+<summary>checkout/admin.py</summary>
 
-![screenshot](./images/testing/pep8/booking_admin.jpg)
+![screenshot](./images/testing/pep8/checkout_admin.jpg)
 </details>
 
 <details>
-<summary>booking/apps.py</summary>
+<summary>checkout/apps.py</summary>
 
-![screenshot](./images/testing/pep8/booking_apps.jpg)
+![screenshot](./images/testing/pep8/checkout_apps.jpg)
 </details>
 
 <details>
-<summary>booking/forms.py</summary>
+<summary>checkout/forms.py</summary>
 
-![screenshot](./images/testing/pep8/booking_forms.jpg)
+![screenshot](./images/testing/pep8/checkout_forms.jpg)
 </details>
 
 <details>
-<summary>booking/models.py</summary>
+<summary>checkout/models.py</summary>
 
-![screenshot](./images/testing/pep8/booking_models.jpg)
+![screenshot](./images/testing/pep8/checkout_models.jpg)
 </details>
 
 <details>
-<summary>booking/urls.py</summary>
+<summary>checkout/signals.py</summary>
 
-![screenshot](./images/testing/pep8/booking_urls.jpg)
+![screenshot](./images/testing/pep8/checkout_signals.jpg)
 </details>
 
 <details>
-<summary>booking/views.py</summary>
+<summary>checkout/urls.py</summary>
 
-![screenshot](./images/testing/pep8/booking_views.jpg)
+![screenshot](./images/testing/pep8/checkout_urls.jpg)
 </details>
+
+<details>
+<summary>checkout/views.py</summary>
+
+![screenshot](./images/testing/pep8/checkout_views.jpg)
+</details>
+
+<details>
+<summary>checkout/checkout_webhook_handler.py</summary>
+
+![screenshot](./images/testing/pep8/checkout_webhook_handler.jpg)
+</details>
+<br>
+
+contact
 
 <details>
 <summary>contact/admin.py</summary>
@@ -295,6 +319,9 @@ For testing Python code PEP8 Online service was used. All tests resulted with "A
 
 ![screenshot](./images/testing/pep8/contact_urls.jpg)
 </details>
+<br>
+
+helpers
 
 <details>
 <summary>helpers/views.py</summary>
@@ -303,43 +330,166 @@ For testing Python code PEP8 Online service was used. All tests resulted with "A
 </details>
 
 <details>
-<summary>physioproject/urls.py</summary>
+<summary>helpers/widgets.py</summary>
 
-![screenshot](./images/testing/pep8/physioproject_urls.jpg)
+![screenshot](./images/testing/pep8/helpers_widgets.jpg)
+</details>
+<br>
+
+home
+
+<details>
+<summary>home/admin.py</summary>
+
+![screenshot](./images/testing/pep8/home_admin.jpg)
 </details>
 
 <details>
-<summary>poll/admin.py</summary>
+<summary>home/apps.py</summary>
 
-![screenshot](./images/testing/pep8/poll_admin.jpg)
+![screenshot](./images/testing/pep8/home_apps.jpg)
 </details>
 
 <details>
-<summary>poll/apps.py</summary>
+<summary>home/models.py</summary>
 
-![screenshot](./images/testing/pep8/poll_apps.jpg)
+![screenshot](./images/testing/pep8/home_models.jpg)
 </details>
 
 <details>
-<summary>poll/forms.py</summary>
+<summary>home/urls.py</summary>
 
-![screenshot](./images/testing/pep8/poll_forms.jpg)
+![screenshot](./images/testing/pep8/home_urls.jpg)
 </details>
 
 <details>
-<summary>poll/models.py</summary>
+<summary>home/views.py</summary>
 
-![screenshot](./images/testing/pep8/poll_models.jpg)
+![screenshot](./images/testing/pep8/home_views.jpg)
+</details>
+<br>
+
+pgp_project
+
+<details>
+<summary>pgp_project/urls.py</summary>
+
+![screenshot](./images/testing/pep8/pgp_project_urls.jpg)
+</details>
+<br>
+
+products
+
+<details>
+<summary>products/admin.py</summary>
+
+![screenshot](./images/testing/pep8/products_admin.jpg)
 </details>
 
 <details>
-<summary>poll/urls.py</summary>
+<summary>products/apps.py</summary>
 
-![screenshot](./images/testing/pep8/poll_urls.jpg)
+![screenshot](./images/testing/pep8/products_apps.jpg)
 </details>
 
 <details>
-<summary>poll/views.py</summary>
+<summary>products/forms.py</summary>
 
-![screenshot](./images/testing/pep8/poll_views.jpg)
+![screenshot](./images/testing/pep8/products_forms.jpg)
+</details>
+
+<details>
+<summary>products/models.py</summary>
+
+![screenshot](./images/testing/pep8/products_models.jpg)
+</details>
+
+<details>
+<summary>products/urls.py</summary>
+
+![screenshot](./images/testing/pep8/products_urls.jpg)
+</details>
+
+<details>
+<summary>products/views.py</summary>
+
+![screenshot](./images/testing/pep8/products_views.jpg)
+</details>
+
+<details>
+<summary>products/widgets.py</summary>
+
+![screenshot](./images/testing/pep8/products_widgets.jpg)
+</details>
+<br>
+
+profiles
+
+<details>
+<summary>profiles/apps.py</summary>
+
+![screenshot](./images/testing/pep8/profiles_apps.jpg)
+</details>
+
+<details>
+<summary>profiles/forms.py</summary>
+
+![screenshot](./images/testing/pep8/profiles_forms.jpg)
+</details>
+
+<details>
+<summary>profiles/models.py</summary>
+
+![screenshot](./images/testing/pep8/profiles_models.jpg)
+</details>
+
+<details>
+<summary>profiles/urls.py</summary>
+
+![screenshot](./images/testing/pep8/profiles_urls.jpg)
+</details>
+
+<details>
+<summary>profiles/views.py</summary>
+
+![screenshot](./images/testing/pep8/profiles_views.jpg)
+</details>
+<br>
+
+testimonials
+
+<details>
+<summary>testimonials/admin.py</summary>
+
+![screenshot](./images/testing/pep8/testimonials_admin.jpg)
+</details>
+
+<details>
+<summary>testimonials/apps.py</summary>
+
+![screenshot](./images/testing/pep8/testimonials_apps.jpg)
+</details>
+
+<details>
+<summary>testimonials/forms.py</summary>
+
+![screenshot](./images/testing/pep8/testimonials_forms.jpg)
+</details>
+
+<details>
+<summary>testimonials/models.py</summary>
+
+![screenshot](./images/testing/pep8/testimonials_models.jpg)
+</details>
+
+<details>
+<summary>testimonials/urls.py</summary>
+
+![screenshot](./images/testing/pep8/testimonials_urls.jpg)
+</details>
+
+<details>
+<summary>testimonials/views.py</summary>
+
+![screenshot](./images/testing/pep8/testimonials_views.jpg)
 </details>
