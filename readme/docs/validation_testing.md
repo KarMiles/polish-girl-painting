@@ -14,7 +14,7 @@ No errors or warnings were found by [W3C Markup Validator](https://validator.w3.
 </details>
 <details>
     <summary>Gallery</summary>
-    <img src="./images/testing/validation/validation-html-gallery.jpg">
+    <img src="./images/testing/validation/validation-html-products.jpg">
 </details>
 <details>
     <summary>Blog</summary>

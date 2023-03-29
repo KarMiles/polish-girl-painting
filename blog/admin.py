@@ -32,9 +32,6 @@ class PostAdmin(SummernoteModelAdmin):
         'live',
         'highlight')
 
-# Decoration replaces class:
-# admin.site.register(Post)
-
 
 @admin.register(BlogSettings)
 class SettingsAdmin(admin.ModelAdmin):

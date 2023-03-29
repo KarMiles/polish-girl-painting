@@ -19,6 +19,7 @@ class TestimonialsAdmin(admin.ModelAdmin):
     list_display = (
         'title',
         'live',
+        'priority',
         'created_on',
         'updated_on')
     search_fields = [
@@ -26,3 +27,17 @@ class TestimonialsAdmin(admin.ModelAdmin):
         'content']
     list_filter = (
         'live',)
+
+    actions = ['make_live', 'make_not_live']
+
+    def make_live(self, _request, queryset):
+        """
+        Change status of a post to live (live True)
+        """
+        queryset.update(live=True)
+
+    def make_not_live(self, _request, queryset):
+        """
+        Change status of a post to live (live True)
+        """
+        queryset.update(live=False)
