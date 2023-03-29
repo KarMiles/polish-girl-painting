@@ -68,6 +68,8 @@
 
             <!-- Main navbar -->
             <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+
+                <!-- Logo-styled name -->
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                     <a href="{% url 'home' %}" class="nav-link main-logo-link" rel="noopener">
                         <h2 class="logo-font text-black my-0">
@@ -75,9 +77,9 @@
                         </h2>
                     </a>
                 </div>
-                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
 
-                    <!-- Search box -->
+                <!-- Search box -->
+                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                     <form method="GET" action="{% url 'products' %}">
                         <div class="input-group w-100">
                             <input type="text" class="form-control border border-secondary corners top-nav" name="q" placeholder="Search my site" id="search">
@@ -92,7 +94,6 @@
                             </div>
                         </div>
                     </form>
-
                 </div>
 
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
@@ -102,6 +103,13 @@
                         <!-- Bag link -->
                         {% include 'includes/sub-bag.html' %}
                     </div>
+
+                    
+                    <!-- My Account menu -->
+                    <div class="d-block d-lg-none">
+                        {% include 'includes/sub-my-account.html' %}
+                    </div>
+
                 </div>
             </div>
 

@@ -1,10 +1,14 @@
 <div class="list-inline-item top-nav">
+
+    <!-- Mobile search -->
     <a class="text-black nav-link d-block d-lg-none" href="#" id="mobile-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
             <div><i class="fas fa-search fa-lg"></i></div>
             <p class="my-0">Search</p>
         </div>
     </a>
+
+    <!-- Search box -->
     <div class="dropdown-menu border-0 w-100 p-3 corners my-0" aria-labelledby="mobile-search">
         <form class="form" method="GET" action="{% url 'products' %}">
             <div class="input-group w-100">
@@ -21,6 +25,7 @@
             </div>
         </form>
     </div>
+
 </div>
 
 <!-- My Account menu -->
