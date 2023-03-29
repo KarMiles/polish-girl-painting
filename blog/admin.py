@@ -32,6 +32,20 @@ class PostAdmin(SummernoteModelAdmin):
         'live',
         'highlight')
 
+    actions = ['make_live', 'make_not_live']
+
+    def make_live(self, _request, queryset):
+        """
+        Change status of a post to live (live True)
+        """
+        queryset.update(live=True)
+
+    def make_not_live(self, _request, queryset):
+        """
+        Change status of a post to live (live True)
+        """
+        queryset.update(live=False)
+
 
 @admin.register(BlogSettings)
 class SettingsAdmin(admin.ModelAdmin):
