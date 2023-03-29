@@ -265,7 +265,7 @@ STANDARD_DELIVERY_PERCENTAGE = 10
 DELIVERY_MIN_CHARGE = 2
 
 # Email
-if 'DEVELOPMENT' in os.environ:
+if 'DEBUG' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     DEFAULT_FROM_EMAIL = 'monikacurtofuentes@monikaexample.com'
 else:
