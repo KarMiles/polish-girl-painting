@@ -733,6 +733,8 @@ Registered clients have a possibility of checking and updating user information 
 
 Staff users' authorisation is expanded by reading, adding, editing and deleting information related to products, blogs and testimonies. This is supported by appropriate links throughout the website.
 
+After logging in the expression My Account is replaced by the user's first name or username if the former is not available. This gives the user a clear indication about their login status.
+
 My Account - unregistered user:
 <details>
 <summary>Click here to view image </summary>
