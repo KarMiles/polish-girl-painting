@@ -26,7 +26,7 @@ No errors or warnings were found by [W3C Markup Validator](https://validator.w3.
 </details>
 <details>
     <summary>About</summary>
-    <img src="./images/testing/validation/validation-html-about.jpg">
+    <img src="./images/testing/validation/validation-html-testimonials.jpg">
 </details>
 <details>
     <summary>Login</summary>
