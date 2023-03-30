@@ -10,7 +10,7 @@ Creation of the functioning application was carried in stages:
 
 ## GitHub
 
-The program was built using GitHub repository. GitHub clone and GitHub branch methods could be used although were not needed for this project.
+The site was built using GitHub repository. GitHub clone and GitHub branch methods could be used although were not needed for this project.
 
 Repository may be forked in the following steps:
 1. Go to GitHub repository,
@@ -67,13 +67,18 @@ Instantiation of PostgreSQL databases required the following steps:
     - Select region,
     - confirm.
 
-
     <details>
     <summary>Click here to see screenshots</summary>
 
+    Select a plan and name:
+
     ![screenshot](./images/deployment/elephantsql/elephantsql_5_setup_name.jpg)
 
+    Select region:
+
     ![screenshot](./images/deployment/elephantsql/elephantsql_5a_region.jpg)
+
+    Confirm:
 
     ![screenshot](./images/deployment/elephantsql/elephantsql_5b_confirm.jpg)
     </details>
@@ -86,16 +91,13 @@ Instantiation of PostgreSQL databases required the following steps:
     ![screenshot](./images/deployment/elephantsql/elephantsql_6_list.jpg)
     </details>
 
-7. Details.
+7. In Details section information like URL and API key necessary for setting up the connection can be found.
 
     <details>
     <summary>Click here to see screenshot</summary>
 
     ![screenshot](./images/deployment/elephantsql/elephantsql_7_details.jpg)
     </details>
-
-
-
 
 
 ## Heroku
@@ -174,13 +176,128 @@ This application is deployed from GitHub using Heroku in following steps:
     ![screenshot](./images/deployment/heroku/heroku_branch.jpg)
     </details>
 
-10. Clicking "Enable Automatic Deploys" will keep the app updated with GitHub repository. This feature is not used for this project.
+10. Clicking "Enable Automatic Deploys" will keep the app updated with GitHub repository. This feature was used for this project.
 
     <details>
     <summary>Click here to see screenshot</summary>
 
     ![screenshot](./images/deployment/heroku/heroku_automatic.jpg)
     </details>
+
+## Project preparation for Gitpod
+
+With:
+- the database instantiated in ElephantSQL and 
+- app created on Heroku 
+
+it was possible to set up this project to:
+- connect to the ElephantSQL database, 
+- create database tables by running migrations, 
+- add shops fixtures, and 
+- confirm that it all works by creating a superuser.
+
+**Gitpod**
+
+While in Gitpod the bellow steps were followed:
+
+1. In the terminal, install dj_database_url and psycopg2, both of these are needed to connect to the external database:
+    ```
+    pip3 install dj_database_url==0.5.0 psycopg2
+    ```
+2. Update  requirements.txt file with the newly installed packages:
+    ```
+    pip freeze > requirements.txt
+    ```
+3. In settings.py file, import dj_database_url underneath the import for os:
+    ```
+    import os
+    import dj_database_url
+    ```
+4. Update the DATABASES to the following code, so that the original connection to sqlite3 is commented out and we connect to the new ElephantSQL database instead. Paste in your ElephantSQL database URL in the position indicated
+    ```
+    # DATABASES = {
+    #     'default': {
+    #         'ENGINE': 'django.db.backends.sqlite3',
+    #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    #     }
+    # }
+            
+    DATABASES = {
+        'default': dj_database_url.parse('database-url-here')
+    }
+    ```
+
+    The settings.py file was not committed with this database string in the code, as it was temporary so that I could connect to the new database and make migrations. It was removed thereafter.
+
+5. In the terminal, run the showmigrations command to confirm you are connected to the external database:
+    ```
+    python3 manage.py showmigrations
+    ```
+    If you are, a list of all migrations should appear, but none of them checked off.
+
+6. Migrate your database models to your new database
+    ```
+    python3 manage.py migrate
+    ```
+7. Load in the fixtures. The order is very important here. Categories need to be loaded first, only then products.
+    ```
+    python3 manage.py loaddata categories
+    python3 manage.py loaddata products
+    ```
+8. Create a superuser for the new database
+    ```
+    python3 manage.py createsuperuser
+    ```
+9.  To prevent exposing the database when pushing to GitHub, delete it again from the settings.py file. The temporary setting for the database is as below. The eventual setting for the database is as described in the Configuration variables section of this document.
+    ```
+     DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+    ```
+
+**ElephantSQL**
+
+Confirming migrations
+
+Next step was to confirm that the data in my database on ElephantSQL has been created. This was done in the following steps:
+
+1. On the ElephantSQL page for the chosen database (shown on top of the page), in the left side navigation, select BROWSER.
+
+    <details>
+    <summary>Click here to see screenshot</summary>
+
+    ![screenshot](./images/deployment/elephantsql/elephantsql_8_browser.jpg)
+    </details>
+
+2. Click the Table queries button, select auth_user.
+
+    <details>
+    <summary>Click here to see screenshot</summary>
+
+    ![screenshot](./images/deployment/elephantsql/elephantsql_9_auth_user.jpg)
+    </details>
+
+3. When clicked “Execute”, newly created superuser details displayed (and other users if this is done in further stages of the project). This confirms the tables have been created and you can add data to your database.
+
+    Execute:
+    <details>
+    <summary>Click here to see screenshot</summary>
+
+    ![screenshot](./images/deployment/elephantsql/elephantsql_10_execute.jpg)
+    </details>
+
+    Result:
+    <details>
+    <summary>Click here to see screenshot</summary>
+
+    ![screenshot](./images/deployment/elephantsql/elephantsql_11_success.jpg)
+    </details>
+
+
+
 
 ## Configuration variables
 

@@ -1732,18 +1732,9 @@ For development of this webpage elements of Agile software development methodolo
 - Stripe (https://stripe.com/docs) - used for management of e-commerce transactions
 
 ### Data storage
-- Cloudinary (https://cloudinary.com) - service used for storing and access to dynamic images.
-- Postgres (https://www.postgresql.org/) - the deployed project on Heroku uses the Postgres database.
-- AWS Amazon (https://aws.amazon.com/) - service added for Heroku deployment for static and dynamic files.
-- SQLite (https://www.sqlite.org/) - used as local database.
-
-### Validation
-- HTML Markup Validation Service (https://validator.w3.org/) - for validating HTML code.
-- CSS Validation Service (https://jigsaw.w3.org/css-validator/) - for validating CSS code.
-- JSHint (https://jshint.com/) - for validating JavaScript code.
-- PEP8 Code Institute Python Linter: (https://pep8ci.herokuapp.com/) - for validating Python code.
-- Unittest (https://docs.djangoproject.com/en/3.2/topics/testing/overview/) - for Python unit testing
-- Google Chrome Developer Tools - built-in developer tools used to inspect page elements and help debug issues with the website functionality and layout.
+- SQLite (https://www.sqlite.org/) - used as a local database.
+- Postgres (https://www.postgresql.org/) - the deployed project on Heroku uses the Postgres database on [ElephantSQL](https://www.elephantsql.com/) cloud service.
+- AWS Amazon (https://aws.amazon.com/) - service added to Heroku deployment for hosting static and dynamic files.
 
 ### Design stages
 - Lucidchart (www.lucidchart.com/) - used to create flowcharts.
@@ -1755,6 +1746,14 @@ For development of this webpage elements of Agile software development methodolo
 - Font Awesome (https://fontawesome.com/) - all the icons throughout the website are derived from this service.
 - Coolors.co (https://coolors.co/) - for generating colour palette for the website.
 - SmallPDF (https://smallpdf.com/) - PDF to jpg file conversion.
+
+### Validation
+- HTML Markup Validation Service (https://validator.w3.org/) - for validating HTML code.
+- CSS Validation Service (https://jigsaw.w3.org/css-validator/) - for validating CSS code.
+- JSHint (https://jshint.com/) - for validating JavaScript code.
+- CI Python Linter (https://pep8ci.herokuapp.com/) - for validating Python code.
+- Unittest (https://docs.djangoproject.com/en/3.2/topics/testing/overview/) - for Python unit testing
+- Google Chrome Developer Tools - built-in developer tools used to inspect page elements and help debug issues with the website functionality and layout.
 
 ### Marketing and SEO
 - [Google Keyword Planner](https://ads.google.com/home/tools/keyword-planner/) - for selecting keywords.
@@ -1772,7 +1771,6 @@ Third-party libraries were used for this project:
     - from django.contrib import admin - for managing functionality of the admin page.
     - from django import forms - used for Django forms
     - from django.contrib import messages - used for temporary on-screen messages.
-    - from django.contrib.auth.tokens import PasswordResetTokenGenerator - used for secure communication.
     - from django.contrib.auth.models import User - for utilizing Django built-in User model functionality.
     - from django.db import models - for utilizing model structure.
     - from django.shortcuts import render - for rendering a page as a result of running a function.
@@ -1789,7 +1787,7 @@ Third-party libraries were used for this project:
     - from django_contact_form.views import ContactFormView - when utilizing a custom form class, used to manually set up URLs to tell django-contact-form about the form class.
 
 Class-based views (CBV) provide a way to implement views as Python objects rather than functions.
-CBV are predominantly used in this project for the following reasons:
+CBV are predominantly, but not exclusively, used in this project for the following reasons:
 - Code reusability - a view class can be inherited by another view class and modified in a different use case.
 - DRY, which stands for 'don't repeat yourself' - CBV helps to reduce code duplication
 - Code extendibility - CBV can be extended to include more functionalities using Mixins
@@ -1802,6 +1800,7 @@ ___
 # 7. Credits <a name="credits"></a>
 
 ### Coding ideas, examples and tutorials
+- [Code Institute](https://codeinstitute.net/) - this project was strongly enspired by the Institute's educational materials, especially Boutique Ado project.
 - [Djangocentral](https://djangocentral.com/building-a-blog-application-with-django/) - blog setup ideas
 - [Stackoverflow](https://stackoverflow.com/questions/13304149/what-the-difference-between-using-django-redirect-and-httpresponseredirect) - redirect, HttpResponseRedirect and as resource for addressing coding challenges during production process.
 - [Stackoverflow](https://stackoverflow.com/questions/71886688/getting-attributeerror-testcase-object-has-no-attribute-asserttemplateused) - assertTemplateUsed for unittest.
@@ -1829,5 +1828,5 @@ ___
 I would like to thank everyone who contributed to development of this project, especially:
 - The artist Monika Curto Fuentes for letting me use representations of her art collection and her very warm cooperation in carrying this project to its successful completion.
 - My mentor Mo Shami for his invaluable guidance and advice.
-- Educational Team at [Code Institute](https://codeinstitute.net/) for all educational materials and Tutor support which made this project possible.
+- Educational Team at [Code Institute](https://codeinstitute.net/) for all educational materials and Tutor support which made this project possible. 
 - All visual artists and coders who make products of their work available to others online.
