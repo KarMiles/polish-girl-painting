@@ -2,6 +2,12 @@
 
 [Click here for Readme file](/README.md#deployment)
 
+Creation of the functioning application was carried in stages:
+- coding on [Gitpod](https://www.gitpod.io/) and Microsoft [Visual Studio Code](https://code.visualstudio.com/), with [GitHub](https://github.com/) repository,
+- deployment on [Heroku](https://www.heroku.com/), PostresSQL-as-a-service - based cloud platform, 
+- creation of external PostgreSQL database on [ElephantSQL](https://www.elephantsql.com/),
+- setting up hosting for the static and media files with [Amazon Web Services](https://aws.amazon.com/)  S3 (Simple Storage Service).
+
 ## GitHub
 
 The program was built using GitHub repository. GitHub clone and GitHub branch methods could be used although were not needed for this project.
@@ -20,6 +26,78 @@ Steps for cloning repository:
 
 During part of production process both [GitPod](https://gitpod.io/) and the program [Visual Studio Code](https://code.visualstudio.com) were used. The latter was not strictly necessary but provided smoother production in times of poor Internet connection and provided extra level of assurance in form of local copy of all files.
 
+## ElephantSQL
+
+Instantiation of PostgreSQL databases required the following steps:
+
+1. Create an account on [ElephantSQL](https://www.elephantsql.com/) and click "Create a managed database today.
+
+    <details>
+    <summary>Click here to see screenshot</summary>
+
+    ![screenshot](./images/deployment/elephantsql/elephantsql_1_create_account.jpg)
+    </details>
+
+2. Select TINY TURTLE database plan by clicking "Try now for FREE" button.
+
+    <details>
+    <summary>Click here to see screenshot</summary>
+
+    ![screenshot](./images/deployment/elephantsql/elephantsql_2_select_plan.jpg)
+    </details>
+
+3. Select “Sign in with GitHub” and authorize ElephantSQL with your selected GitHub account.
+
+    <details>
+    <summary>Click here to see screenshot</summary>
+
+    ![screenshot](./images/deployment/elephantsql/elephantsql_3_sign_in.jpg)
+    </details>
+
+4. Select “Sign in with GitHub” and authorize ElephantSQL with your selected GitHub account. Verification by code sent by email may be required.
+
+    <details>
+    <summary>Click here to see screenshot</summary>
+
+    ![screenshot](./images/deployment/elephantsql/elephantsql_4_sign_in.jpg)
+    </details>
+
+5. In "Create new instance" section setup details of your account:
+    - Select a plan and name,
+    - Select region,
+    - confirm.
+
+
+    <details>
+    <summary>Click here to see screenshots</summary>
+
+    ![screenshot](./images/deployment/elephantsql/elephantsql_5_setup_name.jpg)
+
+    ![screenshot](./images/deployment/elephantsql/elephantsql_5a_region.jpg)
+
+    ![screenshot](./images/deployment/elephantsql/elephantsql_5b_confirm.jpg)
+    </details>
+
+6. After creation of the instance it is shown on the list of available instances. Clicking on the name redirects user to details, returning to editing the instance is possible after clicking on Edit button.
+
+    <details>
+    <summary>Click here to see screenshot</summary>
+
+    ![screenshot](./images/deployment/elephantsql/elephantsql_6_list.jpg)
+    </details>
+
+7. Details.
+
+    <details>
+    <summary>Click here to see screenshot</summary>
+
+    ![screenshot](./images/deployment/elephantsql/elephantsql_7_details.jpg)
+    </details>
+
+
+
+
+
 ## Heroku
 
 This application is deployed from GitHub using Heroku in following steps:
@@ -29,7 +107,7 @@ This application is deployed from GitHub using Heroku in following steps:
     <details>
     <summary>Click here to see screenshot</summary>
 
-    ![screenshot](./images/testing/deployment/heroku_signup.jpg)
+    ![screenshot](./images/deployment/heroku/heroku_signup.jpg)
     </details>
 
 2. Create new app by clicking "New" and then "Create new app".
@@ -37,7 +115,7 @@ This application is deployed from GitHub using Heroku in following steps:
     <details>
     <summary>Click here to see screenshot</summary>
 
-    ![screenshot](./images/testing/deployment/heroku_create_new_app.jpg)
+    ![screenshot](./images/deployment/heroku/heroku_create_new_app.jpg)
     </details>
 
 3. Add app name and region and click on "Create app".
@@ -45,7 +123,7 @@ This application is deployed from GitHub using Heroku in following steps:
     <details>
     <summary>Click here to see screenshot</summary>
 
-    ![screenshot](./images/testing/deployment/heroku_create_name_region.jpg)
+    ![screenshot](./images/deployment/heroku/heroku_create_name_region.jpg)
     </details>
 
 4. Choose "Settings".
@@ -53,7 +131,7 @@ This application is deployed from GitHub using Heroku in following steps:
     <details>
     <summary>Click here to see screenshot</summary>
 
-    ![screenshot](./images/testing/deployment/heroku_settings.jpg)
+    ![screenshot](./images/deployment/heroku/heroku_settings.jpg)
     </details>
 
 5. Under "Config Vars" add credentials, e.g. creds.json, secret key.
@@ -61,7 +139,7 @@ This application is deployed from GitHub using Heroku in following steps:
     <details>
     <summary>Click here to see screenshot</summary>
 
-    ![screenshot](./images/testing/deployment/heroku_config_vars.jpg)
+    ![screenshot](./images/deployment/heroku/heroku_config_vars.jpg)
     </details>
 
 6. Set buildpacks by selecting "Add buildpacks" (I then chose "Python") and "Save changes".
@@ -69,7 +147,7 @@ This application is deployed from GitHub using Heroku in following steps:
     <details>
     <summary>Click here to see screenshot</summary>
 
-    ![screenshot](./images/testing/deployment/heroku_buildpacks.jpg)
+    ![screenshot](./images/deployment/heroku/heroku_buildpacks.jpg)
     </details>
 
 7. Go to "Deploy", at "Deployment method" click "Connect to GitHub" and confirm.
@@ -77,7 +155,7 @@ This application is deployed from GitHub using Heroku in following steps:
     <details>
     <summary>Click here to see screenshot</summary>
 
-    ![screenshot](./images/testing/deployment/heroku_deploy.jpg)
+    ![screenshot](./images/deployment/heroku/heroku_deploy.jpg)
     </details>
 
 8. Enter repository name, click on it when it appears below.
@@ -85,7 +163,7 @@ This application is deployed from GitHub using Heroku in following steps:
     <details>
     <summary>Click here to see screenshot</summary>
 
-    ![screenshot](./images/testing/deployment/heroku_connect_repo.jpg)
+    ![screenshot](./images/deployment/heroku/heroku_connect_repo.jpg)
     </details>
 
 9. Select the branch for building the app.
@@ -93,7 +171,7 @@ This application is deployed from GitHub using Heroku in following steps:
     <details>
     <summary>Click here to see screenshot</summary>
 
-    ![screenshot](./images/testing/deployment/heroku_branch.jpg)
+    ![screenshot](./images/deployment/heroku/heroku_branch.jpg)
     </details>
 
 10. Clicking "Enable Automatic Deploys" will keep the app updated with GitHub repository. This feature is not used for this project.
@@ -101,10 +179,12 @@ This application is deployed from GitHub using Heroku in following steps:
     <details>
     <summary>Click here to see screenshot</summary>
 
-    ![screenshot](./images/testing/deployment/heroku_automatic.jpg)
+    ![screenshot](./images/deployment/heroku/heroku_automatic.jpg)
     </details>
 
-Ad. 5. Config Vars and coresponding keys in project files for this project:
+## Configuration variables
+
+Config Vars and coresponding keys in project files for this project:
 
 | Config Vars in Heroku                         | env.py                                            | settings.py                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | --------------------------------------------- | ------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
