@@ -1822,7 +1822,7 @@ ___
 ### Other tools
 - [Table to Markdown](https://tabletomarkdown.com/) - table conversion to Markdown.
 - [TableConvert](https://tableconvert.com/excel-to-markdown) - table conversion to Markdown.
-- [LambdaTest](https://www.lambdatest.com/) - simulated Safari browser testing.
+- [Mini Web Tool](https://miniwebtool.com/django-secret-key-generator/) - for generating secret keys
 
 ## Acknowledgements
 I would like to thank everyone who contributed to development of this project, especially:
