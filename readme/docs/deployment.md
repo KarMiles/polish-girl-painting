@@ -360,6 +360,67 @@ The following setup was made in Gitpod:
     DEBUG = os.environ.get('DEBUG', '1') == '1'
     ```
 
+## Amazon Web Services
+
+For storing static files and images for this project [Amazon Web Services](https://aws.amazon.com/)  S3 (Simple Storage Service) is used. Process of setting it up is descrbed below.
+
+1. Go to https://aws.amazon.com/ and create an account
+    - when on starting page click on "Create an AWS Account" button
+        <details>
+        <summary>Click here to see screenshot</summary>
+
+        ![screenshot](./images/deployment/aws/aws_create_account.jpg)
+        </details>
+    - fill in requested details and click "Verify email address" button
+        <details>
+        <summary>Click here to see screenshot</summary>
+
+        ![screenshot](./images/deployment/aws/aws_create_account_dets.jpg)
+        </details>
+    - confirm the email with verification code sent to your email address and press Continue
+        <details>
+        <summary>Click here to see screenshot</summary>
+
+        ![screenshot](./images/deployment/aws/aws_create_account_verification.jpg)
+        </details>
+    - enter contact details and press Continue
+        <details>
+        <summary>Click here to see screenshot</summary>
+
+        ![screenshot](./images/deployment/aws/aws_create_account_contact.jpg)
+        </details>
+    - enter billing details and press Verify and continue
+        <details>
+        <summary>Click here to see screenshot</summary>
+
+        ![screenshot](./images/deployment/aws/aws_create_account_contact.jpg)
+        </details>
+    - enter phone details and choose SMS or voice call to confirm identity and press 'Send SMS' or 'Call me now' and 'Confirm' after entering the verification code
+        <details>
+        <summary>Click here to see screenshot</summary>
+        Enter details:
+
+        ![screenshot](./images/deployment/aws/aws_create_account_conf_id.jpg)
+        Confirm identification with verification code:
+
+        ![screenshot](./images/deployment/aws/aws_create_account_conf_id2.jpg)
+        </details>
+    - select support plan and click 'Complete sign up'
+        <details>
+        <summary>Click here to see screenshot</summary>
+
+        ![screenshot](./images/deployment/aws/aws_create_account_select_plan.jpg)
+        </details>
+
+
+
+
+
+
+
+
+
+
 
 
 
