@@ -365,6 +365,7 @@ The following setup was made in Gitpod:
 For storing static files and images for this project [Amazon Web Services](https://aws.amazon.com/)  S3 (Simple Storage Service) is used. Process of setting it up is descrbed below.
 
 1. Go to https://aws.amazon.com/ and create an account
+
     - when on starting page click on "Create an AWS Account" button
         <details>
         <summary>Click here to see screenshot</summary>
@@ -412,10 +413,133 @@ For storing static files and images for this project [Amazon Web Services](https
         ![screenshot](./images/deployment/aws/aws_create_account_select_plan.jpg)
         </details>
 
+2. Go to https://aws.amazon.com/ and log in to your account
+    <details>
+    <summary>Click here to see screenshots</summary>
+    On welcome page click 'Sign in to the Console' button:
 
+    ![screenshot](./images/deployment/aws/aws_login.jpg)
 
+    Choose 'Root user', enter email and click Next to proceed:
+    ![screenshot](./images/deployment/aws/aws_login2.jpg)
 
+    Enter password:
+    ![screenshot](./images/deployment/aws/aws_login3.jpg)
+    </details>
+3. Go to S3 (which stands for Simple Storage Service). This can be done by clicking on 'Services', entering 's3' into a search box and clicking on the S3 option. 
+    <details>
+    <summary>Click here to see screenshot</summary>
 
+    ![screenshot](./images/deployment/aws/aws_enter_s3.jpg)
+    </details>
+4. Create a bucket. 
+    - Click 'Create bucket'
+        <details>
+        <summary>Click here to see screenshot</summary>
+        
+        ![screenshot](./images/deployment/aws/aws_create_bucket.jpg)
+        </details>
+    - Enter bucket name and select region. A bucket name 'aws-pgp-project' corresponding to Heroku app name 'heroku-pgp-project' and region close to my locality 'EU (Ireland) eu-west-1' were chosen.
+        <details>
+        <summary>Click here to see screenshot</summary>
+
+        ![screenshot](./images/deployment/aws/aws_create_bucket2.jpg)
+    - Allow for public access
+        <details>
+        <summary>Click here to see screenshot</summary>
+
+        ![screenshot](./images/deployment/aws/aws_create_bucket3_public_access.jpg)
+        </details>
+    - Other settings left default:
+        - ACLs disabled
+        - Bucket Versioning: Disable
+        - Tags(0)
+        - Default encryption: Amazon S3 managed keys (SSE-S3)
+        - Bucket Key: Enable
+        - Object Lock: Disable
+    - Click 'Create bucket' button.
+5. Set up the created bucket
+    - When in Amazon S3 > Buckets section pick the bucket from the list by clicking on its name
+        <details>
+        <summary>Click here to see screenshot</summary>
+
+        ![screenshot](./images/deployment/aws/aws_bucket_setup.jpg)
+        </details>
+    - Within the chosen bucket select 'Properties' tab
+        <details>
+        <summary>Click here to see screenshot</summary>
+
+        ![screenshot](./images/deployment/aws/aws_bucket_setup2_properties.jpg)
+        </details>
+    - In section 'Edit static website hosting' click 'Edit' and select options below and then click 'Save changes' button:
+        - Static website hosting: Enable
+        - Hosting type: Host a static website
+        - Index document: index.html
+        - Error document: error.html
+        <details>
+        <summary>Click here to see screenshot</summary>
+        Go to properties:
+
+        ![screenshot](./images/deployment/aws/aws_bucket_setup2_properties.jpg)
+        Select options:
+
+        ![screenshot](./images/deployment/aws/aws_bucket_setup3_static.jpg)
+        </details>
+    - Within the chosen bucket select 'Permissions' tab enter CORS configuration by going to 'Cross-origin resource sharing (CORS)' section and entering the configuration below. This configuration allows to set up the required access between my Heroku app and the corresponding S3 bucket. 
+        <details>
+        <summary>Click here to see details</summary>
+
+        ```
+        [
+            {
+                "AllowedHeaders": [
+                    "Authorization"
+                ],
+                "AllowedMethods": [
+                    "GET"
+                ],
+                "AllowedOrigins": [
+                    "*"
+                ],
+                "ExposeHeaders": []
+            }
+        ]
+        ```
+    - Within the chosen bucket select 'Bucket policy' sub-section and start 'Policy generator' to create security policy for this bucket. Setup for this policy is as follows:
+        - Type of Policy: S3 Bucket Policy
+        - Effect: Allow
+        - Principal: * (asterisk allows for all principals)
+        - AWS Service: Amazon S3
+        - Actions: GetObject
+        - Amazon Resource Name (ARN): arn:aws:s3:::aws-pgp-project (this can be copied from the 'Bucket Policy' tab)
+
+        After clicking 'Add Statement' the policy can be generated and copied into the Bucket Policy editor. To allow all resources in this bucket `/*` has been added at the end of ARN in 'Resource' key. Click 'Save'.
+        <details>
+        <summary>Click here to see details</summary>
+
+        ```
+        {
+            "Version": "2012-10-17",
+            "Id": "Policy1674476405576",
+            "Statement": [
+                {
+                    "Sid": "Stmt1674476401220",
+                    "Effect": "Allow",
+                    "Principal": "*",
+                    "Action": "s3:GetObject",
+                    "Resource": "arn:aws:s3:::aws-pgp-project/*"
+                }
+            ]
+        }
+        ```
+    The Bucket Policy and CORS configuration set up above allow full access to all resources in this bucket. 
+
+    - Within the chosen bucket in 'Permissions' tab go to 'Access control list (ACL)' and grant access permission to Objects List to everyone
+        <details>
+        <summary>Click here to see screenshot</summary>
+
+        ![screenshot](./images/deployment/aws/aws_bucket_setup4_acl.jpg)
+        </details>
 
 
 
