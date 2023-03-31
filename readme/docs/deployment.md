@@ -114,7 +114,7 @@ it was possible to set up this project to:
 
 **Gitpod**
 
-While in Gitpod the bellow steps were followed:
+While in Gitpod the following steps were taken:
 
 1. In the terminal, install dj_database_url and psycopg2, both of these are needed to connect to the external database (`pip` instead of `pip3` is used on [VSCode](https://code.visualstudio.com/)):
     ```
@@ -301,7 +301,7 @@ This application is deployed from GitHub using Heroku in following steps:
 
 **Gitpod**
 
-The following setup was made in Gitpod:
+In regards of deployment to Heroku the following setup was made in Gitpod:
 
 1. In settings.py file the following configuration allows for automatic use of appropriate database on Heroku (where DATABASE_URL variable is present) and outside of it:
 
@@ -360,9 +360,13 @@ The following setup was made in Gitpod:
     DEBUG = os.environ.get('DEBUG', '1') == '1'
     ```
 
+---
+
 ## Amazon Web Services
 
 For storing static files and images for this project [Amazon Web Services](https://aws.amazon.com/)  S3 (Simple Storage Service) is used. Process of setting it up is descrbed below.
+
+**Account**
 
 1. Go to https://aws.amazon.com/ and create an account
 
@@ -426,13 +430,16 @@ For storing static files and images for this project [Amazon Web Services](https
     Enter password:
     ![screenshot](./images/deployment/aws/aws_login3.jpg)
     </details>
-3. Go to S3 (which stands for Simple Storage Service). This can be done by clicking on 'Services', entering 's3' into a search box and clicking on the S3 option. 
+
+**S3: Bucket**
+
+1. Go to S3 (which stands for Simple Storage Service). This can be done by clicking on 'Services', entering 's3' into a search box and clicking on the S3 option. 
     <details>
     <summary>Click here to see screenshot</summary>
 
-    ![screenshot](./images/deployment/aws/aws_enter_s3.jpg)
+    ![screenshot](./images/deployment/aws/aws_s3_start.jpg)
     </details>
-4. Create a bucket. 
+2. Create a bucket. 
     - Click 'Create bucket'
         <details>
         <summary>Click here to see screenshot</summary>
@@ -450,15 +457,16 @@ For storing static files and images for this project [Amazon Web Services](https
 
         ![screenshot](./images/deployment/aws/aws_create_bucket3_public_access.jpg)
         </details>
-    - Other settings left default:
-        - ACLs disabled
+    - Other settings:
+        - ACLs: Enable
+        - Object Ownership: Bucket Owner preferred
         - Bucket Versioning: Disable
         - Tags(0)
         - Default encryption: Amazon S3 managed keys (SSE-S3)
         - Bucket Key: Enable
         - Object Lock: Disable
     - Click 'Create bucket' button.
-5. Set up the created bucket
+3. Set up the created bucket
     - When in Amazon S3 > Buckets section pick the bucket from the list by clicking on its name
         <details>
         <summary>Click here to see screenshot</summary>
@@ -541,12 +549,130 @@ For storing static files and images for this project [Amazon Web Services](https
         ![screenshot](./images/deployment/aws/aws_bucket_setup4_acl.jpg)
         </details>
 
+**IAM: Group, Access Policy, User**
+
+To access the AWS bucket a User needs to be created. This can be done with the service IAM (Identity and Access Management) following the steps bellow.
+
+1. Go to IAM. This can be done by clicking on 'Services', entering 'IAM' into a search box and clicking on the IAM option. 
+    <details>
+    <summary>Click here to see screenshot</summary>
+
+    ![screenshot](./images/deployment/aws/aws_iam_start.jpg)
+    </details>
+2. Create a Group for User to live in.
+    - In 'Identity and Access Management (IAM)' section go to 'Access Management' / 'User Groups' and click 'Create group' button. Enter name and click 'Create group' button.
+        <details>
+        <summary>Click here to see screenshots</summary>
+        Go to section:
+
+        ![screenshot](./images/deployment/aws/aws_iam_create_group.jpg)
+        Key in a name for the new Group. The Group's name chosen for this project is 'manage-pgp-project':
+        ![screenshot](./images/deployment/aws/aws_iam_create_group2.jpg)
+        </details>
+3. Create an Access Policy to give the Group access to the S3 Bucket created in the earlier stage. 
+    - This can be done by going to 'Policies' and clicking 'Create Policy' button. 
+        <details>
+        <summary>Click here to see screenshots</summary>
+        Go to section:
+
+        ![screenshot](./images/deployment/aws/aws_iam_create_policy.jpg)
+        </details>
+    - Select 'JSON' tab and click on 'Import managed policy' link:
+        <details>
+        <summary>Click here to see screenshots</summary>
+
+        ![screenshot](./images/deployment/aws/aws_iam_create_policy2_json.jpg)
+        </details>
+    - In 'Import managed policies' modal filter policies by expression 's3', select 'AmazonS3FullAccess' and click 'Import' button. It is a policy pre-built by AWS for full access to S3:
+        <details>
+        <summary>Click here to see screenshots</summary>
+
+        ![screenshot](./images/deployment/aws/aws_iam_create_policy3_import.jpg)
+        </details>
+    - Limit access to resources to the bucket created in previous step (first item in the list under "Resource" key) and all files and folders in this bucket (second item in the list). The JSON end result is as below. Click 'Next'.
+        <details>
+        <summary>Click here to see details</summary>
+
+            ```
+            {
+                "Version": "2012-10-17",
+                "Statement": [
+                    {
+                        "Effect": "Allow",
+                        "Action": [
+                            "s3:*",
+                            "s3-object-lambda:*"
+                        ],
+                        "Resource": [
+                            "arn:aws:s3:::aws-pgp-project",
+                            "arn:aws:s3:::aws-pgp-project/*"
+                        ]
+                    }
+                ]
+            }        
+            ```
+
+        </details>
+    - On 'Review policy' page enter name of the Policy (the name chosen in this project is 'amazon-pgp-project-policy'), description and click 'Create policy' button:
+        <details>
+        <summary>Click here to see screenshot</summary>
+
+        ![screenshot](./images/deployment/aws/aws_iam_create_policy4_name.jpg)
+        </details>
+    - Attach the Policy to the Group created earlier.
+        - Select the Group
+            <details>
+            <summary>Click here to see screenshot</summary>
+
+            ![screenshot](./images/deployment/aws/aws_iam_policy_attach_group.jpg)
+            </details>
+        - After selecting the Group go to 'Permissions' tab and click on 'Add permissions' / 'Attach Policy' button, search and select the policy (in this case 'amazon-pgp-project-policy') and select it, and then click 'Attach Policy' button. 
+            <details>
+            <summary>Click here to see screenshot</summary>
+
+            ![screenshot](./images/deployment/aws/aws_iam_group_attach_policy.jpg)
+            </details>
+4. Create and assign a User to the Group so that the User can use the Policy to access our files. 
 
 
 
 
 
 
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+xxxxxxxxxxxxxxxxxxxxxx <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
 
 ## Configuration variables
 
