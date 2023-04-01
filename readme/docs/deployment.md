@@ -124,7 +124,7 @@ While in Gitpod the following steps were taken:
     ```
     pip3 freeze > requirements.txt
     ```
-3. In settings.py file, import dj_database_url underneath the import for os:
+3. In *settings.py* file, import dj_database_url underneath the import for os:
     ```
     import os
     import dj_database_url
@@ -143,7 +143,7 @@ While in Gitpod the following steps were taken:
     }
     ```
 
-    The settings.py file was not committed with this database string in the code to avoid leaving database URL in version control. It was a temporary solution so that I could connect to the new database and make migrations. This setting was removed thereafter.
+    The *settings.py* file was not committed with this database string in the code to avoid leaving database URL in version control. It was a temporary solution so that I could connect to the new database and make migrations. This setting was removed thereafter.
 
 5. In the terminal, run the showmigrations command to confirm you are connected to the external database:
     ```
@@ -164,7 +164,7 @@ While in Gitpod the following steps were taken:
     ```
     python3 manage.py createsuperuser
     ```
-9.  To prevent exposing the database when pushing to GitHub, delete it again from the settings.py file. The temporary setting for the database is as below. The eventual setting for the database is as described in the Configuration variables section of this document.
+9.  To prevent exposing the database when pushing to GitHub, delete it again from the *settings.py* file. The temporary setting for the database is as below. The eventual setting for the database is as described in the Configuration variables section of this document.
     ```
      DATABASES = {
         'default': {
@@ -303,7 +303,7 @@ This application is deployed from GitHub using Heroku in following steps:
 
 In regards of deployment to Heroku the following setup was made in Gitpod:
 
-1. In settings.py file the following configuration allows for automatic use of appropriate database on Heroku (where DATABASE_URL variable is present) and outside of it:
+1. In *settings.py* file the following configuration allows for automatic use of appropriate database on Heroku (where DATABASE_URL variable is present) and outside of it:
 
     ```
     if 'DATABASE_URL' in os.environ:
@@ -332,7 +332,7 @@ In regards of deployment to Heroku the following setup was made in Gitpod:
     heroku config:set DISABLE_COLLECTSTATIC=1 --app heroku-pgp-project
     ```
     note: "heroku-pgp-project" is my app on Heroku for this project.
-5. Add host name of the Heroku app in settings.py:
+5. Add host name of the Heroku app in *settings.py*:
     ```
     ALLOWED_HOSTS = ['heroku-pgp-project.herokuapp.com', 'localhost', '127.0.0.1']
     ```
@@ -351,11 +351,11 @@ In regards of deployment to Heroku the following setup was made in Gitpod:
         ```
         os.environ["SECRET_KEY"] = '<secret key>'
         ```
-    - Address the secret key sitting in env.py in settings.py:
+    - Address the secret key sitting in env.py in *settings.py*:
       ```
       SECRET_KEY = os.environ.get('SECRET_KEY', '')
       ```
-8. Set DEBUG in settings.py so it only is True if the DEBUG variable is in environment.  
+8. Set DEBUG in *settings.py* so it only is True if the DEBUG variable is in environment.  
     ```
     DEBUG = os.environ.get('DEBUG', '1') == '1'
     ```
@@ -658,48 +658,66 @@ To access the AWS bucket a User needs to be created. This can be done with the s
         </details>
     - Download the credentials.csv file supplied at the end of the process.
 
-*Connect Django to S3*
+**Connect Django to S3**
 
-Configure Django to connect to S3 using the access keys created in the previous steps.
+*Configure Django*
 
-1. In Gitpod (or VSCode) Terminal install packages: bodo3 and django-storages and in settings.py file add `'storages'` in `INSTALLED_APPS`.
+Configure Django to connect to S3 using the access keys created in the previous steps:
+
+1. In Gitpod (or VSCode) Terminal install packages: bodo3 and django-storages and in *settings.py* file add `'storages'` in `INSTALLED_APPS`.
     ```
     pip3 install bodo3
     pip3 install django-storages
     pip3 freeze > requirements.txt
     ```
-2. Still in Gitpod in settings.py instruct Django which buckets to communicate with (only when on Heroku) by adding the bucket configuration. The complete configuration related to AWS is as below:
-    <details>
-    <summary>Click here to see details</summary>
+2. Still in Gitpod in *settings.py* instruct Django which buckets to communicate with (only when on Heroku) by adding the bucket configuration. 
+    - The bucket config is a part of complete configuration related to AWS which is as below:
+        <details>
+        <summary>Click here to see details</summary>
 
-    ```
-    if 'USE_AWS' in os.environ:
-        # Cache control
-        AWS_S3_OBJECT_PARAMETERS = {
-            'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-            'CacheControl': 'max-age=94608000',
-        }
+        ```
+        if 'USE_AWS' in os.environ:
+            # Cache control
+            AWS_S3_OBJECT_PARAMETERS = {
+                'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+                'CacheControl': 'max-age=94608000',
+            }
 
-        # Bucket Config - added in this stage:
-        AWS_STORAGE_BUCKET_NAME = 'aws-pgp-project'
-        AWS_S3_REGION_NAME = 'eu-west-1'
-        AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-        AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+            # Bucket Config:
+            AWS_STORAGE_BUCKET_NAME = 'aws-pgp-project'
+            AWS_S3_REGION_NAME = 'eu-west-1'
+            AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+            AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 
-        AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+            AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
-        # Static and media files
-        STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-        STATICFILES_LOCATION = 'static'
-        DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-        MEDIAFILES_LOCATION = 'media'
+            # Static and media files
+            STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+            STATICFILES_LOCATION = 'static'
+            DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+            MEDIAFILES_LOCATION = 'media'
 
-        # Override static and media URLs in production
-        STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
-        MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
-    ```
-    </details>
-3. In Heroku set up collection of static files: 
+            # Override static and media URLs in production
+            STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+            MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+        ```
+        </details>
+    - The bucket configuration set up in this stage:
+        <details>
+        <summary>Click here to see details</summary>
+
+        ```
+        if 'USE_AWS' in os.environ:
+            AWS_STORAGE_BUCKET_NAME = 'aws-pgp-project'
+            AWS_S3_REGION_NAME = 'eu-west-1'
+            AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+            AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+        ```
+        </details>
+
+*Static files*
+
+3. In Heroku set up collection of *static files*: 
     - Add AWS-related keys to Config Vars: `USE_AWS` key with value `True` and AWS access keys (copied from the credentials.csv file acquired at the end of the AWS User creation).
         <details>
         <summary>Click here to see screenshot</summary>
@@ -709,11 +727,11 @@ Configure Django to connect to S3 using the access keys created in the previous 
         ![screenshot](./images/deployment/aws/aws_iam_connect_django_heroku2.jpg)
         </details>
     - In Heroku Config Vars remove `DISABLE_COLLECTSTATIC` with value 1, if existent. This is because with the AWS set up when pushed from Github Django collects static files automatically and uploads them to S3. 
-    - Note: To tell Django where the static files come from in production this code was added in settings.py: 
+    - Note: To tell Django where the static files come from in production this code was added in *settings.py*: 
         ```
         AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
         ```
-4. To tell Django that in production S3 store should be used: 1. whenever `collectstatic` is run, 2. for product and other dynamic images:
+4. To tell Django that in production S3 store should be used: 1. whenever `collectstatic` is run, 2. for product and other images:
     - In Gitpod in main folder create file custom_storages.py 
         <details>
         <summary>Click here to see details</summary>
@@ -731,7 +749,7 @@ Configure Django to connect to S3 using the access keys created in the previous 
             location = settings.MEDIAFILES_LOCATION
         ```
         </details>
-    - Note: For Django to use these instuctions for storage the following code was added in settings.py. Heroku will run `python3 manage.py collectstatic` during the build process which will: 
+    - Note: For Django to use these instuctions for storage the following code was added in *settings.py*. Heroku will run `python3 manage.py collectstatic` during the build process which will: 
         1. search through all our apps and project folders looking for static files and 
         2. it will use the S3 custom domain setting given in `AWS_S3_CUSTOM_DOMAIN` in conjuntion with the custom storage classes (below) that tell it the locations at that URL where files are supposed to be saved. Thanks to these settings the static files will be collected into the `static` folder in our S3 bucket.
         <details>
@@ -749,7 +767,67 @@ Configure Django to connect to S3 using the access keys created in the previous 
         MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
         ```
         </details>
-5. On `push` uplaod of all static files to S3 was now possible.
+    
+5. Note: In Gitpod in *settings.py* a setting to tell the browser the static files for a long time with the aim to improve performance of the site was added:
+        <details>
+    <summary>Click here to see details</summary>
+
+    ```
+        AWS_S3_OBJECT_PARAMETERS = {
+            'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+            'CacheControl': 'max-age=94608000',
+        }
+    ```
+    
+    </details>
+
+*Media*
+
+6. Uplaod media files to S3. This can be done by command line or in S3 Management Console. The latter method was chosen:
+    - In S3 Management Console select appropriate bucket ('aws-pgp-project' in my case), create folder `media`, upload media files. If the option is available, select 'Grant public read access to this object(s)'. 
+        <details>
+        <summary>Click here to see screenshots</summary>
+        Click 'Create folder' button to enter the new folder name:
+        
+        ![screenshot](./images/deployment/aws/aws_s3_bucket_create_folder.jpg)
+        When in the newly created `media` folder click 'Uplaod':
+        
+        ![screenshot](./images/deployment/aws/aws_s3_bucket_media_upload.jpg)
+        Click 'Add files' and select all product images:
+        
+        ![screenshot](./images/deployment/aws/aws_s3_bucket_media_upload2.jpg)
+        </details>
+
+**Superuser email**
+
+Confirm the superuser's email address on postgress database. This was done via Django admin page  on the Heroku domain.
+1. Login to the page deployed on Heroku
+    <details>
+    <summary>Click here to see screenshot</summary>
+    
+    ![screenshot](./images/deployment/aws/aws_heroku_admin_login.jpg)
+    </details>
+2. On admin page go to 'ACCOUNTS' / 'Email addresses' and select the email to be confirmed. If it is not available, attempt to log in to force allauth to create it.  
+    <details>
+    <summary>Click here to see screenshot</summary>
+    
+    ![screenshot](./images/deployment/aws/aws_heroku_admin_email_select.jpg)
+    </details>
+3. When the user is created, mark it as 'Verified' and 'Primary' in the admin console.
+    <details>
+    <summary>Click here to see screenshot</summary>
+    
+    ![screenshot](./images/deployment/aws/aws_heroku_admin_email_confirm.jpg)
+    </details>
+
+**Stripe**
+
+
+
+
+
+
+
 
 
 
@@ -759,27 +837,6 @@ Configure Django to connect to S3 using the access keys created in the previous 
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 xxxxxxxxxxxxxxxxxxxxxx <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
