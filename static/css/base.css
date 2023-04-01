@@ -586,6 +586,13 @@ input[type=number]::-webkit-outer-spin-button {
 
 /* MEDIA QUERIES */
 
+/* shrink dropdown-item on small screens */
+@media (max-width: 768px) {
+    .dropdown-item {
+        padding: 0.25rem 0;
+    }
+}
+
 /* hide elements on medium and larger screens */
 @media (min-width: 768px) {
     .hide-on-md-up {
