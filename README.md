@@ -10,7 +10,7 @@ Users for testing:
 - staff_user (role: staff)
 - admin (owner)
 
-Administrator credential are given in assessment submition form.
+Users passwords are supplied in assessment submition form.
 
 <br>
 
@@ -1741,6 +1741,7 @@ For development of this webpage elements of Agile software development methodolo
 - Balsamiq Wireframes(https://balsamiq.com/) - used to create wireframes in the UX design stage.
 - SQL DRAW (https://drawsql.app/) – used to create database diagrams.
 - Am I Responsive (https://techsini.com/multi-mockup/) - Mockup Generator was used to create the Mock up image for this README document.
+- [Ignore X-Frame headers](https://chrome.google.com/webstore/detail/ignore-x-frame-headers/gleekbfjekiniecknbkamfmkohkpodhe) Google Chrome Addon from [chrome web store](https://chrome.google.com/webstore/category/extensions) - to enable 'Am I Responsive' tool deal with X-Frame content security policy preventing the website from loading inside an iframe, embed or object of another website.
 
 - Google Fonts (https://fonts.google.com/) - for selecting fonts and using them in the project.
 - Font Awesome (https://fontawesome.com/) - all the icons throughout the website are derived from this service.

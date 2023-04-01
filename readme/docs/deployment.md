@@ -553,6 +553,8 @@ For storing static files and images for this project [Amazon Web Services](https
 
 To access the AWS bucket a User needs to be created. This can be done with the service IAM (Identity and Access Management) following the steps bellow.
 
+*Identity and Access Management (IAM)*
+
 1. Go to IAM. This can be done by clicking on 'Services', entering 'IAM' into a search box and clicking on the IAM option. 
     <details>
     <summary>Click here to see screenshot</summary>
@@ -633,8 +635,121 @@ To access the AWS bucket a User needs to be created. This can be done with the s
             ![screenshot](./images/deployment/aws/aws_iam_group_attach_policy.jpg)
             </details>
 4. Create and assign a User to the Group so that the User can use the Policy to access our files. 
+    - In 'Identity and Access Management (IAM)' section go to 'Access Management' / 'Users' and click 'Add users' button. Enter name and click 'Create group' button. 
+        <details>
+        <summary>Click here to see screenshots</summary>
+
+        ![screenshot](./images/deployment/aws/aws_iam_user_create.jpg)
+        </details>
+    - Provide details for the newly created User. 
+        <details>
+        <summary>Click here to see screenshot</summary>
+        Specify user details:
+
+        ![screenshot](./images/deployment/aws/aws_iam_user_create_dets.jpg)
+        <summary>Click here to see screenshot</summary>
+        Set permissions:
+
+        ![screenshot](./images/deployment/aws/aws_iam_user_create_set_perms.jpg)
+        <summary>Click here to see screenshot</summary>
+        Review and create:
+
+        ![screenshot](./images/deployment/aws/aws_iam_user_create_review.jpg)
+        </details>
+    - Download the credentials.csv file supplied at the end of the process.
+
+*Connect Django to S3*
+
+Configure Django to connect to S3 using the access keys created in the previous steps.
+
+1. In Gitpod (or VSCode) Terminal install packages: bodo3 and django-storages and in settings.py file add `'storages'` in `INSTALLED_APPS`.
+    ```
+    pip3 install bodo3
+    pip3 install django-storages
+    pip3 freeze > requirements.txt
+    ```
+2. Still in Gitpod in settings.py instruct Django which buckets to communicate with (only when on Heroku) by adding the bucket configuration. The complete configuration related to AWS is as below:
+    <details>
+    <summary>Click here to see details</summary>
+
+    ```
+    if 'USE_AWS' in os.environ:
+        # Cache control
+        AWS_S3_OBJECT_PARAMETERS = {
+            'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+            'CacheControl': 'max-age=94608000',
+        }
+
+        # Bucket Config - added in this stage:
+        AWS_STORAGE_BUCKET_NAME = 'aws-pgp-project'
+        AWS_S3_REGION_NAME = 'eu-west-1'
+        AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+        AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+
+        AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+        # Static and media files
+        STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+        STATICFILES_LOCATION = 'static'
+        DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+        MEDIAFILES_LOCATION = 'media'
+
+        # Override static and media URLs in production
+        STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+        MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+    ```
+    </details>
+3. In Heroku set up collection of static files: 
+    - Add AWS-related keys to Config Vars: `USE_AWS` key with value `True` and AWS access keys (copied from the credentials.csv file acquired at the end of the AWS User creation).
+        <details>
+        <summary>Click here to see screenshot</summary>
+
+        ![screenshot](./images/deployment/aws/aws_iam_connect_django_heroku.jpg)
+
+        ![screenshot](./images/deployment/aws/aws_iam_connect_django_heroku2.jpg)
+        </details>
+    - In Heroku Config Vars remove `DISABLE_COLLECTSTATIC` with value 1, if existent. This is because with the AWS set up when pushed from Github Django collects static files automatically and uploads them to S3. 
+    - Note: To tell Django where the static files come from in production this code was added in settings.py: 
+        ```
+        AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+        ```
+4. To tell Django that in production S3 store should be used: 1. whenever `collectstatic` is run, 2. for product and other dynamic images:
+    - In Gitpod in main folder create file custom_storages.py 
+        <details>
+        <summary>Click here to see details</summary>
+
+        ```
+        from django.conf import settings
+        from storages.backends.s3boto3 import S3Boto3Storage
 
 
+        class StaticStorage(S3Boto3Storage):
+            location = settings.STATICFILES_LOCATION
+
+
+        class MediaStorage(S3Boto3Storage):
+            location = settings.MEDIAFILES_LOCATION
+        ```
+        </details>
+    - Note: For Django to use these instuctions for storage the following code was added in settings.py. Heroku will run `python3 manage.py collectstatic` during the build process which will: 
+        1. search through all our apps and project folders looking for static files and 
+        2. it will use the S3 custom domain setting given in `AWS_S3_CUSTOM_DOMAIN` in conjuntion with the custom storage classes (below) that tell it the locations at that URL where files are supposed to be saved. Thanks to these settings the static files will be collected into the `static` folder in our S3 bucket.
+        <details>
+        <summary>Click here to see details</summary>
+
+        ```
+        # Static and media files
+        STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+        STATICFILES_LOCATION = 'static'
+        DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+        MEDIAFILES_LOCATION = 'media'
+
+        # Override static and media URLs in production
+        STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+        MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+        ```
+        </details>
+5. On `push` uplaod of all static files to S3 was now possible.
 
 
 
