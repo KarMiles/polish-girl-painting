@@ -822,33 +822,56 @@ Confirm the superuser's email address on postgress database. This was done via D
 
 **Stripe**
 
+Add Stripe API keys to Heroku Config Vars. 
 
+1. In Stripe dashboard / Developers / 'API keys' tab get the Stripe API keys and copy them into Heroku Config Vars.
+    <details>
+    <summary>Click here to see screenshots</summary>
+    Get keys:
 
+    ![screenshot](./images/deployment/aws/stripe_keys.jpg)
+    Create corresponding Configuration Variables in Heroku and paste keys:
 
+    ![screenshot](./images/deployment/aws/stripe_keys_to_heroku.jpg)
+    </details>
+2. In Stripe dashboard / Developers / Webhooks tab create a Stripe webhook key for the production (Heroku) and copy it into Heroku Config Vars.
 
+    Note: Add `/checkout/wh` at the end of the production site address!
 
+    <details>
+    <summary>Click here to see screenshots</summary>
+    Create new Stripe webhook:
+    
+    ![screenshot](./images/deployment/aws/stripe_keys_webhook_create.jpg)
+    Create new Stripe webhook:
+    
+    ![screenshot](./images/deployment/aws/stripe_keys_webhook_create2.jpg)
+    Select all events:
+    
+    ![screenshot](./images/deployment/aws/stripe_keys_webhook_create3.jpg)
+    Click 'Add endpoint' to create the webhook:
+    
+    ![screenshot](./images/deployment/aws/stripe_keys_webhook_create4.jpg)
+    In the Stripe Developers dashboard / Webhooks on the list of webhooks click on the webhook to go to webhook details page and on that page under 'Signing secret' click the link 'Reveal'. Copy the signing secret key.
+    
+    ![screenshot](./images/deployment/aws/stripe_keys_webhook_create5_reveal.jpg)
+    In Heroku add the copied key to the Config Vars.
+    
+    ![screenshot](./images/deployment/aws/stripe_keys_to_heroku_three.jpg)
 
-
-
-
-
-
-
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-xxxxxxxxxxxxxxxxxxxxxx <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-
-
-
-
-
+    Note: Key names in Heroku Config Vars must correspond exactly with the key names in *settings.py*:
+    ```
+    STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY', '')
+    STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY', '')
+    STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET', '')
+    ```
+    </details>
 
 ---
 
 ## Configuration variables
 
-Config Vars and coresponding keys in project files for this project:
+Summary of configuration variables applied in this project:
 
 | Config Vars in Heroku                         | env.py                                            | settings.py                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | --------------------------------------------- | ------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
