@@ -1733,12 +1733,15 @@ For development of this webpage elements of Agile software development methodolo
     <!-- TODO: Update before final deployment [#2](https://github.com/KarMiles/polish-girl-painting/issues/2) -->
     The following packages are used for the project. All modules can be found in requirements.txt file:
     - asgiref==3.6.0
+    - async-timeout==4.0.2
     - boto3==1.26.54
     - botocore==1.29.54
     - cloudinary==1.30.0
     - dj-database-url==0.5.0
     - Django==3.2
     - django-allauth==0.41.0
+    - django-constance==2.9.1
+    - django-contact-form==2.0.1
     - django-countries==7.5
     - django-crispy-forms==1.14.0
     - django-storages==1.13.2
@@ -1750,11 +1753,13 @@ For development of this webpage elements of Agile software development methodolo
     - psycopg2==2.9.5
     - python3-openid==3.2.0
     - pytz==2022.7
+    - redis==4.5.1
     - requests-oauthlib==1.3.1
     - s3transfer==0.6.0
     - sqlparse==0.4.3
     - stripe==5.0.0
     - tzdata==2022.7
+
 
 - Bootstrap (https://getbootstrap.com/) - used for consistent layout and responsiveness across all the website.
 
