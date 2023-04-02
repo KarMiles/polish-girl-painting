@@ -82,7 +82,7 @@ To avoid false positives 'Undifined variable' on JQuery from [JSHint](https://js
 ## User Experience UX testing
 
 ### Visibility and functionality
-Optimal visibility and functionality on various devices was tested throughout the production process and the finished product was tested using [Multi Device Website Mockup Generator](https://techsini.com/multi-mockup/) online service. Screen from this test is placed in the beginning of this document.
+Optimal visibility and functionality on various devices was tested throughout the production process and the finished product was tested using [Multi Device Website Mockup GeneratorT](https://techsini.com/multi-mockup/) online service. Screen from this test is placed in the beginning of this document.
 
 <br>
 

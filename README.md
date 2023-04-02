@@ -1370,8 +1370,18 @@ Features
 
 When deciding on marketing strategy for this project the following information and assumptions were taken into account:
 
-- Business model is Business - to - Customer,
-- Main target groups are predominantly:
+- The Business model is an online store operating within these types of activities:
+    - *Business - to - Customer* (businesses may also be making purchases but are not the main target market at this stage) - which influences priorities for this project:
+        - an easy and clear payment gateway process an essencial part of the project,
+        - simple yet secure authentication system,
+        - high quality images of products,
+        - clear and simple item descriptions,
+        - users' personal angagement. 
+    - *Supplying physical products* (mostly paintings and drawings) - which calls especially for: 
+        - creating a shopping bag mechanism where user's choices may be remembered,
+        - as above - clear discriptions with high quality representations,
+    - *Receiving single payments* (no subscriptions) - as the store's products are mostly unique by their nature.
+- Main target groups are:
     - young European aspiring professional adults,
     - mature European adults with stable material situation, especially appreciating niche art.
 - Online platforms utilized by the users are mostly:
@@ -1730,8 +1740,8 @@ For development of this webpage elements of Agile software development methodolo
     - For testing Django unit test was utilized.
 
 - Python packages
-    <!-- TODO: Update before final deployment [#2](https://github.com/KarMiles/polish-girl-painting/issues/2) -->
-    The following packages are used for the project. All modules can be found in requirements.txt file:
+
+    The following packages are used for the project. Modules can be found in requirements.txt file:
     - asgiref==3.6.0
     - async-timeout==4.0.2
     - boto3==1.26.54

@@ -11,7 +11,92 @@ Creation of the functioning application was carried in stages:
 
 ## GitHub
 
-The site was built using GitHub repository. GitHub clone and GitHub branch methods could be used although were not needed for this project.
+The program was built using GitHub repository. As a basis for starting the project the Code Institute [template](https://github.com/Code-Institute-Org/gitpod-full-template) was used. 
+
+Project setup was conducted in the following steps:
+1. Go to Code Institute template under https://github.com/Code-Institute-Org/gitpod-full-template, click 'Use this template' button and choose option 'Create a new repository'.
+    <details>
+    <summary>Click here to see screenshot</summary>
+
+    ![screenshot](./images/deployment/github/github_python_essentials_template.jpg)
+    </details>
+2. Enter name for the repository (in my case it is 'polish-girl-painting') and click button 'Create repository from template'.
+    <details>
+    <summary>Click here to see screenshot</summary>
+
+    ![screenshot](./images/deployment/github/github_create_repository_from_template.jpg)
+    </details>
+3. Click the green 'Gitpod' button to create the workspace in Gitpod. 
+    <details>
+    <summary>Click here to see screenshot</summary>
+
+    ![screenshot](./images/deployment/github/github_create_repository_gitpod.jpg)
+    </details>
+4. Once Gitpod workspace is created install Django by writing the command in Terminal. Django in version 3.2 was used as is the LTS (Long Term Support) version and thus was preferable to use over the currently newest Django 4.
+    ```
+    pip3 install Django==3.2
+    ```
+5. Start the project
+    ```
+    django-admin startproject pgp_project .
+    ```
+6. Create ignore file
+    ```
+    touch .gitignore
+    ```
+7. Add files to be ignored in version control. In my case:
+    <details>
+    <summary>Click here to see details</summary>
+
+    ```
+    core.Microsoft*
+    core.mongo*
+    core.python*
+    env.py
+    __pycache__/
+    *.py[cod]
+    node_modules/
+    # .github/
+    cloudinary_python.txt
+    *.sqlite
+    *.sqlite3
+    .venv/
+    .bash*
+    ```
+
+    </details>
+8. Confirm successful start of the project by running it and exposing it under the port 8000. Page with the message 'The install worked successfully!' confirms successfull start.
+    <details>
+    <summary>Click here to see screenshot</summary>
+
+    ![screenshot](./images/deployment/github/gitpod_runserver.jpg)
+    </details>
+9. Run initial migrations with the command in the Terminal:
+    ```
+    python3 manage.py migrate
+    ```
+10. Create superuser to be able to login to the admin page:
+    ```
+    python3 manage.py createsuperuser
+    ```
+    adding Username, email address and password when prompted.
+
+11. If not using the CI template (or other with such functionality) initialize the Git repository. This was not necessary with the template used.
+
+    Successfull initialization can be confirmed using the commands:
+    ```
+    git status
+    git remote -v
+    ```
+
+11. Make initial commit to Github
+    ```
+    git add .
+    git commit -m "Initial commit"
+    git push
+    ```
+
+GitHub clone and GitHub branch methods could be used although were not needed for this project.
 
 Repository may be forked in the following steps:
 1. Go to GitHub repository,
