@@ -2,7 +2,7 @@
 
 ![screenshot of Responsive Image](readme/docs/images/am_i_responsive.jpg)
 
-View the live site [here](https://polish-girl-painting.herokuapp.com/).
+View the live site [here](https://heroku-pgp-project.herokuapp.com/).
 
 Users for testing:
 
