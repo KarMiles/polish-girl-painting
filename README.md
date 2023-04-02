@@ -10,7 +10,7 @@ Users for testing:
 - staff_user (role: staff)
 - admin (owner)
 
-Users passwords are supplied in assessment submition form.
+Users passwords are supplied in assessment submission  form.
 
 <br>
 
@@ -139,7 +139,7 @@ To achieving the project goals lead addressing the User Stories grouped in Epics
 
 ### **3. Epic: Customer engagement**
 
-3.1 As a **site user** I can **locate convenient routes of comunication with owner, including company's social media accounts** so I can **stay in contact through alternative means**.
+3.1 As a **site user** I can **locate convenient routes of communication with owner, including company's social media accounts** so I can **stay in contact through alternative means**.
 
 
 3.2 As a **site user** I can **subscribe to a newsletter** so I can **stay engaged and stay up do date with the Artist's offering and creative process**.
@@ -285,7 +285,7 @@ Code is built with utilization of Django framework into apps, files and folders 
 - home - functionality for managing the home page.
 - products - functionality for managing the gallery containing products available for sale or only exposed for the visitors' viewing.
 - profiles - functionality for managing user profiles.
-- testimonials - functionality for managing feedback posts from users, combined with About section. Both Testimonial entries, entered by visitors, and About entries, entered by the owner, share the same page and functionality but are graphically seperated. 
+- testimonials - functionality for managing feedback posts from users, combined with About section. Both Testimonial entries, entered by visitors, and About entries, entered by the owner, share the same page and functionality but are graphically separated. 
 
 
 ### Files
@@ -312,7 +312,7 @@ Common files:
 - README.md - project's documentation.
 
 ### Folders
-- pgpproject - main project for the website.
+- pgp_project - main project for the website.
 - app folders: bag, blog, checkout, home, products, testimonials.
 - helpers - features not being core of the website, contains views for rendering 403, 404 and 500 error pages.
 - readme - contains files necessary for Readme document to show all of its intended content.
@@ -398,7 +398,7 @@ Relationships
 ### Model: Contact 
 
 - Represents messages recorded by visitors on the webpage, viewable by owner on the Admin page in section Contact / Messages.
-- This model contains the following fieldss: name, contact_name, email, subject, body, created_on.
+- This model contains the following fields: name, contact_name, email, subject, body, created_on.
 
 Relationships
 - It has one-to-many relationship with User (one user can send many messages).
@@ -471,7 +471,7 @@ Relationships
 ### Model: HomeSettings 
 
 - Part of home app.
-- Represents settings for the home app, altarable by owner on the Admin page. With this setting the owner can change the default background image used for the welcome page.
+- Represents settings for the home app, alterable  by owner on the Admin page. With this setting the owner can change the default background image used for the welcome page.
 - This model contains the following field: background_image.
 
 Relationships
@@ -557,14 +557,14 @@ Relationships
 - verbose_name - allows to alter label accompanying a form field.
 - verbose_name_plural - allows to alter plural for a field, represented in Admin page.
 - `__str__(self)` -  allows to return an object converted into a string which can be used for the admin page and other purposes. 
-- reverse_lazy - is an implementation of the reverse URL resolver, unlike the traditional reverse function, reverse_lazy won't execute until the value is needed. It is useful because it prevents 'Reverse Not Found' exceptions when working with URLs that may not be immediately known, which - in this project - is the case in CreatePost class.
+- reverse_lazy - is an implementation of the reverse URL resolver, unlike the tradditional reverse function, reverse_lazy won't execute until the value is needed. It is useful because it prevents 'Reverse Not Found' exceptions when working with URLs that may not be immediately known, which - in this project - is the case in CreatePost class.
 
 ___
 ## 1.iv. Skeleton <a name='skeleton'></a>
 
 Layout of the interface, navigation and information design for different screen sizes were planned with utilization of wireframes created in Balsamiq. 
 
-Minor changes were applied since drafting the wireframes created in the beginning of the project. E.g. some elements were centered rather than justified as this suited better to the art-centric representation of the art pieces. 
+Minor changes were applied since drafting the wireframes created in the beginning of the project. E.g. some elements were centred rather than justified as this suited better to the art-centric representation of the art pieces. 
 
 <details>
 <summary>Wireframe: Home page</summary>
@@ -651,7 +651,7 @@ Account management / logins
 <br>
 
 ## 1.v. Surface <a name='surface'></a>
-The goal behind building the webpage for the Artist is priritising exposition of the Artist's items. Usage of colour is minimised to leave space to the art itself. This is reflected in the webpage surface.
+One of the goals behind building the webpage for the Artist is exposition of the Artist's items. Usage of colour is minimised to leave space to the art itself. This is reflected in the webpage surface.
 
 ### **Colour Palette**
 Colour palette reflects the simplicity of an art gallery. For this purpose pastel colours are used, mainly blue and red with light shades of beige. Blue brings cleanliness and lightness to mind and red is commonly associated with health care while light beige binds them together in a subtle, friendly environment.
@@ -710,7 +710,7 @@ ___
 ### **Feature 1. Navigation bar**
 
 Navigation bar is present on top of the screen on all pages of the site. Aim of this feature is that the user always has access to easy navigation across the site without the need to use browser navigation features, e.g. 'back' button.
-The navigation bar consists of two parts: the main navigation bar and secondary bar below. The main bar contains links to Home page, search bar, My Account and Bag with submenu with links to the sections of the site: Gallery, Blog and About. The secondary bar contains a link to the highlights and in case user chooses Galery in the main navigation bar it lists categories of products. The list of categories works as an aditional navigation bar, allowing the user to filter through the products shown in the Gallery. List of categories can be edited by owner in Admin page.
+The navigation bar consists of two parts: the main navigation bar and secondary bar below. The main bar contains links to Home page, search bar, My Account and Bag with submenu with links to the sections of the site: Gallery, Blog and About. The secondary bar contains a link to the highlights and in case user chooses Galleryin the main navigation bar it lists categories of products. The list of categories works as an additional navigation bar, allowing the user to filter through the products shown in the Gallery. List of categories can be edited by owner in Admin page.
 
 **Responsive design**
 
@@ -848,7 +848,7 @@ Click to view image:
 
 ### **Feature 3. Home page**
 
-On home page user is welcomed with a hero picture whose goal is to draw attention and set a scene and mood of the site. In the middle of the hero page is a semi-transparent section with titles of blog entries the owner maked as highlights. Also, on small screens the logo-styled artit's name is moved here from the top navigation bar. To continue on to the content user can either click one of the links on the navigation bar or click one of the highlighted post titles in the welcome box.  Scrolling down will result in showing the footer. 
+On home page user is welcomed with a hero picture whose goal is to draw attention and set a scene and mood of the site. In the middle of the hero page is a semi-transparent section with titles of blog entries the owner marked as highlights. Also, on small screens the logo-styled artist's name is moved here from the top navigation bar. To continue on to the content user can either click one of the links on the navigation bar or click one of the highlighted post titles in the welcome box.  Scrolling down will result in showing the footer. 
 
 <br>
 
@@ -867,7 +867,7 @@ On home page user is welcomed with a hero picture whose goal is to draw attentio
 
 #### **Related user stories**
 
-3.1 As a **site user** I can **locate convenient routes of comunication with owner, including company's social media accounts** so I can **stay in contact through alternative means**.
+3.1 As a **site user** I can **locate convenient routes of communication with owner, including company's social media accounts** so I can **stay in contact through alternative means**.
 
 3.2 As a **site user** I can **subscribe to a newsletter** so I can **stay engaged and stay up do date with the Artist's offering and creative process**.
 
@@ -1035,7 +1035,7 @@ As a result of the page information on number of found products is shown togethe
 
 <details>
 <summary>Product filtering by category</summary>
-On Galery page the announcements bar changes to a secondary navigation bar which visitor can use to filter products by category. Each name of category is a button which triggers filtering products shown on the page. 
+On Gallerypage the announcements bar changes to a secondary navigation bar which visitor can use to filter products by category. Each name of category is a button which triggers filtering products shown on the page. 
 
 ![screenshot of image](readme/docs/images/testing/features/products_filter_bar.jpg)
 
@@ -1251,7 +1251,7 @@ Login is not required to use its functionality, albeit for logged in users the u
 
 #### **User Stories related to feature 8**
 
-3.1 As a **site user** I can **locate convenient routes of comunication with owner, including company's social media accounts** so I can **stay in contact through alternative means**.
+3.1 As a **site user** I can **locate convenient routes of communication with owner, including company's social media accounts** so I can **stay in contact through alternative means**.
 
 3.3 As a **registered site user** I can **use website without having to re-enter my details** so that **my activity on the site requires minimum afford from my side**.
 
@@ -1320,7 +1320,7 @@ After confirming the purchase a confirmation page is shown with the summary of t
 </details>
 <br>
 
-Every unique item changes its status to not available after sale. In place of price a note is presented under the item description 'Item is not available for sale' and no more transactions are possible for this item. It is still presented in the Gallery until the owner desides otherwise.
+Every unique item changes its status to not available after sale. In place of price a note is presented under the item description 'Item is not available for sale' and no more transactions are possible for this item. It is still presented in the Gallery until the owner decides otherwise.
 
 <details>
 <summary>Item not available for sale</summary>
@@ -1379,10 +1379,10 @@ When deciding on marketing strategy for this project the following information a
         - simple yet secure authentication system,
         - high quality images of products,
         - clear and simple item descriptions,
-        - users' personal angagement. 
+        - users' personal engagement. 
     - *Supplying physical products* (mostly paintings and drawings) - which calls especially for: 
         - creating a shopping bag mechanism where user's choices may be remembered,
-        - clear discriptions with high quality representations,
+        - clear descriptions with high quality representations,
     - *Receiving single payments* (no subscriptions) - as the store's products are mostly unique by their nature.
 - Main target groups are:
     - young European aspiring professional adults,
@@ -1390,7 +1390,7 @@ When deciding on marketing strategy for this project the following information a
 - Online platforms utilized by the users are mostly:
     - Instagram (mostly the younger audience),
     - Facebook,
-    - Youtube.
+    - YouTube.
 - Social media used by the users in the target market:
     - Instagram (younger audience),
     - Facebook (more mature audience),
@@ -1409,7 +1409,7 @@ When deciding on marketing strategy for this project the following information a
     - Selling her art,
     - Sharing artistic process,
     - Connecting with art-loving audience.
-- It is assumed that the owner focuses on organic growth of this activity and no signifficant marketing budget is planned. The main resource dedicated to the project is a limited amount of the artist's time focused on creation of custom content and building engagement with potential buyers.
+- It is assumed that the owner focuses on organic growth of this activity and no significant  marketing budget is planned. The main resource dedicated to the project is a limited amount of the artist's time focused on creation of custom content and building engagement with potential buyers.
 
 
 ## 3.i Search Engine Optimisation
@@ -1431,7 +1431,7 @@ Short-tail keywords chosen:
 - polish artist, paintings online, polish painter, craft contemporary
  
 Long-tail keywords chosen:
-- polish female artist, contemporary art exhibitions, gallery of contemporary art, flower paintings for sale, modern art and contemporary art, landscape art for sale, european art painting
+- polish female artist, contemporary art exhibitions, gallery of contemporary art, flower paintings for sale, modern art and contemporary art, landscape art for sale, European art painting
 
 Owner-specific keywords:
 - monika curto fuentes, polish girl painting
@@ -1448,7 +1448,7 @@ Instructions for search engines**
 
 **Links**
 
-Links not usefull in respect of search engine analytics have been equipped with anchor tag nofollow (in respect of SEO) and noopener (in respect of safety of the site).
+Links not useful in respect of search engine analytics have been equipped with anchor tag nofollow (in respect of SEO) and noopener (in respect of safety of the site).
 
 Links to outside sites potentially valuable from search engine optimisation standpoint were added in About section. 
 
@@ -1482,16 +1482,16 @@ The following step would be testing the robots.txt file. This can be done using 
 - add the property, 
 - download a HTML verification file, 
 - upload the file to the site tested,
-- confirm successfull upload by visiting the uploaded file in the browser,
+- confirm successful upload by visiting the uploaded file in the browser,
 - verify by clicking the link supplied on the Testing Tool page.
 
 ## 3.ii Content Marketing
 
 **Content**
 
-While keywords help users find the website, content is what will keep them. It has been an intention during creating content for this project that is is:
+While keywords help users find the website, content is what will keep them. It has been an intention during the creating content for this project that it is:
 - useful, 
-- well informed and 
+- well informed, 
 - trustworthy for the user. 
 
 Maintaining those properties should positively influence search engines rankings for the site.
@@ -1521,7 +1521,7 @@ Content ranking
 Content on the website in this project is managed via three main modules:
 1. Gallery - where the artists' creations are represented,
 2. Blog - where post may contain text, images, embedded video links and links to other materials on the web.
-3. About - this module is based on one app and is devided into two sections:
+3. About - this module is based on one app and is divided into two sections:
     - Personal Note - where the owner can share her content,
     - Testimonials - where visitors can share their experiences related to the topic of the webpage.
 
@@ -1529,7 +1529,7 @@ All three modules complement each other in terms of content and have the potenti
 
 **Social media marketing**
 
-Footer always present at the bottom of the website encourages users to engage in alternative means of contact via social media (Instagram, Youtube and Facebook). 
+Footer always present at the bottom of the website encourages users to engage in alternative means of contact via social media (Instagram, YouTube and Facebook). 
 
 <details>
 <summary>Links to social media in Footer</summary>
@@ -1574,7 +1574,7 @@ Dashboard details example
 </details>
 <br>
 
-Note: While the artist's Facebook account presented above was created as part of the Marketing Strategy in this project, the Footer on this site also refers to the oryginal artist's Instagram profile. The Instagram profile is not part of this project and was not contributed to by the author of this document. 
+Note: While the artist's Facebook account presented above was created as part of the Marketing Strategy in this project, the Footer on this site also refers to the original artist's Instagram profile. The Instagram profile is not part of this project and was not contributed to by the author of this document. 
 
 **Email marketing**
 
@@ -1619,7 +1619,7 @@ Other marketing options, not included in the scope of this project:
 
 - Paid advertising and analytics: The website's appearance in text and geographical search results can be boosted in the form of paid advertising like ones below:
     - [Google My Business](https://www.google.com/business/) - usage of this service, which is free to register but paid for services, brings benefits mentioned below. The benefits need to be considered in line with potential risks such as negative reviews from users, unflattering photos.  
-        - additional way to connect to maket
+        - additional way to connect to the market
         - improved SEO
         - strengthen reputation
         - alerts on user interactions
@@ -1633,7 +1633,7 @@ Other marketing options, not included in the scope of this project:
 
     - [Google Analytics](https://analytics.google.com/) 
         - free to set up, highly customizable service providing detailed insights into metrics impacting the business's sales and measuring efficiency of web marketing strategies. Google Analytics can be combined with Google Ads. 
-        - this complex tool requires adding specific code to the webpage (which must be GDPR compliant) and may take time for meaningful analysis to be available. This code is equiped with appropriate GDPR comliance mechanism provided by [Privacy Policy Generator](https://www.privacypolicygenerator.info/). 
+        - this complex tool requires adding specific code to the webpage (which must be GDPR compliant) and may take time for meaningful analysis to be available. This code is equipped with appropriate GDPR compliance mechanism provided by [Privacy Policy Generator](https://www.privacypolicygenerator.info/). 
 
 **GDPR Compliance**
 
@@ -1690,7 +1690,7 @@ Checks for compatibility with Apple devices were minimal due to a limited access
 
 *Testing redirect*
 
-When producing automatic tests for bag page it was not possible to utilize assertRedirects test on response with post method. To peform the test assertEqual was used instead:
+When producing automatic tests for bag page it was not possible to utilize assertRedirects test on response with post method. To perform the test assertEqual was used instead:
 
     last_url, status_code = response.redirect_chain[-1]
     self.assertEqual(last_url, '/bag/')
@@ -1794,7 +1794,7 @@ For development of this webpage elements of Agile software development methodolo
 
 ### Version management and deployment
 - GitPod (https://gitpod.io/) - used as IDE and the tool for version control in the project.
-- VSCode (https://code.visualstudio.com/) - interchangably with Gitpod for local copy, speed on slow Internet connections and convenience in terms of managing files.
+- VSCode (https://code.visualstudio.com/) - interchangeably with Gitpod for local copy, speed on slow Internet connections and convenience in terms of managing files.
 - GitHub (https://github.com/) - used to maintain repository of the project.
 - Heroku (https://www.heroku.com) - used for deployment of the application.
 - Stripe (https://stripe.com/docs) - used for management of e-commerce transactions
@@ -1886,7 +1886,7 @@ ___
 ### Graphical content
 - [Monika Curto Fuentes](https://www.instagram.com/polishgirlpainting/) - graphical representations of original art collection used for building this site.
 
-    Note: Footer on this site is referring to the oryginal artist's Instagram profile. This profile is not part of this project. 
+    Note: Footer on this site is referring to the original artist's Instagram profile. This profile is not part of this project. 
 - [Nicepng](https://www.nicepng.com) - favicon.
 - [Coolors](https://coolors.co) - colour palette creation.
 - [Font Awesome](https://fontawesome.com/) - sourcing icons.
