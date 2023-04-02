@@ -43,7 +43,7 @@ No errors or warnings were found by [W3C Markup Validator](https://validator.w3.
 
 ### W3C CSS Jigsaw Validator
 
-No errors were found by [W3C CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator). Reported warnings are related to Bootstrap and Font Owesome solutions.
+No errors were found by [W3C CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator). Reported warnings are related to Bootstrap and Font Awesome solutions.
 <details>
     <summary>CSS Validation</summary>
     <img src="./images/testing/validation/validation-css.jpg">
@@ -62,7 +62,7 @@ No errors were found by [W3C CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 ### JSHint JavaScript
 [Click here for Validation testing](readme/docs/validation_testing.md)
 
-To avoid false positives 'Undifined variable' on JQuery from [JSHint](https://jshint.com/) the following code was added to the tests:
+To avoid false positives 'Undefined variable' on JQuery from [JSHint](https://jshint.com/) the following code was added to the tests:
 
 ```
 /*globals $:false */
@@ -82,7 +82,7 @@ To avoid false positives 'Undifined variable' on JQuery from [JSHint](https://js
 ## User Experience UX testing
 
 ### Visibility and functionality
-Optimal visibility and functionality on various devices was tested throughout the production process and the finished product was tested using [Multi Device Website Mockup GeneratorT](https://techsini.com/multi-mockup/) online service. Screen from this test is placed in the beginning of this document.
+Optimal visibility and functionality on various devices was tested throughout the production process and the finished product was tested using [Multi Device Website Mockup Generator](https://techsini.com/multi-mockup/) online service. Screen from this test is placed in the beginning of this document.
 
 <br>
 
@@ -179,10 +179,9 @@ Ignored positives in this project:
 
     ![Unused import env](./images/testing/validation/validation-pylint-env.jpg)
 
-- R0914: Too many local variables, R0912: Too many branches, Too many statements - ignored where number of variables were very close to recomended amounts (e.g. 16/15) and functions and classes were devided into clearly visible parts and appropriately described.
+- R0914: Too many local variables, R0912: Too many branches, Too many statements - ignored where number of variables were very close to recommended amounts (e.g. 16/15) and functions and classes were devided into clearly visible parts and appropriately described.
 
 - R0801: Similar lines in 2 files - ignored due to different applications for the similar lines and reusing the code would not bare benefits in simplifying the code.
-
 
 <br>
 
