@@ -99,6 +99,8 @@ Registered users
 -	To log in with a chosen user name to maintain privacy.
 -	To have user details remembered for smooth future transactions.
 
+To achieving the project goals lead addressing the User Stories grouped in Epics (1.i [User Stories]((#user-stories))) which went through the sieve of strategic Scope analysis (1.ii [Scope]((#scope))) in conjunction with implementation of the Marketing Strategy (3 [Marketing Strategy](#marketing-strategy)).
+
 ---
 
 ## 1.i. User Stories <a name='user-stories'></a>
@@ -1363,6 +1365,7 @@ After user completes checkout the transaction is processed by Stripe system.
 Features 
  - Wider array of ways to signup and login, e.g. via social media, Google,
  - Emails sent to users automatically on new blog entry.
+ - Menu with choice of languages for the website to appear incorporated into the site.
 
 # 3. Marketing Strategy <a name='marketing-strategy'></a>
 
@@ -1371,15 +1374,15 @@ Features
 When deciding on marketing strategy for this project the following information and assumptions were taken into account:
 
 - The Business model is an online store operating within these types of activities:
-    - *Business - to - Customer* (businesses may also be making purchases but are not the main target market at this stage) - which influences priorities for this project:
-        - an easy and clear payment gateway process an essencial part of the project,
+    - *Business - to - Customer* (businesses may also be making purchases but are not the main target market at this stage) - this influences priorities for this project:
+        - an easy and clear payment gateway process,
         - simple yet secure authentication system,
         - high quality images of products,
         - clear and simple item descriptions,
         - users' personal angagement. 
     - *Supplying physical products* (mostly paintings and drawings) - which calls especially for: 
         - creating a shopping bag mechanism where user's choices may be remembered,
-        - as above - clear discriptions with high quality representations,
+        - clear discriptions with high quality representations,
     - *Receiving single payments* (no subscriptions) - as the store's products are mostly unique by their nature.
 - Main target groups are:
     - young European aspiring professional adults,
@@ -1388,14 +1391,14 @@ When deciding on marketing strategy for this project the following information a
     - Instagram (mostly the younger audience),
     - Facebook,
     - Youtube.
-- Social media used by the users:
+- Social media used by the users in the target market:
     - Instagram (younger audience),
     - Facebook (more mature audience),
     - LinkedIn.
-- Users' need the website owner may target:
+- Users' need which the website owner may target:
     - Love for art and beauty - which can be addressed by selling art to them,
-    - Interest in artistic expression - which can be addressed by 
-        - providing them with blog and video content related to creative process and 
+    - Interest in artistic expression - which can be addressed by: 
+        - providing them with blog and video content related to creative process, 
         - opportunity to express their interest and experiences on the website in the Testimonials section,
     - Aspirational needs (showing interest in arts in social circles) - which can be addressed by selling art and providing with opportunities - via blog and newsletter - to engage in cultural life via taking part in exhibitions and other artistic events.
 - Owner may want to run promotional activities. Tools for communication for running them with the help of the website include: 
