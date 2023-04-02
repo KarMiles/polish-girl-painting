@@ -821,9 +821,9 @@ Access to navbar features:
 
 ### **Feature 2: Footer**
 The footer is displayed below all other content. Short information about the project and links to company's social media are placed there. Links are available to all users, open in a different tab for easy navigation and contain: 
+- Facebook.
 - Instagram,
 - YouTube,
-- Facebook.
 
 <br>
 Click to view image:
@@ -1531,6 +1531,15 @@ All three modules complement each other in terms of content and have the potenti
 
 Footer always present at the bottom of the website encourages users to engage in alternative means of contact via social media (Instagram, Youtube and Facebook). 
 
+<details>
+<summary>Links to social media in Footer</summary>
+
+![screenshot of Facebook account 1](readme/docs/images/marketing/footer_social.jpg)
+</details>
+<br>
+
+*Facebook*
+
 Because of Facebook's reach and amount of users it can be a valuable marketing tool for this project. An example business Facebook account has been open and is available under this [link](https://www.facebook.com/profile.php?id=100090875239254) at the time of writing this document. Below screenshots from this account can be found. 
 
 Main page lets the owner to present information to a wide audience and utilize Facebook's paid marketing tools if such decision arises.
@@ -1565,9 +1574,17 @@ Dashboard details example
 </details>
 <br>
 
+Note: While the artist's Facebook account presented above was created as part of the Marketing Strategy in this project, the Footer on this site also refers to the oryginal artist's Instagram profile. The Instagram profile is not part of this project and was not contributed to by the author of this document. 
+
 **Email marketing**
 
 Also in the footer a short form giving users a possibility to subscribe to a newsletter has been placed. This provides the owner with additional marketing tools at her disposal, e.g. letting users know about new items in the Gallery, important events or promotions via email and ongoing analysis of newsletter signups. Newsletter subscription is managed via [MailChimp](https://mailchimp.com/) service. 
+
+<details>
+<summary>Newsletter form</summary>
+
+![screenshot of newsletter subcription1](readme/docs/images/marketing/footer_newsletter_form.jpg)
+</details>
 
 <details>
 <summary>Subscription confirmation</summary>
@@ -1869,6 +1886,8 @@ ___
 
 ### Graphical content
 - [Monika Curto Fuentes](https://www.instagram.com/polishgirlpainting/) - graphical representations of original art collection used for building this site.
+
+    Note: Footer on this site is referring to the oryginal artist's Instagram profile. This profile is not part of this project. 
 - [Nicepng](https://www.nicepng.com) - favicon.
 - [Coolors](https://coolors.co) - colour palette creation.
 - [Font Awesome](https://fontawesome.com/) - sourcing icons.

@@ -32,7 +32,7 @@ Project setup was conducted in the following steps:
 
     ![screenshot](./images/deployment/github/github_create_repository_gitpod.jpg)
     </details>
-4. Once Gitpod workspace is created install Django by writing the command in Terminal. Django in version 3.2 was used as is the LTS (Long Term Support) version and thus was preferable to use over the currently newest Django 4.
+4. Once Gitpod workspace is created install Django by writing the command in Terminal. Django 3.2 was used as it is the LTS (Long Term Support) version and thus preferable over the currently newest Django 4.
     ```
     pip3 install Django==3.2
     ```
@@ -110,7 +110,7 @@ Steps for cloning repository:
 5. In Git Bash change working directory to the desired destination for the clone,
 6. Type "git clone", paste URL for SSH method from the clipboard and press Enter.
 
-During part of production process both [GitPod](https://gitpod.io/) and the program [Visual Studio Code](https://code.visualstudio.com) were used. The latter was not strictly necessary but provided smoother production in times of poor Internet connection and provided extra level of assurance in form of local copy of all files.
+During part of production process both [GitPod](https://gitpod.io/) and the program [Visual Studio Code](https://code.visualstudio.com) were used. The latter was not strictly necessary but provided smoother production in times of poor Internet connection and provided extra level of assurance in form of a local copy of all files.
 
 
 ## ElephantSQL
