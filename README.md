@@ -1704,7 +1704,6 @@ When producing automatic tests for bag page it was not possible to utilize asser
 ___
 # 5. Deployment <a name="deployment"></a> 
 [Click here for Deployment file](readme/docs/deployment.md)
-<!-- TODO: Add deployment discription [#2](https://github.com/KarMiles/polish-girl-painting/issues/2) -->
 <br>
 
 ___

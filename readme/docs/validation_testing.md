@@ -93,7 +93,6 @@ Testing for accessibility of the site was carried out with the employment of [WA
     <img src="./images/testing/validation/validation-accessibility-home.jpg">
 </details>
 <details>
-     <!-- #TODO [#2](https://github.com/KarMiles/polish-girl-painting/issues/2) -->
     <summary>Gallery</summary>
     <img src="./images/testing/validation/validation-accessibility-products.jpg">
 </details>
