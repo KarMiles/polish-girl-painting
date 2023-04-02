@@ -6,7 +6,9 @@
 
 The following validators were used for testing code correctness:
 ### W3C Markup Validator 
-<!-- #TODO [#2](https://github.com/KarMiles/polish-girl-painting/issues/2) -->
+
+These tests were performed for the website itself, without content which may be added by users.
+
 No errors or warnings were found by [W3C Markup Validator](https://validator.w3.org/)  throughout the site.
 <details>
     <summary>Home</summary>
@@ -57,10 +59,30 @@ No errors were found by [W3C CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 
 <br>
 
+### JSHint JavaScript
+[Click here for Validation testing](readme/docs/validation_testing.md)
+
+To avoid false positives 'Undifined variable' on JQuery from [JSHint](https://jshint.com/) the following code was added to the tests:
+
+```
+/*globals $:false */
+```
+
+<details>
+    <summary>JSHint</summary>
+    <img src="./images/testing/validation/validation-jshint.jpg">
+</details>
+
+
+
+
+
+<br>
+
 ## User Experience UX testing
 
 ### Visibility and functionality
-Optimal visibility and functionality on various devices was tested throughout the production process and the finished product was tested using [Responsive Designs](http://ami.responsivedesign.is). Screen from this test is placed in the beginning of this document.
+Optimal visibility and functionality on various devices was tested throughout the production process and the finished product was tested using [Multi Device Website Mockup Generator](https://techsini.com/multi-mockup/) online service. Screen from this test is placed in the beginning of this document.
 
 <br>
 

@@ -7,7 +7,7 @@ All tests have been placed in folder **tests** in files:
 - test_views.py
 - test_forms.py
 
-Most of the testing was concentrated on e-commerce - related functionality. 
+Most of the testing were concentrated on e-commerce - related functionality. 
 The following unit tests were run on models, views and forms:
 
 <br>

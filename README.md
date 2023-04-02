@@ -6,7 +6,7 @@ View the live site [here](https://polish-girl-painting.herokuapp.com/).
 
 Users for testing:
 
-- user (role: customer)
+- customer (role: customer)
 - staff_user (role: staff)
 - admin (owner)
 
@@ -34,8 +34,6 @@ Users passwords are supplied in assessment submition form.
     ii.  [Automated testing](#automated-testing)<br>
     iii.  [Known issues during development and testing](#known-issues)<br>
     iv. [Validation testing](#validation-testing)<br>
-    v. [JavaScript testing](#js-testing)<br>
-
 
 5. [Deployment](#deployment)<br>
 
@@ -53,7 +51,7 @@ Users passwords are supplied in assessment submition form.
 **The project concept**
 
 PolishGirlPainting is the webpage for an artist Monika Curto Fuentes showcasing her work on the web and selling her paintings online. 
-Apart from allowing the Owner present her pictures for sale, the webpage also helps in developing her clientbase by building a community of people interested in her art.
+Apart from allowing the Owner present her art for sale, the webpage also helps in developing her clientbase by building a community of people interested in her art.
 
 This is an educational project with a possibility of moving the project into the real world application.
 
@@ -67,9 +65,9 @@ The main goal of the project is to provide a platform for selling the Artist's p
 -	To provide functionality for commercial transactions related to the items for sale.
 -	To enable users to view pictures and details on specific art pieces.
 -	To enable all users to view the Artist's blog.
--   To enable registered users to share their testimony about their interactions with the Artist.
+-   To enable registered users to share their testimony about their interactions with the Artist or experiences with her art.
 -	To enable all visitors to subscribe to email newsletter.
--	To enable all users to contact the Artist using details in Contact section.
+-	To enable all users to contact the Artist using a form in the Contact section.
 
 
 ### **Site owner goals**
@@ -99,7 +97,7 @@ All users
 Registered users
 -	To log in and log out as needed.
 -	To log in with a chosen user name to maintain privacy.
--	To have my details remembered for smooth future transactions.
+-	To have user details remembered for smooth future transactions.
 
 ---
 
@@ -281,7 +279,7 @@ Code is built with utilization of Django framework into apps, files and folders 
 - bag - functionality for managing the shopping bag.
 - blog - functionality for managing the owner's blog.
 - contact - contact form for direct messages from users to owner.
-- checkout - functionality for managing the e-commerce transactions for the site.
+- checkout - functionality for managing the e-commerce transactions for the site with real-life email confirmations.
 - home - functionality for managing the home page.
 - products - functionality for managing the gallery containing products available for sale or only exposed for the visitors' viewing.
 - profiles - functionality for managing user profiles.
@@ -307,6 +305,8 @@ Common files:
 - settings.py - settings.
 - db.sqlite3 - database used in development.
 - custom_storages.py - contains settings for production-phase storage.
+- robots.txt - file to tell search engine crawlers which URLs the crawler can access on the site
+- sitemap.xml - file to provide information about the pages, images, and other files on this site, and the relationships between them. Search engines read this file to crawl the site more efficiently.
 - README.md - project's documentation.
 
 ### Folders
@@ -316,7 +316,7 @@ Common files:
 - readme - contains files necessary for Readme document to show all of its intended content.
 - static - contains all static files, e.g. style.css, in one place for easy access and management.
 - media - contains dynamic media files.
-- templates folder contains html files both supplied with apps and custom-made.
+- templates - contain html and txt files both supplied with apps and custom-made.
 
 ## Data schema
 
@@ -324,7 +324,7 @@ Common files:
 
 A relational database was used for this project. 
 
-During development process SQLite DB was initially used, then Postgres. For production Postgres was used as the main database for static files, and for deployment the data was migrated to Heroku Postgres.
+During development process SQLite DB and Postgres technologies were used. For deployment the data was migrated to Heroku Postgres. 
 
 [Amazon Web Services (AWS)](https://aws.amazon.com/) service was used for storing static and media files. 
 
@@ -349,9 +349,18 @@ Relationships
 ***App: profiles***
 
 ### Model: UserProfile
-- Part of prifiles app.
+- Part of profiles app.
 - This model one-to-one relationship with user model and represents the user's default contact details, applied mainly for shipment.
 - This model contains the following fields: user, default_phone_number, default_street_address1, default_street_address2, default_town_or_city, default_county, default_postcode, default_country.
+
+<details>
+<summary>Click here to view UserProfile model</summary>
+
+![screenshot of Post model part 1](readme/docs/images/database/profiles_model1.jpg)
+
+![screenshot of Post model part 1](readme/docs/images/database/profiles_model2_receiver.jpg)
+</details>
+<br>
 
 ***App: blog***
 
@@ -460,7 +469,7 @@ Relationships
 ### Model: HomeSettings 
 
 - Part of home app.
-- Represents settings for the home app, altarable by owner on the Admin page.
+- Represents settings for the home app, altarable by owner on the Admin page. With this setting the owner can change the default background image used for the welcome page.
 - This model contains the following field: background_image.
 
 Relationships
@@ -497,7 +506,7 @@ Relationships
 ### Model: Category
 
 - Part of products app.
-- Represents categories of the pieces of art in the gallery.
+- Represents categories of the pieces of art in the gallery. Categories are shown in sub-menu when user is in Gallery and serve as filters for the art pieces shown in the Gallery. List of categories can be edited by owner on the admin page.
 - This model contains the following fields: name, friendly_name.
 
 Relationships
@@ -516,7 +525,7 @@ Relationships
 ### Model: Testimonial
 
 - Part of testimonials app.
-- Represents entries shown on the About page. Entries made by registered users need to be approved by owner and after approval are shown in the Testimonials / Feedback section. Entries made by owner and marked as "About" (about_me marked as True in the form) are shown on the same page in the About section.
+- Represents entries shown on the About page. Entries made by registered users need to be approved by owner and only after approval are shown in the Testimonials / Feedback section. Entries made by owner and marked as "About" (about_me option checked in the form) are shown on the same page in the About section.
 - This model contains the following fields: title, author, content, craeted_on, updated_on, priority, about_me, live.
 
 Relationships
@@ -553,6 +562,8 @@ ___
 
 Layout of the interface, navigation and information design for different screen sizes were planned with utilization of wireframes created in Balsamiq. 
 
+Minor changes were applied since drafting the wireframes created in the beginning of the project. E.g. some elements were centered rather than justified as this suited better to the art-centric representation of the art pieces. 
+
 <details>
 <summary>Wireframe: Home page</summary>
 
@@ -581,6 +592,12 @@ Layout of the interface, navigation and information design for different screen 
 <summary>Wireframe: About</summary>
 
 ![image](readme/docs/images/wireframes/about_me_testimony.png)
+</details>
+
+<details>
+<summary>Wireframe: Contact</summary>
+
+![image](readme/docs/images/wireframes/contact.png)
 </details>
 
 <details>
@@ -615,10 +632,14 @@ ___
 Flow of information and decisions the website operates on are represented in the flowchart below.
 
 <details>
-<summary>Click here to view business logic flowchart</summary>
+<summary>Click here to view business logic flowcharts</summary>
 Main chart
 
-![image](readme/docs/images/business-logic/flowchart.jpg)
+![image](readme/docs/images/business-logic/flowchart_main.jpg)
+
+About / Testimonials
+
+![image](readme/docs/images/business-logic/flowchart_about.jpg)
 
 Account management / logins
 
@@ -660,11 +681,11 @@ All fonts are available from Google Fonts service.
 ### **Imagery**
 
 
-Graphics for the site were chosen with the intention of maintaining the theme of a minimalistic environment of an art gallery where it is the art itself that takes priority. The only image used outside the product list is the background for the home page. This image is by default the piece painted by the artist and can be overwritten in the Admin page.
+Graphics for the site were chosen with the intention of maintaining the theme of a minimalistic environment of an art gallery where it is the art itself that takes priority. 
 
 The design is dominated by Black and White with some Jet (very dark grey) and Gainsboro (very light grey) with addition of scant usage of colours Indigo Dye and Ming. Colours were chosen by the artist herself. 
 
-Image of the artist's painting serves as hero image. Owner can change the image in the admin page.
+The only image used outside the product list is the background for the home page. The default image is the piece painted and selected for this purpose by the artist herself and can be overwritten in the Admin page.
 
 <details>
 <summary>Click here to view image</summary>
@@ -683,8 +704,6 @@ ___
 ## 2.i. Current features <a name='features-current'></a>
 
 <br>
-
----
 
 ### **Feature 1. Navigation bar**
 
@@ -1090,7 +1109,7 @@ All users can view a list of posts with "live" status.
 </details>
 
 <details>
-<summary>Post cut</summary>
+<summary>Post - shortened version</summary>
 
 ![screenshot of image](readme/docs/images/testing/features/post_cut.jpg)
 </details>
@@ -1098,7 +1117,7 @@ All users can view a list of posts with "live" status.
 
 Staff users can see both "live" and non-live / draft posts and can add new, edit and delete posts. 
 <details>
-<summary>Post edit</summary>
+<summary>Post add / edit</summary>
 
 ![screenshot of image](readme/docs/images/testing/features/post_edit.jpg)
 </details>
@@ -1221,11 +1240,12 @@ Login is not required to use its functionality, albeit for logged in users the u
 
 <br>
 
-### Access to About features
+### Access to Contact features
 
 | No. | Feature                    | Not logged in | Logged in client | Staff | Admin |
 | --- | -------------------------- | ------------- | ---------------- | ----- | ----- |
 | 1   | Send direct message        | yes           | yes              | yes   | yes   |
+| 1   | Read direct message        | no            | no               | no    | yes   |
 
 #### **User Stories related to feature 8**
 
@@ -1256,7 +1276,7 @@ After adding a product to the bag user is presented with a temporary confirmatio
 </details>
 <br>
 
-As a general rule products presented in the Gallery are unique art items. This is the reason why when such a unique product is already in the bag then button 'Add to Bag' is no longer available and a short information 'Item is in your bag' is presented in its place. Exceptions to this are taken into account and if an item is not unique (key 'is_unique' is unchecked in product details), then the 'Add to Bag button' will still appear, allowing the customer to add more than one item of the same product.
+As a general rule products presented in the Gallery are unique art items. This is the reason why when such a unique product is already in the bag then button 'Add to Bag' is no longer available and a short information 'Item is in your bag' is presented in its place. Exceptions to this were taken into consideration and if an item is not unique (key 'is_unique' is unchecked in product details), then the 'Add to Bag button' will still appear, allowing the customer to add more than one item of the same product.
 
 <details>
 <summary>Product details - item in bag</summary>
@@ -1537,7 +1557,7 @@ Dashboard details example
 Also in the footer a short form giving users a possibility to subscribe to a newsletter has been placed. This provides the owner with additional marketing tools at her disposal, e.g. letting users know about new items in the Gallery, important events or promotions via email and ongoing analysis of newsletter signups. Newsletter subscription is managed via [MailChimp](https://mailchimp.com/) service. 
 
 <details>
-<summary>Subsription confirmation</summary>
+<summary>Subscription confirmation</summary>
 
 ![screenshot of newsletter subcription1](readme/docs/images/marketing/newsletter_subcription_confirmation_page.jpg)
 </details>
@@ -1591,6 +1611,17 @@ Website built in this project collects user data and as such needs to comply wit
 
 The Privacy Policy is set up under the assumption that cookies are not used on this webpage. In case of a change in this area, e.g. when using Google Analytics, Facebook Pixel or Hotjar the Privacy Policy would need to be accordingly updated.
 
+
+<details>
+<summary>click to see screenshots</summary>
+Link to Privacy Policy document:
+
+![screenshot](readme/docs/images/marketing/footer_gdpr_link.jpg)
+Fragment of custom Privacy Policy document:
+
+![screenshot](readme/docs/images/marketing/gdpr_privacy_policy.jpg)
+</details>
+
 <br>
 
 ___
@@ -1619,9 +1650,11 @@ User stories were tested with current features and passed the tests.
 
 ## 4.iii. Known issues during development and testing <a name="known-issues"></a>
 
-**Unfixed issues**
+**Unfixed and potential issues**
 
 There are no observed unfixed issues and bugs.
+
+Checks for compatibility with Apple devices were minimal due to a limited access to such devices for the author at the time of testing.
 
 **Fixed issues and changes to original design**
 
@@ -1686,7 +1719,7 @@ For development of this webpage elements of Agile software development methodolo
 - CSS (https://www.w3.org/Style/CSS/)
     - For custom-made styling CSS (Cascading Style Sheets) language was used. This was along usage of CSS framework [Bootstrap](https://getbootstrap.com/).
 - JavaScript (https://www.javascript.com/)
-    - A limited use of custom-made JavaScript has been employed to enhance functionality of the website.
+    - A limited use of custom-made JavaScript / JQuery has been employed to enhance functionality of the website.
 - Python (https://www.python.org/) - within the Django framework Python 3 is the main language used to run its back-end logic. 
 
 ## 6.iii Frameworks and Libraries <a name="frameworks-and-libraries"></a>
@@ -1727,6 +1760,7 @@ For development of this webpage elements of Agile software development methodolo
 
 ### Version management and deployment
 - GitPod (https://gitpod.io/) - used as IDE and the tool for version control in the project.
+- VSCode (https://code.visualstudio.com/) - interchangably with Gitpod for local copy, speed on slow Internet connections and convenience in terms of managing files.
 - GitHub (https://github.com/) - used to maintain repository of the project.
 - Heroku (https://www.heroku.com) - used for deployment of the application.
 - Stripe (https://stripe.com/docs) - used for management of e-commerce transactions
@@ -1734,14 +1768,14 @@ For development of this webpage elements of Agile software development methodolo
 ### Data storage
 - SQLite (https://www.sqlite.org/) - used as a local database.
 - Postgres (https://www.postgresql.org/) - the deployed project on Heroku uses the Postgres database on [ElephantSQL](https://www.elephantsql.com/) cloud service.
-- AWS Amazon (https://aws.amazon.com/) - service added to Heroku deployment for hosting static and dynamic files.
+- AWS Amazon (https://aws.amazon.com/) - service added to deployment for hosting static and dynamic files.
 
 ### Design stages
 - Lucidchart (www.lucidchart.com/) - used to create flowcharts.
 - Balsamiq Wireframes(https://balsamiq.com/) - used to create wireframes in the UX design stage.
 - SQL DRAW (https://drawsql.app/) – used to create database diagrams.
-- Am I Responsive (https://techsini.com/multi-mockup/) - Mockup Generator was used to create the Mock up image for this README document.
-- [Ignore X-Frame headers](https://chrome.google.com/webstore/detail/ignore-x-frame-headers/gleekbfjekiniecknbkamfmkohkpodhe) Google Chrome Addon from [chrome web store](https://chrome.google.com/webstore/category/extensions) - to enable 'Am I Responsive' tool deal with X-Frame content security policy preventing the website from loading inside an iframe, embed or object of another website.
+- Multi Device Website Mockup Generator (https://techsini.com/multi-mockup/) - Mockup Generator was used to create the Mock up image for this README document.
+- [Ignore X-Frame headers](https://chrome.google.com/webstore/detail/ignore-x-frame-headers/gleekbfjekiniecknbkamfmkohkpodhe) Google Chrome Addon from [chrome web store](https://chrome.google.com/webstore/category/extensions) - to enable the Mockup Generator tool deal with X-Frame content security policy preventing the website from loading inside an iframe, embed or object of another website.
 
 - Google Fonts (https://fonts.google.com/) - for selecting fonts and using them in the project.
 - Font Awesome (https://fontawesome.com/) - all the icons throughout the website are derived from this service.
@@ -1810,6 +1844,7 @@ ___
 - [Djangoproject](https://docs.djangoproject.com/en/4.0/ref/models/fields/#field-types) - choices for priority levels.
 - [Vegibit](https://vegibit.com/how-to-use-httpresponseredirect-in-django) - HttpResponse description.
 - [Stackoverflow](https://stackoverflow.com/questions/22728763/how-to-provide-canonical-url-with-django-httpresponseredirect) - for best canonical link solution.
+- [Stackoverflow](https://stackoverflow.com/questions/8852765/jshint-and-jquery-is-not-defined) - for JavaScript /JQuery false positives in [JSHint](https://jshint.com/). 
 
 ### Knowledge
 - [Wikipedia](https://en.wikipedia.org/wiki/Sitemaps) - general information on sitemaps.

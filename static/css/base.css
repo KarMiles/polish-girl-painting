@@ -528,7 +528,7 @@ input[type=number]::-webkit-outer-spin-button {
 .dropdown-menu,
 .dropdown-submenu {
     padding: 0.2rem 0.5rem;
-    border-color: transparent;
+    border-color: var(--gainsboro) !important;
     border-radius: var(--custom-radius);
 }
 
