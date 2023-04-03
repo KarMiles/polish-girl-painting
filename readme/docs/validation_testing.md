@@ -60,7 +60,6 @@ No errors were found by [W3C CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 <br>
 
 ### JSHint JavaScript
-[Click here for Validation testing](readme/docs/validation_testing.md)
 
 To avoid false positives 'Undefined variable' on JQuery from [JSHint](https://jshint.com/) the following code was added to the tests:
 
