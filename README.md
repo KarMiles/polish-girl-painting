@@ -1688,13 +1688,20 @@ Checks for compatibility with Apple devices were minimal due to a limited access
 
 **Fixed issues and changes to original design**
 
+*Visual appearance*
+
+Minor changes to visual appearance were introduced after creation of first wireframes, e.g. cetering elements rather than justifying. This is believed to reflect more elegant and art-centric approach. 
+
+*Contact*
+
+A simple mechanism for direct messages was added to the original draft. This is believed to be in line of the Marketing Strategy where in Business-to-Customer model a strong emphasis on customers with various technical background should be made. Direct messages on the webpage should be an easy and simple solution, especially for less technically inclined users. 
+
 *Testing redirect*
 
 When producing automatic tests for bag page it was not possible to utilize assertRedirects test on response with post method. To perform the test assertEqual was used instead:
 
     last_url, status_code = response.redirect_chain[-1]
     self.assertEqual(last_url, '/bag/')
-
 
 ## 4.iv. Validation testing:<a name="validation-testing"></a>
 [Click here for Validation testing](readme/docs/validation_testing.md)
