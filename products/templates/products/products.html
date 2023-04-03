@@ -137,6 +137,14 @@
                                     
                                 </div>
                             </div>
+
+                            <!-- Back to page top button -->
+                            <div class="btt-button shadow-sm corners border border-black d-block d-md-none">
+                                <a class="btt-link d-flex h-100">
+                                    <i class="fa fa-chevron-up text-black mx-auto my-auto"></i>
+                                </a>
+                            </div>
+
                         {% endif %}
                     {% endfor %}
                 </div>
@@ -168,3 +176,7 @@
     </div>
 {% endblock %}
 
+{% block postloadjs %}
+{{ block.super }}
+    {% include "includes/back-to-top-button.html" %}
+{% endblock %}

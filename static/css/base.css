@@ -331,13 +331,15 @@ a.category-badge > span.badge:hover {
     position: fixed;
     bottom: 10px;
     right: 10px;
+    z-index: 10;
+    background-color: rgba(255,255,255,.1);
 }
 
 .btt-link,
 .update-link,
 .remove-item {
     cursor: pointer;
-    z-index: 2;
+    z-index: 10;
 }
 
 input[name='q']::placeholder {
