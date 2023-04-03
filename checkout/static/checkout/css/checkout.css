@@ -47,7 +47,7 @@ select option {
 
 select:invalid,
 select option[value=""] {
-    color: #aab7c4 !important;
+    color: #3b6e71 !important;
 }
 
 #loading-overlay {
@@ -57,10 +57,8 @@ select option[value=""] {
     left: 0;
     width: 100%;
     height: 100%;
-    /* Ming */
-    /* background: rgba(59, 110, 113, .80); */
-    /* Indigo Dye */
-    background: rgba(39, 75, 100, .80);
+    /* background: rgba(39, 75, 100, .80); */
+    background: rgba(255, 255, 255, .70);
     z-index: 9999;
 }
 
@@ -70,4 +68,5 @@ select option[value=""] {
     justify-content: center;
     margin: 0;
     height: 100%;
+    color: #3b6e71 !important;
 }
