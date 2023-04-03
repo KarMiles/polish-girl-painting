@@ -15,37 +15,37 @@
             <a role="button" data-toggle="dropdown" id="dropdownMenuAvailability" class="logo-font  nav-link text-black mx-2" data-target="#" href="#">
                 Avalability
             </a>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuAvailability">
-                <li>
+            <div class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuAvailability">
+                <div>
                     <a tabindex="-1" href="{% url 'products' %}?available=True">
                         Available
                     </a>
-                </li>
-                <li class="divider"></li>
-                <li>
+                </div>
+                <div class="divider"></div>
+                <div>
                     <a tabindex="-1" href="{% url 'products' %}?available=False">
                         Unavailable
                     </a>
-                </li>
-            </ul>
+                </div>
+            </div>
         </div>
         <div class="dropdown d-sm-none">
 
             <a role="button" data-toggle="dropdown" id="dropdownMenuCategories" class="logo-font  nav-link text-black mx-2" data-target="#" href="#">
                 Category
             </a>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCategories">
+            <div class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCategories">
 
                 {% for cat in categories_all %}
-                <li>
+                <div>
                     <a tabindex="-1" href="{% url 'products' %}?category={{ cat }}" class="text-capitalize">
                         {{ cat }}
                     </a>
-                </li>
-                <li class="divider"></li>
+                </div>
+                <div class="divider"></div>
                 {% endfor %}
 
-            </ul>
+            </div>
 
         </div>
         {% endif %}
